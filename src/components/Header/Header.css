@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center; /* Vertically center items in the container */
+  border: 2px solid black;
+  padding: 10px; /* Adjust to your design */
+  
+  color: white;
+}
