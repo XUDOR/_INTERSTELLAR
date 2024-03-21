@@ -15,7 +15,7 @@ function Gallery_Display() {
         </GalleryItem>
         <GalleryItem label="3">
           Content for Artist/Album 3
-        </GalleryItem>
+        </GalleryItem>      
       </Gallery>
     </div>
   );
