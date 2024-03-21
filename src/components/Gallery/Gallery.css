@@ -10,17 +10,18 @@
   padding-left: 0;
   margin: 0;
   display: flex;
-  background-color: #f9f9f9;
+  background-color: white;
 }
 
 .tab-list-item {
-  padding: 10px 20px;
+  color: white;
+  padding: 10px 10px;
   margin-top: 10px;
   margin-left: 10px;
   cursor: pointer;
   border: 1px solid #ccc;
   border-bottom: none;
-  background-color: inherit;
+  background-color: black;
 }
 
 .tab-list-item:hover {
@@ -37,8 +38,8 @@
 .tab-content {
   border: 1px solid #ccc;
   margin-left: 10px;
-  min-height: 500px;
   width: 50%;
   padding: 10px;
   background-color: #fff;
+  height: 500px;
 }
