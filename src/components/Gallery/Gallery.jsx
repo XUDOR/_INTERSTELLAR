@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Tabs = ({ children }) => {
+const Gallery = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
 
   const handleClick = (e, newActiveTab) => {
@@ -35,4 +35,4 @@ const Tabs = ({ children }) => {
   );
 };
 
-export default Tabs;
+export default Gallery;
