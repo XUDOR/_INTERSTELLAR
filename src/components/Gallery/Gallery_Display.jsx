@@ -7,13 +7,13 @@ function Gallery_Display() {
   return (
     <div className="Gallery_Display">
       <Gallery>
-        <GalleryItem label="Artist 1">
+        <GalleryItem label="1">
           Content for Artist 1
         </GalleryItem>
-        <GalleryItem label="Album 2">
+        <GalleryItem label="2">
           Content for Album 2
         </GalleryItem>
-        <GalleryItem label="Artist/Album 3">
+        <GalleryItem label="3">
           Content for Artist/Album 3
         </GalleryItem>
       </Gallery>
