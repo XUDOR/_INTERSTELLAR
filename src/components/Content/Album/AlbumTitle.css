@@ -1,8 +1,7 @@
-.InfoContainer {
-  margin-left: 5px;
+.AlbumTitle {
+  display: flex;
   border: 2px solid gray;
   color: black;
   padding: 5px;
-  width: 40%;
-  
+
 }
