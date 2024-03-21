@@ -3,9 +3,9 @@ import Gallery from './Gallery';
 import GalleryItem from './GalleryItem';
 import './Gallery.css';
 
-function App() {
+function Gallery_Display() {
   return (
-    <div className="App">
+    <div className="Gallery_Display">
       <Gallery>
         <GalleryItem label="Artist 1">
           Content for Artist 1
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default Gallery_Display;
