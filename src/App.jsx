@@ -1,27 +1,23 @@
+// App.jsx
 import React from 'react';
-import Tabs from './components/Tabs/Tabs';
-import TabPanel from './components/Tabs/TabPanel';
-import './App.css';
+import Header from './components/Header/Header'; // Assuming Header is properly set up
+import GalleryDisplay from './components/Gallery/Gallery_Display';
+// Assuming you'll create and import Footer later
+// import Footer from './components/Footer/Footer';
+import './App.css'; // Make sure to have global styles that apply to the entire app
 
 function App() {
   return (
-    <div className="App">
-      
-      <Tabs>
-        <TabPanel label="Tab 1">
-          Content for Tab 1
-        </TabPanel>
-        <TabPanel label="Tab 2">
-          Content for Tab 2
-        </TabPanel>
-        <TabPanel label="Tab 3">
-          Content for Tab 3
-        </TabPanel>
-
-      </Tabs>
+    <div className="app">
+      <Header />
+      <main>
+        <GalleryDisplay />
+        {/* Place other components here as your app grows */}
+      </main>
+      {/* Footer will eventually go here */}
+      {/* <Footer /> */}
     </div>
   );
 }
-
 
 export default App;
