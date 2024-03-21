@@ -1,8 +1,8 @@
 import React from "react";
 
-const TabPanel = ({ children }) => {
+const GalleryItem = ({ children }) => {
   return <div className="container">{children}</div>;
 };
 
-export default TabPanel;
+export default GalleryItem;
 
