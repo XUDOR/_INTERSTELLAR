@@ -1,6 +1,7 @@
 .artists-releases  {
   flex: 3;
   border: 2px solid black;
+  margin-left: 2px;
   text-decoration: none;
   color: black;
   padding: 10px;
