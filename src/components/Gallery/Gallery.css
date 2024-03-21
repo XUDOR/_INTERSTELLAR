@@ -8,31 +8,29 @@
 .tab-list {
   list-style-type: none;
   padding-left: 0;
-  margin: 0;
+  margin: 0 0 0 10px;
   display: flex;
   background-color: white;
 }
 
 .tab-list-item {
-  color: white;
-  padding: 10px 10px;
-  margin-top: 10px;
-  margin-left: 10px;
+  text-indent: -9999px; /* Hide text */
+  width: 15px; /* Set a fixed width */
+  height: 15px; /* Set a fixed height */
+  line-height: 15px; /* Align to the middle if text is to be shown */
+  border-radius: 50%; /* Make it round */
+  background-color: #ccc; /* Set background color for dots */
+  margin: 5px;
+  border: none; /* Optional: removes border */
   cursor: pointer;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  background-color: black;
 }
 
 .tab-list-item:hover {
   background-color: #ddd;
 }
 
-.tab-list-active {
-  background-color: #fff;
-  border-color: #cccccc;
-  border-bottom: 2px solid #fff;
-  top: 1px;
+.tab-list-item.active {
+  background-color: #333; /* Different color for the active dot */
 }
 
 .tab-content {
