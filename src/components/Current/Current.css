@@ -1,0 +1,9 @@
+.Current {
+  flex: .2;
+  margin: 5px;
+  border: 2px solid gray;
+  color: black;
+  padding: 5px;
+  width: 30%;
+  
+}
