@@ -1,14 +1,17 @@
 import React from 'react';
 import Gallery from './Gallery';
 import GalleryItem from './GalleryItem';
-import './Gallery.css';
 import Album from '../Content/Album/Album';
+import AlbumTitle from '../Content/Album/AlbumTitle';
+import '../Content/Album/AlbumTitle.css';
+import './Gallery.css';
 
 function Gallery_Display() {
   return (
     <div className="Gallery_Display">
       <Gallery>
         <GalleryItem label="1">
+          <AlbumTitle></AlbumTitle>
           <Album></Album>
         </GalleryItem>
         <GalleryItem label="2">
