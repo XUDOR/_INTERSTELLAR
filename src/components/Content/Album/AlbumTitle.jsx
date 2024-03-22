@@ -3,7 +3,7 @@ import './AlbumTitle.css';
 function AlbumTitle() {
   return (
     <div className='AlbumTitle'>
-      Album
+      Album Title
     </div>
   );
 
