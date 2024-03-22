@@ -1,0 +1,7 @@
+.Gallery_Display {
+  flex: 2;
+  
+  border: 2px solid gray;
+  
+  margin: 10px;
+}

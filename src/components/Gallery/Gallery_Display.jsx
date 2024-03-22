@@ -3,8 +3,12 @@ import Gallery from './Gallery';
 import GalleryItem from './GalleryItem';
 import Album from '../Content/Album/Album';
 import AlbumTitle from '../Content/Album/AlbumTitle';
+import Current from '../Current/Current';
+
 import '../Content/Album/AlbumTitle.css';
-import './Gallery.css';
+import './Gallery_Display.css'
+import './GalleryItem.css'
+
 
 function Gallery_Display() {
   return (
