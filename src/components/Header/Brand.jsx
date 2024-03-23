@@ -1,10 +1,11 @@
 import React from 'react';
 import './Brand.css';
+import LogoSVG from '../../images/IP_TAG24.svg';
 
 const Brand = () => {
   return (
     <div className="brand">
-      Interstellar Packages
+      <img src ={LogoSVG} alt="LOGO" />
     </div>
   );
 };
