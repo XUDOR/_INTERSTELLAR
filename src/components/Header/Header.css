@@ -1,9 +1,9 @@
 /* Header.css */
+
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center; /* Vertically center items in the container */
   border: 2px solid black;
   height: 150px;
 }
-
