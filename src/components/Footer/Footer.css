@@ -2,7 +2,7 @@
 
 .Footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: center;
   padding: 5px;
   background-color: #083D5E; /* Match header color or any color you prefer */

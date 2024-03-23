@@ -1,7 +1,7 @@
 /* Shop.css  */
 
 .Shop {
-  flex: .5;
+  flex-basis: 15%;
   border: 2px solid black;
   color: black;
   padding: 5px;

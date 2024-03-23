@@ -1,7 +1,7 @@
 /* Player.css  */
 
 .Player {
-  flex: 2;
+  flex-basis: 15%;
   border: 2px solid black;
   color: black;
   padding: 5px;
