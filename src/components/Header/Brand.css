@@ -1,10 +1,11 @@
 /* Brand.css */
 
 .brand {
-  margin: 3px;
+  margin: 15px;
   flex: 2;
   display: flex;
   align-items: center; /* This ensures vertical centering within the brand div */
+  background-color: #083D5E;
 }
 
 .brand img {
