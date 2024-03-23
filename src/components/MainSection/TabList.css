@@ -1,11 +1,12 @@
 /* TabList.css */
 
-.tab-list {
+.tab-list {  
   list-style-type: none;
   padding-left: 0;
-  margin: 0 0 0 10px;
+  margin: 0px ;
   display: flex;
-  background-color: white;
+  flex-direction: column;
+  background-color: #083D5E;
 }
 
 .tab-list-item {
@@ -14,7 +15,7 @@
   height: 15px; /* Set a fixed height */
   line-height: 15px; /* Align to the middle if text is to be shown */
   border-radius: 50%; /* Make it round */
-  background-color: #ccc; /* Set background color for dots */
+  background-color: #FFFADF; /* Set background color for dots */
   margin: 5px;
   border: none; /* Optional: removes border */
   cursor: pointer;
@@ -25,14 +26,13 @@
 }
 
 .tab-list-item.active {
-  background-color: #333; /* Different color for the active dot */
+  background-color: #58A7AF; /* Different color for the active dot */
 }
 
 .tab-content {
-  border: 1px solid #ccc;
+  border: 1px solid white;
   margin-left: 10px;
-  width: 55%;
-  padding: 10px;
+  
+  padding: 0px;
   background-color: #fff;
-  height: 510px;
 }
