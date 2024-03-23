@@ -1,24 +1,19 @@
 // Gallery.jsx
-import React, { useState } from 'react';
-import TabList from '../MainSection/TabList'; // Assuming it's in the same directory
-//import './Gallery.css';
+import React from 'react';
+import './Gallery.css';
 
-const Gallery = ({ children }) => {
-  const [activeTab, setActiveTab] = useState(children[0].props.label);
-
-  const handleTabClick = (label) => {
-    setActiveTab(label);
-  };
-
+const Gallery = ({ children, activeTab, onTabClick }) => {
   return (
-    <div>
-      <TabList activeTab={activeTab} onTabClick={handleTabClick}>
-        {children}
-      </TabList>
+    <div className="Gallery">
+      {/* ... Other components or markup */}
       <div className="tab-content">
         {children.map((one) => {
-          if (one.props.label !== activeTab) return undefined;
-          return one.props.children;
+          const display = one.props.label === activeTab ? 'block' : 'none'; // Only display the active tab content
+          return (
+            <div key={one.props.label} style={{ display }}>
+              {one.props.children}
+            </div>
+          );
         })}
       </div>
     </div>
