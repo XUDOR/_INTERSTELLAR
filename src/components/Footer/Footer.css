@@ -1,11 +1,18 @@
-/*  Footer.css */
+/* Footer.css */
 
 .Footer {
   display: flex;
-  justify-content: space-between; /* Distributes space between items */
-  align-items: center; /* Vertically center items in the container */
-  border: 2px solid black;
-  padding: 10px; /* Adjust to your design */
-  
-  color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #083D5E; /* Match header color or any color you prefer */
+  color: #FFF; /* Adjust text color for better contrast */
+  border-top: 2px solid #FFF; /* Optional: adds a defining top border */
+}
+
+.Footer > div {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  padding: 5px;
 }
