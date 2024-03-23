@@ -1,10 +1,12 @@
 /* Cover.css  */
 
 .Cover {
-  border: 2px solid gray;
-  color: black;
-  padding: 5px;
-  height: 430px;
-  width: 430px;
-  
+  margin: 0;
+  padding: 0px;
+}
+
+.Cover img {
+  width: 100%; /* Will scale the image to the parent container's width */
+  height: auto; /* Will maintain the aspect ratio */
+  display: block; /* Remove extra space underneath the image */
 }
