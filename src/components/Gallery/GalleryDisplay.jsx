@@ -17,10 +17,10 @@ function Gallery_Display() {
           <Album></Album>
         </GalleryItem>
         <GalleryItem label="2">
-          Content 2
+          #2
         </GalleryItem>
         <GalleryItem label="3">
-          Content 3
+          #3
         </GalleryItem>      
       </Gallery>
     </div>
