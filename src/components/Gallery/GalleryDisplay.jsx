@@ -3,8 +3,6 @@ import Gallery from './Gallery';
 import GalleryItem from './GalleryItem';
 import Album from '../Content/Album/Album';
 import AlbumTitle from '../Content/Album/AlbumTitle';
-import Current from '../Current/Current';
-
 import '../Content/Album/AlbumTitle.css';
 import './GalleryDisplay.css'
 import './GalleryItem.css'
