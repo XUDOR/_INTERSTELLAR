@@ -6,7 +6,7 @@ import AlbumTitle from '../Content/Album/AlbumTitle';
 import Current from '../Current/Current';
 
 import '../Content/Album/AlbumTitle.css';
-import './Gallery_Display.css'
+import './GalleryDisplay.css'
 import './GalleryItem.css'
 
 
