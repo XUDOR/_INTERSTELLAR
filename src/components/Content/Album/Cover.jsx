@@ -1,9 +1,10 @@
 import React from 'react';
 import './Cover.css';
-function Cover() {
+
+function Cover({ imageUrl }) {
   return (
     <div className='Cover'>
-      Cover
+      <img src={imageUrl} alt="Album Cover" />
     </div>
   );
 }
