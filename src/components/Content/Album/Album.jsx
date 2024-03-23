@@ -2,14 +2,17 @@ import React from 'react';
 import Cover from './Cover';
 import SongList from './SongList';
 import InfoContainer from './InfoContainer';
-import AlbumTitle from './AlbumTitle';
 import './Album.css';
+import coverImage from '../../../images/CHARLOTTA_cover.png';
+
+
 
 function Album() {
+  const coverImageUrl = coverImage;
   return (
     <div className='Album'>
-      {/*<AlbumTitle></AlbumTitle>*/}
-      <Cover></Cover>
+
+      <Cover imageUrl={coverImageUrl}/>
       <SongList></SongList>
       <InfoContainer></InfoContainer>
       
