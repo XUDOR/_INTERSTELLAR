@@ -9,4 +9,5 @@
   width: 100%; /* Will scale the image to the parent container's width */
   height: auto; /* Will maintain the aspect ratio */
   display: block; /* Remove extra space underneath the image */
+  position: relative;
 }

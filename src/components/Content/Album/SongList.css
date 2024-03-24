@@ -5,7 +5,8 @@
   border: 2px solid gray;
   color: black;
   padding: 5px;
-  height: 430px;
+  width: fit-content;
+  
   
   
 }
