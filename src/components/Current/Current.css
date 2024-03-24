@@ -2,9 +2,9 @@
 
 .Current {
   flex: .5;
-  margin: 0px;
+  margin-left: 1px;
   border: 2px solid gray;
-  color: black;
+  color: #E0ECED;
   padding: 5px;
   width: fit-content;
   

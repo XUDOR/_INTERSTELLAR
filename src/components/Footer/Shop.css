@@ -2,8 +2,8 @@
 
 .Shop {
   flex-basis: 15%;
-  border: 2px solid black;
-  color: black;
+  border: 2px solid gray;
+  color: #E0ECED;
   padding: 5px;
   
 }
