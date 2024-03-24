@@ -1,4 +1,4 @@
-// TabList.jsx
+// /MainSection/TabList.jsx
 import React from 'react';
 import './TabList.css';
 

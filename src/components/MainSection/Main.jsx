@@ -1,4 +1,4 @@
-// Main.jsx
+// /MainSection/Main.jsx
 import React, { useState } from 'react';
 import GalleryDisplay from '../Gallery/GalleryDisplay';
 import TabList from './TabList'; // Adjust the path as necessary
