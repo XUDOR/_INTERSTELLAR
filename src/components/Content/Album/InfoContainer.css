@@ -3,7 +3,7 @@
 .InfoContainer {
   flex: .5;
   margin-left: 1px;
-  border: 2px solid gray;
+  border: 1px solid gray;
   color: #E0ECED;
   padding: 5px;
   width:fit-content;
