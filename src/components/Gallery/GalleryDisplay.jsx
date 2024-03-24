@@ -4,6 +4,9 @@ import Gallery from './Gallery';
 import GalleryItem from './GalleryItem';
 import Album from '../Content/Album/Album';
 import AlbumTitle from '../Content/Album/AlbumTitle';
+import SongList from '../Content/Album/SongList';
+import InfoContainer from '../Content/Album/InfoContainer';
+
 import './GalleryDisplay.css';
 import './GalleryItem.css';
 
@@ -19,6 +22,7 @@ function GalleryDisplay({ activeTab, setActiveTab }) {
         <GalleryItem label="1">
           <AlbumTitle />
           <Album />
+          
         </GalleryItem>
         <GalleryItem label="2">
           Content 2

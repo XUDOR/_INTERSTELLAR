@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import GalleryDisplay from '../Gallery/GalleryDisplay';
 import TabList from './TabList'; // Adjust the path as necessary
 import Current from '../Current/Current'; // Corrected path
+import SongList from '../Content/Album/SongList';
+import InfoContainer from '../Content/Album/InfoContainer';
 import './Main.css';
 
 function Main() {
@@ -21,7 +23,10 @@ function Main() {
     <div className='Main'>
       <TabList activeTab={activeTab} onTabClick={handleTabClick} labels={tabLabels} />
       <GalleryDisplay activeTab={activeTab} onSetActiveTab={setActiveTab} />
+      <SongList></SongList>
+      <InfoContainer></InfoContainer>
       <Current />
+      
     </div>
   );
 }

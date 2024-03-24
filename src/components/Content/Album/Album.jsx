@@ -11,11 +11,7 @@ function Album() {
   const coverImageUrl = coverImage;
   return (
     <div className='Album'>
-
       <Cover imageUrl={coverImageUrl}/>
-      <SongList></SongList>
-      <InfoContainer></InfoContainer>
-      
     </div>
   );
 
