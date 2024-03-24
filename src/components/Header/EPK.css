@@ -1,7 +1,8 @@
 /* EPK.css */
 
 .EPK  { 
-  border: 2px solid gray;
+  margin-left: auto; /* Pushes .EPK to the right */
+  border: 1px solid gray;
   text-decoration: none;
   color: #E0ECED;
   padding: 10px;
