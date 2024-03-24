@@ -1,12 +1,14 @@
+// Shop.jsx
+
 import React from 'react';
 import './Shop.css';
 
-const Shop = () => {
+const Shop = ({ onShopClick }) => {
   return (
-    <div className="Shop">
+    <div className="Shop" onClick={onShopClick}>
       Shop
     </div>
   );
 };
 
-export default Shop;  
+export default Shop;
