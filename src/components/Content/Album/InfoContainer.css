@@ -1,6 +1,7 @@
 /* InfoContainer.css  */
 
 .InfoContainer {
+  flex: 1;
   margin: 5px;
   border: 2px solid gray;
   color: black;

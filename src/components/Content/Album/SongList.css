@@ -1,6 +1,7 @@
 /* SongList.css  */
 
 .SongList {
+  flex: .5;
   margin-left: 5px;
   border: 2px solid gray;
   color: black;

@@ -6,9 +6,9 @@
 }
 
 .Cover img {
-  
-   width: 100%; /* Will scale the image to the parent container's width */
-  height: auto; /* Will maintain the aspect ratio */
-  display: block; /* Remove extra space underneath the image */
-  position: relative;
+  width: 100%; /* Sets the image width to fill the container */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Removes extra space underneath the image */
+  transform: scale(1); /* Scales the image to 80% of its size */
+  transform-origin: left; /* Ensures the image scales from its center */
 }
