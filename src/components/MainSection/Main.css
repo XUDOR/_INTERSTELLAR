@@ -3,5 +3,6 @@
 .Main {
   display: flex;
   flex-direction: row;
-  margin: 2 0 0 0px;
+
+  background-color: #083D5E;
 }
