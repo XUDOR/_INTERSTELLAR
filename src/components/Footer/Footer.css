@@ -12,6 +12,7 @@
   background-color: #083D5E; /* Match header color or any color you prefer */
   color: #FFF; /* Adjust text color for better contrast */
   border-top: 2px solid #FFF; /* Optional: adds a defining top border */
+  z-index: 1000;
 }
 
 .Footer > div {
