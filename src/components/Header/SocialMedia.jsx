@@ -4,7 +4,7 @@ import './SocialMedia.css';
 const SocialMedia = () => {
   return (
     <div className="social-media">
-      Social Media
+      Social Media | Contact
     </div>
   );
 };
