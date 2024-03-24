@@ -4,8 +4,6 @@ import Gallery from './Gallery';
 import GalleryItem from './GalleryItem';
 import Album from '../Content/Album/Album';
 import AlbumTitle from '../Content/Album/AlbumTitle';
-import SongList from '../Content/Album/SongList';
-import InfoContainer from '../Content/Album/InfoContainer';
 
 import './GalleryDisplay.css';
 import './GalleryItem.css';
