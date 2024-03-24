@@ -1,8 +1,8 @@
 /* InfoContainer.css  */
 
 .InfoContainer {
-  flex: 1;
-  margin: 5px;
+  flex: .5;
+  margin: 1px;
   border: 2px solid gray;
   color: black;
   padding: 5px;
