@@ -1,14 +1,9 @@
 /* Cover.css  */
 
-.Cover {
-  margin: 0;
-  padding: 0px;
-}
-
 .Cover img {
   width: 100%; /* Sets the image width to fill the container */
   height: auto; /* Maintains the aspect ratio */
   display: block; /* Removes extra space underneath the image */
   transform: scale(1); /* Scales the image to 80% of its size */
-  transform-origin: left; /* Ensures the image scales from its center */
+  transform-origin: center; /* Ensures the image scales from its center */
 }
