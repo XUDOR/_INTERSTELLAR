@@ -1,0 +1,16 @@
+/* Downloads.css  */
+
+.Downloads {
+  flex-basis: 15%;
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  transition: background-color 0.3s ease; /* Smooth transition for the background color */
+  
+}
+
+.Downloads:hover {
+  background-color: #065A82; /* Darker background on hover */
+}
