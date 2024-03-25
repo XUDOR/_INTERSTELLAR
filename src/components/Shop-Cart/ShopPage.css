@@ -1,0 +1,20 @@
+/* ShopPage.css */
+.shop-header {
+  border-bottom: 1px solid gray;
+  /* Other styles as needed */
+}
+
+.shopContent {
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 10px; 
+  
+}
+
+.shopTitle {
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 5px;
+  align-self: flex-start; 
+  margin-right: 10px; 
+}
