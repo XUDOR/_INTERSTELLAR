@@ -3,7 +3,7 @@ import React from 'react';
 import Brand from './Brand';
 import ArtistsReleases from './ArtistsReleases';
 import SocialMedia from './SocialMedia';
-import { useHeaderStyle } from '../../hooks/useHeaderStyle'; // Update the path as necessary
+import { useHeaderStyle } from '../../hooks/useHeaderStyle'; 
 import './Header.css';
 
 const Header = () => {
