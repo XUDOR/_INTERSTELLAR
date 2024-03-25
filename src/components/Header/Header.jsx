@@ -8,7 +8,7 @@ import './Header.css';
 
 const Header = ({ className }) => {
   const location = useLocation();
-  const minimal = location.pathname === '/shop';
+  const minimal = location.pathname === '/shop'|| location.pathname === '/admin';
   
   const headerClasses = `header ${className || ''}`.trim();
 
