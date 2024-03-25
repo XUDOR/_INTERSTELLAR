@@ -1,0 +1,10 @@
+/* User.css  */
+
+.User {
+  flex-basis: 15%;
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 5px;
+  margin: 2px;
+  
+} 
