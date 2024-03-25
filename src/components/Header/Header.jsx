@@ -1,16 +1,22 @@
-// Header.jsx, located at src/components/Header/Header.jsx
+// Header.jsx
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Brand from './Brand';
 import ArtistsReleases from './ArtistsReleases';
 import SocialMedia from './SocialMedia';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ className }) => {
+  const location = useLocation();
+  const minimal = location.pathname === '/shop';
+  
+  const headerClasses = `header ${className || ''}`.trim();
+
   return (
-    <header className="header">
+    <header className={headerClasses}>
       <Brand />
-      <ArtistsReleases />
-      <SocialMedia />
+      {!minimal && <ArtistsReleases />}
+      {!minimal && <SocialMedia />}
     </header>
   );
 };
