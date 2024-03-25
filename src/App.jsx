@@ -3,7 +3,8 @@ import React from 'react';
 import Header from './components/Header/Header'; 
 import Main from './components/MainSection/Main';
 import Footer from './components/Footer/Footer';
-import ShopPage from './components/Shop-Cart/ShopPage';
+import ShopPage from './components/ShopCart/ShopPage';
+import AdminPage from './components/Admin/AdminPage';
 import './App.css'; 
 
 const AppWrapper = () => {
@@ -17,16 +18,19 @@ const AppWrapper = () => {
 const App = () => {
   let location = useLocation(); // This hook must be used within a component that is a child of <Router>
 
+  const isMinimalLayout = location.pathname === '/shop' || location.pathname === '/admin';
+
   return (
     <div className="app">
-      {location.pathname !== '/shop' && <Header />}
+      {!isMinimalLayout && <Header />}
       <main>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<ShopPage minimalHeader={true} />} />
+          <Route path="/admin" element={<AdminPage minimalHeader={true} />} />
         </Routes>
       </main>
-      {location.pathname !== '/shop' && <Footer />}
+      {!isMinimalLayout && <Footer />}
     </div>
   );
 }
