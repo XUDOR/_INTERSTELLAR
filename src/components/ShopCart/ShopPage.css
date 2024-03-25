@@ -1,6 +1,6 @@
 /* ShopPage.css */
-.shop-header {
-  border-bottom: 1px solid gray;
+.header-minimal {
+  border-bottom: 1px solid red;
   /* Other styles as needed */
 }
 
@@ -8,6 +8,8 @@
   display: flex;
   justify-content: flex-end; 
   padding-right: 10px; 
+  padding-top: 10px;
+  border-top: 1px solid gray;
   
 }
 
@@ -17,4 +19,5 @@
   padding: 5px;
   align-self: flex-start; 
   margin-right: 10px; 
+  
 }
