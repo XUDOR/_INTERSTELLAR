@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 export function useHeaderStyle() {
   const location = useLocation();
-  const minimalHeaderPaths = ['/shop', '/admin', '/user'];
+  const minimalHeaderPaths = ['/shop', '/admin', '/user', '/downloads'];
   const isMinimal = minimalHeaderPaths.includes(location.pathname);
 
   return {
