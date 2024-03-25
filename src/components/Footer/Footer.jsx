@@ -6,12 +6,14 @@ import Shop from './Shop';
 import Nav from './Nav';
 import Admin from './Admin';
 import User from './User';
+import Downloads from './Downloads';
 import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="Footer">
       <Admin />
+      <Downloads />
       <User />
       <Nav />
       <Player />
