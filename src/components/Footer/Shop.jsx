@@ -1,6 +1,5 @@
 // Import React if you're using any React features like hooks
 import React from 'react';
-// Import the CSS file for the Shop component
 import './Shop.css';
 import { useNavigate } from 'react-router-dom';
 
