@@ -1,37 +1,39 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+// App.jsx
 import React from 'react';
-import Header from './components/Header/Header'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
 import Main from './components/MainSection/Main';
 import Footer from './components/Footer/Footer';
 import ShopPage from './components/ShopCart/ShopPage';
 import AdminPage from './components/Admin/AdminPage';
-import './App.css'; 
+import UserPage from './components/User/UserPage';
+import { useHeaderStyle } from './hooks/useHeaderStyle'; // Make sure to use the correct path
+import './App.css';
+
+const App = () => {
+  const { isMinimal } = useHeaderStyle();
+
+  return (
+    <div className="app">
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/user" element={<UserPage />} />
+        </Routes>
+      </main>
+      {!isMinimal && <Footer />}
+    </div>
+  );
+};
 
 const AppWrapper = () => {
   return (
     <Router>
       <App />
     </Router>
-  );
-}
-
-const App = () => {
-  let location = useLocation(); // This hook must be used within a component that is a child of <Router>
-
-  const isMinimalLayout = location.pathname === '/shop' || location.pathname === '/admin';
-
-  return (
-    <div className="app">
-      {!isMinimalLayout && <Header />}
-      <main>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/shop" element={<ShopPage minimalHeader={true} />} />
-          <Route path="/admin" element={<AdminPage minimalHeader={true} />} />
-        </Routes>
-      </main>
-      {!isMinimalLayout && <Footer />}
-    </div>
   );
 }
 
