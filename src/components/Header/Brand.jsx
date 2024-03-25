@@ -4,6 +4,7 @@ import './Brand.css';
 import LogoSVG from '../../images/IP_TAG24.svg';
 
 const Brand = () => {
+  
   return (
     <div className="brand">
       {/* Wrap your img tag in a Link tag */}
