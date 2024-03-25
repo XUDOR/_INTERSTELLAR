@@ -3,9 +3,11 @@ import './AlbumPage.css';
 
 function AlbumPage () {
   return (
-    <div className="AlbumPage">
-      _Album Page
+    <>
+    <div className="AlbumContent">
+     <div className="AlbumTitle" _Album Page />
     </div>
+    </>
   );
 }
 
