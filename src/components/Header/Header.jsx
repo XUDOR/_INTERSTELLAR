@@ -1,22 +1,19 @@
 // Header.jsx
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import Brand from './Brand';
 import ArtistsReleases from './ArtistsReleases';
 import SocialMedia from './SocialMedia';
+import { useHeaderStyle } from '../../hooks/useHeaderStyle'; // Update the path as necessary
 import './Header.css';
 
-const Header = ({ className }) => {
-  const location = useLocation();
-  const minimal = location.pathname === '/shop'|| location.pathname === '/admin';
-  
-  const headerClasses = `header ${className || ''}`.trim();
+const Header = () => {
+  const { isMinimal, headerClassName } = useHeaderStyle();
 
   return (
-    <header className={headerClasses}>
+    <header className={`header ${headerClassName}`}>
       <Brand />
-      {!minimal && <ArtistsReleases />}
-      {!minimal && <SocialMedia />}
+      {!isMinimal && <ArtistsReleases />}
+      {!isMinimal && <SocialMedia />}
     </header>
   );
 };
