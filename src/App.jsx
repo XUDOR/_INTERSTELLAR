@@ -8,6 +8,8 @@ import ShopPage from './components/ShopCart/ShopPage';
 import AdminPage from './components/Admin/AdminPage';
 import UserPage from './components/User/UserPage';
 import DownloadsPage from './components/Downloads/DownloadsPage';
+import EPKPage from './components/EPKPage/EPKPage';
+import ContactPage from './components/Contact/ContactPage';
 import { useHeaderStyle } from './hooks/useHeaderStyle'; // Make sure to use the correct path
 import './App.css';
 
@@ -24,6 +26,8 @@ const App = () => {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/downloads" element={<DownloadsPage />} />
+          <Route path="/epk" element={<EPKPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       {!isMinimal && <Footer />}
