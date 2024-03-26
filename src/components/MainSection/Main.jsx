@@ -16,8 +16,10 @@ function Main() {
     setActiveTab(label);
   };
 
-  // Labels for the tabs
-  const tabLabels = ['1', '2', '3'];
+  // Labels for the tabs ------>    this needs to have some more dynamic capacity...
+  // like perhaps - iteratively (to test the hook):: the tab updated by an external value.
+  
+  const tabLabels = ['1', '2', '3', ];
 
   return (
     <div className='Main'>
