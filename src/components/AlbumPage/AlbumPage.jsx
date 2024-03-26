@@ -5,7 +5,7 @@ function AlbumPage () {
   return (
     <>
     <div className="AlbumContent">
-     <div className="AlbumTitle" _Album Page />
+     <div className="AlbumTitle">_Album Page</div> 
     </div>
     </>
   );
