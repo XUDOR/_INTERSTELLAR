@@ -1,19 +1,13 @@
-// ALBUM DATA HOOK-start
-
-
-import { useState, useEffect } from 'react';
-
 const useAlbumData = () => {
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
     const fetchAlbums = async () => {
-      // Example API call
-      const response = await fetch('https://api.example.com/albums');
+      const response = await fetch('URL_TO_YOUR_CLOUD_STORAGE_JSON_OR_API');
       const data = await response.json();
       setAlbums(data.map(album => ({
         ...album,
-        imageUrl: album.imageUrl // Or modify this to adapt to new URL structure
+        imageUrl: album.imageUrl // Ensure this URL points to the image in your Google Cloud Storage bucket
       })));
     };
 
