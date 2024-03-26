@@ -9,3 +9,16 @@
   padding: 10px;
   height: 100%;
 }
+
+.contact-link {
+  color: #E0ECED; /* Matches the text color of your navigation */
+  text-decoration: none; /* Initially, no underline */
+  padding: 5px; /* Adjust padding as needed to match other nav items */
+  cursor: pointer; /* Indicates it's clickable */
+  transition: color 0.3s ease; /* Smooth transition for the color */
+}
+
+.contact-link:hover {
+  color: #007bff; /* Lighter blue on hover, adjust this color as needed */
+  text-decoration: underline; /* Adds underline on hover */
+}
