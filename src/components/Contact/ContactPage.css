@@ -1,0 +1,24 @@
+/* ContactPage.css */
+.Contact-Header {
+  border-bottom: 1px solid gray;
+  /* Other styles as needed */
+}
+
+.ContactContent {
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 10px; 
+  padding-top: 10px;
+  border-top: 1px solid gray;
+  
+}
+
+.ContactTitle {
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 5px;
+  align-self: flex-start; 
+  margin-right: 10px; 
+}
+
+
