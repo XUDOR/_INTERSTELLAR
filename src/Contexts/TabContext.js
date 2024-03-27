@@ -1,34 +1,35 @@
-// /contexts/TabContext.js
+import React, { createContext, useContext, useEffect } from 'react';
+import usePersistentState from '../hooks/usePersistentState'; // Adjust the path as necessary
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-
-// Create a context
 const TabContext = createContext();
 
-// Custom hook to use the context
 export const useTabs = () => {
-    const context = useContext(TabContext);
-    console.log("useTabs accessed, current context:", context);
-    return context; // Return the context so it can be used by the component that called this hook
+  const context = useContext(TabContext);
+  // Adding log here to observe whenever useTabs hook is accessed
+  console.log("useTabs accessed, current context:", context);
+  return context;
 };
 
-// Provider component
 export const TabProvider = ({ children }) => {
-    const [tabCount, setTabCount] = useState(3); // Default state for the count
-    const [tabLabels, setTabLabels] = useState(['1', '2', '3']); // Default state for labels
+  const [tabLabels, setTabLabels] = usePersistentState('tabLabels', ['1', '2', '3']);
+  const [adminModified, setAdminModified] = usePersistentState('adminModified', false);
 
-    // Log state updates for debugging
-    useEffect(() => {
-      console.log("TabProvider updated tabCount:", tabCount);
-      console.log("TabProvider updated tabLabels:", tabLabels);
-    }, [tabCount, tabLabels]);
+  useEffect(() => {
+    // Log when useEffect runs to check conditions about the "Album" label
+    console.log(`Effect running: adminModified=${adminModified}, first label is currently '${tabLabels[0]}'`);
+    if (adminModified && tabLabels.length && tabLabels[0] !== 'Album') {
+      console.log("Correcting first label to 'Album'");
+      setTabLabels(['Album', ...tabLabels.slice(1)]);
+    }
+  }, [adminModified, tabLabels, setTabLabels]);
 
-    // Value provided to consumers
-    const value = { tabCount, setTabCount, tabLabels, setTabLabels };
+  // Logging state updates for debugging
+  useEffect(() => {
+    console.log("Global tabLabels updated:", tabLabels);
+    console.log("Global adminModified updated:", adminModified);
+  }, [tabLabels, adminModified]);
 
-    return (
-        <TabContext.Provider value={value}>
-            {children}
-        </TabContext.Provider>
-    );
+  const value = { tabLabels, setTabLabels, adminModified, setAdminModified };
+
+  return <TabContext.Provider value={value}>{children}</TabContext.Provider>;
 };
