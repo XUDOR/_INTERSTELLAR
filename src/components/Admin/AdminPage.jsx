@@ -1,13 +1,14 @@
-// AdminPage.jsx
 import React from 'react';
-import './AdminPage.css'; 
+import Input from '../Form/Input';
+import './AdminPage.css';
 
-const AdminPage = () => {
+const AdminPage = ({ onTabSubmit }) => {
   return (
     <>
-     
-      <div className="AdminContent"> {/* Add this wrapper */}
+      <div className="AdminContent">
+      <Input onSubmit={onTabSubmit} />
         <div className='AdminTitle'>_Admin</div>
+        
       </div>
     </>
   );
