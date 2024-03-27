@@ -7,12 +7,14 @@ const Input = ({ onSubmit }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("Submitting value:", value);
     onSubmit(value); // Call the passed-in callback function with the current value
     setValue(''); // Optionally reset the input value
   };
 
   return (
     <form onSubmit={handleSubmit} className="InputForm">
+      
       <div className='InputTitle'>Input:</div>
       <input
         type="number"
@@ -22,7 +24,9 @@ const Input = ({ onSubmit }) => {
       />
       <button type="submit" className="SubmitButton">Submit</button>
     </form>
+  
   );
+  
 };
 
 export default Input;

@@ -6,6 +6,7 @@ function useDynamicTabs(initialLabels) {
 
   // Function to update tab labels
   const updateTabLabels = (newLabels) => {
+    console.log("Updating tab labels to:", newLabels);
     setTabLabels(newLabels);
   };
 

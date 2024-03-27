@@ -9,6 +9,7 @@ import './GalleryDisplay.css';
 import './GalleryItem.css';
 
 function GalleryDisplay({ activeTab, setActiveTab }) {
+  console.log("GalleryDisplay showing content for tab:", activeTab);
   // Function to handle tab selection change
   const handleTabClick = (label) => {
     setActiveTab(label);
