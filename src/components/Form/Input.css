@@ -1,0 +1,46 @@
+/* Input.css */
+
+.InputTitle {
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 5px;
+  align-self: flex-start;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.InputForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust space below the form */
+}
+
+.InputField {
+  padding: 5px;
+  margin-right: 10px; /* Space between the input field and the submit button */
+  border: 1px solid #ccc; /* Light gray border */
+  color: #333; /* Darker text color for contrast */
+  background-color: #f9f9f9; /* Light background color */
+  /* Hide the number input's up/down spinner */
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+}
+
+.InputField::-webkit-outer-spin-button,
+.InputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.SubmitButton {
+  padding: 5px 10px;
+  border: none;
+  background-color: #065A82; /* Example: Blue background */
+  color: white;
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+
+.SubmitButton:hover {
+  background-color: #0374B5; /* Darker shade of blue for hover effect */
+}
