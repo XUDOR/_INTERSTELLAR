@@ -1,6 +1,6 @@
-// App.jsx
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Main from './components/MainSection/Main';
 import Footer from './components/Footer/Footer';
@@ -10,37 +10,32 @@ import UserPage from './components/User/UserPage';
 import DownloadsPage from './components/Downloads/DownloadsPage';
 import EPKPage from './components/EPKPage/EPKPage';
 import ContactPage from './components/Contact/ContactPage';
-import { useHeaderStyle } from './hooks/useHeaderStyle'; // Make sure to use the correct path
+import { TabProvider } from './Contexts/TabContext'; // Ensure this path is correct based on your project structure
+import { useHeaderStyle } from './hooks/useHeaderStyle';
 import './App.css';
 
 const App = () => {
   const { isMinimal } = useHeaderStyle();
 
   return (
-    <div className="app">
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/shop" element={<ShopPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/user" element={<UserPage />} />
-          <Route path="/downloads" element={<DownloadsPage />} />
-          <Route path="/epk" element={<EPKPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-      </main>
-      {!isMinimal && <Footer />}
-    </div>
+    <TabProvider> {/* Wrap the entire application content within TabProvider */}
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/user" element={<UserPage />} />
+            <Route path="/downloads" element={<DownloadsPage />} />
+            <Route path="/epk" element={<EPKPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        {!isMinimal && <Footer />}
+      </div>
+    </TabProvider>
   );
 };
 
-const AppWrapper = () => {
-  return (
-    <Router>
-      <App />
-    </Router>
-  );
-}
-
-export default AppWrapper;
+export default App;
