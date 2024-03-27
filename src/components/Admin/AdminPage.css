@@ -6,7 +6,7 @@
 
 .AdminContent {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-end; 
   padding-right: 10px; 
   padding-top: 10px;
   border-top: 1px solid gray;
