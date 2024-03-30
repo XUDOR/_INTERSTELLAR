@@ -3,7 +3,7 @@ INSERT INTO albums
 (id, name, cover_url, production_date, release_date, artist_id, description, tracks) 
 VALUES 
 (1,
-  'Album Name', 
+  'Charlotta', 
  'http://example.com/cover.jpg', 
  '2005-05-01', 
  '2010-10-03', 
