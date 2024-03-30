@@ -10,7 +10,7 @@ import DownloadsPage from './components/Downloads/DownloadsPage';
 import EPKPage from './components/EPKPage/EPKPage';
 import ContactPage from './components/Contact/ContactPage';
 import { TabProvider } from './Contexts/TabContext';
-import { AlbumProvider } from './contexts/AlbumContext'; // Ensure this path is correct based on your project structure
+import { AlbumProvider } from './Contexts/AlbumContext'; // Ensure this path is correct based on your project structure
 import { useHeaderStyle } from './hooks/useHeaderStyle';
 import './App.css';
 
