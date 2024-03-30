@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAlbum } from '../Contexts/AlbumContext'; // Adjust the import path as necessary
+import { useAlbum } from '../../../Contexts/AlbumContext';
 
 function AlbumTitle() {
   const { album } = useAlbum();
