@@ -1,13 +1,17 @@
 import React from 'react';
-import './AlbumTitle.css';
+import { useAlbum } from '../Contexts/AlbumContext'; // Adjust the import path as necessary
+
 function AlbumTitle() {
+  const { album } = useAlbum();
+
+  // Display "Loading..." or similar text while the album is null (fetching data)
+  if (!album) return <div>Loading...</div>;
+
   return (
     <div className='AlbumTitle'>
-      Album Title
+      {album.name} {/* Render the fetched album's title */}
     </div>
   );
-
 }
-
 
 export default AlbumTitle;
