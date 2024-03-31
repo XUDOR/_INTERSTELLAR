@@ -1,3 +1,4 @@
+//GalleryItem.jsx
 import React from "react";
 
 const GalleryItem = ({ children }) => {

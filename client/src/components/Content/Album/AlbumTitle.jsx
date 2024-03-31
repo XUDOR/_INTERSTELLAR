@@ -1,3 +1,5 @@
+// AlbumTitle.jsx
+
 import React, { useEffect } from 'react';
 import { useAlbum } from '../../../Contexts/AlbumContext';
 

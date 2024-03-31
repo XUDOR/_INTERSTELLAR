@@ -1,3 +1,5 @@
+// AdminPage.jsx
+
 import React from 'react';
 import Input from '../Form/Input';
 import useDynamicTabs from '../../hooks/useDynamicTabs'; // Adjust the path as necessary

@@ -1,4 +1,4 @@
-// DownloadsPage.jsx
+// EPKPage.jsx
 import React from 'react';
 
 import './EPKPage.css'; 

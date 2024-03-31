@@ -1,3 +1,4 @@
+// Cover.jsx
 import React from 'react';
 import './Cover.css';
 

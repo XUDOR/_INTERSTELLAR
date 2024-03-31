@@ -1,3 +1,4 @@
+// Productitem.jsx
 import React from "react";
 
 const ProductItem = ({ product, onAddToCart, onDecreaseInCart}) => (

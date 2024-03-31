@@ -1,3 +1,4 @@
+// Cart.jsx
 import React from "react";
 import CartItem from "./CartItem";
 import Total from "./Total";

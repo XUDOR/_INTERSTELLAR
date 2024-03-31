@@ -1,3 +1,4 @@
+//useDynamicTabs.js
 import { useState } from 'react';
 
 // Revised custom hook to manage dynamic tab labels, returning an object

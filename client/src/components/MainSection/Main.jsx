@@ -1,3 +1,4 @@
+//Main.jsx
 import React, { useState } from 'react';
 import GalleryDisplay from '../Gallery/GalleryDisplay';
 import TabList from './TabList'; 

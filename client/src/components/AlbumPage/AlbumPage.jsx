@@ -1,3 +1,4 @@
+// AlbumPage.jsx
 import React from "react";
 import './AlbumPage.css';
 

@@ -1,4 +1,4 @@
-// AdminPage.jsx
+// ContactPage.jsx
 import React from 'react';
 import './ContactPage.css'; 
 

@@ -1,4 +1,4 @@
-// Import React if you're using any React features like hooks
+// Shop.jsx
 import React from 'react';
 import './Shop.css';
 import { useNavigate } from 'react-router-dom';

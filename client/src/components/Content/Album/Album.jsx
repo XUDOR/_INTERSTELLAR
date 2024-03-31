@@ -1,3 +1,4 @@
+// Album.jsx
 import React from 'react';
 import Cover from './Cover';
 import './Album.css';

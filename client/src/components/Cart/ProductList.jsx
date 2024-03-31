@@ -1,3 +1,4 @@
+// ProductList.jsx
 import React from 'react';
 import ProductItem from './ProductItem';
 
@@ -13,4 +14,4 @@ const ProductList = ({ products, onAddToCart, onDecreaseInCart}) => (
   </div>
 );
 
-export default ProductList;
+export default ProductList; 

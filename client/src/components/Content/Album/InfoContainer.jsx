@@ -1,3 +1,4 @@
+// infocontainer.jsx
 import React from 'react';
 import './InfoContainer.css';
 
@@ -9,4 +10,4 @@ function InfoContainer() {
   );
 }
 
-export default InfoContainer;
+export default InfoContainer; 

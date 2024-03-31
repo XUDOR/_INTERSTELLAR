@@ -1,3 +1,4 @@
+//usePersistentState.js
 import { useState, useEffect } from 'react';
 
 // A hook to manage state that's backed by localStorage for persistence

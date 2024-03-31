@@ -1,3 +1,4 @@
+// CartItem.jsx
 import React from "react";
 
 const CartItem = ({ item, onRemoveFromCart, onDecreasedQuantity}) => (
