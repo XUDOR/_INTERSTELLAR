@@ -22,7 +22,7 @@ CREATE TABLE users (
 CREATE TABLE artists (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(255) NOT NULL
+    description TEXT NOT NULL
 );
 
 -- Albums Table
@@ -33,7 +33,7 @@ CREATE TABLE albums (
     production_date DATE NOT NULL,
     release_date DATE NOT NULL,
     artist_id INTEGER NOT NULL REFERENCES artists(id),
-    description VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     tracks INTEGER NOT NULL
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE products (
     price INTEGER NOT NULL,
     name VARCHAR(255) NOT NULL,
     catalogue_id VARCHAR(15) NOT NULL,
-    description VARCHAR(255) NOT NULL
+    description TEXT NOT NULL
 );
 
 -- Carts Table
