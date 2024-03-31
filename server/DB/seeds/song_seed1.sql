@@ -1,3 +1,5 @@
+--song_seed1.sql
+
 INSERT INTO songs (id, name, audio_url, artist_id, album_id, track_id) 
 VALUES 
 ('0101', 'Charlotta', 'http://example.com/audio/song1.mp3', 1, 1, 1),

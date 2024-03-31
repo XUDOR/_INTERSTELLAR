@@ -1,3 +1,5 @@
+// adminRoutes.js
+
 const express = require('express');
 const router = express.Router();
 const pool = require('../db'); // Assuming your db.js exports the pooled connection

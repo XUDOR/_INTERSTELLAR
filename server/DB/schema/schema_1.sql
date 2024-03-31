@@ -1,3 +1,5 @@
+--SCHEMA_1--
+
 -- Drop existing tables to reset the schema
 DROP TABLE IF EXISTS cart_items CASCADE;
 DROP TABLE IF EXISTS carts CASCADE;

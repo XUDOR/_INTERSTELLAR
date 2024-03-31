@@ -1,3 +1,5 @@
+-- album_seed1.sql
+
 -- Insert record with ID 1
 INSERT INTO albums 
 (id, name, cover_url, production_date, release_date, artist_id, description, tracks) 

@@ -1,3 +1,5 @@
+--artist_seed1.sql
+
 INSERT INTO artists (id, name, description) 
 VALUES 
 (1, 'Roderick Shoolbraid', '
