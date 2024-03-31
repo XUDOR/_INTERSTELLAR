@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react'; // Corrected import to include useEffect
 import { useAlbum } from '../../../Contexts/AlbumContext';
 
-function AlbumTitle() {
-  const { album } = useAlbum();
+function AlbumTitle({ albumId }) {
+  const { album, setAlbum } = useAlbum();
 
-  // Display "Loading..." or similar text while the album is null (fetching data)
+  useEffect(() => {
+    if (albumId) {
+      fetch(`/api/albums/${albumId}`)
+        .then(res => res.json())
+        .then(data => setAlbum(data))
+        .catch(error => console.error("Failed to fetch album", error));
+    }
+  }, [albumId, setAlbum]);
+
   if (!album) return <div>Loading...</div>;
 
-  return (
-    <div className='AlbumTitle'>
-      {album.name} {/* Render the fetched album's title */}
-    </div>
-  );
+  return <div className='AlbumTitle'>{album.name}</div>;
 }
 
 export default AlbumTitle;
