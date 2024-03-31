@@ -1,12 +1,14 @@
 /* Input.css */
 
 .InputTitle {
+  display: flex;
+  flex-direction: column;
   border: 1px solid gray;
   color: #E0ECED;
   padding: 5px;
   align-self: flex-start;
   margin-right: 10px;
-  width: 100px;
+  width: 15%;
 }
 
 .InputForm {
@@ -14,11 +16,12 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 20px; /* Adjust space below the form */
+  margin-left: 10px;
 }
 
 .InputField {
   padding: 5px;
-  margin-right: 10px; /* Space between the input field and the submit button */
+  margin: 5px; /* Space between the input field and the submit button */
   border: 1px solid #ccc; /* Light gray border */
   color: #333; /* Darker text color for contrast */
   background-color: #f9f9f9; /* Light background color */
@@ -34,7 +37,8 @@
 }
 
 .SubmitButton {
-  padding: 5px 10px;
+  padding: 10px;
+  margin: 5px;
   border: none;
   background-color: #065A82; /* Example: Blue background */
   color: white;
