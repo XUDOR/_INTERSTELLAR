@@ -1,21 +1,28 @@
-// albumRoutes.js
-
 const express = require('express');
 const router = express.Router();
-const pool = require('../db'); // Assuming this is your database connection pool
+const pool = require('../db')
 
-// Directly using an async function for route handling
+const { getAlbumById, getAllAlbums } = require('../services/albumService'); // Corrected import
+
+// Fetch all albums
+router.get('/', async (req, res) => {
+  try {
+    const albums = await getAllAlbums();
+    res.json(albums);
+  } catch (err) {
+    console.error('Error fetching all albums:', err);
+    res.status(500).send('Server error');
+  }
+});
+
+// Fetch an album by ID
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  console.log(`Fetching album with ID: ${id}`); // Debug log
-
   try {
-    const { rows } = await pool.query('SELECT * FROM albums WHERE id = $1', [id]);
+    const rows = await getAlbumById(id);
     if (rows.length > 0) {
-      console.log('Album found:', rows[0]); // Debug log
       res.json(rows[0]);
     } else {
-      console.log('Album not found'); // Debug log
       res.status(404).send('Album not found');
     }
   } catch (err) {
