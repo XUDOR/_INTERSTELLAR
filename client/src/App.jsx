@@ -11,8 +11,7 @@ import UserPage from './components/User/UserPage';
 import DownloadsPage from './components/Downloads/DownloadsPage';
 import EPKPage from './components/EPKPage/EPKPage';
 import ContactPage from './components/Contact/ContactPage';
-import { TabProvider } from './Contexts/TabContext';
-import { AlbumProvider } from './Contexts/AlbumContext'; // Ensure this path is correct based on your project structure
+import { MusicDataProvider } from './Contexts/MusicDataContext';
 import { useHeaderStyle } from './hooks/useHeaderStyle';
 import './App.css';
 
@@ -20,8 +19,7 @@ const App = () => {
   const { isMinimal } = useHeaderStyle();
 
   return (
-    <AlbumProvider> {/* Wrap the entire application with AlbumProvider */}
-      <TabProvider> {/* Then, wrap the content within TabProvider */}
+      <MusicDataProvider>
         <div className="app">
           <Header />
           <main>
@@ -37,8 +35,7 @@ const App = () => {
           </main>
           {!isMinimal && <Footer />}
         </div>
-      </TabProvider>
-    </AlbumProvider>
+        </MusicDataProvider>
   );
 };
 
