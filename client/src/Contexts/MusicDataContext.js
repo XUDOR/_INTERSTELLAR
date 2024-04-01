@@ -1,51 +1,60 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Creating the context
 export const MusicDataContext = createContext();
 
-// Defining and directly exporting the provider component
 export const MusicDataProvider = ({ children }) => {
-    const [albumIndex, setAlbumIndex] = useState({});
-    const [songIndex, setSongIndex] = useState({});
-    const [albumDetails, setAlbumDetails] = useState({}); // State for detailed album information
+  const [albumIndex, setAlbumIndex] = useState({});
+  const [songIndex, setSongIndex] = useState({});
+  const [albumDetails, setAlbumDetails] = useState({}); // State for detailed album information
 
-    useEffect(() => {
-        const fetchData = async () => {
-            // Placeholder for actual fetch calls
-            // Example: Fetch the album and song index from your API and set state
-            const fetchedAlbums = {
-                // Example data structure
-                // 1: { id: 1, name: 'Album 1', ... },
-                // 2: { id: 2, name: 'Album 2', ... },
-            };
-            const fetchedSongs = {
-                // Example data structure
-                // 1: { id: 1, title: 'Song 1', albumId: 1, ... },
-                // 2: { id: 2, title: 'Song 2', albumId: 1, ... },
-            };
-
-            // Update state with fetched data
-            setAlbumIndex(fetchedAlbums);
-            setSongIndex(fetchedSongs);
-        };
-
-        fetchData();
-    }, []);
-
-    // Function to update detailed information for a specific album
-    const updateAlbumDetails = (albumId, details) => {
-        setAlbumDetails(prevDetails => ({
-            ...prevDetails,
-            [albumId]: details, // Update the specific album's details
-        }));
+  useEffect(() => {
+    // Fetch album data
+    const fetchAlbums = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/api/albums');
+        if (!response.ok) throw new Error('Failed to fetch albums');
+        const albums = await response.json();
+        setAlbumIndex(albums.reduce((acc, album) => {
+          acc[album.id] = album;
+          return acc;
+        }, {}));
+      } catch (error) {
+        console.error('Error fetching albums:', error);
+      }
     };
 
-    return (
-        <MusicDataContext.Provider value={{ albumIndex, songIndex, albumDetails, updateAlbumDetails }}>
-            {children}
-        </MusicDataContext.Provider>
-    );
+    // Fetch song data
+    const fetchSongs = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/api/songs');
+        if (!response.ok) throw new Error('Failed to fetch songs');
+        const songs = await response.json();
+        setSongIndex(songs.reduce((acc, song) => {
+          acc[song.id] = song;
+          return acc;
+        }, {}));
+      } catch (error) {
+        console.error('Error fetching songs:', error);
+      }
+    };
+
+    fetchAlbums();
+    fetchSongs();
+  }, []);
+
+  // Function to update detailed information for a specific album
+  const updateAlbumDetails = (albumId, details) => {
+    setAlbumDetails(prevDetails => ({
+      ...prevDetails,
+      [albumId]: details,
+    }));
+  };
+
+  return (
+    <MusicDataContext.Provider value={{ albumIndex, songIndex, albumDetails, updateAlbumDetails }}>
+      {children}
+    </MusicDataContext.Provider>
+  );
 };
 
-// Defining and directly exporting the custom hook for using the context
 export const useMusicData = () => useContext(MusicDataContext);
