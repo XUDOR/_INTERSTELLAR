@@ -1,4 +1,3 @@
-// MusicDataContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const MusicDataContext = createContext();
@@ -6,14 +5,12 @@ const MusicDataContext = createContext();
 export const MusicDataProvider = ({ children }) => {
   const [albumIndex, setAlbumIndex] = useState({});
   const [songIndex, setSongIndex] = useState({});
-  // Placeholder for future playlist index
-  // const [playListIndex, setPlayListIndex] = useState({});
+  const [albumDetails, setAlbumDetails] = useState({}); // Added state for detailed album information
 
-  // Fetch data from the backend and populate the indexes
   useEffect(() => {
-    // Placeholder for fetch function
     const fetchData = async () => {
-      // Fetch albums and songs, then set indexes
+      // This is a placeholder for your actual fetch calls
+      // Example: Fetch the album and song index from your API and set state
       // setAlbumIndex(fetchedAlbums);
       // setSongIndex(fetchedSongs);
     };
@@ -21,12 +18,19 @@ export const MusicDataProvider = ({ children }) => {
     fetchData();
   }, []);
 
+  // Function to update detailed information for a specific album
+  const updateAlbumDetails = (albumId, details) => {
+    setAlbumDetails(prevDetails => ({
+      ...prevDetails,
+      [albumId]: details, // Update the specific album's details
+    }));
+  };
+
   return (
-    <MusicDataContext.Provider value={{ albumIndex, songIndex }}>
+    <MusicDataContext.Provider value={{ albumIndex, songIndex, albumDetails, updateAlbumDetails }}>
       {children}
     </MusicDataContext.Provider>
   );
 };
 
 export const useMusicData = () => useContext(MusicDataContext);
-  
