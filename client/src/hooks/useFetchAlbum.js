@@ -1,33 +1,30 @@
-//useFetchAlbum.js
-import { useEffect } from 'react';
-import { useAlbum } from './AlbumContext';
+import { useContext, useEffect, useState } from 'react';
+import { MusicDataContext } from './MusicDataContext'; // Adjust the import path as necessary
 
-const useFetchAlbum = (id) => {
-  const { setAlbum } = useAlbum();
+const useFetchAlbum = (albumId) => {
+  const { updateAlbumDetails } = useContext(MusicDataContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log(`Attempting to fetch album with ID: ${id}`); // Log attempt to fetch
-
-    const fetchAlbum = async () => {
+    setIsLoading(true);
+    const fetchAlbumDetails = async () => {
       try {
-        console.log(`Sending request to /api/albums/${id}`); // Log the request URL
-        const response = await fetch(`/api/albums/${id}`);
-        console.log(`Response status: ${response.status}`); // Log the response status
-
-        if (!response.ok) {
-          throw new Error('Album not found');
-        }
-
-        const data = await response.json();
-        console.log('Fetched album data:', data); // Log the fetched data
-        setAlbum(data);
+        const response = await fetch(`/api/albums/${albumId}`);
+        if (!response.ok) throw new Error('Album not found');
+        const details = await response.json();
+        updateAlbumDetails(albumId, details);
+        setIsLoading(false);
       } catch (error) {
-        console.error("Failed to fetch album:", error.message); // Log any errors
+        setError(error.message);
+        setIsLoading(false);
       }
     };
 
-    fetchAlbum();
-  }, [id, setAlbum]);
+    fetchAlbumDetails();
+  }, [albumId, updateAlbumDetails]);
+
+  return { isLoading, error };
 };
 
 export default useFetchAlbum;
