@@ -1,5 +1,6 @@
+// AlbumTitle.jsx
 import React, { useContext } from 'react';
-import { MusicDataContext } from '../../../Contexts/MusicDataContext';
+import { MusicDataContext } from '../../../Contexts/MusicDataContext'; // Adjust the import path as necessary
 
 function AlbumTitle({ albumId }) {
   const { albumIndex } = useContext(MusicDataContext);
@@ -7,13 +8,12 @@ function AlbumTitle({ albumId }) {
   // Access the album directly from the albumIndex using the albumId
   const album = albumIndex[albumId];
 
-  // If the album data for the given ID isn't found, render a loading message or null
+  // If the album data for the given ID isn't found, show a placeholder message
   if (!album) {
-    console.log('Album data is not available, rendering placeholder...'); // Consider changing this to actual user feedback
-    return <div>Loading...</div>; // or <div>Album Not Found</div>, based on your use case
+    return <div>Loading or album not found...</div>;
   }
 
-  console.log('Album data is available, rendering album name:', album.name); // Consider removing this log in production
+  // When album data is available, render the album name
   return <div className='AlbumTitle'>{album.name}</div>;
 }
 
