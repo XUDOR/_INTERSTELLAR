@@ -9,17 +9,12 @@ import './Main.css';
 
 function Main() {
   const { albumIndex } = useMusicData();
-  const [activeTab, setActiveTab] = useState('1'); // Initially, no tab is selected
+  const [activeTab, setActiveTab] = useState(Object.keys(albumIndex)[0]); // Use first album ID as default
 
-  // Generate tab labels dynamically from albumIndex
-  const tabLabels = Object.values(albumIndex).map(album => album.name);
+  const tabLabels = Object.values(albumIndex).map(({ id, name }) => ({ id, name }));
 
-  const handleTabClick = (albumName) => {
-    // Find album by name to set as active tab. This assumes album names are unique.
-    const album = Object.values(albumIndex).find(album => album.name === albumName);
-    if (album) {
-      setActiveTab(album.id); // Use album ID as the identifier for active tabs
-    }
+  const handleTabClick = (albumId) => {
+    setActiveTab(albumId); // Directly use album ID
   };
 
   return (
