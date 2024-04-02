@@ -20,14 +20,17 @@ function GalleryDisplay({ activeTab, setActiveTab }) {
       <Gallery activeTab={activeTab} onTabClick={handleTabClick}>
         <GalleryItem label="1">
           <AlbumTitle albumId={1} /> {/* Pass album ID 1 for the first tab */}
+          
           <Album />
         </GalleryItem>
         <GalleryItem label="2">
           <AlbumTitle albumId={2} /> {/* Pass album ID 2 for the second tab */}
+          
           {/* Other content for tab 2 */}
         </GalleryItem>
         <GalleryItem label="3">
           <AlbumTitle albumId={3} /> {/* Pass album ID 3 for the third tab */}
+          
           {/* Other content for tab 3 */}
         </GalleryItem>
       </Gallery>
@@ -36,10 +39,3 @@ function GalleryDisplay({ activeTab, setActiveTab }) {
 }
 
 export default GalleryDisplay;
-
-
-
-
-
-
-
