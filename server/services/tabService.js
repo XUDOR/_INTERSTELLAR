@@ -1,4 +1,4 @@
-// services/tabService.js
+// services/tabService.js /// not sure what this is for yet ...
 const pool = require('../db');
 
 const updateTabConfigs = async (tabsToUpdate) => {
