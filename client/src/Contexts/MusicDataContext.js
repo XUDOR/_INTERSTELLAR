@@ -5,60 +5,62 @@ export const MusicDataContext = createContext();
 export const MusicDataProvider = ({ children }) => {
   const [albumIndex, setAlbumIndex] = useState({});
   const [songIndex, setSongIndex] = useState({});
-  const [albumDetails, setAlbumDetails] = useState({}); // State for detailed album information
+  const [albumDetails, setAlbumDetails] = useState({});
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
-    // Fetch album data
-    const fetchAlbums = async () => {
-      console.log('Initiating fetch for albums');
-      try {
-        const response = await fetch('http://localhost:5001/api/albums');
-        console.log('Response received for albums', response);
-        if (!response.ok) throw new Error('Failed to fetch albums');
-        const albums = await response.json();
-        console.log('Albums fetched successfully', albums);
-        setAlbumIndex(albums.reduce((acc, album) => {
-          acc[album.id] = album;
-          return acc;
-        }, {}));
-      } catch (error) {
-        console.error('Error fetching albums:', error);
+    const fetchData = async () => {
+      console.log(`Fetching Data: isDataFetched=${isDataFetched}`);
+      if (!isDataFetched) {
+        console.log('Initiating fetch for albums and songs');
+        try {
+          const albumResponse = await fetch('http://localhost:5001/api/albums');
+          const songResponse = await fetch('http://localhost:5001/api/songs');
+          console.log('Album and Song responses fetched');
+
+          if (!albumResponse.ok) throw new Error('Failed to fetch albums');
+          if (!songResponse.ok) throw new Error('Failed to fetch songs');
+
+          const albums = await albumResponse.json();
+          const songs = await songResponse.json();
+          console.log('Albums and songs converted to JSON');
+
+          // Update state with fetched data
+          setAlbumIndex(albums.reduce((acc, album) => {
+            acc[album.id] = album;
+            return acc;
+          }, {}));
+          console.log('Updated albumIndex state with fetched albums');
+
+          setSongIndex(songs.reduce((acc, song) => {
+            acc[song.id] = song;
+            return acc;
+          }, {}));
+          console.log('Updated songIndex state with fetched songs');
+
+          console.log('Albums and songs fetched successfully');
+          setIsDataFetched(true); // Indicate that data has been successfully fetched
+          console.log('Set isDataFetched to true');
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
       }
     };
 
-    // Fetch song data
-    const fetchSongs = async () => {
-      console.log('Initiating fetch for songs');
-      try {
-        const response = await fetch('http://localhost:5001/api/songs');
-        console.log('Response received for songs', response);
-        if (!response.ok) throw new Error('Failed to fetch songs');
-        const songs = await response.json();
-        console.log('Songs fetched successfully', songs);
-        setSongIndex(songs.reduce((acc, song) => {
-          acc[song.id] = song;
-          return acc;
-        }, {}));
-      } catch (error) {
-        console.error('Error fetching songs:', error);
-      }
-    };
+    fetchData();
+  }, [isDataFetched]);
 
-    fetchAlbums();
-    fetchSongs();
-  }, []);
-
-  // Function to update detailed information for a specific album
   const updateAlbumDetails = (albumId, details) => {
     console.log(`Updating details for albumId ${albumId}`);
-    setAlbumDetails(prevDetails => ({
-      ...prevDetails,
-      [albumId]: details,
-    }));
+    setAlbumDetails(prevDetails => {
+      const updatedDetails = { ...prevDetails, [albumId]: details };
+      console.log('Updated albumDetails state', updatedDetails);
+      return updatedDetails;
+    });
   };
 
-  // Logs to see the current state
   useEffect(() => {
+    console.log('State changes detected:');
     console.log('Current albumIndex:', albumIndex);
     console.log('Current songIndex:', songIndex);
     console.log('Current albumDetails:', albumDetails);
