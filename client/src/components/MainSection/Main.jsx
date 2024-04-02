@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useMusicData } from '../../Contexts/MusicDataContext'; // Adjust the path as necessary
+import React, { useState, useEffect } from 'react';
+import { useMusicData } from '../../Contexts/MusicDataContext';
 import GalleryDisplay from '../Gallery/GalleryDisplay';
 import TabList from './TabList';
 import Current from '../Current/Current';
@@ -9,18 +9,27 @@ import './Main.css';
 
 function Main() {
   const { albumIndex } = useMusicData();
-  console.log("Main Component: albumIndex", albumIndex);
+  const [activeTab, setActiveTab] = useState(null); // Start with null
+  const [isLoading, setIsLoading] = useState(true); // Add a loading state
 
-  const [activeTab, setActiveTab] = useState(Object.keys(albumIndex)[0]); // Use first album ID as default
-  console.log("Main Component: activeTab", activeTab);
+  // When albumIndex is updated, set the first album as the active tab
+  useEffect(() => {
+    if (Object.keys(albumIndex).length > 0) {
+      setActiveTab(Object.keys(albumIndex)[0]);
+      setIsLoading(false); // Set loading to false after data is fetched
+    }
+  }, [albumIndex]); // This effect runs when albumIndex changes
 
   const tabLabels = Object.values(albumIndex).map(({ id, name }) => ({ id, name }));
-  console.log("Main Component: tabLabels", tabLabels);
 
   const handleTabClick = (albumId) => {
-    console.log("Main Component: tab clicked", albumId);
-    setActiveTab(albumId); // Directly use album ID
+    setActiveTab(albumId);
   };
+
+  // Render a loading state if data is not yet fetched
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className='Main'>
