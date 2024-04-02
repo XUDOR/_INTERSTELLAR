@@ -1,21 +1,16 @@
-//Songlist.jsx
+// SongList.jsx
 import React from 'react';
 import Song from './Song';
 import './SongList.css';
-function SongList() {
+
+function SongList({ songs }) {
   return (
     <div className='SongList'>
-      Songlist
-      <Song></Song>
-      <Song></Song>
-      <Song></Song>
-      <Song></Song>
-      <Song></Song>
-      <Song></Song>
+      {songs.map((song) => (
+        <Song key={song.id} {...song} /> // Assuming `Song` can handle individual song data
+      ))}
     </div>
   );
-
 }
 
-
-export default SongList;  
+export default SongList;
