@@ -9,7 +9,7 @@ import './Main.css';
 
 function Main() {
   const { albumIndex } = useMusicData();
-  const [activeTab, setActiveTab] = useState(null); // Initially, no tab is selected
+  const [activeTab, setActiveTab] = useState('1'); // Initially, no tab is selected
 
   // Generate tab labels dynamically from albumIndex
   const tabLabels = Object.values(albumIndex).map(album => album.name);
