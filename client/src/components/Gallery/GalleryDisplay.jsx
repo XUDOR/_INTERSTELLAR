@@ -6,6 +6,10 @@ import Album from '../Content/Album/Album';
 import AlbumTitle from '../Content/Album/AlbumTitle';
 import SongList from '../Content/Album/SongList'; // Assuming this component exists
 
+
+import '../Content/Album/SongList.css';
+import '../Content/Album/AlbumTitle.css';
+
 function GalleryDisplay({ activeTab }) {
   const { albumIndex, songIndex } = useMusicData();
   
