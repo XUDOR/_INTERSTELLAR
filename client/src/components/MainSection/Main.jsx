@@ -8,25 +8,26 @@ import InfoContainer from '../Content/Album/InfoContainer';
 import './Main.css';
 
 function Main() {
-  const { albumIndex } = useMusicData();
-  const [activeTab, setActiveTab] = useState(null); // Start with null
-  const [isLoading, setIsLoading] = useState(true); // Add a loading state
+  const { albumIndex, songIndex } = useMusicData(); // Assuming songIndex is structured similarly
+  const [activeTab, setActiveTab] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // When albumIndex is updated, set the first album as the active tab
   useEffect(() => {
     if (Object.keys(albumIndex).length > 0) {
       setActiveTab(Object.keys(albumIndex)[0]);
-      setIsLoading(false); // Set loading to false after data is fetched
+      setIsLoading(false);
     }
-  }, [albumIndex]); // This effect runs when albumIndex changes
+  }, [albumIndex]);
 
   const tabLabels = Object.values(albumIndex).map(({ id, name }) => ({ id, name }));
+
+  // Assuming songIndex maps album IDs to song lists
+  const activeSongs = activeTab ? songIndex[activeTab] : [];
 
   const handleTabClick = (albumId) => {
     setActiveTab(albumId);
   };
 
-  // Render a loading state if data is not yet fetched
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -35,11 +36,12 @@ function Main() {
     <div className='Main'>
       <TabList activeTab={activeTab} onTabClick={handleTabClick} labels={tabLabels} />
       <GalleryDisplay activeTab={activeTab} />
-      <SongList />
+      <SongList songs={activeSongs} /> {/* Pass activeSongs to SongList */}
       <InfoContainer />
       <Current />
     </div>
   );
 }
 
-export default Main;
+
+export default Main;    
