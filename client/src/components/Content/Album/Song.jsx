@@ -1,13 +1,12 @@
 // Song.jsx
 import React from 'react';
-import './Song.css';
+import './Song.css'
 
-function Song({ song }) { // Accept song as props
+function Song({ song }) {
   return (
     <div className='Song'>
-      {/* Display song information */}
-      <div className="Song-title">{song.name}</div> {/* Example property access */}
-      {/* Add more song details here */}
+      <div>{song.title} - {song.artist}</div>
+      {/* Display more song details here */}
     </div>
   );
 }
