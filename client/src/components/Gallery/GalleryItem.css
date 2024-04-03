@@ -1,6 +1,7 @@
 /* GallaryItem.css */
 .AlbumBLock {
 flex-direction: row;
+height: 100vh;
 
 
 }
