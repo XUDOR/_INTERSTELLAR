@@ -1,0 +1,16 @@
+/* LoadingPage.css adjustments for centering the loading indicator */
+.LoadingContent {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Add this to vertically center */
+  height: 100vh; /* Make it take the full viewport height */
+  width: 100vw; /* Make it take the full viewport width */
+  border-top: none; /* Removed the border-top as it may not be necessary for a full-page loading indicator */
+}
+
+.LoadingTitle {
+  border: 1px solid gray;
+  color: #3AA0A0;
+  padding: 20px; /* Adjusted padding for better visibility */
+  /* Removed align-self and margin-right as they may not be necessary with the updated flex container */
+}
