@@ -1,6 +1,19 @@
 /* Gallery.css */
-
 .Gallery {
-  margin: 0;
-  padding: 0;
+display: flex;
+
+
+}
+
+
+.tab-content {
+  border: 1px solid gray;
+  margin-left: 10px;
+  padding: 0px;
+  
+}
+
+.ArtBlock {
+  flex-direction: row;
+
 }
