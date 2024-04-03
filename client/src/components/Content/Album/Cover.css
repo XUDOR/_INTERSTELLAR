@@ -1,6 +1,8 @@
 /* Cover.css  */
 
 .Cover img {
+  padding-top: 15px;
+  padding-right: 15px;
   width: 100%; /* Sets the image width to fill the container */
   height: auto; /* Maintains the aspect ratio */
   display: block; /* Removes extra space underneath the image */
