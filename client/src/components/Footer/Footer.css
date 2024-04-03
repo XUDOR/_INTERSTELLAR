@@ -1,17 +1,16 @@
-/* Footer.css */
-
 .Footer {
-  
-  bottom: .5;
+  position: fixed; /* Fixed position relative to the viewport */
+  left: 0; /* Align to the left side of the viewport */
+  bottom: 0; /* Align to the bottom of the viewport */
   width: 100%;
-  height: 7vh; /* 10% of the viewport height */
+  height: 7vh; /* Adjust height as needed */
   display: flex;
-  justify-content: right;
+  justify-content: flex-end; /* Align content to the right */
   align-items: center;
   padding: 5px;
   background-color: #083D5E; /* Match header color or any color you prefer */
   color: #FFF; /* Adjust text color for better contrast */
-  
+  z-index: 1000; /* Ensure the footer stays on top of other elements */
 }
 
 .Footer > div {
