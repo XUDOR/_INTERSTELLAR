@@ -32,6 +32,7 @@ function Main() {
     <div className='Main'>
       <TabList activeTab={activeTab} onTabClick={handleTabClick} labels={tabLabels} />
       <GalleryDisplay activeTab={activeTab} />
+      
       <InfoContainer />
       <Current />
     </div>
