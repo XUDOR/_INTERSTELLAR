@@ -14,7 +14,7 @@ const Gallery = ({ children, activeTab, onTabClick }) => {
           const display = child.props.label === activeTab ? 'block' : 'none';
           console.log(`Gallery Component: Displaying tab ${child.props.label} as ${display}`);
           return (
-            <div className="ArtBlock"key={child.props.label} style={{ display }}>
+            <div className="ArtBlock"key={child.props.label}>
               {child.props.children}
             </div>
           );
