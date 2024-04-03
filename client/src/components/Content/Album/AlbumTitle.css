@@ -2,7 +2,7 @@
 
 .AlbumTitle {
   display: flex;
-  /* border: 1px solid red;*/
+  border-bottom: 1px solid gray;
   color: #E0ECED;
   padding: 7px;
  
