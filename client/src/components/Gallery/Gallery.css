@@ -1,15 +1,17 @@
 
 
 .tab-content {  
-  border: 1px solid gray;
+  
   padding: 2px; /* Add padding around the content */
-  background-color: blueviolet;
+  height: 100vh; /* Subtract the footer's height from the viewport height */
+  box-sizing: border-box; /* Ensures padding and border are included in the height calculation */
 }
 
 .ArtBlock {
   display: flex;
-  flex-direction: row; /* Align album details in a column */
-  width: 100%; /* Half the width of the parent */
+  flex-direction: row; /* Align album details in a column, not row */
+  width: 100%; /* Take full width of the parent */
+  height: 100%; /* Make sure ArtBlock takes the full height of its parent */
   justify-content: flex-start; /* Align content to the start on the main axis */
 }
 
