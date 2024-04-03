@@ -9,6 +9,7 @@ import SongList from '../Content/Album/SongList'; // Assuming this component exi
 
 import '../Content/Album/SongList.css';
 import '../Content/Album/AlbumTitle.css';
+import './GalleryDisplay.css'
 
 function GalleryDisplay({ activeTab }) {
   const { albumIndex, songIndex } = useMusicData();
@@ -25,8 +26,10 @@ function GalleryDisplay({ activeTab }) {
         <Gallery activeTab={activeTab}>
           {/* Single GalleryItem for the active album */}
           <GalleryItem key={activeAlbum.id} label={activeAlbum.id.toString()}>
+            <div className='AlbumBlock'>
             <AlbumTitle albumId={activeAlbum.id} />
             <Album albumId={activeAlbum.id} />
+            </div>
             {/* Displaying songs for the active album */}
             <SongList songs={songsForActiveAlbum} />
           </GalleryItem>
