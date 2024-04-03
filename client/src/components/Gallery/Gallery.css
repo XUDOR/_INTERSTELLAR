@@ -1,19 +1,16 @@
-/* Gallery.css */
-.Gallery {
-display: flex;
 
 
-}
-
-
-.tab-content {
+.tab-content {  
   border: 1px solid gray;
-  margin-left: 10px;
-  padding: 0px;
-  
+  padding: 2px; /* Add padding around the content */
+  background-color: blueviolet;
 }
 
 .ArtBlock {
-  flex-direction: row;
-
+  display: flex;
+  flex-direction: row; /* Align album details in a column */
+  width: 100%; /* Half the width of the parent */
+  justify-content: flex-start; /* Align content to the start on the main axis */
 }
+
+/* Additional styles for AlbumTitle, Cover, and SongList to adjust their specific layout may be needed */
