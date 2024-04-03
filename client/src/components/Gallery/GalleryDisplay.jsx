@@ -18,7 +18,8 @@ function GalleryDisplay({ activeTab }) {
   const activeAlbum = albumIndex[activeTab];
   
   // Songs for the active album
-  const songsForActiveAlbum = songIndex[activeTab] || [];
+  const songsForActiveAlbum = Object.values(songIndex).filter(song => song.album_id === activeTab);
+
 
   return (
     <div className="GalleryDisplay">
