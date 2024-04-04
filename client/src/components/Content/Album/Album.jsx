@@ -3,7 +3,7 @@ import Cover from './Cover';
 import './Album.css';
 // Uncomment below when ready for dynamic image fetching
 // import useAuthenticatedImage from '../../../hooks/useAuthenticatedImage';
-import coverImage from '../../../images/CHARLOTTA_cover.png';
+import coverImage from '../../../images/Covers/CHARLOTTA_cover.png';
 
 function Album({ albumId }) { // Assuming albumId might be used for fetching specific album images
   // For dynamic image fetching, uncomment the line below
