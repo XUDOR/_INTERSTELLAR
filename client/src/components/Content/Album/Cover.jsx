@@ -1,13 +1,17 @@
-// Cover.jsx
 import React from 'react';
 import './Cover.css';
 
-// Assuming Cover accepts imageUrl as a prop
 function Cover({ imageUrl }) {
   return (
-    <div className='Cover'>
-      {/* Render the image using the imageUrl prop */}
-      <img src={imageUrl} alt="Album Cover" />
+    <div className="cover-container"> {/* Container div with a class for styling */}
+      <img 
+        src={imageUrl} 
+        alt="Album Cover" 
+        onError={(e) => { 
+          e.target.onerror = null; // Prevent further onError triggers
+          e.target.src = '/Fallback-image.png'; // Directly reference from the public folder
+        }} 
+      />
     </div>
   );
 }
