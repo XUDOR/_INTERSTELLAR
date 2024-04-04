@@ -38,3 +38,29 @@ VALUES
  1, 
  'This album became the sequel to "Charlotta", composed and engineered over a 2 year period from 2003-2005, finished in the middle of 2005. The concept of "The City" emerged through the rough romantic plot of two people in a massive futuristic city, that seems dwarfed by the sentiments by them both.', 
  6);
+
+-- Insert record with ID 4
+INSERT INTO albums 
+(id, name, cover_url, production_date, release_date, artist_id, description, tracks) 
+VALUES 
+(4,
+ 'New Domes of Earth', 
+ 'http://example.com/third_cover.jpg', 
+ '2005-5-15', 
+ '2010-10-19', 
+ 1, 
+ 'Music for visions of the future.', 
+ 6);
+
+ -- Insert record with ID 5
+INSERT INTO albums 
+(id, name, cover_url, production_date, release_date, artist_id, description, tracks) 
+VALUES 
+(5,
+ 'Natura', 
+ 'http://example.com/third_cover.jpg', 
+ '2022-03-15', 
+ '2022-03-22', 
+ 1, 
+ 'An open letter of love and admiration for the natural world.', 
+ 6);
