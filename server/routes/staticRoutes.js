@@ -17,7 +17,7 @@ router.get('/images/:albumId', (req, res) => {
     return res.status(404).send('Image not found');
   }
 
-  const imagePath = path.join(__dirname, '..', '..', 'src', 'images', 'Covers', imageName);
+  const imagePath = path.join(__dirname, '..', 'src', 'images', 'Covers', imageName);
   console.log('Attempting to send file at path:', imagePath); // Log the file path
 
   res.sendFile(imagePath, (err) => {
