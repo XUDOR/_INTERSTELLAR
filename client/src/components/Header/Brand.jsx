@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link component
 import './Brand.css';
-import LogoSVG from '../../images/IP_TAG24.svg';
+import LogoSVG from '../../images/Icons/IP_TAG24.svg';
 
 const Brand = () => {
   
