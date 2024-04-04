@@ -44,10 +44,12 @@ CREATE TABLE songs (
     id VARCHAR(15) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     audio_url VARCHAR(255) NOT NULL,
+    duration TIME NOT NULL,
     artist_id INTEGER NOT NULL,
     album_id INTEGER NOT NULL REFERENCES albums(id),
     track_id INTEGER NOT NULL
 );
+
 
 -- Playlists Table
 CREATE TABLE playlists (
