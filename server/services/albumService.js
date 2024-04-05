@@ -21,7 +21,7 @@ const getAlbumById = async (id) => {
     } else {
       console.log(`Service: Album found with ID: ${id}`, rows[0]);
     }
-    return rows;
+    return rows[0];
   } catch (err) {
     console.error(`Service: Error fetching album with ID: ${id}`, err);
     throw new Error('Failed to fetch album');
