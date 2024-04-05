@@ -1,24 +1,36 @@
 // Album.jsx
 
-import React from 'react';
-import { API_BASE_URL } from '../../../utils/const';
-import Cover from './Cover'; // Adjust the import path as necessary
+import React, {useState, useEffect} from 'react';
+import Cover from './Cover';
 import './Album.css';
+import { API_BASE_URL } from '../../../utils/const';
 
+// Assuming you've moved your images to be served statically and set REACT_APP_API_URL in your environment
 function Album({ albumId }) {
-  // Construct the URL to the image served by the backend using the constant
-  const imageUrl = `${API_BASE_URL}/api/images/${albumId}`;
+
+  /*
+  //const imageUrl = `${API_BASE_URL}/static/images/Covers/1_CHARLOTTA.png`;
+  const imageUrl = `${API_BASE_URL}/api/covers/${albumId}`;
 
   console.log(`Fetching album cover for album ID ${albumId} from: ${imageUrl}`);
+*/
+const [albumData, setAlbumData] = useState(null);
+const imageUrl = "";
 
-  return (
+useEffect(() => {
+  fetch(`/api/albums/${albumId}`)
+    .then(res => res.json())
+    .then(data =>setAlbumData(data))
+
+},[]);
+
+
+
+  return  albumData && (
     <div className="album">
-      {/* Use the Cover component and pass the imageUrl */}
-      <Cover imageUrl={imageUrl} />
+      <Cover imageUrl={albumData.cover_url} />
     </div>
   );
 }
 
 export default Album;
-
-
