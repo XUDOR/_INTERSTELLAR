@@ -6,7 +6,7 @@ INSERT INTO albums
 VALUES 
 (1,
  'Charlotta', 
- 'http://example.com/cover.jpg', 
+ '/static/images/Covers/1_CHARLOTTA.png',
  '2005-05-01', 
  '2010-10-03', 
  1, 
@@ -19,7 +19,7 @@ INSERT INTO albums
 VALUES 
 (2,
  'Objects & Particles', 
- 'http://example.com/second_cover.jpg', 
+ '/static/images/Covers/2_OBJECTS-PARTICLES.png',
  '2006-03-01', 
  '2010-10-10', 
  1, 
@@ -32,7 +32,7 @@ INSERT INTO albums
 VALUES 
 (3,
  'Glass City of Us', 
- 'http://example.com/third_cover.jpg', 
+ '/static/images/Covers/3_GLASS-CITY-OF-US.png', 
  '2005-4-1', 
  '2010-10-06', 
  1, 
@@ -45,7 +45,7 @@ INSERT INTO albums
 VALUES 
 (4,
  'New Domes of Earth', 
- 'http://example.com/third_cover.jpg', 
+ '/static/images/Covers/4_NEW-DOMES.png',                                        
  '2005-5-15', 
  '2010-10-19', 
  1, 
@@ -58,7 +58,7 @@ INSERT INTO albums
 VALUES 
 (5,
  'Natura', 
- 'http://example.com/third_cover.jpg', 
+ '/static/images/Covers/5_NATURA.png', 
  '2022-03-15', 
  '2022-03-22', 
  1, 
