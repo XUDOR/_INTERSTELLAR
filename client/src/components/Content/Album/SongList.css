@@ -1,13 +1,12 @@
 /* SongList.css  */
 
 .SongList {
-  flex: 75%;
+  flex: 25%;
   margin-left: 1px;
   border: 1px solid gray;
   color: #E0ECED;
   padding: 5px;
-  width: 125px;
-  
+ 
   
   
 }
