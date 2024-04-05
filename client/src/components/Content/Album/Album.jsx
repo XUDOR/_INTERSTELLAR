@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from 'react';
 import Cover from './Cover';
 import './Album.css';
-import { API_BASE_URL } from '../../../utils/const';
+//mport { API_BASE_URL } from '../../../utils/const';
 
 // Assuming you've moved your images to be served statically and set REACT_APP_API_URL in your environment
 function Album({ albumId }) {
