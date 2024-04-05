@@ -1,11 +1,9 @@
 /* Cover.css  */
 
-.Cover img {
+
+.cover-container {
   padding-top: 15px;
   padding-right: 15px;
-  width: 100%; /* Sets the image width to fill the container */
-  height: auto; /* Maintains the aspect ratio */
-  display: block; /* Removes extra space underneath the image */
-  transform: scale(1); /* Scales the image to 80% of its size */
-  transform-origin: center; /* Ensures the image scales from its center */
+  height: 100vh; /* Corrected from 100%vh to 100vh */
+  width: 100%;
 }
