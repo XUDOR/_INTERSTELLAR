@@ -23,10 +23,10 @@ router.get('/:id', async (req, res) => {
   const { id } = req.params;
   console.log(`Received request to fetch album with ID: ${id}`);
   try {
-    const albums = await getAlbumById(id);
-    if (albums.length > 0) {
-      console.log('Fetched album:', albums[0]);
-      res.json(albums[0]);
+    const album = await getAlbumById(id);
+    if (album) {
+      console.log('Fetched album:', album);
+      res.json(album);
     } else {
       console.log(`Album with ID: ${id} not found`);
       res.status(404).send('Album not found');
