@@ -228,4 +228,4 @@ VALUES
 ('1907', 'Sunrise in Primary Colors', 'http://example.com/audio/song5.mp3', '00:04:02', 1, 19, 7),
 ('1908', 'Penumbra', 'http://example.com/audio/song1.mp3', '00:06:59', 1, 19, 8),
 ('1909', 'Tree of Thought', 'http://example.com/audio/song2.mp3', '00:08:05', 1, 19, 9),
-('1910', 'Art District', 'http://example.com/audio/song3.mp3', '00:07:05', 1, 19, 10),
+('1910', 'Art District', 'http://example.com/audio/song3.mp3', '00:07:05', 1, 19, 10);
