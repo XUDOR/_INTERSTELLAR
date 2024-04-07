@@ -277,10 +277,17 @@ VALUES
  '2023-10-20', 
  '2023-10-25', 
  1,
- 'All Sound and Instruments: Roderick Shoolbraid. Album Cover Design: Roderick Shoolbraid. All Rights Reserved.',
+ $$All Sound and Instruments: Roderick Shoolbraid 
+Voice sample on track #1: Lynn Demers 
+Voice sample on track #7: Lovina Lakatua 
+Vocal on track #7: Ruby Lakatua
+Album Cover Design: Roderick Shoolbraid 
+All Rights Reserved.$$,
  $$A cascade of experiences, a free fall into pulp science fiction of singular memory, set against 1990s electronic music’s landscape & language. What is the plot summary for our protagonist? Only the environments know. Written over 7 months pulling from reservoirs of old and new sounds: "Poem for a Homeworld" has a history of its own. Where are we in the index of portals? "Have I not been here before?" asks the lone traveller as all paths lead back to the beginning of the contemplations: "Am I alone? If I am alone in the universe, am I then not alone? If I am held in the embrace of the expanse of the universe?" These are the questions and revelations of our story, painted in the colours and reference of nostalgia.
 A lament from a distant future, a chaos of remembrance; an understanding that all time exists at once, on the cusp of the Void. A narrative set against the abstracted lexicon of 90s ambient drum & bass on a bed of watercolours of experiments. Completed by the fall of 2023.$$,
- 15);
+ 15
+);
+
 
  -- Insert record with ID 19
 INSERT INTO albums 
