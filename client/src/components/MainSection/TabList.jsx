@@ -24,7 +24,7 @@ const TabList = ({ labels, activeTab, onTabClick }) => {
         </li>
       ))}
     </ul>
-  );
+  );  
 };
 
 export default TabList;
