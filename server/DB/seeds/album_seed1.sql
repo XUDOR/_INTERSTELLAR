@@ -1,4 +1,4 @@
--- album_seed1.sql
+-- album_seed1.sql // line 1
 
 -- Insert record with ID 1
 INSERT INTO albums 
@@ -36,7 +36,7 @@ INSERT INTO albums
 (id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
 VALUES 
 (3,
- '00040103'
+ '00040103',
  'Glass City of Us', 
  '/static/images/Covers/3_GLASS-CITY-OF-US.png', 
  '2005-4-1', 
