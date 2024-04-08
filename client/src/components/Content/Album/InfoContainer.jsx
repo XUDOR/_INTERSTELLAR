@@ -6,6 +6,7 @@ import Description from './Description';
 import Credit from './Credit';
 
 function InfoContainer() {
+  console.log('Rendering InfoContainer');
   const { albumIndex, activeTab } = useMusicData();
   const currentAlbum = albumIndex[activeTab]; // Access current album directly with activeTab
 
