@@ -6,7 +6,7 @@ function Credit({ credit }) {
   console.log('Credit:', credit); // Log the credit prop
   return (
     <div className='CreditContent'>
-      {credit} credit:
+      {credit} 
     </div>
   );
 }
