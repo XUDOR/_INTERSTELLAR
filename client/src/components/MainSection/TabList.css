@@ -11,13 +11,12 @@
 
 .tab-list-item {
   text-indent: -9999px; /* Hide text */
-  width: 15px; /* Set a fixed width */
-  height: 15px; /* Set a fixed height */
+  width: 17px; /* Set a fixed width */
+  height: 17px; /* Set a fixed height */
   line-height: 15px; /* Align to the middle if text is to be shown */
-  border-radius: 50%; /* Make it round */
-  background-color: #FFFADF; /* Set background color for dots */
+  border-radius: 0%; /* Make it round */
   margin: 5px;
-  border: none; /* Optional: removes border */
+  border: .5px solid #3AA0A0; /* Optional: removes border */
   cursor: pointer;
 }
 
