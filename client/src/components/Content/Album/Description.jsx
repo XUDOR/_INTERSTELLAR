@@ -1,13 +1,15 @@
-// Decription.jsx
+// Description.jsx
 import React from 'react';
 import './Description.css';
 
-function Decription() {
+function Description({ description }) {
+  console.log('Description:', description); // Log the description prop
   return (
     <div className='DescriptionContent'>
-      Description:
+      {description} description
     </div>
   );
 }
 
-export default Decription; 
+
+export default Description;
