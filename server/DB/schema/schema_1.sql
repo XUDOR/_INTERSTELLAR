@@ -27,20 +27,18 @@ CREATE TABLE artists (
     description TEXT NOT NULL
 );
 
--- Albums Table
 CREATE TABLE albums (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
     catalogue VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
     cover_url VARCHAR(255) NOT NULL,
-    production_date DATE NOT NULL,
-    release_date DATE NOT NULL,
+    production_date DATE, -- Allowing NULL
+    release_date DATE, -- Allowing NULL
     artist_id INTEGER NOT NULL REFERENCES artists(id),
     credit TEXT NOT NULL,
     description TEXT NOT NULL,
     tracks INTEGER NOT NULL
 );
-
 
 
 -- Songs Table
