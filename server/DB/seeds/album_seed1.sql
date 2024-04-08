@@ -1,50 +1,64 @@
--- album_seed1.sql // line 1
-
--- Insert record with ID 1
+-- Insert record with ID 0 DEFAULT
 INSERT INTO albums 
 (id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
 VALUES 
-(1,
- '00040101',
- 'Charlotta', 
- '/static/images/Covers/1_CHARLOTTA.png',
- '2005-05-01', 
- '2010-10-03', 
- 1,
- 'All Sound & Composition: Roderick Shoolbraid. Album Cover Art, Photography & Design: Roderick Shoolbraid. All Rights Reserved.', 
- 'The debut ambient electronic album by Roderick Shoolbraid, written in a span from 2003 to 2005. Released in 2010. A soundtrack for a dream, and a film that never was.', 
- 8);
+(0,
+'00000000',
+'Default', 
+'/static/images/Covers/0_IP_DEFAULT.png',
+NULL, -- Adjusted for valid SQL
+NULL, -- Adjusted for valid SQL
+1,
+'Default-set up', 
+'Default album description.', 
+0);
 
 
--- Insert record with ID 2
-INSERT INTO albums 
-(id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks)  
-VALUES 
-(2,
- '00040102',
- 'Objects & Particles', 
- '/static/images/Covers/2_OBJECTS-PARTICLES.png',
- '2006-03-01', 
- '2010-10-10', 
- 1,
- 'All Sound & Composition: Roderick Shoolbraid. Album Cover Art, Photography & Design: Roderick Shoolbraid. All Rights Reserved', 
- 'Between "Charlotta" & "Glass City of Us" (2004-6), this darker album explored minimal ambient music. It used noise, line hum, record skips, and drone reverbs. Inspired by the idea that objects in math, physics, & chemistry have their own music, if we listen closely.', 
- 6);
+  -- Insert record with ID 1
+  INSERT INTO albums 
+  (id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
+  VALUES 
+  (1,
+  '00040101',
+  'Charlotta', 
+  '/static/images/Covers/1_CHARLOTTA.png',
+  '2005-05-01', 
+  '2010-10-03', 
+  1,
+  'All Sound & Composition: Roderick Shoolbraid. Album Cover Art, Photography & Design: Roderick Shoolbraid. All Rights Reserved.', 
+  'The debut ambient electronic album by Roderick Shoolbraid, written in a span from 2003 to 2005. Released in 2010. A soundtrack for a dream, and a film that never was.', 
+  8);
 
--- Insert record with ID 3
-INSERT INTO albums 
-(id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
-VALUES 
-(3,
- '00040103',
- 'Glass City of Us', 
- '/static/images/Covers/3_GLASS-CITY-OF-US.png', 
- '2005-4-1', 
- '2010-10-06', 
- 1,
- 'All Sound & Composition: Roderick Shoolbraid. Album Cover Art, Photography & Design: Roderick Shoolbraid. All Rights Reserved.', 
- 'This album became the sequel to "Charlotta", composed and engineered over a 2 year period from 2003-2005, finished in the middle of 2005. The concept of "The City" emerged through the rough romantic plot of two people in a massive futuristic city, that seems dwarfed by the sentiments by them both.', 
- 6);
+
+  -- Insert record with ID 2
+  INSERT INTO albums 
+  (id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks)  
+  VALUES 
+  (2,
+  '00040102',
+  'Objects & Particles', 
+  '/static/images/Covers/2_OBJECTS-PARTICLES.png',
+  '2006-03-01', 
+  '2010-10-10', 
+  1,
+  'All Sound & Composition: Roderick Shoolbraid. Album Cover Art, Photography & Design: Roderick Shoolbraid. All Rights Reserved', 
+  'Between "Charlotta" & "Glass City of Us" (2004-6), this darker album explored minimal ambient music. It used noise, line hum, record skips, and drone reverbs. Inspired by the idea that objects in math, physics, & chemistry have their own music, if we listen closely.', 
+  6);
+
+  -- Insert record with ID 3
+  INSERT INTO albums 
+  (id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
+  VALUES 
+  (3,
+  '00040103',
+  'Glass City of Us', 
+  '/static/images/Covers/3_GLASS-CITY-OF-US.png', 
+  '2005-4-1', 
+  '2010-10-06', 
+  1,
+  'All Sound & Composition: Roderick Shoolbraid. Album Cover Art, Photography & Design: Roderick Shoolbraid. All Rights Reserved.', 
+  'This album became the sequel to "Charlotta", composed and engineered over a 2 year period from 2003-2005, finished in the middle of 2005. The concept of "The City" emerged through the rough romantic plot of two people in a massive futuristic city, that seems dwarfed by the sentiments by them both.', 
+  6);
 
 -- Insert record with ID 4
 INSERT INTO albums 
