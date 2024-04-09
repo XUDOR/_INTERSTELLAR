@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMusicData } from '../../Contexts/MusicDataContext';
 import Cover from '../Content/Album/Cover'; // Corrected import path
-import AlbumTitle from '../Content/Album/AlbumTitle'; // Adjust the import path as necessary
+//import AlbumTitle from '../Content/Album/AlbumTitle'; // Adjust the import path as necessary
 
 
 
