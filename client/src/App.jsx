@@ -1,5 +1,7 @@
+// App.js
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { MusicDataProvider } from './Contexts/MusicDataContext';
 import LoadingPage from './components/Loading/LoadingPage';
 import Header from './components/Header/Header';
 import Main from './components/MainSection/Main';
@@ -10,26 +12,24 @@ import UserPage from './components/User/UserPage';
 import DownloadsPage from './components/Downloads/DownloadsPage';
 import EPKPage from './components/EPKPage/EPKPage';
 import ContactPage from './components/Contact/ContactPage';
-import { MusicDataProvider } from './Contexts/MusicDataContext';
-import { useHeaderStyle } from './hooks/useHeaderStyle';
 import './App.css';
 
 const App = () => {
-  const { isMinimal } = useHeaderStyle();
-  const [isLoading, setIsLoading] = useState(true); // Initial loading state for the app
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading time of 1-2 seconds (1500 milliseconds as an example)
-    const timer = setTimeout(() => {
-      setIsLoading(false); // Hide the loading page and show the app content
-    }, 1500);
+    // Instead of setTimeout, here you could fetch your initial app data 
+    // and set isLoading to false once the data is loaded.
+    const loadData = async () => {
+      // Simulate data fetching
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setIsLoading(false);
+    };
 
-    // Cleanup function to clear the timer if the component unmounts
-    return () => clearTimeout(timer);
+    loadData();
   }, []);
 
   if (isLoading) {
-    // Show the LoadingPage component while the app is in the loading state
     return <LoadingPage />;
   }
 
@@ -46,13 +46,13 @@ const App = () => {
             <Route path="/downloads" element={<DownloadsPage />} />
             <Route path="/epk" element={<EPKPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            {/* Ensure all your routes are listed here */}
           </Routes>
         </main>
-        {!isMinimal && <Footer />}
+        <Footer />
       </div>
     </MusicDataProvider>
   );
 };
 
 export default App;
-  
