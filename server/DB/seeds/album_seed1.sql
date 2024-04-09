@@ -1,19 +1,3 @@
--- Insert record with ID 0 DEFAULT
-INSERT INTO albums 
-(id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
-VALUES 
-(0,
-'00000000',
-'Default', 
-'/static/images/Covers/0_IP_DEFAULT.png',
-NULL, -- Adjusted for valid SQL
-NULL, -- Adjusted for valid SQL
-1,
-'Default-set up', 
-'Default album description.', 
-0);
-
-
   -- Insert record with ID 1
   INSERT INTO albums 
   (id, catalogue, name, cover_url, production_date, release_date, artist_id, credit, description, tracks) 
