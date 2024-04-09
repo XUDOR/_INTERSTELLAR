@@ -1,22 +1,18 @@
 import React, { useContext } from 'react';
-import { MusicDataContext } from '../../../Contexts/MusicDataContext'; // Adjust the import path as necessary
+import { MusicDataContext } from '../../../Contexts/MusicDataContext';
 
 function AlbumTitle({ albumId }) {
   const { albumIndex } = useContext(MusicDataContext);
   
-  // Log to check the album being accessed
-  console.log(`AlbumTitle Component: Fetching album with ID ${albumId}`, albumIndex[albumId]);
+  const album = albumIndex ? albumIndex[albumId] : null;
 
-  // Access the album directly from the albumIndex using the albumId
-  const album = albumIndex[albumId];
-
-  // If the album data for the given ID isn't found, show a placeholder message
   if (!album) {
-    console.error(`AlbumTitle Component: Album with ID ${albumId} not found.`);
-    return <div>Loading or album not found...</div>;
+    // Instead of logging an error, consider how to handle this in the UI
+    // For example, you might return null or a different placeholder
+    // This avoids console errors for the user but ensures developers are aware during development
+    return <div className='AlbumTitle'>Album Not Found</div>;
   }
 
-  // When album data is available, render the album name
   return <div className='AlbumTitle'>{album.name}</div>;
 }
 
