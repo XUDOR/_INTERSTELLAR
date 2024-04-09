@@ -1,30 +1,33 @@
 import React from 'react';
-import './TabList.css';
+import { useMusicData } from '../../Contexts/MusicDataContext';
 
-const TabList = ({ labels, activeTab, onTabClick }) => {
-  // Log the entire labels array to see what we're working with each render
-  console.log("TabList Component: labels", JSON.stringify(labels));
-  
-  // Log the current activeTab to understand which tab should be highlighted
-  console.log("TabList Component: activeTab", activeTab);
+const TabList = () => {
+  const { state, dispatch } = useMusicData();
+
+  // Assuming state includes { albumIndex, activeTab, isLoading }
+  const { albumIndex, activeTab, isLoading } = state;
+
+  if (isLoading) {
+    return <div>Loading tabs...</div>;
+  }
+
+  const handleTabClick = (albumId) => {
+    dispatch({ type: 'SET_ACTIVE_TAB', payload: albumId });
+  };
 
   return (
     <ul className="tab-list">
-      {labels.map(({ id, name }) => (
+      {Object.entries(albumIndex).map(([id, { name }]) => (
         <li 
-          className={id.toString() === activeTab.toString() ? 'tab-list-item active' : 'tab-list-item'}
+          className={id === activeTab ? 'tab-list-item active' : 'tab-list-item'}
           key={id}
-          onClick={() => {
-            // This log helps in tracking user interactions with the tab list
-            console.log("TabList Component: Tab clicked", id);
-            onTabClick(id);
-          }}
+          onClick={() => handleTabClick(id)}
         >
           {name}
         </li>
       ))}
     </ul>
-  );  
+  );
 };
 
 export default TabList;
