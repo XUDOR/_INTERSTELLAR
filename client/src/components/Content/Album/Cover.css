@@ -5,7 +5,7 @@
   height: auto; /* Set to auto so it only takes the space it needs */
   width: 100%;
   display: flex;
-  justify-content: center; /* This will center the image horizontally */
+  justify-content: left; /* This will center the image horizontally */
   align-items: flex-start; /* This will align the image to the top of the container */
   overflow: hidden; 
 }
