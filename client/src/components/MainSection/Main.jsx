@@ -10,33 +10,28 @@ import '../Content/Album/InfoContainer.css';
 function Main() {
   const { state } = useMusicData();
 
-  console.log("songIndex state at Main component:", state.songIndex); // Log the entire songIndex state for debugging
+  console.log("State at Main component:", state); // Log the entire state for debugging
 
   const renderAlbumDivs = () => {
-    return Object.entries(state.albumIndex).map(([albumId, { name, cover_url }]) => {
+    // Ensuring we're referencing the correct state object and providing a fallback
+    const albums = Object.values(state.albumIndex || {});
 
-      // Place debugging logs here to check the structure, keys, and values
-      console.log("Keys in songIndex:", Object.keys(state.songIndex).map(key => typeof key));
-      console.log("Type and value of albumId being accessed:", typeof albumId, albumId);
-      console.log(state.songIndex); // Check the structure and contents
-      console.log(albumId); // Ensure this matches keys in songIndex
+    return albums.map((album) => {
+      // Ensuring we're referencing the correct state object and providing a fallback
+      const songsForThisAlbum = state.songIndex[album.id] || [];
 
-      // Attempt to retrieve songs for this specific albumId from songIndex
-      const songsForThisAlbum = state.songIndex[albumId] || [];
-
-      console.log("Mapping albumId to songs", {
-        albumId,
-        songsForThisAlbum: songsForThisAlbum
-      });
+      // Detailed logs for debugging songs data fetching and rendering
+      console.log(`Rendering album ${album.name} with ID ${album.id}`);
+      console.log(`Songs for album ${album.name}:`, songsForThisAlbum);
 
       return (
-        <div key={albumId} className="album-container">
+        <div key={album.id} className="album-container">
           <div className="album-info">
-            <h3 className='albumTitle'>{name}</h3>
-            <Cover imageUrl={cover_url} altText={`Cover of ${name}`} />
+            <h3 className='albumTitle'>{album.name}</h3>
+            <Cover imageUrl={album.cover_url} altText={`Cover of ${album.name}`} />
           </div>
           <SongList songs={songsForThisAlbum} />
-          <InfoContainer albumId={albumId} />
+          <InfoContainer albumId={album.id} />
         </div>
       );
     });
