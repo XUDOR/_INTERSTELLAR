@@ -1,3 +1,5 @@
+/* main.css*/
+
 .Main {
   display: flex;
   flex-direction: column;
@@ -11,12 +13,21 @@
 }
 
 
+.album-container {
+  display: flex; /* Use flexbox to create a row */
+}
+
+.album-info {
+  flex-direction: column; /* Stack title and cover vertically */
+  margin-top: 5px;
+}
+
 .albumTitle {
   display: flex;
   border-bottom: 1px solid gray;
   color: #E0ECED;
   padding: 7px;
-  margin-bottom: 13px;
+  margin: 13px;
   font-weight: lighter;
   font-size: 30px;
 }
