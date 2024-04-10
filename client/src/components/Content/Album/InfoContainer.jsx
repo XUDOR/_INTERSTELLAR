@@ -1,27 +1,22 @@
-// InfoContainer.jsx or the component that renders Description, Credit, and Catalogue
+// src/components/Content/Album/InfoContainer.js
 import React from 'react';
-import { useMusicData } from '../../../Contexts/MusicDataContext';
+import { useMusicData } from '../../../Contexts/MusicDataContext'; // Ensure path correctness
 import Catalogue from './Catalogue';
 import Description from './Description';
 import Credit from './Credit';
 
-function InfoContainer() {
-  console.log('Rendering InfoContainer');
-  const { albumIndex, activeTab } = useMusicData();
-  const currentAlbum = albumIndex[activeTab]; // Access current album directly with activeTab
+function InfoContainer({ albumId }) {
+  const { state } = useMusicData();
+  const albumDetails = state.albumIndex[albumId] || {}; // Use albumId to get details
 
-  if (!currentAlbum) {
-    return <div>Loading album data or no album selected...</div>;
-  }
-
-  // Now pass the current album's data as props to child components
   return (
     <div className='InfoContainer'>
-      <Catalogue catalogue={currentAlbum.catalogue} />
-      <Description description={currentAlbum.description} />
-      <Credit credit={currentAlbum.credit} />
+      <Catalogue catalogue={albumDetails.catalogue} />
+      <Description description={albumDetails.description} />
+      <Credit credit={albumDetails.credit} />
     </div>
   );
 }
 
 export default InfoContainer;
+
