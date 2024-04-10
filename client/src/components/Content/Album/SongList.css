@@ -1,13 +1,15 @@
 /* SongList.css  */
 
 .SongList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align items to the end of the container */
   flex: 25%;
   margin-left: 1px;
-  border: 1px solid gray;
+  
   color: #E0ECED;
   padding: 5px;
+  padding-bottom: 25px;
   font-size: 15px;
- 
-  
-  
+  height: 100%; /* Ensure it has a height to allow flex-end to work */
 }
