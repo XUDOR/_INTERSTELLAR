@@ -2,12 +2,11 @@
 
 .DescriptionContent {
   display: flex;
-  justify-content: flex-start; 
-  padding-right: 10px; 
-  padding-top: 10px;
+  justify-content: flex-start;
+  padding: 10px;
   margin-top: 5px;
   border: 1px solid gray;
-  height: 25%;
   color: #E0ECED;
-  
+  flex: 1; /* This allows the box to grow and shrink as needed */
+  overflow: auto; /* Adds a scrollbar if content overflows */
 }
