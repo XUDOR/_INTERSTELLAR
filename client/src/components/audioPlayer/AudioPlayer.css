@@ -7,13 +7,14 @@
   background: #3AA0A0;
   height: 40px;
   justify-content: center;
-  width: 100%
+  width: 90%;
 
 }
 
 
 .player {
   display: flex; /* This line is crucial for horizontal layout */
+  width: 100%;
   color: #F9F7E8;
   justify-content: center;
   font-size: 15px;
@@ -22,6 +23,7 @@
 
 .Play, .Time, .volume-control { /* Corrected class name for consistency */
   height: 50px;
+  width: 60%;
   align-items: left; /* Ensure vertical center alignment */
   margin-left: 5px;
 }
@@ -31,9 +33,11 @@
   margin-right: 5px; /* Adjust spacing between elements */
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-top: 5px; /* Added padding for visual space */
+  width: 60%;
+  padding-top: 7px;
+  padding-left: 7px; /* Added padding for visual space */
   margin: 0px;
+  font-size: 12px;
 }
 
 .Play {
@@ -50,13 +54,13 @@
   display: flex; /* Ensures flex properties apply */
   align-items: center; /* Align the slider within this control */
   margin-left: 10px; /* Space out from preceding elements */
-  width: 150%; /* Control the max width of your volume slider */
+  width: 100%; /* Control the max width of your volume slider */  
 }
 
 .volume-slider {
 
   -webkit-appearance: none;
-  appearance: none;
+  appearance: none; 
   width: 100%;
   height: 5px;
   background: #F9F7E8;
