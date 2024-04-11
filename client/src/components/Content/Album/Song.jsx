@@ -1,7 +1,7 @@
 // Song.jsx
 import React from 'react';
 import './Song.css'
-import play from "../../../images/Icons/Play.png"
+import play from "../../../images/Icons/play_small.png"
 
 // Adjusting the Song component to match your data structure
 function Song({ song, setaudioFIleName }) {
