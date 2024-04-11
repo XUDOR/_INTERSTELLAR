@@ -5,7 +5,7 @@ VALUES
 
 --Charlotta-- 1
 
-('0101', 'Charlotta', 'http://example.com/audio/song1.mp3', '00:08:28', 1, 1, 1),
+('0101', 'Charlotta', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/CHARLOTTA.mp3', '00:08:28', 1, 1, 1),
 ('0102', 'Garden Mix', 'http://example.com/audio/song2.mp3', '00:03:28', 1, 1, 2),
 ('0103', 'New Ornithologies', 'http://example.com/audio/song3.mp3', '00:03:51', 1, 1, 3),
 ('0104', 'Old Flowers', 'http://example.com/audio/song4.mp3', '00:03:33', 1, 1, 4),
