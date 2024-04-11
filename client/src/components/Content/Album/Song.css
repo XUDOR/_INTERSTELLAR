@@ -1,19 +1,23 @@
-/* Song.css - Updated with a blue hover effect for image */
+/* Song.css - Updated with a blue hover effect for the entire Song component */
 
 .Song {
+  border-radius: 3px;
   display: flex;
-  
   color: #E0ECED;
-  padding-bottom: 5px;
+  background-color: #083D5E; /* Default background color */
+  padding: 3px;
   margin: 1px;
   width: 100%;
-  max-height: 45px;
-  justify-content: space-between;
+  max-height: 50px;
   align-items: center;
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  transition: background-color 0.3s ease; /* Smooth transition for the background color */
 }
 
-.Song img {
-  margin-left: auto;
-  height: 60%;
- 
+.Song div {
+  background-color: transparent; /* Ensure nested divs don't block hover color */
+}
+
+.Song:hover {
+  background-color: #065A82; /* Darker background on hover for the whole component */
 }
