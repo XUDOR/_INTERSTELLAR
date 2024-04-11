@@ -1,0 +1,111 @@
+
+.audio-file-name{
+  padding: 10px;
+  flex: 20%;
+  color: #083D5E;
+  background: #3AA0A0;
+
+}
+
+
+.player {
+  display: flex; /* This line is crucial for horizontal layout */
+  color: #F9F7E8;
+  background-color: gray;
+  margin: 10px auto; /* Center your player horizontally */
+  padding: 5px;
+  font-size: 15px;
+  border: 2px solid #083D5E;
+  max-width: 700px; /* Adjust based on your preference */
+}
+
+.Play, .Time, .volume-control { /* Corrected class name for consistency */
+  
+  align-items: left; /* Ensure vertical center alignment */
+  margin-left: 5px;
+}
+
+.Time {
+  border: 2px solid #3AA0A0;
+  margin-right: 5px; /* Adjust spacing between elements */
+  width: 10%;
+  padding: 5px; /* Added padding for visual space */
+}
+
+.Play {
+  background-color: #083D5E;
+  border: 1px solid #F9F7E8;
+  color: #3AA0A0;
+  padding: 5px;
+  width: 10%;
+  cursor: pointer; /* Suggest interaction */
+}
+
+.volume-control {
+  display: flex; /* Ensures flex properties apply */
+  flex-grow: 1;
+  align-items: center; /* Align the slider within this control */
+  margin-left: 10px; /* Space out from preceding elements */
+  max-width: 200px; /* Control the max width of your volume slider */
+}
+
+.volume-slider {
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60%;
+  height: 5px;
+  background: #F9F7E8;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.volume-slider:hover {
+  opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #3AA0A0;
+  cursor: pointer;
+}
+
+.seek-control {
+  display: flex; /* Ensures flex properties apply */
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center; /* Align the slider within this control */
+  margin-left: auto; /* Space out from preceding elements */
+  max-width: 200px; /* Control the max width of your volume slider */
+}
+
+.seek-slider {
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #F9F7E8;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+
+
+.seek-slider:hover {
+  opacity: 1;
+}
+
+.seek-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  background: #083D5E;
+  cursor: pointer;
+}
