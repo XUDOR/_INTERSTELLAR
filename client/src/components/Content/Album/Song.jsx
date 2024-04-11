@@ -1,32 +1,23 @@
 // Song.jsx
 import React from 'react';
-import './Song.css'
-import play from "../../../images/Icons/play_small.png"
+import './Song.css';
 
-// Adjusting the Song component to match your data structure
 function Song({ song, setaudioFIleName }) {
   console.log("Rendering song:", song);
 
-const handleClickPlay = (songToPlay) => {
-  console.log("PLay-clicked",songToPlay);
-setaudioFIleName(songToPlay.audio_url)
-}
+  const handleClickPlay = (e) => {
+    console.log("Play clicked", song);
+    setaudioFIleName(song.audio_url);
+    e.preventDefault(); // If needed to prevent any default behavior
+  };
 
-
-
+  // Adding accessibility enhancements
   return (
-    <div className='Song'>
-      
-      {/* Assuming `name` is the correct property based on your state log */}
+    <div className='Song' onClick={handleClickPlay} role="button" tabIndex="0">
       <div>{song.name}</div>
-      {/* Display more song details here */}
-    
-      <div onClick={()=>handleClickPlay(song)}>
-        <img src={play} alt="play" />  
-        </div>
+      {/* You can add more song details here if needed */}
     </div>
   );
 }
-
 
 export default Song;
