@@ -7,6 +7,7 @@
   margin-top: 5px;
   border-bottom: 1px solid #0F1D38;
   color: #7E8D9B;
+  font-size: 14px;
   flex: 1; /* This allows the box to grow and shrink as needed */
   overflow: auto; /* Adds a scrollbar if content overflows */
 }
