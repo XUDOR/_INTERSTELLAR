@@ -1,7 +1,8 @@
 /* header/SocialMedia.css*/
 
 .social-media {
-  flex: .5;
+  flex: .7;
+  flex-wrap: wrap;
   border: 1px solid gray;
   margin-left: 2px;
   text-decoration: none;
