@@ -7,7 +7,9 @@ import './Main.css';
 import '../Content/Album/Cover.css';
 import '../Content/Album/InfoContainer.css';
 
-function Main() {
+function Main({setaudioFIleName}) {
+
+
   const { state } = useMusicData();
 
   console.log("State at Main component:", state); // Log the entire state for debugging
@@ -30,7 +32,7 @@ function Main() {
             <h3 className='albumTitle'>{album.name}</h3>
             <Cover imageUrl={album.cover_url} altText={`Cover of ${album.name}`} />
           </div>
-          <SongList songs={songsForThisAlbum} />
+          <SongList songs={songsForThisAlbum} setaudioFIleName={setaudioFIleName} />
           <InfoContainer albumId={album.id} />
         </div>
       );
