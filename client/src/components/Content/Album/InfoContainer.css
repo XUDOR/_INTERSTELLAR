@@ -3,10 +3,10 @@
 .InfoContainer {
   flex: 30%;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: 20px;
   margin-bottom: 20px;
-  border: 1px solid gray;
+  border-left: 1px solid gray;
   color: #E0ECED;
   padding: 20px;
   padding-top: 5px;
