@@ -22,7 +22,7 @@ const AudioPlayer = (props) => {
         onEnded={() => setIsPlaying(false)}
       ></audio>
       <div className="audio-file-name">
-        Now Playing: {audioFileName} {/* Display the file name */}
+       {audioFileName} {/* Display the file name */}
       </div>
       <button className="Play" onClick={togglePlayPause}>
         {isPlaying ? 'Pause' : 'Play'}
