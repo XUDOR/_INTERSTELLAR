@@ -5,8 +5,8 @@
   justify-content: flex-start;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid gray;
-  color: #E0ECED;
+  border-bottom: 1px solid #0F1D38;
+  color: #7E8D9B;
   flex: 1; /* This allows the box to grow and shrink as needed */
   overflow: auto; /* Adds a scrollbar if content overflows */
 }
