@@ -171,7 +171,7 @@ INSERT INTO albums
 VALUES 
 (12,
  '01040112',
- 'Prefabrications', 
+ 'Prefabrication', 
  '/static/images/Covers/12_PREFABRICATION.png', 
  '2022-12-15', 
  '2023-01-24', 
