@@ -2,9 +2,9 @@
 
 .Song {
   display: flex;
-  border: 1px solid gray;
+  
   color: #E0ECED;
-  padding: 5px;
+  padding-bottom: 5px;
   margin: 1px;
   width: 100%;
   max-height: 55px;
