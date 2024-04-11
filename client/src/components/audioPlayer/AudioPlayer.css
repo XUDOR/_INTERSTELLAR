@@ -2,11 +2,12 @@
 .audio-file-name{
   padding: 10px;
   flex: 40%;
-  margin: 0px;
+  margin-top: 2px;
   color: #083D5E;
   background: #3AA0A0;
   height: 40px;
   justify-content: center;
+  width: 100%
 
 }
 
@@ -49,7 +50,7 @@
   display: flex; /* Ensures flex properties apply */
   align-items: center; /* Align the slider within this control */
   margin-left: 10px; /* Space out from preceding elements */
-  width: 100%; /* Control the max width of your volume slider */
+  width: 150%; /* Control the max width of your volume slider */
 }
 
 .volume-slider {
@@ -83,7 +84,7 @@
   
   align-items: center; /* Align the slider within this control */
   margin-left: 10px; /* Space out from preceding elements */
-  width: 100%; /* Control the max width of your volume slider */
+  width: 200%; /* Control the max width of your volume slider */
 }
 
 .seek-slider {

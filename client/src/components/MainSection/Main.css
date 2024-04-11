@@ -3,7 +3,7 @@
 .Main {
   display: flex;
   flex-direction: column;
-  border: 2px solid gray;
+  /*border: 12px solid gray;*/
   background-color: #083D5E;
   /*height: calc(100vh - 100px - 7vh); /* Adjust for the header and footer heights */
   margin-top: 10px; /* Adjust if your header has margin */

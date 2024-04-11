@@ -1,6 +1,7 @@
 /* SongList.css  */
 
 .SongList {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Align items to the end of the container */

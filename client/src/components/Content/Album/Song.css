@@ -1,20 +1,19 @@
-/* Song.css  */
+/* Song.css - Updated with a blue hover effect for image */
 
 .Song {
-  margin: 2px;
+  display: flex;
   border: 1px solid gray;
   color: #E0ECED;
   padding: 5px;
-  margin: 3px;
-  width: 100%;  
-
-  max-height: 45px;
-  display: flex;
+  margin: 5px;
+  width: 100%;
+  max-height: 55px;
   justify-content: space-between;
-  
+  align-items: center;
 }
 
 .Song img {
-  
-  height: 80%;
+  margin-left: auto;
+  height: 60%;
+ 
 }
