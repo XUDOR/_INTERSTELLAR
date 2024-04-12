@@ -34,12 +34,12 @@ VALUES
 
 --New Domes of Earth-- 4
 
-('0401', 'Beaches', 'http://example.com/audio/song1.mp3', '00:03:58', 1, 4, 1),
-('0402', 'Projected Mountains', 'http://example.com/audio/song2.mp3', '00:08:24', 1, 4, 2),
-('0403', 'Repeated Fires', 'http://example.com/audio/song3.mp3', '00:03:04', 1, 4, 3),
-('0404', 'The Taste of Truth', 'http://example.com/audio/song4.mp3', '00:04:38', 1, 4, 4),
-('0405', 'Spheres of Life', 'http://example.com/audio/song5.mp3', '00:02:54', 1, 4, 5),
-('0406', 'Dawn for Children', 'http://example.com/audio/song6.mp3', '00:04:29',1, 4, 6),
+('0401', 'Beaches', 'https://storage.googleapis.com/ip-public-bucket1/New-Domes-of-Earth/BEACHES.mp3', '00:03:58', 1, 4, 1),
+('0402', 'Projected Mountains', 'https://storage.googleapis.com/ip-public-bucket1/New-Domes-of-Earth/PROJECTED-MOUNTAINS.mp3', '00:08:24', 1, 4, 2),
+('0403', 'Repeated Fires', 'https://storage.googleapis.com/ip-public-bucket1/New-Domes-of-Earth/REPEATED-FIRES.mp3', '00:03:04', 1, 4, 3),
+('0404', 'The Taste of Truth', 'https://storage.googleapis.com/ip-public-bucket1/New-Domes-of-Earth/THE-TASTE-OF-TRUTH.mp3', '00:04:38', 1, 4, 4),
+('0405', 'Spheres of Life', 'https://storage.googleapis.com/ip-public-bucket1/New-Domes-of-Earth/SPHERES-OF-LIFE.mp3', '00:02:54', 1, 4, 5),
+('0406', 'Dawn for Children', 'https://storage.googleapis.com/ip-public-bucket1/New-Domes-of-Earth/DAWN-FOR-CHILDREN.mp3', '00:04:29',1, 4, 6),
 
 --Natura-- 5
 
