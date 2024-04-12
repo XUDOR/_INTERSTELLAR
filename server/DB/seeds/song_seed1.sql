@@ -118,21 +118,21 @@ VALUES
 
 --Nocturnes & Reveries-- 11
 
-('1101', 'Moon above the Sea', 'http://example.com/audio/song1.mp3', '00:06:46', 1, 11, 1),
-('1102', 'Starlight through Trees', 'http://example.com/audio/song2.mp3', '00:09:40', 1, 11, 2),
-('1103', 'Garden', 'http://example.com/audio/song3.mp3', '00:04:31', 1, 11, 3),
-('1104', 'Animals of the Night', 'http://example.com/audio/song4.mp3', '00:06:09', 1, 11, 4),
-('1105', 'Moon Gate', 'http://example.com/audio/song5.mp3', '00:06:49', 1, 11, 5),
-('1106', 'Obelisk', 'http://example.com/audio/song6.mp3', '00:08:42',1, 11, 6),
-('1107', 'Bardo', 'http://example.com/audio/song6.mp3', '00:07:06',1, 11, 7),
-('1108', 'Eyes open at the Cusp of Dawn', 'http://example.com/audio/song6.mp3', '00:05:36',1, 11, 8),
-('1109', 'Selene', 'http://example.com/audio/song6.mp3', '00:04:54',1, 11, 9),
-('1110', 'Charon', 'http://example.com/audio/song6.mp3', '00:06:08',1, 11, 10),
-('1111', 'Night Music', 'http://example.com/audio/song6.mp3', '00:07:07',1, 11, 11),
-('1112', 'Lunar Eclipse', 'http://example.com/audio/song6.mp3', '00:04:44',1, 11, 12),
-('1113', 'Nocturnes & Reveries', 'http://example.com/audio/song6.mp3', '00:09:20',1, 11, 13),
-('1114', 'Beyond the Veils', 'http://example.com/audio/song6.mp3', '00:07:08',1, 11, 14),
-('1115', 'Morning Light', 'http://example.com/audio/song6.mp3', '00:06:28',1, 11, 15),
+('1101', 'Moon above the Sea', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Moon-above-the-Sea.mp3', '00:06:46', 1, 11, 1),
+('1102', 'Starlight through Trees', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Starlight-through-Trees.mp3', '00:09:40', 1, 11, 2),
+('1103', 'Garden', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Starlight-through-Trees.mp3', '00:04:31', 1, 11, 3),
+('1104', 'Animals of the Night', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Animals-of-the-Night.mp3', '00:06:09', 1, 11, 4),
+('1105', 'Moon Gate', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Moon-Gate.mp3', '00:06:49', 1, 11, 5),
+('1106', 'Obelisk', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Obelisk.mp3', '00:08:42',1, 11, 6),
+('1107', 'Bardo', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Bardo.mp3', '00:07:06',1, 11, 7),
+('1108', 'Eyes open at the Cusp of Dawn', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Eyes-open-at-the-Cusp-of-Dawn.mp3', '00:05:36',1, 11, 8),
+('1109', 'Selene', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Selene.mp3', '00:04:54',1, 11, 9),
+('1110', 'Charon', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Charon.mp3', '00:06:08',1, 11, 10),
+('1111', 'Night Music', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Night-Music.mp3', '00:07:07',1, 11, 11),
+('1112', 'Lunar Eclipse', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Lunar-Eclipse.mp3', '00:04:44',1, 11, 12),
+('1113', 'Nocturnes & Reveries', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Nocturnes-and-Reveries.mp3', '00:09:20',1, 11, 13),
+('1114', 'Beyond the Veils', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Beyond-the-Veils.mp3', '00:07:08',1, 11, 14),
+('1115', 'Morning Light', 'https://storage.googleapis.com/ip-public-bucket1/Nocturnes-and-Reveries/Morning-Light.mp3', '00:06:28',1, 11, 15),
 
 --Prefabrications-- 12
 
