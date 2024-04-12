@@ -1,13 +1,14 @@
 
 .audio-file-name{
-  padding: 10px;
-  flex: 40%;
+  padding: 7px;
+  flex: 55%;
   margin-top: 2px;
-  color: #083D5E;
+  color: #0F1D38;
+  font-size: 11px;
   background: #3AA0A0;
-  height: 40px;
+  height: 45px;
   justify-content: center;
-  width: 90%;
+  width: 100%;
 
 }
 
