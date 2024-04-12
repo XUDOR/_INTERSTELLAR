@@ -182,11 +182,11 @@ VALUES
 
 --Postcards from Old Sounds-- 16
 
-('1601', 'Polarity', 'http://example.com/audio/song1.mp3', '00:11:18', 1, 16, 1),
-('1602', 'Celestial Drum', 'http://example.com/audio/song2.mp3', '00:09:36', 1, 16, 2),
-('1603', 'Crystal Heart', 'http://example.com/audio/song3.mp3', '00:10:48', 1, 16, 3),
-('1604', 'Old Machines', 'http://example.com/audio/song4.mp3', '00:04:55', 1, 16, 4),
-('1605', 'Postcards from Old sounds', 'http://example.com/audio/song5.mp3', '00:13:06', 1, 16, 5),
+('1601', 'Polarity', 'https://storage.googleapis.com/ip-public-bucket1/Postcards-From-Old-Sounds/POLARITY.mp3', '00:11:18', 1, 16, 1),
+('1602', 'Celestial Drum', 'https://storage.googleapis.com/ip-public-bucket1/Postcards-From-Old-Sounds/CELESTIAL-DRUM.mp3', '00:09:36', 1, 16, 2),
+('1603', 'Crystal Heart', 'https://storage.googleapis.com/ip-public-bucket1/Postcards-From-Old-Sounds/CRYSTAL-HEART.mp3', '00:10:48', 1, 16, 3),
+('1604', 'Old Machines', 'https://storage.googleapis.com/ip-public-bucket1/Postcards-From-Old-Sounds/OLD-MACHINES.mp3', '00:04:55', 1, 16, 4),
+('1605', 'Postcards from Old sounds', 'https://storage.googleapis.com/ip-public-bucket1/Postcards-From-Old-Sounds/POSTCARDS-FROM-OLD-SOUNDS.mp3', '00:13:06', 1, 16, 5),
 
 --Postcards from Old Sounds-- 17
 
