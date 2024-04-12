@@ -200,21 +200,21 @@ VALUES
 
 --Poem for a Homewolrd-- 18
 
-('1801', 'Ocean Holiday Simulation', 'http://example.com/audio/song1.mp3', '00:06:41', 1, 18, 1),
-('1802', 'Journey home to Base One', 'http://example.com/audio/song2.mp3', '00:06:16', 1, 18, 2),
-('1803', 'Solarium at Base Two', 'http://example.com/audio/song3.mp3', '00:05:13', 1, 18, 3),
-('1804', 'Code for Robots', 'http://example.com/audio/song4.mp3', '00:05:08', 1, 18, 4),
-('1805', 'Bouquet against the Blackness of Space', 'http://example.com/audio/song5.mp3', '00:03:52', 1, 18, 5),
-('1806', 'Poem for a Homeworld', 'http://example.com/audio/song5.mp3', '00:09:37', 1, 18, 6),
-('1807', 'Heirlooms of 1999 (Featuring: Ruby Lakatua)', 'http://example.com/audio/song5.mp3', '00:07:09', 1, 18, 7),
-('1808', 'The Colours of Beyond', 'http://example.com/audio/song1.mp3', '00:07:44', 1, 18, 8),
-('1809', 'Biospheres', 'http://example.com/audio/song2.mp3', '00:05:04', 1, 18, 9),
-('1810', 'Lone Galaxies', 'http://example.com/audio/song3.mp3', '00:09:30', 1, 18, 10),
-('1811', 'Stars of Origin', 'http://example.com/audio/song4.mp3', '00:04:49', 1, 18, 11),
-('1812', 'Cryostasis', 'http://example.com/audio/song5.mp3', '00:05:48', 1, 18, 12),
-('1813', 'Sailboat to the Sun', 'http://example.com/audio/song5.mp3', '00:06:02', 1, 18, 13),
-('1814', 'Event Horizon of the Self', 'http://example.com/audio/song5.mp3', '00:04:47', 1, 18, 14),
-('1815', 'Epilogues', 'http://example.com/audio/song5.mp3', '00:05:18', 1, 18, 15),
+('1801', 'Ocean Holiday Simulation', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Ocean-Holiday-Simulation.mp3', '00:06:41', 1, 18, 1),
+('1802', 'Journey home to Base One', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Journey-home-to-Base-One.mp3', '00:06:16', 1, 18, 2),
+('1803', 'Solarium at Base Two', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Solarium-at-Base-Two.mp3', '00:05:13', 1, 18, 3),
+('1804', 'Code for Robots', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Code-for-Robots.mp3', '00:05:08', 1, 18, 4),
+('1805', 'Bouquet against the Blackness of Space', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Bouquet-against-the-Blackness-of-Space.mp3', '00:03:52', 1, 18, 5),
+('1806', 'Poem for a Homeworld', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Poem-for-a-Homeworld.mp3', '00:09:37', 1, 18, 6),
+('1807', 'Heirlooms of 1999 (Featuring: Ruby Lakatua)', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Heirlooms-of-1999.mp3', '00:07:09', 1, 18, 7),
+('1808', 'The Colours of Beyond', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/The-Colours-of-Beyond.mp3', '00:07:44', 1, 18, 8),
+('1809', 'Biospheres', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Biospheres.mp3', '00:05:04', 1, 18, 9),
+('1810', 'Lone Galaxies', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Lone-Galaxies.mp3', '00:09:30', 1, 18, 10),
+('1811', 'Stars of Origin', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Stars-of-Origin.mp3', '00:04:49', 1, 18, 11),
+('1812', 'Cryostasis', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Cryostasis.mp3', '00:05:48', 1, 18, 12),
+('1813', 'Sailboat to the Sun', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Sailboat-to-the-Sun.mp3', '00:06:02', 1, 18, 13),
+('1814', 'Event Horizon of the Self', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Event-Horizon-of-the-Self.mp3', '00:04:47', 1, 18, 14),
+('1815', 'Epilogues', 'https://storage.googleapis.com/ip-public-bucket1/Poem-For-A-Homeworld/Epilogues.mp3', '00:05:18', 1, 18, 15),
 
 
 --Rhombus-- 19
