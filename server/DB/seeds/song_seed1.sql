@@ -16,12 +16,12 @@ VALUES
 
 --Objects & Particles-- 2
 
-('0201', 'Jade Flower Memory Index', 'http://example.com/audio/song1.mp3', '00:06:19', 1, 2, 1),
-('0202', 'r+d=t', 'http://example.com/audio/song2.mp3', '00:09:06', 1, 2, 2),
-('0203', 'Raintunnels', 'http://example.com/audio/song3.mp3', '00:04:35', 1, 2, 3),
-('0204', 'Snow Crystal', 'http://example.com/audio/song4.mp3', '00:08:09', 1, 2, 4),
-('0205', 'X+Y=Z', 'http://example.com/audio/song5.mp3', '00:06:10', 1, 2, 5),
-('0206', 'V', 'http://example.com/audio/song6.mp3', '00:06:45', 1, 2, 6),
+('0201', 'Jade Flower Memory Index', 'https://storage.googleapis.com/ip-public-bucket1/Objects-and-Particles/JADE-FLOWER-MEMORY-INDEX.mp3', '00:06:19', 1, 2, 1),
+('0202', 'r+d=t', 'https://storage.googleapis.com/ip-public-bucket1/Objects-and-Particles/r-D-T.mp3', '00:09:06', 1, 2, 2),
+('0203', 'Raintunnels', 'https://storage.googleapis.com/ip-public-bucket1/Objects-and-Particles/RAINTUNNELS.mp3', '00:04:35', 1, 2, 3),
+('0204', 'Snow Crystal', 'https://storage.googleapis.com/ip-public-bucket1/Objects-and-Particles/SNOW-CRYSTAL.mp3', '00:08:09', 1, 2, 4),
+('0205', 'X+Y=Z', 'https://storage.googleapis.com/ip-public-bucket1/Objects-and-Particles/X-Y-Z.mp3', '00:06:10', 1, 2, 5),
+('0206', 'V', 'https://storage.googleapis.com/ip-public-bucket1/Objects-and-Particles/V.mp3', '00:06:45', 1, 2, 6),
 
 --Glass City of Us-- 3
 
