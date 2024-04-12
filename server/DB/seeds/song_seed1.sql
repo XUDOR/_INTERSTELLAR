@@ -105,15 +105,15 @@ VALUES
 
 --Inner Moments of Light-- 10
 
-('1001', 'Moment of Light', 'http://example.com/audio/song1.mp3', '00:04:34', 1, 10, 1),
-('1002', 'Landscape II', 'http://example.com/audio/song2.mp3', '00:03:00', 1, 10, 2),
-('1003', 'Prisms', 'http://example.com/audio/song3.mp3', '00:08:08', 1, 10, 3),
-('1004', 'Sphere', 'http://example.com/audio/song4.mp3', '00:12:44', 1, 10, 4),
-('1005', 'Beauty of the Heart', 'http://example.com/audio/song5.mp3', '00:04:13', 1, 10, 5),
-('1006', 'Beginnings', 'http://example.com/audio/song6.mp3', '00:06:53',1, 10, 6),
-('1007', 'Landscape I', 'http://example.com/audio/song6.mp3', '00:03:19',1, 10, 7),
-('1008', 'Universal Knowledge', 'http://example.com/audio/song6.mp3', '00:04:25',1, 10, 8),
-('1009', 'Love is the Universe', 'http://example.com/audio/song6.mp3', '00:04:27',1, 10, 9),
+('1001', 'Moment of Light', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/MOMENT-OF-LIGHT.mp3', '00:04:34', 1, 10, 1),
+('1002', 'Landscape II', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/LANDSCAPE-II.mp3', '00:03:00', 1, 10, 2),
+('1003', 'Prisms', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/PRISMS.mp3', '00:08:08', 1, 10, 3),
+('1004', 'Sphere', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/SPHERE.mp3', '00:12:44', 1, 10, 4),
+('1005', 'Beauty of the Heart', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/BEAUTY-OF-THE-HEART.mp3', '00:04:13', 1, 10, 5),
+('1006', 'Beginnings', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/BEGININGS.mp3', '00:06:53',1, 10, 6),
+('1007', 'Landscape I', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/LANDCSCAPE-I.mp3', '00:03:19',1, 10, 7),
+('1008', 'Universal Knowledge', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/UNIVERSAL-KNOWLEDGE.mp3', '00:04:25',1, 10, 8),
+('1009', 'Love is the Universe', 'https://storage.googleapis.com/ip-public-bucket1/Inner-Moment-of-Light/LOVE-IS-THE-UNIVERSE.mp3', '00:04:27',1, 10, 9),
 
 
 --Nocturnes & Reveries-- 11
