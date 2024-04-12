@@ -55,13 +55,13 @@ VALUES
 
 --Outer Corners-- 6
 
-('0601', 'Stars', 'http://example.com/audio/song1.mp3', '00:06:23', 1, 6, 1),
-('0602', 'Galaxies', 'http://example.com/audio/song2.mp3', '00:05:49', 1, 6, 2),
-('0603', 'Dimensions', 'http://example.com/audio/song3.mp3', '00:02:25', 1, 6, 3),
-('0604', 'Nebulae', 'http://example.com/audio/song4.mp3', '00:04:54', 1, 6, 4),
-('0605', 'Galactic Cosmic Rays', 'http://example.com/audio/song5.mp3', '00:07:34', 1, 6, 5),
-('0606', 'Quantum', 'http://example.com/audio/song6.mp3', '00:05:40',1, 6, 6),
-('0607', 'Stellar', 'http://example.com/audio/song6.mp3', '00:05:38',1, 6, 7),
+('0601', 'Stars', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/STARS.mp3', '00:06:23', 1, 6, 1),
+('0602', 'Galaxies', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/GALAXIES.mp3', '00:05:49', 1, 6, 2),
+('0603', 'Dimensions', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/DIMENSIONS.mp3', '00:02:25', 1, 6, 3),
+('0604', 'Nebulae', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/NEBULAE.mp3', '00:04:54', 1, 6, 4),
+('0605', 'Galactic Cosmic Rays', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/GALACTIC-COSMIC-RAYS.mp3', '00:07:34', 1, 6, 5),
+('0606', 'Quantum', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/QUANTUM.mp3', '00:05:40',1, 6, 6),
+('0607', 'Stellar', 'https://storage.googleapis.com/ip-public-bucket1/Outer-Corners/STELLAR.mp3', '00:05:38',1, 6, 7),
 
 --Nonagon-- 7
 
