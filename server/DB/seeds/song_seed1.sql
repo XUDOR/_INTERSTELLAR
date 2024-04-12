@@ -25,12 +25,12 @@ VALUES
 
 --Glass City of Us-- 3
 
-('0301', 'Caterpillar', 'http://example.com/audio/song1.mp3', '00:06:43', 1, 3, 1),
-('0302', 'Films of Nature', 'http://example.com/audio/song2.mp3', '00:06:09', 1, 3, 2),
-('0303', 'Glass City of Us', 'http://example.com/audio/song3.mp3', '00:12:52', 1, 3, 3),
-('0304', 'Nice', 'http://example.com/audio/song4.mp3', '00:07:00', 1, 3, 4),
-('0305', 'Optical Record Pipe', 'http://example.com/audio/song5.mp3', '00:07:44', 1, 3, 5),
-('0306', 'Sun Through Clouds onto Flowers', 'http://example.com/audio/song6.mp3', '00:08:33', 1, 3, 6),
+('0301', 'Caterpillar', 'https://storage.googleapis.com/ip-public-bucket1/Glass-City-of-Us/CATERPILLAR.mp3', '00:06:43', 1, 3, 1),
+('0302', 'Films of Nature', 'https://storage.googleapis.com/ip-public-bucket1/Glass-City-of-Us/FILMS-OF-NATURE.mp3', '00:06:09', 1, 3, 2),
+('0303', 'Glass City of Us', 'https://storage.googleapis.com/ip-public-bucket1/Glass-City-of-Us/GLASS-CITY-OF-US.mp3', '00:12:52', 1, 3, 3),
+('0304', 'Nice', 'https://storage.googleapis.com/ip-public-bucket1/Glass-City-of-Us/NICE.mp3', '00:07:00', 1, 3, 4),
+('0305', 'Optical Record Pipe', 'https://storage.googleapis.com/ip-public-bucket1/Glass-City-of-Us/OPTICAL-RECORD-PIPE.mp3', '00:07:44', 1, 3, 5),
+('0306', 'Sun Through Clouds onto Flowers', 'https://storage.googleapis.com/ip-public-bucket1/Glass-City-of-Us/SUN-THROUGH-CLOUDS-ONTO-FLOWERS.mp3', '00:08:33', 1, 3, 6),
 
 --New Domes of Earth-- 4
 
