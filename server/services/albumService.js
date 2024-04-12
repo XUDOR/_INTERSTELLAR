@@ -1,3 +1,5 @@
+//AlbumService.js
+
 const pool = require('../db'); // Import the pool
 
 const getAllAlbums = async () => {
