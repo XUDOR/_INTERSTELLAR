@@ -7,8 +7,8 @@ import './Main.css';
 import '../Content/Album/Cover.css';
 import '../Content/Album/InfoContainer.css';
 
-function Main({setaudioFIleName}) {
-
+function Main({ setCurrentSong }) {
+  console.log("Received setCurrentSong in Main:", setCurrentSong);
 
   const { state } = useMusicData();
 
@@ -32,7 +32,7 @@ function Main({setaudioFIleName}) {
             <h3 className='albumTitle'>{album.name}</h3>
             <Cover imageUrl={album.cover_url} altText={`Cover of ${album.name}`} />
           </div>
-          <SongList songs={songsForThisAlbum} setaudioFIleName={setaudioFIleName} />
+          <SongList songs={songsForThisAlbum} setCurrentSong={setCurrentSong} />
           <InfoContainer albumId={album.id} />
         </div>
       );
