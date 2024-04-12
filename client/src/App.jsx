@@ -1,5 +1,4 @@
-// App.js
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { MusicDataProvider } from './Contexts/MusicDataContext';
 import LoadingPage from './components/Loading/LoadingPage';
@@ -16,90 +15,68 @@ import './App.css';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(1.0);
   const [isSeeking, setIsSeeking] = useState(false);
-  const [audioFileName,setaudioFIleName] =useState(null
-    //"https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3"
-  );
+  
   const audioPlayer = useRef();
 
-  // File name for display. If the audio file path is static, this can remain constant.
-  //const audioFileName = "https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3"; // Directly using the file name since the path is static
+  useEffect(() => {
+    const loadData = async () => {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setIsLoading(false);
+    };
+    loadData();
+  }, []);
 
-  // Toggles the play/pause state
   const togglePlayPause = () => {
-    const prevValue = isPlaying;
-    setIsPlaying(!prevValue);
-    if (!prevValue) {
-      audioPlayer.current.play();
-    } else {
-      audioPlayer.current.pause();
+    setIsPlaying(!isPlaying);
+    if (audioPlayer.current) {
+      isPlaying ? audioPlayer.current.pause() : audioPlayer.current.play();
     }
   };
 
-  // Sets the duration once audio metadata is loaded
   const handleLoadedData = () => {
-    setDuration(audioPlayer.current.duration);
-    if (isPlaying) audioPlayer.current.play();
+    if (audioPlayer.current) {
+      setDuration(audioPlayer.current.duration);
+      if (isPlaying) audioPlayer.current.play();
+    }
   };
 
-  // Updates the current time as the audio plays
   const handleTimeUpdate = () => {
-    if (!isSeeking) {
+    if (!isSeeking && audioPlayer.current) {
       setCurrentTime(audioPlayer.current.currentTime);
     }
   };
 
-  // Handles the change in volume
   const handleVolumeChange = (e) => {
-    const newVolume = e.target.value;
-    audioPlayer.current.volume = newVolume;
-    setVolume(newVolume);
+    const newVolume = parseFloat(e.target.value);
+    if (audioPlayer.current) {
+      audioPlayer.current.volume = newVolume;
+      setVolume(newVolume);
+    }
   };
 
-  // Handles the change in the seek bar
   const handleSeekChange = (e) => {
-    const newTime = e.target.value;
-    audioPlayer.current.currentTime = newTime;
-    setCurrentTime(newTime);
+    const newTime = parseFloat(e.target.value);
+    if (audioPlayer.current) {
+      audioPlayer.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
   };
 
-  // Indicates the user has started dragging the seek bar
-  const handleSeekMouseDown = () => {
-    setIsSeeking(true);
-  };
+  const handleSeekMouseDown = () => setIsSeeking(true);
+  
+  const handleSeekMouseUp = () => setIsSeeking(false);
 
-  // Indicates the user has finished dragging the seek bar
-  const handleSeekMouseUp = () => {
-    setIsSeeking(false);
-    audioPlayer.current.currentTime = currentTime;
-  };
-
-  // Converts the time in seconds to a displayable format
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
-    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
     const seconds = Math.floor(secs % 60);
-    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    return `${returnedMinutes}:${returnedSeconds}`;
+    return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
-
-
-  useEffect(() => {
-    // Instead of setTimeout, here you could fetch your initial app data 
-    // and set isLoading to false once the data is loaded.
-    const loadData = async () => {
-      // Simulate data fetching
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setIsLoading(false);
-    };
-
-    loadData();
-  }, []);
 
   if (isLoading) {
     return <LoadingPage />;
@@ -111,37 +88,32 @@ const App = () => {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<Main 
-            setaudioFIleName={setaudioFIleName}
-            
-            />} />
+          <Route path="/" element={<Main setCurrentSong={setCurrentSong} />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/user" element={<UserPage />} />
             <Route path="/downloads" element={<DownloadsPage />} />
             <Route path="/epk" element={<EPKPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            {/* Ensure all your routes are listed here */}
           </Routes>
         </main>
         <Footer
-        audioFileName={audioFileName}
-        handleLoadedData={handleLoadedData}
-        handleTimeUpdate={handleTimeUpdate}
-        setIsPlaying={setIsPlaying}
-        handleSeekMouseDown={handleSeekMouseDown}
-        handleSeekMouseUp={handleSeekMouseUp}
-        handleSeekChange={handleSeekChange}
-        handleVolumeChange={handleVolumeChange}
-        volume={volume}  
-        duration={duration} 
-        togglePlayPause={togglePlayPause}
-        audioPlayer={audioPlayer}
-        calculateTime={calculateTime}
-        currentTime={currentTime}
-        isPlaying={isPlaying}
-        isSeeking={isSeeking}
-        
+          currentSong={currentSong}
+          handleLoadedData={handleLoadedData}
+          handleTimeUpdate={handleTimeUpdate}
+          setIsPlaying={setIsPlaying}
+          handleSeekMouseDown={handleSeekMouseDown}
+          handleSeekMouseUp={handleSeekMouseUp}
+          handleSeekChange={handleSeekChange}
+          handleVolumeChange={handleVolumeChange}
+          volume={volume}
+          duration={duration}
+          togglePlayPause={togglePlayPause}
+          audioPlayer={audioPlayer}
+          calculateTime={calculateTime}
+          currentTime={currentTime}
+          isPlaying={isPlaying}
+          isSeeking={isSeeking}
         />
       </div>
     </MusicDataProvider>
@@ -149,3 +121,29 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
