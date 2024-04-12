@@ -1,28 +1,54 @@
 import React from "react";
-//import audioFile from '../../Audio-Assets/CHARLOTTA.mp3';
 import './AudioPlayer.css';
 
 const AudioPlayer = (props) => {
   const {
-    audioFileName,
+    currentSong,
     handleLoadedData,
-    handleTimeUpdate, setIsPlaying, handleSeekMouseDown, 
-    handleSeekMouseUp, calculateTime, currentTime, duration, 
-    handleSeekChange, handleVolumeChange, togglePlayPause, 
-    isPlaying,isSeeking,volume, audioPlayer  } = props
-  
+    handleTimeUpdate,
+    setIsPlaying,
+    handleSeekMouseDown,
+    handleSeekMouseUp,
+    calculateTime,
+    currentTime,
+    duration,
+    handleSeekChange,
+    handleVolumeChange,
+    togglePlayPause,
+    isPlaying,
+    isSeeking,
+    volume,
+    audioPlayer
+  } = props;
+
+  // Added useEffect to handle auto-play when currentSong changes
+  React.useEffect(() => {
+    console.log("Current song changed:", currentSong);
+    if (currentSong && audioPlayer.current) {
+      audioPlayer.current.play().catch((error) => {
+        console.error("Error attempting to play:", error);
+      });
+      setIsPlaying(true);
+    }
+  }, [currentSong, audioPlayer, setIsPlaying]);
 
   return (
     <div className="player">
       <audio
         ref={audioPlayer}
-        src={audioFileName}
-        onLoadedData={handleLoadedData}
+        src={currentSong ? currentSong.audio_url : ''}
+        onLoadedData={() => {
+          console.log("Audio data loaded, attempting to play...");
+          handleLoadedData();
+        }}
         onTimeUpdate={handleTimeUpdate}
-        onEnded={() => setIsPlaying(false)}
+        onEnded={() => {
+          console.log("Audio playback ended");
+          setIsPlaying(false);
+        }}
       ></audio>
       <div className="audio-file-name">
-       {audioFileName} {/* Display the file name */}
+        {currentSong ? currentSong.name : "No song loaded"}
       </div>
       <button className="Play" onClick={togglePlayPause}>
         {isPlaying ? 'Pause' : 'Play'}
@@ -34,7 +60,7 @@ const AudioPlayer = (props) => {
         <input
           type="range"
           min="0"
-          max={duration}
+          max={duration || 0}
           value={isSeeking ? undefined : currentTime}
           onChange={handleSeekChange}
           onMouseDown={handleSeekMouseDown}
