@@ -19,7 +19,7 @@ const App = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [volume, setVolume] = useState(1.0);
+  const [volume, setVolume] = useState(0.9);  // Default volume set to 80%
   const [isSeeking, setIsSeeking] = useState(false);
   
   const audioPlayer = useRef();
@@ -31,6 +31,12 @@ const App = () => {
     };
     loadData();
   }, []);
+
+  useEffect(() => {
+    if (audioPlayer.current) {
+      audioPlayer.current.volume = volume;  // Apply the default volume when the component mounts
+    }
+  }, [volume]);
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -88,7 +94,7 @@ const App = () => {
         <Header />
         <main>
           <Routes>
-          <Route path="/" element={<Main setCurrentSong={setCurrentSong} />} />
+            <Route path="/" element={<Main setCurrentSong={setCurrentSong} />} />
             <Route path="/shop" element={<ShopPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/user" element={<UserPage />} />
@@ -121,29 +127,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
