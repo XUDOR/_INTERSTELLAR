@@ -43,15 +43,15 @@ VALUES
 
 --Natura-- 5
 
-('0501', 'Botany', 'http://example.com/audio/song1.mp3', '00:03:19', 1, 5, 1),
-('0502', 'Clouds', 'http://example.com/audio/song2.mp3', '00:05:12', 1, 5, 2),
-('0503', 'Colours in Rain', 'http://example.com/audio/song3.mp3', '00:07:18', 1, 5, 3),
-('0504', 'Early Summer Sky', 'http://example.com/audio/song4.mp3', '00:04:46', 1, 5, 4),
-('0505', 'First Spring', 'http://example.com/audio/song5.mp3', '00:05:26', 1, 5, 5),
-('0506', 'Flower', 'http://example.com/audio/song6.mp3', '00:03:45',1, 5, 6),
-('0507', 'Streams', 'http://example.com/audio/song6.mp3', '00:05:29',1, 5, 7),
-('0508', 'Tidal', 'http://example.com/audio/song6.mp3', '00:04:55',1, 5, 8),
-('0509', 'Waters', 'http://example.com/audio/song6.mp3', '00:05:46',1, 5, 9),
+('0501', 'Botany', 'https://storage.googleapis.com/ip-public-bucket1/Natura/BOTANY.mp3', '00:03:19', 1, 5, 1),
+('0502', 'Clouds', 'https://storage.googleapis.com/ip-public-bucket1/Natura/CLOUDS.mp3', '00:05:12', 1, 5, 2),
+('0503', 'Colours in Rain', 'https://storage.googleapis.com/ip-public-bucket1/Natura/COLOURS-IN-RAIN.mp3', '00:07:18', 1, 5, 3),
+('0504', 'Early Summer Sky', 'https://storage.googleapis.com/ip-public-bucket1/Natura/EARLY-SUMMER-SKY.mp3', '00:04:46', 1, 5, 4),
+('0505', 'First Spring', 'https://storage.googleapis.com/ip-public-bucket1/Natura/FIRST-SPRING.mp3', '00:05:26', 1, 5, 5),
+('0506', 'Flower', 'https://storage.googleapis.com/ip-public-bucket1/Natura/FLOWER.mp3', '00:03:45',1, 5, 6),
+('0507', 'Streams', 'https://storage.googleapis.com/ip-public-bucket1/Natura/STREAMS.mp3', '00:05:29',1, 5, 7),
+('0508', 'Tidal', 'https://storage.googleapis.com/ip-public-bucket1/Natura/TIDAL.mp3', '00:04:55',1, 5, 8),
+('0509', 'Waters', 'https://storage.googleapis.com/ip-public-bucket1/Natura/WATERS.mp3', '00:05:46',1, 5, 9),
 
 --Outer Corners-- 6
 
