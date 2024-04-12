@@ -172,13 +172,13 @@ VALUES
 
 --Watercolours for Friends-- 15
 
-('1501', 'Breakfasts', 'http://example.com/audio/song1.mp3', '00:10:28', 1, 15, 1),
-('1502', 'Astral Conversion', 'http://example.com/audio/song2.mp3', '00:05:40', 1, 15, 2),
-('1503', 'Clouds for Two', 'http://example.com/audio/song3.mp3', '00:05:30', 1, 15, 3),
-('1504', 'Artwork of Children', 'http://example.com/audio/song4.mp3', '00:06:20', 1, 15, 4),
-('1505', 'Robot''s Dream', 'http://example.com/audio/song5.mp3', '00:07:51', 1, 15, 5),
-('1506', 'Spatial Recognition', 'http://example.com/audio/song6.mp3', '00:05:56',1, 15, 6),
-('1507', 'Memories of Forgotten Places', 'http://example.com/audio/song6.mp3', '00:09:08',1, 15, 7),
+('1501', 'Breakfasts', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/BREAKFASTS.mp3', '00:10:28', 1, 15, 1),
+('1502', 'Astral Conversion', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/ASTRAL-CONVERSION.mp3', '00:05:40', 1, 15, 2),
+('1503', 'Clouds for Two', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/CLOUDS-FOR-TWO.mp3', '00:05:30', 1, 15, 3),
+('1504', 'Artwork of Children', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/ARTWORK-OF-CHILDREN.mp3', '00:06:20', 1, 15, 4),
+('1505', 'Robot''s Dream', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/ROBOTS-DREAM.mp3', '00:07:51', 1, 15, 5),
+('1506', 'Spatial Recognition', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/SPATIAL-RECOGNITION.mp3', '00:05:56',1, 15, 6),
+('1507', 'Memories of Forgotten Places', 'https://storage.googleapis.com/ip-public-bucket1/Watercolours-for-Friends/MEMORIES-OF-FORGOTTEN-PLACES.mp3', '00:09:08',1, 15, 7),
 
 --Postcards from Old Sounds-- 16
 
