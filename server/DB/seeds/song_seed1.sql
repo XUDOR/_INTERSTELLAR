@@ -160,15 +160,15 @@ VALUES
 
 --Amsterdam Concreet-- 14
 
-('1401', 'EXHIBIT A', 'http://example.com/audio/song1.mp3', '00:06:40', 1, 14, 1),
-('1402', 'EXHIBIT B', 'http://example.com/audio/song2.mp3', '00:10:42', 1, 14, 2),
-('1403', 'EXHIBIT C1', 'http://example.com/audio/song3.mp3', '00:08:39', 1, 14, 3),
-('1404', 'EXHIBIT C2', 'http://example.com/audio/song4.mp3', '00:03:19', 1, 14, 4),
-('1405', 'EXHIBIT C3', 'http://example.com/audio/song5.mp3', '00:05:27', 1, 14, 5),
-('1406', 'EXHIBIT D', 'http://example.com/audio/song6.mp3', '00:07:24',1, 14, 6),
-('1407', 'EXHIBIT E', 'http://example.com/audio/song6.mp3', '00:08:36',1, 14, 7),
-('1408', 'EXHIBIT F', 'http://example.com/audio/song6.mp3', '00:08:34',1, 14, 8),
-('1409', 'EXHIBIT G', 'http://example.com/audio/song6.mp3', '00:09:28',1, 14, 9),
+('1401', 'EXHIBIT A', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-A.mp3', '00:06:40', 1, 14, 1),
+('1402', 'EXHIBIT B', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-B.mp3', '00:10:42', 1, 14, 2),
+('1403', 'EXHIBIT C1', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-C1.mp3', '00:08:39', 1, 14, 3),
+('1404', 'EXHIBIT C2', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-C2.mp3', '00:03:19', 1, 14, 4),
+('1405', 'EXHIBIT C3', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-C3.mp3', '00:05:27', 1, 14, 5),
+('1406', 'EXHIBIT D', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-D.mp3', '00:07:24',1, 14, 6),
+('1407', 'EXHIBIT E', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-E.mp3', '00:08:36',1, 14, 7),
+('1408', 'EXHIBIT F', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-F.mp3', '00:08:34',1, 14, 8),
+('1409', 'EXHIBIT G', 'https://storage.googleapis.com/ip-public-bucket1/Amsterdam-Concreet/EXHIBIT-G.mp3', '00:09:28',1, 14, 9),
 
 --Watercolours for Friends-- 15
 
