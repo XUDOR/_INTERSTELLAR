@@ -149,14 +149,14 @@ VALUES
 
 --Vagary-- 13
 
-('1301', 'I- When the Observer becomes the observed', 'http://example.com/audio/song1.mp3', '00:09:06', 1, 13, 1),
-('1302', 'II- We all look inward to the Multiverse', 'http://example.com/audio/song2.mp3', '00:06:32', 1, 13, 2),
-('1303', 'III- Axons to the Void', 'http://example.com/audio/song3.mp3', '00:07:18', 1, 13, 3),
-('1304', 'IV- The embrace of Mountains & the Skies', 'http://example.com/audio/song4.mp3', '00:09:08', 1, 13, 4),
-('1305', 'V- Crucibles', 'http://example.com/audio/song5.mp3', '00:12:27', 1, 13, 5),
-('1306', 'VI- What lies beyond That which you Think You Understand?', 'http://example.com/audio/song6.mp3', '00:13:41',1, 13, 6),
-('1307', 'VII- Pathologies', 'http://example.com/audio/song6.mp3', '00:04:36',1, 13, 7),
-('1308', 'VIII- The Crescent of Ascension', 'http://example.com/audio/song6.mp3', '00:16:37',1, 13, 8),
+('1301', 'I- When the Observer becomes the observed', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/I-When-the-Observer-becomes-the-Observed.mp3', '00:09:06', 1, 13, 1),
+('1302', 'II- We all look inward to the Multiverse', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/II-We-all-look-inward-to-the-Multiverse.mp3', '00:06:32', 1, 13, 2),
+('1303', 'III- Axons to the Void', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/III-Axons-to-the-Void.mp3', '00:07:18', 1, 13, 3),
+('1304', 'IV- The embrace of Mountains & the Skies', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/IV-The-Embrace-of-Mountains-and-the-Skies.mp3', '00:09:08', 1, 13, 4),
+('1305', 'V- Crucibles', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/V-Crucibles.mp3', '00:12:27', 1, 13, 5),
+('1306', 'VI- What lies beyond That which you Think You Understand?', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/VI-What-lies-beyond-That-which-you-Think-You-Understand.mp3', '00:13:41',1, 13, 6),
+('1307', 'VII- Pathologies', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/VII-Pathologies.mp3', '00:04:36',1, 13, 7),
+('1308', 'VIII- The Crescent of Ascension', 'https://storage.googleapis.com/ip-public-bucket1/Vagary/VIII-The-Crescent-of-Ascension.mp3', '00:16:37',1, 13, 8),
 
 --Amsterdam Concreet-- 14
 
