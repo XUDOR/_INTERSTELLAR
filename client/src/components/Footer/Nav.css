@@ -1,10 +1,10 @@
 /* Nav.css  */
 
 .Nav {
-  flex-basis: 7%;
+  flex-basis: 5%;
   border: 1px solid gray;
   color: #E0ECED;
-  padding: 5px;
+  padding: 3px;
   margin: 2px;
   cursor: pointer; /* Changes the cursor to indicate it's clickable */
   transition: background-color 0.3s ease; /* Smooth transition for the background color */

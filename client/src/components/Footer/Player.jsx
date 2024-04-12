@@ -1,24 +1,32 @@
-//Footer/Player
+// Footer/Player.jsx
 import React from 'react';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
 import './Player.css';
 
-
 const Player = (props) => {
   const {
-    audioFileName,
+    currentSong,
     handleLoadedData,
-    handleTimeUpdate, setIsPlaying, handleSeekMouseDown,
-    handleSeekMouseUp, calculateTime, currentTime, duration,
-    handleSeekChange, handleVolumeChange, togglePlayPause,
-    isPlaying, isSeeking, volume, audioPlayer } = props
-
-
+    handleTimeUpdate,
+    setIsPlaying,
+    handleSeekMouseDown,
+    handleSeekMouseUp,
+    calculateTime,
+    currentTime,
+    duration,
+    handleSeekChange,
+    handleVolumeChange,
+    togglePlayPause,
+    isPlaying,
+    isSeeking,
+    volume,
+    audioPlayer
+  } = props;
 
   return (
     <div className="Player">
       <AudioPlayer
-        audioFileName={audioFileName}
+        currentSong={currentSong}
         handleLoadedData={handleLoadedData}
         handleTimeUpdate={handleTimeUpdate}
         setIsPlaying={setIsPlaying}
@@ -34,8 +42,6 @@ const Player = (props) => {
         currentTime={currentTime}
         isPlaying={isPlaying}
         isSeeking={isSeeking}
-        
-
       />
     </div>
   );
