@@ -94,13 +94,13 @@ VALUES
 
 --Music for Seven Structures-- 9
 
-('0901', 'I', 'http://example.com/audio/song1.mp3', '00:06:51', 1, 9, 1),
-('0902', 'II', 'http://example.com/audio/song2.mp3', '00:04:32', 1, 9, 2),
-('0903', 'III', 'http://example.com/audio/song3.mp3', '00:04:47', 1, 9, 3),
-('0904', 'IV', 'http://example.com/audio/song4.mp3', '00:02:41', 1, 9, 4),
-('0905', 'V', 'http://example.com/audio/song5.mp3', '00:05:39', 1, 9, 5),
-('0906', 'VI', 'http://example.com/audio/song6.mp3', '00:06:53',1, 9, 6),
-('0907', 'VII', 'http://example.com/audio/song6.mp3', '00:06:58',1, 9, 7),
+('0901', 'I', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-1.mp3', '00:06:51', 1, 9, 1),
+('0902', 'II', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-2.mp3', '00:04:32', 1, 9, 2),
+('0903', 'III', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-3.mp3', '00:04:47', 1, 9, 3),
+('0904', 'IV', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-4.mp3', '00:02:41', 1, 9, 4),
+('0905', 'V', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-5.mp3', '00:05:39', 1, 9, 5),
+('0906', 'VI', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-6.mp3', '00:06:53',1, 9, 6),
+('0907', 'VII', 'https://storage.googleapis.com/ip-public-bucket1/Music-For-Seven-Structures/STRUCTURE-7.mp3', '00:06:58',1, 9, 7),
 
 
 --Inner Moments of Light-- 10
