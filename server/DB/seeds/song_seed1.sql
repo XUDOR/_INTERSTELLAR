@@ -77,20 +77,20 @@ VALUES
 
 --Ambient Garden One-- 8
 
-('0801', 'Stars | Outer Corners', 'http://example.com/audio/song1.mp3', '00:06:23', 1, 8, 1),
-('0802', 'Waters | Natura', 'http://example.com/audio/song2.mp3', '00:05:46', 1, 8, 2),
-('0803', 'Caterpillar | Glass City of Us', 'http://example.com/audio/song3.mp3', '00:06:43', 1, 8, 3),
-('0804', 'Flower | Natura', 'http://example.com/audio/song4.mp3', '00:03:45', 1, 8, 4),
-('0805', 'Beaches | New Domes of Earth', 'http://example.com/audio/song5.mp3', '00:03:58', 1, 8, 5),
-('0806', 'Perfumed Letter | Charlotta', 'http://example.com/audio/song6.mp3', '00:04:48',1, 8, 6),
-('0807', 'Stellar | Outer Corners', 'http://example.com/audio/song6.mp3', '00:05:38',1, 8, 7),
-('0808', 'Dawn for Children | New Domes of Earth', 'http://example.com/audio/song6.mp3', '00:04:29',1, 8, 8),
-('0809', 'Optical Record Pipe | Glass City of Us', 'http://example.com/audio/song6.mp3', '00:07:44',1, 8, 9),
-('0810', 'Nonagon | Nonagon', 'http://example.com/audio/song6.mp3', '00:04:13',1, 8, 10),     
-('0811', 'V | Objects & Particles', 'http://example.com/audio/song6.mp3', '00:06:54',1, 8, 11),     
-('0812', 'Arc | Nonagon', 'http://example.com/audio/song6.mp3', '00:08:53',1, 8, 12),     
-('0813', 'Jade Flower Memory Index | Objects & Particles', 'http://example.com/audio/song6.mp3', '00:06:14',1, 8, 13),          
-('0814', 'Charlotta | Charlotta', 'http://example.com/audio/song6.mp3', '00:08:19',1, 8, 14),   
+('0801', 'Stars | Outer Corners', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/STARS.mp3', '00:06:23', 1, 8, 1),
+('0802', 'Waters | Natura', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/WATERS.mp3', '00:05:46', 1, 8, 2),
+('0803', 'Caterpillar | Glass City of Us', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/CATERPILLAR.mp3', '00:06:43', 1, 8, 3),
+('0804', 'Flower | Natura', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/FLOWER.mp3', '00:03:45', 1, 8, 4),
+('0805', 'Beaches | New Domes of Earth', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/BEACHES.mp3', '00:03:58', 1, 8, 5),
+('0806', 'Perfumed Letter | Charlotta', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/PERFUMED-LETTER.mp3', '00:04:48',1, 8, 6),
+('0807', 'Stellar | Outer Corners', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/STELLAR.mp3', '00:05:38',1, 8, 7),
+('0808', 'Dawn for Children | New Domes of Earth', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/DAWN-FOR-CHILDREN.mp3', '00:04:29',1, 8, 8),
+('0809', 'Optical Record Pipe | Glass City of Us', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/OPTICAL-RECORD-PIPE.mp3', '00:07:44',1, 8, 9),
+('0810', 'Nonagon | Nonagon', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/NONAGON.mp3', '00:04:13',1, 8, 10),     
+('0811', 'V | Objects & Particles', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/V.mp3', '00:06:54',1, 8, 11),     
+('0812', 'Arc | Nonagon', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/ARC.mp3', '00:08:53',1, 8, 12),     
+('0813', 'Jade Flower Memory Index | Objects & Particles', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/JADE-FLOWER-MEMORY-INDEX.mp3', '00:06:14',1, 8, 13),          
+('0814', 'Charlotta | Charlotta', 'https://storage.googleapis.com/ip-public-bucket1/Ambient-Garden-One/CHARLOTTA.mp3', '00:08:19',1, 8, 14),   
 
 --Music for Seven Structures-- 9
 
