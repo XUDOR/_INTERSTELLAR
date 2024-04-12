@@ -1,7 +1,7 @@
-/* Radio.css  */
+/* Queue.css  */
 
-.Radio {
-  flex-basis: 5%;
+.Queue {
+  flex-basis: 25%;
   border: 1px solid gray;
   color: #E0ECED;
   padding: 3px;

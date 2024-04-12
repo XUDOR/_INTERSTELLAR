@@ -1,7 +1,7 @@
 // Footer.jsx
 import React from 'react';
 import Player from './Player';
-import Radio from './Radio';
+import Queue from './Queue';
 import Shop from './Shop';
 import Nav from './Nav';
 import Admin from './Admin';
@@ -53,7 +53,7 @@ const Footer = (props) => {
         isPlaying={isPlaying}
         isSeeking={isSeeking}
       />
-      <Radio />
+      <Queue />
       <Shop />
     </footer>
   );
