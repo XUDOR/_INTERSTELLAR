@@ -136,16 +136,16 @@ VALUES
 
 --Prefabrications-- 12
 
-('1201', 'Prefabrication', 'http://example.com/audio/song1.mp3', '00:06:15', 1, 12, 1),
-('1202', 'Construct', 'http://example.com/audio/song2.mp3', '00:06:24', 1, 12, 2),
-('1203', 'Euclid', 'http://example.com/audio/song3.mp3', '00:08:14', 1, 12, 3),
-('1204', 'Quadrangle', 'http://example.com/audio/song4.mp3', '00:07:49', 1, 12, 4),
-('1205', 'Open Concept', 'http://example.com/audio/song5.mp3', '00:08:00', 1, 12, 5),
-('1206', 'Three Over One', 'http://example.com/audio/song6.mp3', '00:08:58',1, 12, 6),
-('1207', 'Schematic', 'http://example.com/audio/song6.mp3', '00:04:04',1, 12, 7),
-('1208', 'Sequences', 'http://example.com/audio/song6.mp3', '00:05:59',1, 12, 8),
-('1209', 'A Noble Plan for a Good Idea', 'http://example.com/audio/song6.mp3', '00:03:22',1, 12, 9),
-('1210', 'Formulations', 'http://example.com/audio/song6.mp3', '00:07:48',1, 12, 10),
+('1201', 'Prefabrication', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/PREFABRICATION.mp3', '00:06:15', 1, 12, 1),
+('1202', 'Construct', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/CONSTRUCT.mp3', '00:06:24', 1, 12, 2),
+('1203', 'Euclid', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/EUCLID.mp3', '00:08:14', 1, 12, 3),
+('1204', 'Quadrangle', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/QUADRANGLE.mp3', '00:07:49', 1, 12, 4),
+('1205', 'Open Concept', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/OPEN-CONCEPT.mp3', '00:08:00', 1, 12, 5),
+('1206', 'Three Over One', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/THREE-OVER-ONE.mp3', '00:08:58',1, 12, 6),
+('1207', 'Schematic', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/SCHEMATIC.mp3', '00:04:04',1, 12, 7),
+('1208', 'Sequences', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/SEQUENCES.mp3', '00:05:59',1, 12, 8),
+('1209', 'A Noble Plan for a Good Idea', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/A-NOBLE-PLAN-FOR-A-GOOD-IDEA.mp3', '00:03:22',1, 12, 9),
+('1210', 'Formulations', 'https://storage.googleapis.com/ip-public-bucket1/Prefabrication/FORMULATIONS.mp3', '00:07:48',1, 12, 10),
 
 --Vagary-- 13
 
