@@ -1,3 +1,5 @@
+//mainSection/Main.jsx
+
 import React from 'react';
 import { useMusicData } from '../../Contexts/MusicDataContext';
 import Cover from '../Content/Album/Cover';
