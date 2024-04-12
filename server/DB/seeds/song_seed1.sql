@@ -6,13 +6,13 @@ VALUES
 --Charlotta-- 1
 
 ('0101', 'Charlotta', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/CHARLOTTA.mp3', '00:08:28', 1, 1, 1),
-('0102', 'Garden Mix', 'http://example.com/audio/song2.mp3', '00:03:28', 1, 1, 2),
-('0103', 'New Ornithologies', 'http://example.com/audio/song3.mp3', '00:03:51', 1, 1, 3),
-('0104', 'Old Flowers', 'http://example.com/audio/song4.mp3', '00:03:33', 1, 1, 4),
-('0105', 'Windows', 'http://example.com/audio/song5.mp3', '00:09:12', 1, 1, 5),
-('0106', 'Beautiful Waters', 'http://example.com/audio/song6.mp3', '00:08:05', 1, 1, 6),
-('0107', 'Yellow Transports', 'http://example.com/audio/song7.mp3', '00:04:39', 1, 1, 7),
-('0108', 'Perfumed Letter', 'http://example.com/audio/song8.mp3', '00:04:49', 1, 1, 8),
+('0102', 'Garden Mix', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/GARDEN-MIX.mp3', '00:03:28', 1, 1, 2),
+('0103', 'New Ornithologies', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/NEW-ORNITHOLOGIES.mp3', '00:03:51', 1, 1, 3),
+('0104', 'Old Flowers', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/OLD-FLOWERS.mp3', '00:03:33', 1, 1, 4),
+('0105', 'Windows', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/WINDOWS.mp3', '00:09:12', 1, 1, 5),
+('0106', 'Beautiful Waters', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/BEAUTIFUL-WATERS.mp3', '00:08:05', 1, 1, 6),
+('0107', 'Yellow Transports', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/YELLOW-TRANSPORTS.mp3', '00:04:39', 1, 1, 7),
+('0108', 'Perfumed Letter', 'https://storage.googleapis.com/ip-public-bucket1/Charlotta/PERFUMED-LETTER.mp3', '00:04:49', 1, 1, 8),
 
 --Objects & Particles-- 2
 
