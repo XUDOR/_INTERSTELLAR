@@ -65,15 +65,15 @@ VALUES
 
 --Nonagon-- 7
 
-('0701', 'Spherical', 'http://example.com/audio/song1.mp3', '00:05:00', 1, 7, 1),
-('0702', 'Rhombus', 'http://example.com/audio/song2.mp3', '00:05:25', 1, 7, 2),
-('0703', 'Triangular', 'http://example.com/audio/song3.mp3', '00:03:58', 1, 7, 3),
-('0704', 'Curvature', 'http://example.com/audio/song4.mp3', '00:04:16', 1, 7, 4),
-('0705', 'Nonagon', 'http://example.com/audio/song5.mp3', '00:04:13', 1, 7, 5),
-('0706', 'Quadrants', 'http://example.com/audio/song6.mp3', '00:07:17',1, 7, 6),
-('0707', 'Dodecahedron', 'http://example.com/audio/song6.mp3', '00:06:05',1, 7, 7),
-('0708', 'Arc', 'http://example.com/audio/song6.mp3', '00:08:53',1, 7, 8),
-('0709', 'Vertices', 'http://example.com/audio/song6.mp3', '00:08:17',1, 7, 9),
+('0701', 'Spherical', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/SPHERICAL.mp3', '00:05:00', 1, 7, 1),
+('0702', 'Rhombus', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/RHOMBUS.mp3', '00:05:25', 1, 7, 2),
+('0703', 'Triangular', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/TRIANGULAR.mp3', '00:03:58', 1, 7, 3),
+('0704', 'Curvature', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/CURVATURE.mp3', '00:04:16', 1, 7, 4),
+('0705', 'Nonagon', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/NONAGON.mp3', '00:04:13', 1, 7, 5),
+('0706', 'Quadrants', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/QUADRANTS.mp3', '00:07:17',1, 7, 6),
+('0707', 'Dodecahedron', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/DODECAHEDRON.mp3', '00:06:05',1, 7, 7),
+('0708', 'Arc', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/ARC.mp3', '00:08:53',1, 7, 8),
+('0709', 'Vertices', 'https://storage.googleapis.com/ip-public-bucket1/Nonagon/VERTICES.mp3', '00:08:17',1, 7, 9),
 
 --Ambient Garden One-- 8
 
