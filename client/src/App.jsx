@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { MusicDataProvider } from './Contexts/MusicDataContext';
+import { MusicDataProvider, MusicDataContext } from './Contexts/MusicDataContext';
 import LoadingPage from './components/Loading/LoadingPage';
 import Header from './components/Header/Header';
 import Main from './components/MainSection/Main';
@@ -14,8 +14,9 @@ import ContactPage from './components/Contact/ContactPage';
 import './App.css';
 
 const App = () => {
+  const { state: { queue, currentSongIndex, repeat } } = useContext(MusicDataContext);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSong, setCurrentSong] = useState(queue[currentSongIndex] || null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -23,6 +24,10 @@ const App = () => {
   const [isSeeking, setIsSeeking] = useState(false);
   
   const audioPlayer = useRef();
+
+  useEffect(() => {
+    setCurrentSong(queue[currentSongIndex]);
+  }, [queue, currentSongIndex]);
 
   useEffect(() => {
     const loadData = async () => {
@@ -35,8 +40,11 @@ const App = () => {
   useEffect(() => {
     if (audioPlayer.current) {
       audioPlayer.current.volume = volume;  // Apply the default volume when the component mounts
+      if (isPlaying) {
+        audioPlayer.current.play();
+      }
     }
-  }, [volume]);
+  }, [volume, isPlaying]);
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
