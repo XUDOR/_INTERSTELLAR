@@ -1,7 +1,8 @@
 // Downloads.jsx
 import React from 'react';
-import './Downloads.css';
 import { useNavigate } from 'react-router-dom';
+import { ReactComponent as Download } from '../../images/Icons/download-sm.svg';
+import './Downloads.css';
 
 const Downloads = () => {
   let navigate = useNavigate();
@@ -12,7 +13,7 @@ const Downloads = () => {
 
   return (
     <div className="Downloads" onClick={handleShopClick}>
-      Downloads
+      <Download className="svg-icon" />
     </div>
   );
 };
