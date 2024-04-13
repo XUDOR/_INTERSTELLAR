@@ -5,53 +5,53 @@ const MusicDataContext = createContext();
 const initialState = {
   albumIndex: {}, // Albums stored by ID
   songIndex: {},  // Songs stored by Album ID
+  queue: [],
+  currentSongIndex: 0,
+  repeat: false,
   isLoading: false,
   activeTab: null,
   error: null,
 };
 
+
 // Reducer function to handle actions
 const musicDataReducer = (state, action) => {
   console.log("Action type:", action.type); // Log action type for debugging
-
   switch (action.type) {
     case 'FETCH_START':
-      console.log("Fetching started");
       return { ...state, isLoading: true, error: null };
-
     case 'FETCH_ALBUMS_SUCCESS':
-      console.log("Fetching albums success:", action.payload);
       const albumsById = action.payload.reduce((obj, album) => {
         obj[album.id] = album;
         return obj;
       }, {});
       return { ...state, albumIndex: albumsById, isLoading: false };
-
     case 'FETCH_SONGS_SUCCESS':
-      console.log("Fetching songs success:", action.payload);
-      // Store songs by album ID directly without conversion
       const { albumId, songs } = action.payload;
       return {
         ...state,
-        songIndex: {
-          ...state.songIndex,
-          [albumId]: songs
-        },
+        songIndex: { ...state.songIndex, [albumId]: songs },
         isLoading: false
       };
-
+    case 'SET_QUEUE':
+      return { ...state, queue: action.payload, currentSongIndex: 0 };
+    case 'NEXT_SONG':
+      let nextIndex = (state.currentSongIndex + 1) % state.queue.length;
+      return { ...state, currentSongIndex: nextIndex };
+    case 'PREV_SONG':
+      let prevIndex = (state.currentSongIndex - 1 + state.queue.length) % state.queue.length;
+      return { ...state, currentSongIndex: prevIndex };
+    case 'TOGGLE_REPEAT':
+      return { ...state, repeat: !state.repeat };
     case 'SET_ACTIVE_TAB':
-      console.log("Setting active tab:", action.payload);
       return { ...state, activeTab: action.payload };
-
     case 'FETCH_FAILURE':
-      console.error("Fetching data failed:", action.payload);
       return { ...state, isLoading: false, error: action.payload };
-
     default:
       return state;
   }
 };
+
 
 // Custom hook to use music data reducer
 export const useMusicDataReducer = () => {
@@ -98,3 +98,4 @@ export const MusicDataProvider = ({ children }) => {
 
 // Hook to use music data context
 export const useMusicData = () => useContext(MusicDataContext);
+export { MusicDataContext }; 
