@@ -1,4 +1,4 @@
-// adminRoutes.js
+// adminRoutes.js /// not sure of its use yet
 
 const express = require('express');
 const router = express.Router();
