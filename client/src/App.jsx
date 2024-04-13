@@ -13,8 +13,10 @@ import EPKPage from './components/EPKPage/EPKPage';
 import ContactPage from './components/Contact/ContactPage';
 import './App.css';
 
+//repeat was removed for now
+
 const App = () => {
-  const { state: { queue, currentSongIndex, repeat } } = useContext(MusicDataContext);
+  const { state: { queue, currentSongIndex } } = useContext(MusicDataContext);
   const [isLoading, setIsLoading] = useState(true);
   const [currentSong, setCurrentSong] = useState(queue[currentSongIndex] || null);
   const [isPlaying, setIsPlaying] = useState(false);
