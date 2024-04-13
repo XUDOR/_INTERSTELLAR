@@ -1,10 +1,34 @@
-/* Queue.css  */
+/* Queue.css */
 
 .Queue {
-  flex-basis: 25%;
-  border: 1px solid gray;
+  flex-basis: 35%;
+  border-top: 1px solid gray;
   color: #E0ECED;
   padding: 3px;
-  margin: 2px;
-  
-} 
+  cursor: pointer;
+  transition: all 0.3s ease; /* Updated to transition all properties smoothly */
+  overflow: hidden; /* Keeps the content from spilling out */
+  max-height: 50px; /* Initial max-height, adjust based on your needs */
+}
+
+.Queue.expanded {
+  max-height: 300px; /* Increased max-height when expanded */
+  flex-basis: 100%; /* Optional: Takes more space when expanded */
+}
+
+.Queue:hover {
+  background-color: #065A82;
+}
+
+.QueueItems {
+  padding: 10px;
+  background-color: #073C5A; /* Slightly different background for items */
+}
+
+.QueueItem {
+  border-bottom: 1px solid #0D5875;
+  padding: 3px;
+  margin-bottom: 10px;
+  color: #E0ECED;
+  font-size: 14px;
+}
