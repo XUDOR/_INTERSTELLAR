@@ -129,6 +129,7 @@ const App = () => {
           isPlaying={isPlaying}
           isSeeking={isSeeking}
         />
+        
       </div>
     </MusicDataProvider>
   );
