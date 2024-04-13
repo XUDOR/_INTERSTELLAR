@@ -51,6 +51,16 @@
   cursor: pointer; /* Suggest interaction */
 }
 
+.Previous {
+  border: 1px solid #F9F7E8;
+  cursor: pointer;
+}
+
+.Next {
+  border: 1px solid #F9F7E8;
+  cursor: pointer;
+}
+
 .volume-control {
   display: flex; /* Ensures flex properties apply */
   align-items: center; /* Align the slider within this control */
