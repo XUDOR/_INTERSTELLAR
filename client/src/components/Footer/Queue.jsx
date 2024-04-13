@@ -22,6 +22,7 @@ const Queue = () => {
           {queueItems.map((item, index) => (
             <div key={index} className="QueueItem">{item}</div>
           ))}
+        
         </div>
       )}
     </div>
