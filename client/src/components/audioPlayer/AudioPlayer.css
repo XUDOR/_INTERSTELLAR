@@ -23,7 +23,7 @@
 }
 
 .Play, .Time, .volume-control { /* Corrected class name for consistency */
-  height: 50px;
+  height: 48px;
   width: 60%;
   align-items: left; /* Ensure vertical center alignment */
   margin-left: 5px;
@@ -45,19 +45,45 @@
   background-color: #083D5E;
   border: 1px solid #F9F7E8;
   color: #3AA0A0;
-  padding: 5px;
-  width: 35%;
+  padding: 3px;
+  width: 25%;
   margin-right: 5px;
   cursor: pointer; /* Suggest interaction */
 }
 
-.Previous {
+.Play:hover {
+  fill: #065A82; /* Change color on hover */
+}
+
+.svg-icon {
+  fill: #3AA0A0; /* SVG color */
+  width: 20px; /* Width of the SVG */
+  height: 20px; /* Height of the SVG */
+  transition: fill 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.svg-icon:hover {
+  fill: #065A82; /* Change color on hover */
+}
+
+
+
+
+.Back {
   border: 1px solid #F9F7E8;
+  cursor: pointer;
+  width: 20%;
+  margin-left: 5px;
+  padding: 3px;
   cursor: pointer;
 }
 
 .Next {
   border: 1px solid #F9F7E8;
+  cursor: pointer;
+  width: 20%;
+  margin-right: 5px;
+  padding: 3px;
   cursor: pointer;
 }
 
