@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import './AudioPlayer.css';
 
 const AudioPlayer = (props) => {
   const {
+    queue,
+    currentSongIndex,
+    setCurrentSongIndex,
     currentSong,
     handleLoadedData,
     handleTimeUpdate,
@@ -18,12 +21,27 @@ const AudioPlayer = (props) => {
     isPlaying,
     isSeeking,
     volume,
-    audioPlayer
+    audioPlayer,
+    repeat
   } = props;
 
-  // Added useEffect to handle auto-play when currentSong changes
-  React.useEffect(() => {
-    console.log("Current song changed:", currentSong);
+  const playNextSong = () => {
+    if (repeat) {
+      audioPlayer.current.currentTime = 0;
+      audioPlayer.current.play();
+    } else {
+      let nextIndex = (currentSongIndex + 1) % queue.length;
+      setCurrentSongIndex(nextIndex);
+    }
+  };
+
+  const playPreviousSong = () => {
+    let prevIndex = (currentSongIndex - 1 + queue.length) % queue.length;
+    setCurrentSongIndex(prevIndex);
+  };
+
+  // Automatically play the current song when it changes
+  useEffect(() => {
     if (currentSong && audioPlayer.current) {
       audioPlayer.current.play().catch((error) => {
         console.error("Error attempting to play:", error);
@@ -32,27 +50,36 @@ const AudioPlayer = (props) => {
     }
   }, [currentSong, audioPlayer, setIsPlaying]);
 
+  // Handle what happens when audio ends
+  useEffect(() => {
+    const player = audioPlayer.current;
+    const handleSongEnd = () => {
+      console.log("Audio playback ended");
+      playNextSong();
+    };
+
+    if (player) {
+      player.addEventListener('ended', handleSongEnd);
+      return () => player.removeEventListener('ended', handleSongEnd);
+    }
+  }, [audioPlayer, playNextSong]);
+
   return (
     <div className="player">
       <audio
         ref={audioPlayer}
         src={currentSong ? currentSong.audio_url : ''}
-        onLoadedData={() => {
-          console.log("Audio data loaded, attempting to play...");
-          handleLoadedData();
-        }}
+        onLoadedData={handleLoadedData}
         onTimeUpdate={handleTimeUpdate}
-        onEnded={() => {
-          console.log("Audio playback ended");
-          setIsPlaying(false);
-        }}
       ></audio>
       <div className="audio-file-name">
         {currentSong ? currentSong.name : "No song loaded"}
       </div>
+      <button className="Previous" onClick={playPreviousSong}>prev</button>
       <button className="Play" onClick={togglePlayPause}>
         {isPlaying ? 'Pause' : 'Play'}
       </button>
+      <button className="Next" onClick={playNextSong}>Next</button>
       <div className="Time">
         {calculateTime(currentTime)} / {calculateTime(duration)}
       </div>
