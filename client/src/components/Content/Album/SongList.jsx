@@ -1,4 +1,4 @@
-// SongList.jsx
+// /components/Content/Album/SongList.jsx
 import React from 'react';
 import Song from './Song';
 import './SongList.css';
