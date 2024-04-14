@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { ReactComponent as PlayIcon } from '../../images/Icons/play-blue.svg';
 import { ReactComponent as PauseIcon } from '../../images/Icons/Pause.svg';
 import { ReactComponent as NextIcon } from '../../images/Icons/next.svg';
@@ -27,23 +27,35 @@ const AudioPlayer = (props) => {
     isSeeking,
     volume,
     audioPlayer,
-    repeat
   } = props;
 
+  // State to track the index of the currently playing song
+  const [, setCurrentPlayingIndex] = useState(0);
+
+  // Function to update the currently playing song index
+  const updateCurrentPlayingIndex = useCallback((index) => {
+    setCurrentPlayingIndex(index);
+  }, []);
+
+  // Play the next song
   const playNextSong = useCallback(() => {
     let nextIndex = (currentSongIndex + 1) % queue.length;
-    console.log("Current index before update:", currentSongIndex);
-    console.log("Next index:", nextIndex);
     setCurrentSongIndex(nextIndex);
   }, [currentSongIndex, queue.length, setCurrentSongIndex]);
 
+  // Play the previous song
   const playPreviousSong = useCallback(() => {
     let prevIndex = (currentSongIndex - 1 + queue.length) % queue.length;
     setCurrentSongIndex(prevIndex);
   }, [currentSongIndex, queue.length, setCurrentSongIndex]);
 
+  // Update the currently playing song index when the current song changes
   useEffect(() => {
-    console.log(`Current song index is now ${currentSongIndex}, URL: ${queue[currentSongIndex]?.audio_url}`); // Debug log to see current song
+    updateCurrentPlayingIndex(currentSongIndex);
+  }, [currentSongIndex, updateCurrentPlayingIndex]);
+
+  // Play the current song when it changes
+  useEffect(() => {
     if (currentSong && audioPlayer.current) {
       audioPlayer.current.play().catch((error) => {
         console.error("Error attempting to play:", error);
@@ -52,10 +64,10 @@ const AudioPlayer = (props) => {
     }
   }, [currentSong, audioPlayer, setIsPlaying]);
 
+  // Handle the end of the current song
   useEffect(() => {
     const player = audioPlayer.current;
     const handleSongEnd = () => {
-      console.log("Audio playback ended, moving to next song"); // Debug log
       playNextSong();
     };
 
