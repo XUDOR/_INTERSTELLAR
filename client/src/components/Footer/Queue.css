@@ -4,6 +4,7 @@
   flex-basis: 35%;
   border-top: 2px solid #0F1D38;
   color: #E0ECED;
+  
   padding: 5px;
   cursor: pointer;
   transition: all 0.3s ease; /* Updated to transition all properties smoothly */
@@ -21,7 +22,7 @@
 }
 
 .QueueItems {
-  padding-top: 3px;
+  padding-top: 15px;
   padding-right: 15px; /* Corrected padding-right */
   padding-left: 15px;
   background-color: transparent;
