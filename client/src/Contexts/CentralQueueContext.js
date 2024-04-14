@@ -1,5 +1,3 @@
-// CentralQueueContext.js
-
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CentralQueueContext = createContext();
@@ -34,10 +32,25 @@ const queueReducer = (state, action) => {
 export const CentralQueueProvider = ({ children }) => {
   const [state, dispatch] = useReducer(queueReducer, initialState);
 
+  // Actions wrapped in functions for easier use in components
+  const setIndexID = (indexID) => dispatch({ type: 'SET_CURRENT_INDEX_ID', indexID });
+  const setCurrentSongIndex = (index) => dispatch({ type: 'SET_CURRENT_SONG_INDEX', index });
+  const setQueue = (queue) => dispatch({ type: 'SET_QUEUE', payload: queue });
+  const goToNextSong = () => {
+    // Increment currentSongIndex, wrap around if at the end
+    const nextIndex = (state.currentSongIndex + 1) % state.queue.length;
+    dispatch({ type: 'SET_CURRENT_SONG_INDEX', index: nextIndex });
+  };
+  const goToPreviousSong = () => {
+    // Decrement currentSongIndex, wrap around if at the start
+    const prevIndex = (state.currentSongIndex - 1 + state.queue.length) % state.queue.length;
+    dispatch({ type: 'SET_CURRENT_SONG_INDEX', index: prevIndex });
+  };
+
   // Effect to fetch the initial song queue
   useEffect(() => {
+    dispatch({ type: 'LOADING' });
     const fetchSongs = async () => {
-      dispatch({ type: 'LOADING' });
       try {
         const response = await fetch('http://localhost:5001/api/songs');
         const data = await response.json();
@@ -49,12 +62,15 @@ export const CentralQueueProvider = ({ children }) => {
     fetchSongs();
   }, []);
 
-  const setIndexID = (indexID) => {
-    dispatch({ type: 'SET_CURRENT_INDEX_ID', indexID });
-  };
-
   return (
-    <CentralQueueContext.Provider value={{ ...state, setIndexID }}>
+    <CentralQueueContext.Provider value={{
+      ...state,
+      setIndexID,
+      setCurrentSongIndex,
+      setQueue,
+      goToNextSong,
+      goToPreviousSong
+    }}>
       {children}
     </CentralQueueContext.Provider>
   );
