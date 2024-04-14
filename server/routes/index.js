@@ -8,7 +8,7 @@ const albumRoutes = require('./albumRoutes');
 //const artistRoutes = require('./artistRoutes');
 const songRoutes = require('./songRoutes');
 //const coverRoutes = require('./coverRoutes');
-//const playerRoutes = require('./playerRoutes'); 
+const centralRoutes = require('./centralRoutes'); 
 // Import other routes here
 
 router.use('/albums', albumRoutes);
@@ -16,7 +16,7 @@ router.use('/albums', albumRoutes);
 //router.use('/artists', artistRoutes);
 router.use('/songs', songRoutes);
 //router.use('/covers', coverRoutes);
-//router.use('/player', playerRoutes);
+router.use('/central', centralRoutes);
 // Use other routes here
 
 module.exports = router;
