@@ -1,9 +1,12 @@
-// Footer/Player.jsx
-import React from 'react';
+import React, { useContext } from 'react';
+import { CentralQueueContext } from '../../Contexts/CentralQueueContext.js';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
 import './Player.css';
 
-const Player = (props) => {
+
+
+
+const Player = () => {
   const {
     currentSong,
     handleLoadedData,
@@ -20,8 +23,7 @@ const Player = (props) => {
     isPlaying,
     isSeeking,
     volume,
-    audioPlayer
-  } = props;
+  } = useContext(CentralQueueContext);
 
   return (
     <div className="Player">
@@ -37,7 +39,6 @@ const Player = (props) => {
         volume={volume}
         duration={duration}
         togglePlayPause={togglePlayPause}
-        audioPlayer={audioPlayer}
         calculateTime={calculateTime}
         currentTime={currentTime}
         isPlaying={isPlaying}
