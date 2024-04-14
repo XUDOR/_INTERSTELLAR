@@ -1,13 +1,17 @@
-// Importing useState for state management
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { MusicDataContext } from '../../Contexts/MusicDataContext'; // Adjust the import path as necessary
 import './Queue.css';
 
-const Queue = () => {
+const Queue = ({ currentSong }) => {
   // State to track if the queue is expanded
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Dummy data for the queue playlist
-  const queueItems = ["Song 1", "Song 2", "Song 3", "Song 4"];
+  // Access music data from context
+  const { state } = useContext(MusicDataContext);
+  const { songIndex } = state;
+
+  // Create a flat list of all songs
+  const allSongs = Object.values(songIndex).flat();
 
   // Function to toggle the queue expansion
   const toggleQueue = () => {
@@ -19,10 +23,15 @@ const Queue = () => {
       Queue
       {isExpanded && (
         <div className="QueueItems">
-          {queueItems.map((item, index) => (
-            <div key={index} className="QueueItem">{item}</div>
-          ))}
-        
+          {allSongs.length > 0 ? (
+            allSongs.map((song, index) => (
+              <div key={index} className={`QueueItem ${song === currentSong ? 'highlight' : ''}`}>
+                {song.name}
+              </div>
+            ))
+          ) : (
+            <div className="QueueItem">No songs in queue.</div>
+          )}
         </div>
       )}
     </div>
