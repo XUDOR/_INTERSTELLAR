@@ -1,14 +1,16 @@
-// AppWrapper.jsx
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App'; // Adjust the import path if your file structure is different
-import { MusicDataProvider } from './Contexts/MusicDataContext';  // Import the provider
+import App from './App';
+import { MusicDataProvider } from './Contexts/MusicDataContext';
+import { CentralQueueProvider } from './Contexts/CentralQueueContext'; // Ensure it's imported correctly
 
 const AppWrapper = () => {
   return (
     <Router>
-      <MusicDataProvider>  {/* Wrap the App component with MusicDataProvider*/}
-        <App />
+      <MusicDataProvider> {/* First level context for music data */}
+        <CentralQueueProvider> {/* Second level context specifically for queue management */}
+          <App />
+        </CentralQueueProvider>
       </MusicDataProvider>
     </Router>
   );
