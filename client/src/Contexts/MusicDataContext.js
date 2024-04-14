@@ -1,3 +1,6 @@
+
+
+
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 const MusicDataContext = createContext();
@@ -41,10 +44,8 @@ const musicDataReducer = (state, action) => {
     case 'PREV_SONG':
       let prevIndex = (state.currentSongIndex - 1 + state.queue.length) % state.queue.length;
       return { ...state, currentSongIndex: prevIndex };
-    case 'TOGGLE_REPEAT':
-      return { ...state, repeat: !state.repeat };
-    case 'SET_ACTIVE_TAB':
-      return { ...state, activeTab: action.payload };
+    
+    
     case 'FETCH_FAILURE':
       return { ...state, isLoading: false, error: action.payload };
     default:
