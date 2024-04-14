@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { CentralQueueContext } from '../../Contexts/CentralQueueContext'; // Adjust the import path as necessary
 import './Queue.css';
 
 const Queue = () => {
     const [isExpanded, setIsExpanded] = useState(false); // State to manage the visibility of the queue
-    const { state, setCurrentSongIndex } = useContext(CentralQueueContext);
-    const { queue, currentSongIndex } = state;
+    const { queue, currentSongIndex, setCurrentSongIndex } = useContext(CentralQueueContext);
 
     // Function to toggle the visibility of the queue
     const toggleQueue = () => {
@@ -27,7 +26,10 @@ const Queue = () => {
                             <div 
                                 key={index} 
                                 className={`QueueItem ${index === currentSongIndex ? 'highlight' : ''}`}
-                                onClick={() => handleSongClick(index)} // Set the clicked song as the current song
+                                onClick={(e) => {
+                                    e.stopPropagation(); // Prevents the Queue from toggling when clicking on an item
+                                    handleSongClick(index);
+                                }}
                             >
                                 {song.name}
                             </div>
