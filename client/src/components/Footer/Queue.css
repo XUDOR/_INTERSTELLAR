@@ -2,7 +2,7 @@
 
 .Queue {
   flex-basis: 35%;
-  border-top: 1px solid #0F1D38;
+  border-top: 2px solid #0F1D38;
   color: #E0ECED;
   padding: 5px;
   cursor: pointer;
