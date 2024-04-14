@@ -40,4 +40,7 @@
 
 .highlight {
   color: #3AA0A0; /* Highlight color for the currently playing song */
+  background-color: #E0ECED;
+  border-radius: 3px;
+  padding: 1px;
 }

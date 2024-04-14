@@ -34,15 +34,16 @@
   background-color: #083D5E; /* Slightly darker shade for focus */
   color: #E0ECED; /* Light color for text */
   overflow-y: auto; /* Allows scrolling */
-  border-left: 6px solid #0F1D38; /* Separator from footer */
+  border-left: 3px solid #0F1D38; /* Separator from footer */
   z-index: 1000; /* Same layer as footer to maintain UI consistency */
   justify-content: flex-end;
   align-items: center;
-  margin: 10px;
+  margin: 12px;
+  
   margin-left: 0px;
   padding: 10px;
   padding-top: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 35px;
   font-size: 15px;
 }
 
