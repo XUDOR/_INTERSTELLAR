@@ -1,0 +1,26 @@
+/* header/Contact.css*/
+
+.Contact {
+  flex: .3;
+  
+  border-left: 2px solid #0F1D38;
+  margin-left: 2px;
+  text-decoration: none;
+  color: #E0ECED;
+  padding: 10px;
+  height: 100%;
+}
+
+.contact-link {
+  color: #E0ECED; /* Matches the text color of your navigation */
+  text-decoration: none; /* Initially, no underline */
+  padding: 5px; /* Adjust padding as needed to match other nav items */
+  cursor: pointer; /* Indicates it's clickable */
+  transition: color 0.3s ease; /* Smooth transition for the color */
+}
+
+.contact-link:hover {
+  color: #007bff; /* Lighter blue on hover, adjust this color as needed */
+  text-decoration: underline; /* Adds underline on hover */
+}
+
