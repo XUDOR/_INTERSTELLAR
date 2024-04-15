@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { CentralQueueContext } from '../../../Contexts/CentralQueueContext'; // Adjust the path as necessary
+import { CentralQueueContext } from '../../../Contexts/CentralQueueContext';
 import './Song.css';
 
-function Song({ song, albumId, localIndex }) {
-    const { setSongByAlbumAndIndex } = useContext(CentralQueueContext);
+function Song({ song }) {
+    const { setCurrentSongIndex } = useContext(CentralQueueContext);
 
     const handleClickPlay = (e) => {
         e.preventDefault(); // Prevent default action
-        console.log("Playing song:", song, "from album", albumId, "at local index", localIndex);
-        setSongByAlbumAndIndex(albumId, localIndex); // New function to handle this scenario
+        console.log("Playing song:", song.name, "with global index", song.globalIndex);
+        setCurrentSongIndex(song.globalIndex); // Use the global index directly
     };
 
     return (
