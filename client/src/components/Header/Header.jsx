@@ -1,8 +1,8 @@
 // Header.jsx
 import React from 'react';
 import Brand from './Brand';
-import ArtistsReleases from './ArtistsReleases';
-import SocialMedia from './SocialMedia';
+
+import Contact from './Contact';
 import { useHeaderStyle } from '../../hooks/useHeaderStyle'; 
 import './Header.css';
 
@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <header className={`header ${headerClassName}`}>
       <Brand />
-      {!isMinimal && <ArtistsReleases />}
-      {!isMinimal && <SocialMedia />}
+      
+      {!isMinimal && <Contact />}
     </header>
   );
 };
