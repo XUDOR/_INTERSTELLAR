@@ -23,6 +23,11 @@
 .Queue:hover {
   background-color: #065A82;
 }
+.QueueTitle {
+  color: #E0ECED; /* Light color for text */
+  background-color: transparent;
+}
+
 
 .QueueItems {
   padding-top: 15px;
@@ -56,7 +61,7 @@
   width: 20%; /* Takes the remaining space */
   height: 100vh; /* Full height from footer to top */
   background-color: #083D5E; /* Slightly darker shade for focus */
-  color: #E0ECED; /* Light color for text */
+  
   overflow-y: auto; /* Allows scrolling */
   border-left: 3px solid #0F1D38; /* Separator from footer */
   z-index: 1000; /* Same layer as footer to maintain UI consistency */
