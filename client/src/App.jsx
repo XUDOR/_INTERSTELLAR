@@ -6,10 +6,10 @@ import Header from './components/Header/Header';
 import Main from './components/MainSection/Main';
 import Footer from './components/Footer/Footer';
 import ShopPage from './components/ShopCart/ShopPage';
-import AdminPage from './components/Admin/AdminPage';
+
 import UserPage from './components/User/UserPage';
 import DownloadsPage from './components/Downloads/DownloadsPage';
-import EPKPage from './components/EPKPage/EPKPage';
+
 import ContactPage from './components/Contact/ContactPage';
 import { useCentralQueue } from './Contexts/CentralQueueContext'; // Ensure the path is correct
 import './App.css';
@@ -39,10 +39,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route path="/admin" element={<AdminPage />} />
+          
           <Route path="/user" element={<UserPage />} />
           <Route path="/downloads" element={<DownloadsPage />} />
-          <Route path="/epk" element={<EPKPage />} />
+          
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
