@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
-import { MusicDataContext } from '../../Contexts/MusicDataContext';
+import { CentralQueueContext } from '../../Contexts/CentralQueueContext';
 import { ReactComponent as PlayIcon } from '../../images/Icons/play-blue.svg';
 import { ReactComponent as PauseIcon } from '../../images/Icons/Pause.svg';
 import { ReactComponent as NextIcon } from '../../images/Icons/next.svg';
@@ -7,7 +7,7 @@ import { ReactComponent as PreviousIcon } from '../../images/Icons/back.svg';
 import './AudioPlayer.css';
 
 const AudioPlayer = () => {
-    const { state: { queue, currentSongIndex }, setCurrentSongIndex } = useContext(MusicDataContext);
+    const { queue, currentSongIndex, setCurrentSongIndex } = useContext(CentralQueueContext);
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
@@ -15,14 +15,14 @@ const AudioPlayer = () => {
     const [volume, setVolume] = useState(0.9);
     const audioPlayer = useRef(null);
 
-    const currentSong = queue[currentSongIndex] || {};
+    const currentSong = queue.find(song => song.globalIndex === currentSongIndex) || {};
 
     useEffect(() => {
-        if (audioPlayer.current) {
-            audioPlayer.current.src = currentSong.audioUrl;
+        if (audioPlayer.current && currentSong.audio_url) {
+            audioPlayer.current.src = currentSong.audio_url;
             audioPlayer.current.load();
         }
-    }, [currentSong]);
+    }, [currentSong.audio_url]);
 
     useEffect(() => {
         const player = audioPlayer.current;
@@ -39,7 +39,7 @@ const AudioPlayer = () => {
                 player.removeEventListener('loadedmetadata', updateDuration);
             };
         }
-    }, [isPlaying, currentSongIndex, queue.length, setCurrentSongIndex]);
+    }, [currentSongIndex, queue.length]);
 
     const togglePlayPause = () => {
         setIsPlaying(prevIsPlaying => {
@@ -85,13 +85,13 @@ const AudioPlayer = () => {
         <div className="player">
             <audio ref={audioPlayer}></audio>
             <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
-            <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
+            <button className="Back" onClick={() => setCurrentSongIndex(Math.max(1, currentSongIndex - 1))}>
                 <PreviousIcon className="svg-icon" />
             </button>
             <button className="Play" onClick={togglePlayPause}>
                 {isPlaying ? <PauseIcon className="svg-icon" /> : <PlayIcon className="svg-icon" />}
             </button>
-            <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
+            <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex % queue.length) + 1)}>
                 <NextIcon className="svg-icon" />
             </button>
             <div className="Time">
