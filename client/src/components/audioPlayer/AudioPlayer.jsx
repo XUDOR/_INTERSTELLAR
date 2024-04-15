@@ -18,11 +18,14 @@ const AudioPlayer = () => {
     const currentSong = queue[currentSongIndex] || {};
 
     useEffect(() => {
-        if (audioPlayer.current && currentSong.audio_url) {
-            audioPlayer.current.src = currentSong.audio_url;
-            audioPlayer.current.load();
+        const player = audioPlayer.current;
+        if (player && currentSong.audio_url) {
+            console.log("Loading new song:", currentSong.audio_url);
+            player.src = currentSong.audio_url;
+            player.load();
             if (isPlaying) {
-                audioPlayer.current.play().catch(e => console.error("Error auto-playing the song:", e));
+                console.log("Auto-playing song");
+                player.play().catch(e => console.error("Error auto-playing the song:", e));
             }
         }
     }, [currentSongIndex, currentSong.audio_url, isPlaying]);
@@ -30,9 +33,16 @@ const AudioPlayer = () => {
     useEffect(() => {
         const player = audioPlayer.current;
         if (player) {
-            const updateProgress = () => setCurrentTime(player.currentTime);
-            const updateDuration = () => setDuration(player.duration);
+            const updateProgress = () => {
+                console.log("Updating currentTime:", player.currentTime);
+                setCurrentTime(player.currentTime);
+            };
+            const updateDuration = () => {
+                console.log("Setting duration:", player.duration);
+                setDuration(player.duration);
+            };
             const playNextSong = () => {
+                console.log("Song ended, playing next.");
                 const nextIndex = (currentSongIndex + 1) % queue.length;
                 setCurrentSongIndex(nextIndex);
                 setIsPlaying(true);
@@ -50,19 +60,31 @@ const AudioPlayer = () => {
         }
     }, [currentSongIndex, queue.length]);
 
+    useEffect(() => {
+        const handleKeyPress = (e) => {
+            if (e.keyCode === 32) { // Spacebar
+                e.preventDefault(); // Stop the page from scrolling
+                togglePlayPause();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []);
+
     const togglePlayPause = () => {
         setIsPlaying(prevIsPlaying => {
-            if (!prevIsPlaying) {
-                if (audioPlayer.current) {
-                    audioPlayer.current.play().catch(error => {
-                        console.error("Error playing the song:", error);
-                        return false;
-                    });
-                }
-            } else {
-                if (audioPlayer.current) {
-                    audioPlayer.current.pause();
-                }
+            if (!prevIsPlaying && audioPlayer.current) {
+                console.log("Playing audio");
+                audioPlayer.current.play().catch(error => {
+                    console.error("Error playing the song:", error);
+                    return false;
+                });
+            } else if (audioPlayer.current) {
+                console.log("Pausing audio");
+                audioPlayer.current.pause();
             }
             return !prevIsPlaying;
         });
@@ -71,6 +93,7 @@ const AudioPlayer = () => {
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
         if (audioPlayer.current) {
+            console.log("Seeking to:", newTime);
             audioPlayer.current.currentTime = newTime;
             setCurrentTime(newTime);
         }
@@ -79,6 +102,7 @@ const AudioPlayer = () => {
     const handleVolumeChange = (e) => {
         const newVolume = parseFloat(e.target.value);
         if (audioPlayer.current) {
+            console.log("Changing volume to:", newVolume);
             audioPlayer.current.volume = newVolume;
             setVolume(newVolume);
         }
@@ -127,7 +151,7 @@ const AudioPlayer = () => {
                     step="0.01"
                     value={volume}
                     onChange={handleVolumeChange}
-                    className="volume-slider"
+                    className="volume-slider" 
                 />
             </div>
         </div>
