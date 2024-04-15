@@ -8,10 +8,10 @@ function Song({ song }) {
     console.log("Received song object in Song component:", song);
 
     const handleClickPlay = (e) => {
-        e.preventDefault(); // Prevent default action
+        e.preventDefault();
         if (song && song.indexid !== undefined) {
             console.log("Playing song:", song.name, "with index ID", song.indexid);
-            setCurrentSongIndex(song.indexid); // Use the index ID directly
+            setCurrentSongIndex(song.indexid - 1);  // Adjust for zero-based indexing
         } else {
             console.error("Error: Song or index ID is undefined.", song);
         }
