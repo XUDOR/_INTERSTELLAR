@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CentralQueueContext } from '../../../Contexts/CentralQueueContext'; // Adjust the path as necessary
 import './Song.css';
 
-function Song({ song, setCurrentSong }) {
-  const handleClickPlay = (e) => {
-    e.preventDefault(); // Prevent default action (important if this is in a form or link)
-    console.log("Playing song:", song);
-    setCurrentSong(song); // Setting the current song object
-  };
+function Song({ song, albumId, localIndex }) {
+    const { setSongByAlbumAndIndex } = useContext(CentralQueueContext);
 
-  return (
-    <div className='Song' onClick={handleClickPlay} role="button" tabIndex="0">
-      <div>{song.name}</div>
-    </div>
-  );
+    const handleClickPlay = (e) => {
+        e.preventDefault(); // Prevent default action
+        console.log("Playing song:", song, "from album", albumId, "at local index", localIndex);
+        setSongByAlbumAndIndex(albumId, localIndex); // New function to handle this scenario
+    };
+
+    return (
+        <div className='Song' onClick={handleClickPlay} role="button" tabIndex="0">
+            <div>{song.name}</div>
+        </div>
+    );
 }
-
 
 export default Song;

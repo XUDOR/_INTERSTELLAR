@@ -13,7 +13,7 @@
 }
 
 .Queue.expanded {
-  max-height: 850px; /* Increased max-height when expanded */
+  max-height: 813px; /* Increased max-height when expanded */
   flex-basis: 100%; /* Optional: Takes more space when expanded */
 }
 
