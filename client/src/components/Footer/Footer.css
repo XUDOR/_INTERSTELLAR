@@ -25,28 +25,4 @@
 }
 
 /* Additional styling for the Queue to the right of the footer */
-.Queue {
-  position: fixed; /* Fixed to not move with page scrolling */
-  right: 0; /* Align to the right side of the viewport */
-  bottom: 0; /* Align to the bottom, just like the footer */
-  width: 20%; /* Takes the remaining space */
-  height: 100vh; /* Full height from footer to top */
-  background-color: #083D5E; /* Slightly darker shade for focus */
-  color: #E0ECED; /* Light color for text */
-  overflow-y: auto; /* Allows scrolling */
-  border-left: 3px solid #0F1D38; /* Separator from footer */
-  z-index: 1000; /* Same layer as footer to maintain UI consistency */
-  justify-content: flex-end;
-  align-items: center;
-  margin: 12px;
-  
-  margin-left: 0px;
-  padding: 10px;
-  padding-top: 15px;
-  padding-bottom: 35px;
-  font-size: 15px;
-}
 
-.Queue:hover {
-  background-color: #065A82; /* Darker background on hover */
-}
