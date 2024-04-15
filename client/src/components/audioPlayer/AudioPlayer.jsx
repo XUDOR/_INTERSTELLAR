@@ -15,28 +15,37 @@ const AudioPlayer = () => {
     const [volume, setVolume] = useState(0.9);
     const audioPlayer = useRef(null);
 
-    const currentSong = queue.find(song => song.globalIndex === currentSongIndex) || {};
+    const currentSong = queue[currentSongIndex] || {};
 
     useEffect(() => {
         if (audioPlayer.current && currentSong.audio_url) {
             audioPlayer.current.src = currentSong.audio_url;
             audioPlayer.current.load();
+            if (isPlaying) {
+                audioPlayer.current.play().catch(e => console.error("Error auto-playing the song:", e));
+            }
         }
-    }, [currentSong.audio_url]);
+    }, [currentSongIndex, currentSong.audio_url, isPlaying]);
 
     useEffect(() => {
         const player = audioPlayer.current;
         if (player) {
             const updateProgress = () => setCurrentTime(player.currentTime);
             const updateDuration = () => setDuration(player.duration);
+            const playNextSong = () => {
+                const nextIndex = (currentSongIndex + 1) % queue.length;
+                setCurrentSongIndex(nextIndex);
+                setIsPlaying(true);
+            };
 
             player.addEventListener('timeupdate', updateProgress);
             player.addEventListener('loadedmetadata', updateDuration);
-            player.addEventListener('ended', () => setCurrentSongIndex((currentSongIndex + 1) % queue.length));
+            player.addEventListener('ended', playNextSong);
 
             return () => {
                 player.removeEventListener('timeupdate', updateProgress);
                 player.removeEventListener('loadedmetadata', updateDuration);
+                player.removeEventListener('ended', playNextSong);
             };
         }
     }, [currentSongIndex, queue.length]);
@@ -85,13 +94,13 @@ const AudioPlayer = () => {
         <div className="player">
             <audio ref={audioPlayer}></audio>
             <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
-            <button className="Back" onClick={() => setCurrentSongIndex(Math.max(1, currentSongIndex - 1))}>
+            <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
                 <PreviousIcon className="svg-icon" />
             </button>
             <button className="Play" onClick={togglePlayPause}>
                 {isPlaying ? <PauseIcon className="svg-icon" /> : <PlayIcon className="svg-icon" />}
             </button>
-            <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex % queue.length) + 1)}>
+            <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
                 <NextIcon className="svg-icon" />
             </button>
             <div className="Time">
