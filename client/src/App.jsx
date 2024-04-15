@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+// App.jsx
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LoadingPage from './components/Loading/LoadingPage';
 import Header from './components/Header/Header';
@@ -14,14 +15,20 @@ import { useCentralQueue } from './Contexts/CentralQueueContext'; // Ensure the 
 import './App.css';
 
 const App = () => {
-  const { isLoading, queue, currentIndexID } = useCentralQueue(); // Assuming this hook provides what you need
-  console.log({ isLoading, queue, currentIndexID }); // Debug: log out these values to see what you're getting
+  const { isLoading, queue, currentIndexID } = useCentralQueue();
+  const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
     console.log("App component mounted or updated.");
+    // Simulate a loading delay
+    const timer = setTimeout(() => {
+      setIsPageLoading(false);
+    }, 1500); // Delay in milliseconds
+
+    return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
+  if (isPageLoading || isLoading) {
     return <LoadingPage />;
   }
 
