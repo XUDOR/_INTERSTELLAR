@@ -27,23 +27,9 @@ const AudioPlayer = () => {
     useEffect(() => {
         const player = audioPlayer.current;
         if (player) {
-            const playAudio = async () => {
-                try {
-                    await player.play();
-                } catch (error) {
-                    console.error("Playback failed:", error);
-                }
-            };
-
-            if (isPlaying) {
-                playAudio();
-            } else {
-                player.pause();
-            }
-
             const updateProgress = () => setCurrentTime(player.currentTime);
             const updateDuration = () => setDuration(player.duration);
-            
+
             player.addEventListener('timeupdate', updateProgress);
             player.addEventListener('loadedmetadata', updateDuration);
             player.addEventListener('ended', () => setCurrentSongIndex((currentSongIndex + 1) % queue.length));
@@ -55,7 +41,23 @@ const AudioPlayer = () => {
         }
     }, [isPlaying, currentSongIndex, queue.length, setCurrentSongIndex]);
 
-    const togglePlayPause = () => setIsPlaying(!isPlaying);
+    const togglePlayPause = () => {
+        setIsPlaying(prevIsPlaying => {
+            if (!prevIsPlaying) {
+                if (audioPlayer.current) {
+                    audioPlayer.current.play().catch(error => {
+                        console.error("Error playing the song:", error);
+                        return false;
+                    });
+                }
+            } else {
+                if (audioPlayer.current) {
+                    audioPlayer.current.pause();
+                }
+            }
+            return !prevIsPlaying;
+        });
+    };
 
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
