@@ -42,9 +42,11 @@ export const CentralQueueProvider = ({ children }) => {
       try {
         const response = await fetch('http://localhost:5001/api/songs');
         const songs = await response.json();
-        // Increment the index by 1 to start from 1
-        const queueWithGlobalIndex = songs.map((song, index) => ({ ...song, globalIndex: index + 1 }));
+        // Adjust the index here if needed, based on your app's requirements
+        const queueWithGlobalIndex = songs.map((song, index) => ({ ...song, globalIndex: index })); // Zero-based index
         dispatch({ type: 'SET_QUEUE', payload: queueWithGlobalIndex });
+        // Initialize currentSongIndex, e.g., set to start from the first song
+        dispatch({ type: 'SET_CURRENT_SONG_INDEX', index: 0 });
       } catch (error) {
         dispatch({ type: 'ERROR', error: error.toString() });
       }
@@ -52,8 +54,8 @@ export const CentralQueueProvider = ({ children }) => {
     fetchSongs();
   }, []);
 
-  // Function to change the current song index
   const setCurrentSongIndex = (index) => {
+    console.log(`Setting current song index to: ${index}`);
     dispatch({ type: 'SET_CURRENT_SONG_INDEX', index });
   };
 
@@ -63,6 +65,7 @@ export const CentralQueueProvider = ({ children }) => {
     </CentralQueueContext.Provider>
   );
 };
+
 
 // Hook to use this context
 export const useCentralQueue = () => useContext(CentralQueueContext);
