@@ -4,17 +4,22 @@
   flex-basis: 35%;
   border-top: 2px solid #0F1D38;
   color: #E0ECED;
-  
+
   padding: 5px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Updated to transition all properties smoothly */
-  overflow: hidden; /* Keeps the content from spilling out */
-  max-height: 50px; /* Initial max-height, adjust based on your needs */
+  transition: all 0.3s ease;
+  /* Updated to transition all properties smoothly */
+  overflow: hidden;
+  /* Keeps the content from spilling out */
+  max-height: 50px;
+  /* Initial max-height, adjust based on your needs */
 }
 
 .Queue.expanded {
-  max-height: 950px; /* Increased max-height when expanded */
-  flex-basis: 100%; /* Optional: Takes more space when expanded */
+  max-height: 950px;
+  /* Increased max-height when expanded */
+  flex-basis: 100%;
+  /* Optional: Takes more space when expanded */
   padding-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
@@ -23,31 +28,48 @@
 .Queue:hover {
   background-color: #065A82;
 }
+
 .QueueTitle {
-  color: #E0ECED; /* Light color for text */
+  color: #E0ECED;
+  /* Light color for text */
   background-color: transparent;
+  padding-bottom: 15px;
 }
 
 
 .QueueItems {
   padding-top: 15px;
-  padding-right: 15px; /* Corrected padding-right */
+  padding-right: 15px;
+  /* Corrected padding-right */
   padding-left: 15px;
   background-color: transparent;
   /*background-color: #073C5A; /* Slightly different background for items */
 }
 
 .QueueItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: transparent;
   border-bottom: 1px solid #0D5875;
-  padding: 1px;
-  margin-bottom: 3px;
+  padding: 8px 10px;
   color: #E0ECED;
   font-size: 12px;
 }
 
+
+.QueueItem:hover {
+  background-color: transparent;
+  border-bottom: 1px solid #0F1D38;
+  transition: opacity .3s;
+}
+
+
+
+
 .highlight {
-  color: #3AA0A0; /* Highlight color for the currently playing song */
+  color: #3AA0A0;
+  /* Highlight color for the currently playing song */
   background-color: #E0ECED;
   border-radius: 3px;
   padding: 1px;
@@ -55,23 +77,63 @@
 
 
 .Queue {
-  position: fixed; /* Fixed to not move with page scrolling */
-  right: 0; /* Align to the right side of the viewport */
-  bottom: 0; /* Align to the bottom, just like the footer */
-  width: 20%; /* Takes the remaining space */
-  height: 100vh; /* Full height from footer to top */
-  background-color: #083D5E; /* Slightly darker shade for focus */
-  
-  overflow-y: auto; /* Allows scrolling */
-  border-left: 3px solid #0F1D38; /* Separator from footer */
-  z-index: 1000; /* Same layer as footer to maintain UI consistency */
+  position: fixed;
+  /* Fixed to not move with page scrolling */
+  right: 0;
+  /* Align to the right side of the viewport */
+  bottom: 0;
+  /* Align to the bottom, just like the footer */
+  width: 20%;
+  /* Takes the remaining space */
+  height: 100vh;
+  /* Full height from footer to top */
+  background-color: #083D5E;
+  /* Slightly darker shade for focus */
+
+  overflow-y: auto;
+  /* Allows scrolling */
+  border-left: 3px solid #0F1D38;
+  /* Separator from footer */
+  z-index: 1000;
+  /* Same layer as footer to maintain UI consistency */
   justify-content: flex-end;
   align-items: center;
   margin: 5px;
-  
+
   margin-left: 0px;
   padding: 10px;
   padding-top: 18px;
   padding-bottom: 35px;
   font-size: 15px;
+}
+
+.Queue button {
+  margin: 5px;
+  margin-bottom: 2px;
+  padding: 8px 16px;
+  background-color: #0F1D38;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Queue button:hover {
+  background-color: #0056b3;
+}
+
+.favorite-icon {
+  background-color: transparent;
+  color: #083D5E;
+  margin-left: 10px
+}
+
+.favorite-icon:hover {
+  background-color: transparent;
+  color: #0F1D38;
+}
+
+.is-favorite {
+  background-color: transparent;
+  color: #E0ECED;
 }
