@@ -3,7 +3,7 @@ import Player from './Player';
 import Queue from './Queue';
 import Shop from './Shop';
 
-import User from './User';
+import Film from './Film';
 import Downloads from './Downloads';
 import './Footer.css';
 
@@ -12,7 +12,7 @@ const Footer = () => {
     <div className="AppContainer">
       <footer className="Footer">
         <Downloads />
-        <User />
+        <Film />
         <Player />  
         <Shop />
       </footer>
