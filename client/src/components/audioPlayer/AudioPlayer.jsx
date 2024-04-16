@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { CentralQueueContext } from '../../Contexts/CentralQueueContext';
-import { ReactComponent as PlayIcon } from '../../images/Icons/play-blue.svg';
+import { ReactComponent as PlayIcon } from '../../images/Icons/play-leaf3.svg';
 import { ReactComponent as PauseIcon } from '../../images/Icons/Pause.svg';
-import { ReactComponent as NextIcon } from '../../images/Icons/next.svg';
-import { ReactComponent as PreviousIcon } from '../../images/Icons/back.svg';
+import { ReactComponent as NextIcon } from '../../images/Icons/next-gray.svg';
+import { ReactComponent as PreviousIcon } from '../../images/Icons/back-gray.svg';
 import './AudioPlayer.css';
 
 const AudioPlayer = () => {
@@ -122,7 +122,7 @@ const AudioPlayer = () => {
                 <PreviousIcon className="svg-icon" />
             </button>
             <button className="Play" onClick={togglePlayPause}>
-                {isPlaying ? <PauseIcon className="svg-icon" /> : <PlayIcon className="svg-icon" />}
+                {isPlaying ? <PauseIcon className="svg-PAUSE" /> : <PlayIcon className="svg-PLAY" />}
             </button>
             <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
                 <NextIcon className="svg-icon" />
