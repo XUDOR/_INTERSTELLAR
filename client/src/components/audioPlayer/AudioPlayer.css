@@ -42,9 +42,9 @@
 }
 
 .Play {
-  background-color: #083D5E;
-  border: 1px solid #F9F7E8;
-  color: #3AA0A0;
+  
+  border: 2px solid #93A01C;
+  background-color: #0F1D38;
   padding: 3px;
   width: 25%;
   margin-right: 5px;
@@ -52,11 +52,32 @@
 }
 
 .Play:hover {
-  fill: #065A82; /* Change color on hover */
+  fill: #93A01C; /* Change color on hover */
 }
 
+
+.svg-PLAY {
+background-color: transparent;
+  width: 20px; /* Width of the SVG */
+  height: 20px; /* Height of the SVG */
+  transition: fill 0.3s ease; /* Smooth transition for hover effects */
+
+}
+
+
+.svg-PAUSE {
+  background-color: transparent;
+    width: 20px; /* Width of the SVG */
+    height: 20px; /* Height of the SVG */
+    transition: fill 0.3s ease; /* Smooth transition for hover effects */
+  
+  }
+
+
+
+
 .svg-icon {
-  fill: #3AA0A0; /* SVG color */
+  
   width: 20px; /* Width of the SVG */
   height: 20px; /* Height of the SVG */
   transition: fill 0.3s ease; /* Smooth transition for hover effects */
@@ -70,7 +91,7 @@
 
 
 .Back {
-  border: 1px solid #F9F7E8;
+  border: 1px solid #626154;
   cursor: pointer;
   width: 20%;
   margin-left: 5px;
@@ -79,7 +100,7 @@
 }
 
 .Next {
-  border: 1px solid #F9F7E8;
+  border: 1px solid #626154;
   cursor: pointer;
   width: 20%;
   margin-right: 5px;
