@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import Main from './components/MainSection/Main';
 import Footer from './components/Footer/Footer';
 import ShopPage from './components/ShopCart/ShopPage';
-import UserPage from './components/User/UserPage';
+import FilmPage from './components/Film/FilmPage';
 import DownloadsPage from './components/Downloads/DownloadsPage';
 import ContactPage from './components/Contact/ContactPage';
 import { useCentralQueue } from './Contexts/CentralQueueContext'; // Ensure the path is correct
@@ -38,7 +38,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route path="/user" element={<UserPage />} />
+          <Route path="/Film" element={<FilmPage />} />
           <Route path="/downloads" element={<DownloadsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
