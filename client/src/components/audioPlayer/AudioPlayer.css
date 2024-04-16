@@ -43,8 +43,8 @@
 
 .Play {
   
-  border: 2px solid #93A01C;
-  background-color: #0F1D38;
+  border: 2px solid ;
+  background-color: #737F3A;
   padding: 3px;
   width: 25%;
   margin-right: 5px;
@@ -52,24 +52,33 @@
 }
 
 .Play:hover {
-  fill: #93A01C; /* Change color on hover */
+  background-color: #535f0d; /* Change color on hover */
+  
 }
 
 
 .svg-PLAY {
-background-color: transparent;
-  width: 20px; /* Width of the SVG */
-  height: 20px; /* Height of the SVG */
-  transition: fill 0.3s ease; /* Smooth transition for hover effects */
-
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  transition: fill 0.5s ease;
+  opacity: 0.5;
 }
 
+.svg-PLAY:hover {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  transition: fill 0.5s ease;
+  opacity: 1;
+}
 
 .svg-PAUSE {
   background-color: transparent;
-    width: 20px; /* Width of the SVG */
-    height: 20px; /* Height of the SVG */
-    transition: fill 0.3s ease; /* Smooth transition for hover effects */
+    width: 25px; /* Width of the SVG */
+    height: 25px; /* Height of the SVG */
+    opacity: 0.7;
+    transition: fill 0.5s ease; /* Smooth transition for hover effects */
   
   }
 
@@ -77,22 +86,29 @@ background-color: transparent;
 
 
 .svg-icon {
-  
-  width: 20px; /* Width of the SVG */
-  height: 20px; /* Height of the SVG */
+  background-color:transparent;
+  width: 30px; /* Width of the SVG */
+  height: 30px; /* Height of the SVG */
   transition: fill 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.svg-icon:hover {
-  fill: #065A82; /* Change color on hover */
-}
+
 
 
 
 
 .Back {
-  border: 1px solid #626154;
+  border: 1px solid #626154; 
+  width: 20%;
+  margin-left: 5px;
+  padding: 3px;
   cursor: pointer;
+  transition: fill 0.5s ease; /* Smooth transition for hover effects */
+}
+
+.Back:hover {
+  border: 1px solid #626154;
+  background-color: #065A82;  
   width: 20%;
   margin-left: 5px;
   padding: 3px;
@@ -100,8 +116,16 @@ background-color: transparent;
 }
 
 .Next {
-  border: 1px solid #626154;
+  border: 1px solid #626154;  
+  width: 20%;
+  margin-right: 5px;
+  padding: 3px;
   cursor: pointer;
+}
+
+.Next:hover {
+  border: 1px solid #626154;
+  background-color: #065A82;
   width: 20%;
   margin-right: 5px;
   padding: 3px;
@@ -143,7 +167,6 @@ background-color: transparent;
 .seek-control {
   display: flex; /* Ensures flex properties apply */
   justify-content: center;
-  
   align-items: center; /* Align the slider within this control */
   margin-left: 10px; /* Space out from preceding elements */
   width: 200%; /* Control the max width of your volume slider */

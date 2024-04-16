@@ -13,7 +13,7 @@ const Downloads = () => {
 
   return (
     <div className="Downloads" onClick={handleShopClick}>
-      <Download className="svg-icon" />
+      <Download className="svg-icon-Download" />
     </div>
   );
 };

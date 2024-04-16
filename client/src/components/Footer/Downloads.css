@@ -1,28 +1,28 @@
-/* Downloads.css  */
+/* Downloads.css */
 
 .Downloads {
-  flex-basis: 4%;
-  border: 1px solid gray;
-  color: #E0ECED;
-  padding: 3px;
-  margin: 2px;
+  flex-basis: 4%; /* Determines the base size of the element before remaining space is distributed */
+  border: 1px solid gray; /* Sets a gray border */
+  color: #E0ECED; /* Sets the text color */
+  padding: 3px; /* Adds padding inside the button */
+  margin: 2px; /* Adds a margin around the button */
   cursor: pointer; /* Changes the cursor to indicate it's clickable */
-  transition: background-color 0.3s ease; /* Smooth transition for the background color */
-  
+  background-color: transparent; /* Sets a transparent background color */
+  transition: background-color 0.3s ease; /* Smooth transition for the background color on hover */
 }
 
 .Downloads:hover {
-  background-color: #065A82; /* Darker background on hover */
+  background-color: #065A82; /* Changes the background color on hover to a darker shade */
 }
 
-
-.svg-icon {
-  fill: #3AA0A0; /* SVG color */
-  width: 20px; /* Width of the SVG */
-  height: 20px; /* Height of the SVG */
-  transition: fill 0.3s ease; /* Smooth transition for hover effects */
+.svg-icon-Download {
+  background-color: transparent; /* Ensures the background of the SVG is transparent */
+  
+  width: 30px; /* Sets the width of the SVG */
+  height: 30px; /* Sets the height of the SVG */
+  transition: fill 0.3s ease; /* Applies a smooth transition effect to the fill color */
 }
 
-.svg-icon:hover {
-  fill: #F9F7E8; /* Change color on hover */
+.svg-icon-Download:hover {
+  fill: #F9F7E8; /* Changes the fill color on hover to an off-white/cream color */
 }
