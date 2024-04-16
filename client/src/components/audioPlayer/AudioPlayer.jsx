@@ -151,7 +151,7 @@ const AudioPlayer = () => {
                     step="0.01"
                     value={volume}
                     onChange={handleVolumeChange}
-                    className="volume-slider" 
+                    className="volume-slider"
                 />
             </div>
         </div>
