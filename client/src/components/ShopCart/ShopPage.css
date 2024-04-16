@@ -6,7 +6,7 @@
 
 .shopContent {
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-start; 
   padding-right: 10px; 
   padding-top: 10px;
   border-top: 1px solid gray;
@@ -14,6 +14,7 @@
 }
 
 .shopTitle {
+  justify-content: flex-end;
   border: 1px solid gray;
   color: #E0ECED;
   padding: 5px;
