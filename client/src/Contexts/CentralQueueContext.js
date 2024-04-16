@@ -4,23 +4,31 @@ export const CentralQueueContext = createContext();
 
 const initialState = {
     queue: [],
+    originalQueue: [],
     currentSongIndex: 0,
     isLoading: false,
+    showFavorites: false,
     error: null
 };
 
 const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
+    let newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
-    return array;
+    return newArray;
 };
 
 const queueReducer = (state, action) => {
     switch (action.type) {
         case 'SET_QUEUE':
-            return { ...state, queue: action.payload, isLoading: false };
+            return {
+                ...state,
+                queue: action.payload,
+                originalQueue: state.originalQueue.length === 0 ? action.payload : state.originalQueue,
+                isLoading: false
+            };
         case 'ADD_SONGS':
             return { ...state, queue: [...state.queue, ...action.payload] };
         case 'SET_CURRENT_SONG_INDEX':
@@ -28,10 +36,13 @@ const queueReducer = (state, action) => {
         case 'CLEAR_QUEUE':
             return { ...state, queue: [], currentSongIndex: 0 };
         case 'RELOAD_QUEUE':
-            // Reload queue without resetting current index
             return { ...state, queue: action.payload, isLoading: false };
         case 'SHUFFLE_QUEUE':
-            return { ...state, queue: shuffleArray([...state.queue]) };
+            return { ...state, queue: shuffleArray(state.queue) };
+        case 'RESET_QUEUE':
+            return { ...state, queue: [...state.originalQueue], currentSongIndex: 0 };
+        case 'TOGGLE_SHOW_FAVORITES':
+            return { ...state, showFavorites: !state.showFavorites };
         case 'TOGGLE_FAVORITE':
             return { ...state, queue: state.queue.map((song, index) => index === action.index ? { ...song, isFavorite: !song.isFavorite } : song) };
         case 'FILTER_BY_ALBUM':
@@ -68,11 +79,13 @@ export const CentralQueueProvider = ({ children }) => {
     const clearQueue = () => dispatch({ type: 'CLEAR_QUEUE' });
     const addSongs = (songs) => dispatch({ type: 'ADD_SONGS', payload: songs });
     const shuffleQueue = () => dispatch({ type: 'SHUFFLE_QUEUE' });
+    const resetQueue = () => dispatch({ type: 'RESET_QUEUE' });
     const toggleFavorite = (index) => dispatch({ type: 'TOGGLE_FAVORITE', index });
+    const toggleShowFavorites = () => dispatch({ type: 'TOGGLE_SHOW_FAVORITES' });
     const filterByAlbum = (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName });
 
     return (
-        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum }}>
+        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites }}>
             {children}
         </CentralQueueContext.Provider>
     );

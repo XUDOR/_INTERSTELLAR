@@ -4,9 +4,18 @@ import './Queue.css';
 
 const Queue = () => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const { queue, currentSongIndex, setCurrentSongIndex, clearQueue, shuffleQueue, toggleFavorite, filterFavorites } = useContext(CentralQueueContext);
+    const {
+        queue, 
+        currentSongIndex, 
+        setCurrentSongIndex, 
+        clearQueue, 
+        shuffleQueue, 
+        resetQueue, 
+        toggleFavorite, 
+        toggleShowFavorites,
+        showFavorites
+    } = useContext(CentralQueueContext);
 
-    // Toggle expand/collapse when clicking on the title or background of the queue
     const toggleQueue = () => {
         setIsExpanded(!isExpanded);
     };
@@ -22,22 +31,16 @@ const Queue = () => {
           }
         }}>
             <div className="QueueTitle">Queue</div>
-            <button onClick={(e) => {
-              e.stopPropagation(); // Prevents toggling when clicking on the button
-              clearQueue();
-            }}>Clear</button>
-            <button onClick={(e) => {
-              e.stopPropagation(); // Prevents toggling when clicking on the button
-              shuffleQueue();
-            }}>Shuffle</button>
-            <button onClick={(e) => {
-              e.stopPropagation(); // Prevents toggling when clicking on the button
-              filterFavorites(); // Assuming this toggles or filters favorites
-            }}>Show Favorites</button>
+            <button onClick={(e) => { e.stopPropagation(); clearQueue(); }}>Clear</button>
+            <button onClick={(e) => { e.stopPropagation(); shuffleQueue(); }}>Shuffle</button>
+            <button onClick={(e) => { e.stopPropagation(); resetQueue(); }}>Reset Queue</button>
+            <button onClick={(e) => { e.stopPropagation(); toggleShowFavorites(); }}>
+                {showFavorites ? 'Show All' : 'Show Favorites'}
+            </button>
             {isExpanded && (
                 <div className="QueueItems" onClick={(e) => e.stopPropagation()}>
-                    {queue.length > 0 ? queue.map((song, index) => (
-                        <div key={index} 
+                    {queue.filter(song => !showFavorites || song.isFavorite).map((song, index) => (
+                        <div key={song.id || index}
                              className={`QueueItem ${index === currentSongIndex ? 'highlight' : ''}`}
                              onClick={() => handleSongClick(index)}>
                             {song.name}
@@ -47,7 +50,7 @@ const Queue = () => {
                                       toggleFavorite(index);
                                   }}>★</span>
                         </div>
-                    )) : <div className="QueueItem">No songs in queue.</div>}
+                    ))}
                 </div>
             )}
         </div>
