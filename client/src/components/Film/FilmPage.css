@@ -1,0 +1,54 @@
+/* FilmPage.css */
+
+.Film-header {
+  border-bottom: 1px solid gray;
+  /* Add other header styles as needed */
+}
+
+.FilmContent {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}
+
+.FilmTitle {
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 5px;
+  align-self: flex-start;
+  margin-right: 10px;
+}
+
+/* Container for both film elements */
+.FilmContainers {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between; /* Adjusts spacing as needed */
+  align-items: flex-start; /* Aligns items at the start of the container */
+  flex-wrap: wrap; /* Allows containers to wrap on smaller screens */
+}
+.FilmContainer {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  color: #E0ECED;
+  margin: 5px; /* Adjust margins as needed for spacing */
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+  position: relative;
+  width: calc(50% - 20px); /* Smaller width - adjusted for margin */
+  padding-top: calc(28.125% - 10px); /* Smaller height - maintain aspect ratio */
+  height: 0; /* Height is zero to maintain the aspect ratio */
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Removes iframe border */
+}
