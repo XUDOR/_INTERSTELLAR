@@ -60,12 +60,16 @@ export const useMusicDataReducer = () => {
     dispatch({ type: 'FETCH_START' });
     async function fetchData() {
       try {
-        const albumRes = await fetch('/api/albums');
-        const albums = await albumRes.json();
+
+       
+
+        const albumsRes = await axios.get('/api/albums');
+        const albums = await albumsRes.data;
         dispatch({ type: 'FETCH_ALBUMS_SUCCESS', payload: albums });
 
-        const songRes = await fetch('/api/songs');
-        const songs = await songRes.json();
+        const songsRes = await axios.get('/api/songs');
+        const songs = await songsRes.data;
+    
         dispatch({ type: 'FETCH_SONGS_SUCCESS', payload: songs });
       } catch (error) {
         dispatch({ type: 'FETCH_FAILURE', payload: error.toString() });
