@@ -3,7 +3,7 @@ import Song from './Song';
 import './SongList.css';
 
 function SongList({ songs, albumId }) {
-    console.log("Received songs in SongList:", songs);
+    
 
     return (
         <div className='SongList'>

@@ -13,7 +13,7 @@ root.render(
   </React.StrictMode>
 );
 
-console.log('ReactDOM rendered');
+
 
 // Optional: Performance logging
 reportWebVitals(console.log);

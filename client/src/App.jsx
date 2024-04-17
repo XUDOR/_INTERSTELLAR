@@ -14,11 +14,11 @@ import { useCentralQueue } from './Contexts/CentralQueueContext'; // Ensure the 
 import './App.css';
 
 const App = () => {
-  const { isLoading, queue, currentSongIndex } = useCentralQueue(); // Corrected variable name
+  const { isLoading  } = useCentralQueue(); // Corrected variable name
   const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
-    console.log("App component mounted or updated.");
+    
     // Simulate a loading delay
     const timer = setTimeout(() => {
       setIsPageLoading(false);

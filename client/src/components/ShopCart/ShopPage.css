@@ -1,24 +1,114 @@
-/* ShopPage.css */
-.header-minimal {
-  border-bottom: 1px solid gray;
-  /* Other styles as needed */
+.shopPage {
+  color: #E0ECED;
+  font-family: Arial, sans-serif;
+  font-weight: lighter;
+  padding-bottom: 300px;
+}
+
+.shopTitle {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  color: #E0ECED;
+  padding: 5px;
+  margin-right: 10px;
 }
 
 .shopContent {
   display: flex;
-  justify-content: flex-start; 
-  padding-right: 10px; 
+  padding-right: 10px;
   padding-top: 10px;
   border-top: 1px solid gray;
-  
 }
 
-.shopTitle {
-  justify-content: flex-end;
+.shopContainer {
+  display: grid;
+  background-color: #E0ECED;
+  grid-template-columns: 1fr 300px; /* Adjusting as per content size */
+  gap: 15px;
+}
+
+.product-list {
   border: 1px solid gray;
-  color: #E0ECED;
-  padding: 5px;
-  align-self: flex-start; 
-  margin-right: 10px; 
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout for products */
+  gap: 10px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: 2px solid #f7fde1;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  background-color: #CEDDC2;
+  color: #000;
+}
+
+.product-name {
+  border: 1px solid gray;
+  padding: 5px; /* Added padding for better text visibility */
+  text-align: center; /* Centering product name */
+}
+
+.add-product {
+  border: 1px solid white;
+  background-color: #333; /* Added background color for consistency */
+  color: white;
+  padding: 10px;
+  cursor: pointer; /* Ensures cursor changes on hover */
+}
+
+.add-product:hover {
+  background-color: #5A5956; /* Darker background on hover */
+  color: #CEDDC2;
+}
+
+.cart {
+  display: flex;
+  background-color: #FFFEF5;
+  border: 2px solid red;
+  justify-content: flex-start;
+  margin-left: 5%;
+  padding: 20px;
+  height: 500px;
+}
+
+.cartItems {
+  border: 1px solid gray;
+  width: 300px;
+  background-color: #1E1E1E;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+}
+
+.cart-item button {
+  background: #706F6C;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background: #5A5956;
+  color: #CEDDC2;
 }

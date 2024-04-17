@@ -9,10 +9,10 @@ const { getSongByIndex, getAllSongsSortedByIndex, getNextSong, getPreviousSong }
 
 // Fetch all songs sorted by index
 router.get('/songs', async (req, res) => {
-  console.log('Received request to fetch all songs sorted by Index');
+  
   try {
     const songs = await getAllSongsSortedByIndex();
-    console.log('Fetched songs sorted by index:', songs);
+    
     res.json(songs);
   } catch (err) {
     console.error('Error fetching songs:', err);
@@ -23,7 +23,7 @@ router.get('/songs', async (req, res) => {
 // Fetch a single song by its index in the queue
 router.get('/songs/:index', async (req, res) => {
   const { index } = req.params;
-  console.log(`Received request to fetch song at index ${index}`);
+  
   try {
     const song = await getSongByIndex(index);
     if (song) {
@@ -39,7 +39,7 @@ router.get('/songs/:index', async (req, res) => {
 
 // Fetch the next song in the queue
 router.get('/songs/next', async (req, res) => {
-  console.log('Received request for the next song');
+  
   try {
     const song = await getNextSong();
     res.json(song);
@@ -51,7 +51,7 @@ router.get('/songs/next', async (req, res) => {
 
 // Fetch the previous song in the queue
 router.get('/songs/previous', async (req, res) => {
-  console.log('Received request for the previous song');
+  
   try {
     const song = await getPreviousSong();
     res.json(song);

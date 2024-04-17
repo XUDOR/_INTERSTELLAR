@@ -15,42 +15,42 @@ const initialState = {
 
 // Reducer function to handle actions
 const musicDataReducer = (state, action) => {
-  console.log("Received action:", action.type, action); // Log every action received
+  
   switch (action.type) {
     case 'FETCH_START':
-      console.log("Fetching data started");
+      
       return { ...state, isLoading: true, error: null };
     case 'FETCH_ALBUMS_SUCCESS':
       const albumsById = action.payload.reduce((obj, album) => {
         obj[album.id] = album;
         return obj;
       }, {});
-      console.log("Fetched albums successfully:", albumsById);
+      
       return { ...state, albumIndex: albumsById, isLoading: false };
     case 'FETCH_SONGS_SUCCESS':
       const { albumId, songs } = action.payload;
-      console.log(`Fetched songs successfully for album ID ${albumId}:`, songs);
+      
       return {
         ...state,
         songIndex: { ...state.songIndex, [albumId]: songs },
         isLoading: false
       };
     case 'SET_QUEUE':
-      console.log("Queue set:", action.payload);
+      
       return { ...state, queue: action.payload, currentSongIndex: 0 };
     case 'NEXT_SONG':
       let nextIndex = (state.currentSongIndex + 1) % state.queue.length;
-      console.log("Moved to next song, index:", nextIndex);
+      
       return { ...state, currentSongIndex: nextIndex };
     case 'PREV_SONG':
       let prevIndex = (state.currentSongIndex - 1 + state.queue.length) % state.queue.length;
-      console.log("Moved to previous song, index:", prevIndex);
+      
       return { ...state, currentSongIndex: prevIndex };
     case 'FETCH_FAILURE':
-      console.log("Failed to fetch data:", action.payload);
+      
       return { ...state, isLoading: false, error: action.payload };
     default:
-      console.log("Unhandled action:", action);
+      
       return state;
   }
 };

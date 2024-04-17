@@ -20,11 +20,11 @@ const AudioPlayer = () => {
     useEffect(() => {
         const player = audioPlayer.current;
         if (player && currentSong.audio_url) {
-            console.log("Loading new song:", currentSong.audio_url);
+            
             player.src = currentSong.audio_url;
             player.load();
             if (isPlaying) {
-                console.log("Auto-playing song");
+                
                 player.play().catch(e => console.error("Error auto-playing the song:", e));
             }
         }
@@ -34,15 +34,15 @@ const AudioPlayer = () => {
         const player = audioPlayer.current;
         if (player) {
             const updateProgress = () => {
-                console.log("Updating currentTime:", player.currentTime);
+                
                 setCurrentTime(player.currentTime);
             };
             const updateDuration = () => {
-                console.log("Setting duration:", player.duration);
+                
                 setDuration(player.duration);
             };
             const playNextSong = () => {
-                console.log("Song ended, playing next.");
+                
                 const nextIndex = (currentSongIndex + 1) % queue.length;
                 setCurrentSongIndex(nextIndex);
                 setIsPlaying(true);
@@ -58,7 +58,9 @@ const AudioPlayer = () => {
                 player.removeEventListener('ended', playNextSong);
             };
         }
+        // eslint-disable-next-line
     }, [currentSongIndex, queue.length]);
+    
 
     useEffect(() => {
         const handleKeyPress = (e) => {
@@ -77,13 +79,13 @@ const AudioPlayer = () => {
     const togglePlayPause = () => {
         setIsPlaying(prevIsPlaying => {
             if (!prevIsPlaying && audioPlayer.current) {
-                console.log("Playing audio");
+                
                 audioPlayer.current.play().catch(error => {
                     console.error("Error playing the song:", error);
                     return false;
                 });
             } else if (audioPlayer.current) {
-                console.log("Pausing audio");
+                
                 audioPlayer.current.pause();
             }
             return !prevIsPlaying;
@@ -93,7 +95,7 @@ const AudioPlayer = () => {
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
         if (audioPlayer.current) {
-            console.log("Seeking to:", newTime);
+            
             audioPlayer.current.currentTime = newTime;
             setCurrentTime(newTime);
         }
@@ -102,7 +104,7 @@ const AudioPlayer = () => {
     const handleVolumeChange = (e) => {
         const newVolume = parseFloat(e.target.value);
         if (audioPlayer.current) {
-            console.log("Changing volume to:", newVolume);
+            
             audioPlayer.current.volume = newVolume;
             setVolume(newVolume);
         }

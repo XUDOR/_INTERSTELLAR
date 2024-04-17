@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { CentralQueueContext } from '../../Contexts/CentralQueueContext.js';
+import React from 'react';
 import AudioPlayer from '../audioPlayer/AudioPlayer';
 import './Player.css';
 
@@ -7,9 +6,9 @@ import './Player.css';
 
 
 const Player = () => {
-  const {
+ 
     
-  } = useContext(CentralQueueContext);
+ 
 
   return (
     <div className="Player">
@@ -19,5 +18,4 @@ const Player = () => {
     </div>
   );
 };
-
 export default Player;

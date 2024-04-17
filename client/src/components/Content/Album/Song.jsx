@@ -5,12 +5,10 @@ import './Song.css';
 function Song({ song }) {
     const { setCurrentSongIndex } = useContext(CentralQueueContext);
 
-    console.log("Received song object in Song component:", song);
-
     const handleClickPlay = (e) => {
         e.preventDefault();
         if (song && song.indexid !== undefined) {
-            console.log("Playing song:", song.name, "with index ID", song.indexid);
+            
             setCurrentSongIndex(song.indexid - 1);  // Adjust for zero-based indexing
         } else {
             console.error("Error: Song or index ID is undefined.", song);
