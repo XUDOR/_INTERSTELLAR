@@ -31,11 +31,11 @@ const Queue = () => {
           }
         }}>
             <div className="QueueTitle">Queue</div>
-            <button onClick={(e) => { e.stopPropagation(); clearQueue(); }}>Clear</button>
+            {/*<button onClick={(e) => { e.stopPropagation(); clearQueue(); }}>Clear</button>*/}
             <button onClick={(e) => { e.stopPropagation(); shuffleQueue(); }}>Shuffle</button>
             <button onClick={(e) => { e.stopPropagation(); resetQueue(); }}>Reset Queue</button>
-            <button onClick={(e) => { e.stopPropagation(); toggleShowFavorites(); }}>
-                {showFavorites ? 'Show All' : 'Show Favorites'}
+           <button onClick={(e) => { e.stopPropagation(); toggleShowFavorites(); }}>             
+                {showFavorites ? 'Show All' : 'Show Favorites'}                                     
             </button>
             {isExpanded && (
                 <div className="QueueItems" onClick={(e) => e.stopPropagation()}>

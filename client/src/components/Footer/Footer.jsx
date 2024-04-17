@@ -1,20 +1,21 @@
 import React from 'react';
-import Player from './Player';
+import AudioPlayer from '../audioPlayer/AudioPlayer';
 import Queue from './Queue';
-import Shop from './Shop';
+//import Shop from './Shop';
 
 import Film from './Film';
-import Downloads from './Downloads';
+//import Downloads from './Downloads';
 import './Footer.css';
 
 const Footer = () => {
   return (
     <div className="AppContainer">
       <footer className="Footer">
-        <Downloads />
+        {/* <Downloads /> */}
         <Film />
-        <Player />  
-        <Shop />
+        <AudioPlayer />
+       {/* <Shop /> */}
+
       </footer>
       <Queue />
     </div>

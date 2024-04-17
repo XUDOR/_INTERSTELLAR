@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { CentralQueueContext } from '../../Contexts/CentralQueueContext';
-import { ReactComponent as PlayIcon } from '../../images/Icons/play-leaf3.svg';
-import { ReactComponent as PauseIcon } from '../../images/Icons/Pause.svg';
 import { ReactComponent as NextIcon } from '../../images/Icons/next-gray.svg';
 import { ReactComponent as PreviousIcon } from '../../images/Icons/back-gray.svg';
 import './AudioPlayer.css';
@@ -20,11 +18,9 @@ const AudioPlayer = () => {
     useEffect(() => {
         const player = audioPlayer.current;
         if (player && currentSong.audio_url) {
-            
             player.src = currentSong.audio_url;
             player.load();
             if (isPlaying) {
-                
                 player.play().catch(e => console.error("Error auto-playing the song:", e));
             }
         }
@@ -34,15 +30,12 @@ const AudioPlayer = () => {
         const player = audioPlayer.current;
         if (player) {
             const updateProgress = () => {
-                
                 setCurrentTime(player.currentTime);
             };
             const updateDuration = () => {
-                
                 setDuration(player.duration);
             };
             const playNextSong = () => {
-                
                 const nextIndex = (currentSongIndex + 1) % queue.length;
                 setCurrentSongIndex(nextIndex);
                 setIsPlaying(true);
@@ -58,9 +51,7 @@ const AudioPlayer = () => {
                 player.removeEventListener('ended', playNextSong);
             };
         }
-        // eslint-disable-next-line
     }, [currentSongIndex, queue.length]);
-    
 
     useEffect(() => {
         const handleKeyPress = (e) => {
@@ -79,13 +70,11 @@ const AudioPlayer = () => {
     const togglePlayPause = () => {
         setIsPlaying(prevIsPlaying => {
             if (!prevIsPlaying && audioPlayer.current) {
-                
                 audioPlayer.current.play().catch(error => {
                     console.error("Error playing the song:", error);
                     return false;
                 });
             } else if (audioPlayer.current) {
-                
                 audioPlayer.current.pause();
             }
             return !prevIsPlaying;
@@ -95,7 +84,6 @@ const AudioPlayer = () => {
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
         if (audioPlayer.current) {
-            
             audioPlayer.current.currentTime = newTime;
             setCurrentTime(newTime);
         }
@@ -104,7 +92,6 @@ const AudioPlayer = () => {
     const handleVolumeChange = (e) => {
         const newVolume = parseFloat(e.target.value);
         if (audioPlayer.current) {
-            
             audioPlayer.current.volume = newVolume;
             setVolume(newVolume);
         }
@@ -120,15 +107,23 @@ const AudioPlayer = () => {
         <div className="player">
             <audio ref={audioPlayer}></audio>
             <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
-            <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
-                <PreviousIcon className="svg-icon" />
-            </button>
-            <button className="Play" onClick={togglePlayPause}>
-                {isPlaying ? <PauseIcon className="svg-PAUSE" /> : <PlayIcon className="svg-PLAY" />}
-            </button>
-            <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
-                <NextIcon className="svg-icon" />
-            </button>
+
+            <div className='transport'>
+
+                <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
+                    <PreviousIcon className="svg-icon" />
+                </button>
+                <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
+                    <NextIcon className="svg-icon" />
+                </button>
+
+
+                <button className="Play" onClick={togglePlayPause}>
+                    {isPlaying ? <div className="pause-button"></div> : <div className="play-button"></div>}
+                </button>
+
+            </div>
+
             <div className="Time">
                 {calculateTime(currentTime)} / {calculateTime(duration)}
             </div>
@@ -142,7 +137,7 @@ const AudioPlayer = () => {
                     onMouseDown={() => setIsSeeking(true)}
                     onMouseUp={() => setIsSeeking(false)}
                     className="seek-slider"
-                    step="1"
+                    step=".05"
                 />
             </div>
             <div className="volume-control">
