@@ -1,125 +1,124 @@
+.player {
+  display: flex;
+  /*  border: 2px solid red; */
+  width: 70%;
+  color: #F9F7E8;
+  justify-content: center;
+  font-size: 15px;
+}
 
-.audio-file-name{
-  padding: 7px;
-  flex: 55%;
-  margin-top: 2px;
+.audio-file-name {
+  padding: 2px;
+  flex: 70%;
+  margin: 2px;
+
   color: #0F1D38;
   font-size: 11px;
   background: #3AA0A0;
   height: 45px;
   justify-content: center;
   width: 100%;
-
 }
 
 
-.player {
-  display: flex; /* This line is crucial for horizontal layout */
-  width: 100%;
-  color: #F9F7E8;
-  justify-content: center;
-  font-size: 15px;
-  
-}
+/* TRANSPORT */
 
-.Play, .Time, .volume-control { /* Corrected class name for consistency */
-  height: 48px;
-  width: 60%;
-  align-items: left; /* Ensure vertical center alignment */
-  margin-left: 5px;
-}
-
-.Time {
-  border: 2px solid #3AA0A0;
-  margin-right: 5px; /* Adjust spacing between elements */
+.transport {
+  flex-direction: row;
+  flex: 60%;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  padding-top: 7px;
-  padding-left: 7px; /* Added padding for visual space */
-  margin: 0px;
-  font-size: 12px;
+  
+ /* border: 1px solid gold; */
 }
 
 .Play {
-  
-  border: 2px solid ;
-  background-color: #737F3A;
-  padding: 3px;
+
+  border: 1px solid #737F3A;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   width: 25%;
-  margin-right: 5px;
-  cursor: pointer; /* Suggest interaction */
+  height: 47px;
+  margin-top: 5px;
+  margin: 2px;
+  
+  cursor: pointer;
+  /* Suggest interaction */
 }
 
 .Play:hover {
-  background-color: #535f0d; /* Change color on hover */
-  
+  background-color: #535f0d;
+  /* Change color on hover */
+
 }
 
-
-.svg-PLAY {
-  background-color: transparent;
+.play-button {
+  
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
-  transition: fill 0.5s ease;
-  opacity: 0.5;
+  
+  background-color: #96a508;
+  border-radius: 50%;
+  /* Makes it a circle */
 }
 
-.svg-PLAY:hover {
-  background-color: transparent;
+.pause-button {
+ 
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
-  transition: fill 0.5s ease;
-  opacity: 1;
+  margin: 2px;
+  background-color: #2b7f8c;
 }
-
-.svg-PAUSE {
-  background-color: transparent;
-    width: 25px; /* Width of the SVG */
-    height: 25px; /* Height of the SVG */
-    opacity: 0.7;
-    transition: fill 0.5s ease; /* Smooth transition for hover effects */
-  
-  }
-
-
-
 
 .svg-icon {
-  background-color:transparent;
-  width: 30px; /* Width of the SVG */
-  height: 30px; /* Height of the SVG */
-  transition: fill 0.3s ease; /* Smooth transition for hover effects */
+  background-color: transparent;
+  padding: 2px;
+  width: 20px;
+  /* Width of the SVG */
+  height: 20px;
+  /* Height of the SVG */
+  transition: fill 0.3s ease;
+  /* Smooth transition for hover effects */
 }
 
-
-
-
-
-
 .Back {
-  border: 1px solid #626154; 
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #626154;
   width: 20%;
-  margin-left: 5px;
-  padding: 3px;
+  height: 50px;
+  margin-top: 2px;
+  margin: 2px;
+  padding: 4px;
   cursor: pointer;
-  transition: fill 0.5s ease; /* Smooth transition for hover effects */
+  transition: fill 0.5s ease;
+  /* Smooth transition for hover effects */
 }
 
 .Back:hover {
   border: 1px solid #626154;
-  background-color: #065A82;  
+  background-color: #065A82;
   width: 20%;
-  margin-left: 5px;
+  margin-left: 2px;
   padding: 3px;
   cursor: pointer;
 }
 
 .Next {
-  border: 1px solid #626154;  
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #626154;
   width: 20%;
-  margin-right: 5px;
-  padding: 3px;
+  height: 50px;
+  margin: 2px;
+  margin-bottom: 4px;
+  padding: 4px;
   cursor: pointer;
 }
 
@@ -127,23 +126,51 @@
   border: 1px solid #626154;
   background-color: #065A82;
   width: 20%;
-  margin-right: 5px;
+  margin-right: 2px;
   padding: 3px;
   cursor: pointer;
 }
 
+
+/* TIME */
+
+.Time {
+  border: 2px solid #3AA0A0;
+
+  /* Adjust spacing between elements */
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40%;
+  padding: 5px;
+  /* Added padding for visual space */
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Volume */
+
 .volume-control {
-  display: flex; /* Ensures flex properties apply */
-  align-items: center; /* Align the slider within this control */
-  margin-left: 10px; /* Space out from preceding elements */
-  width: 100%; /* Control the max width of your volume slider */  
+/*  border: 1px solid #3AA0A0; */
+
+  display: flex;
+  /* Ensures flex properties apply */
+  align-items: center;
+  /* Align the slider within this control */
+  margin-left: 10px;
+  margin-top: 1px;
+  /* Space out from preceding elements */
+  height: 48px;
+  width: 100%;
+  /* Control the max width of your volume slider */
 }
 
 .volume-slider {
 
   -webkit-appearance: none;
-  appearance: none; 
-  width: 100%;
+  appearance: none;
+  width: 80%;
   height: 5px;
   background: #0F1D38;
   outline: none;
@@ -158,18 +185,25 @@
 .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 5px;
+  height: 50px;
   background: #3AA0A0;
   cursor: pointer;
 }
 
+/* Seek */
+
 .seek-control {
-  display: flex; /* Ensures flex properties apply */
+  /* border: 1px solid #3AA0A0;*/
+  display: flex;
+  /* Ensures flex properties apply */
   justify-content: center;
-  align-items: center; /* Align the slider within this control */
-  margin-left: 10px; /* Space out from preceding elements */
-  width: 200%; /* Control the max width of your volume slider */
+  align-items: center;
+  /* Align the slider within this control */
+  margin-left: 5px;
+  /* Space out from preceding elements */
+  width: 100%;
+  /* Control the max width of your volume slider */
 }
 
 .seek-slider {
@@ -177,14 +211,12 @@
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 25px;
+  height: 10px;
   background: #F9F7E8;
   outline: none;
   opacity: 0.5;
   transition: opacity .3s;
 }
-
-
 
 .seek-slider:hover {
   opacity: 1;
@@ -193,8 +225,8 @@
 .seek-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 10px;
-  height: 25px;
-  background: #3AA0A0;
+  width: 5px;
+  height: 35px;
+  background: #96a508;
   cursor: pointer;
 }
