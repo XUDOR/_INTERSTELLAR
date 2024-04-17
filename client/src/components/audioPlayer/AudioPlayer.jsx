@@ -137,7 +137,7 @@ const AudioPlayer = () => {
                     type="range"
                     min="0"
                     max={duration || 0}
-                    value={isSeeking ? undefined : currentTime}
+                    value={isSeeking ? 0 : currentTime}
                     onChange={handleSeekChange}
                     onMouseDown={() => setIsSeeking(true)}
                     onMouseUp={() => setIsSeeking(false)}
