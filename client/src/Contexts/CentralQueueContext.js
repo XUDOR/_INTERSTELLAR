@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { createContext, useReducer, useEffect, useContext } from 'react';
 
 export const CentralQueueContext = createContext();
@@ -62,8 +63,10 @@ export const CentralQueueProvider = ({ children }) => {
     const fetchSongs = async () => {
         dispatch({ type: 'LOADING' });
         try {
-            const response = await fetch('http://localhost:5001/api/songs');
-            const songs = await response.json();
+           
+            const response = await axios.get('/api/songs');
+            const songs = await response.data;
+
             const queueWithGlobalIndex = songs.map((song, index) => ({ ...song, globalIndex: index, isFavorite: false }));
             dispatch({ type: 'SET_QUEUE', payload: queueWithGlobalIndex });
         } catch (error) {
