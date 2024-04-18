@@ -82,6 +82,7 @@
   background-color: #2b7f8c;
   width: 20px; /* Ensures the pause icon is square */
   height: 20px; /* Square pause button */
+  border-radius: 0%;
 }
 
 /* Time display and seek bar */
