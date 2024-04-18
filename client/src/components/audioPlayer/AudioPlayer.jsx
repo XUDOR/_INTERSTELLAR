@@ -104,12 +104,21 @@ const AudioPlayer = () => {
     return (
         <div className="player">
             <audio ref={audioPlayer}></audio>
-            <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
+
+            <div className='TimeNameInfo'>
+                <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
+
+                <div className="Time">
+                    {calculateTime(currentTime)} / {calculateTime(duration)}
+                </div>
+            </div>
+
+
+
 
             <div className='transport'>
-
-            <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
-                </button>          
+                <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
+                </button>
 
                 <button className="Play" onClick={togglePlayPause}>
                     {isPlaying ? <div className="pause-button"></div> : <div className="play-button"></div>}
@@ -117,35 +126,35 @@ const AudioPlayer = () => {
 
                 <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
                 </button>
-                
+
             </div>
 
-            <div className="Time">
-                {calculateTime(currentTime)} / {calculateTime(duration)}
-            </div>
-            <div className="seek-control">
-                <input
-                    type="range"
-                    min="0"
-                    max={duration || 0}
-                    value={isSeeking ? 0 : currentTime}
-                    onChange={handleSeekChange}
-                    onMouseDown={() => setIsSeeking(true)}
-                    onMouseUp={() => setIsSeeking(false)}
-                    className="seek-slider"
-                    step=".05"
-                />
-            </div>
-            <div className="volume-control">
-                <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value={volume}
-                    onChange={handleVolumeChange}
-                    className="volume-slider"
-                />
+
+            <div className='VolumeSeekBox'>
+                <div className="seek-control">
+                    <input
+                        type="range"
+                        min="0"
+                        max={duration || 0}
+                        value={isSeeking ? 0 : currentTime}
+                        onChange={handleSeekChange}
+                        onMouseDown={() => setIsSeeking(true)}
+                        onMouseUp={() => setIsSeeking(false)}
+                        className="seek-slider"
+                        step=".05"
+                    />
+                </div>
+                <div className="volume-control">
+                    <input
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value={volume}
+                        onChange={handleVolumeChange}
+                        className="volume-slider"
+                    />
+                </div>
             </div>
         </div>
     );
