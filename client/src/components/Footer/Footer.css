@@ -31,6 +31,8 @@
   padding: 5px;
 }
 
+
+
 /* Responsive styles for medium devices (tablets) */
 @media (max-width: 1024px) and (min-width: 769px) {
   .Footer {
@@ -38,9 +40,15 @@
   }
 
   .Footer > div {
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: row; /* Stack children vertically */
   }
 }
+
+
+
+
+
+
 
 /* Responsive styles for small devices (mobiles) */
 @media (max-width: 768px) {
