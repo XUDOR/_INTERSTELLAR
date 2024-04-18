@@ -49,7 +49,7 @@ const AudioPlayer = () => {
                 player.removeEventListener('ended', playNextSong);
             };
         }
-    }, [currentSongIndex, queue.length]);
+    }, [currentSongIndex, queue.length,setCurrentSongIndex]);
 
     useEffect(() => {
         const handleKeyPress = (e) => {

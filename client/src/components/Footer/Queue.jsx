@@ -8,7 +8,7 @@ const Queue = () => {
         queue, 
         currentSongIndex, 
         setCurrentSongIndex, 
-        clearQueue, 
+       // clearQueue, 
         shuffleQueue, 
         resetQueue, 
         toggleFavorite, 
