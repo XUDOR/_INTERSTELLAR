@@ -108,21 +108,16 @@ const AudioPlayer = () => {
 
             <div className='transport'>
 
-             
-            <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
-                </button>
-   
+            <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
+                </button>          
 
                 <button className="Play" onClick={togglePlayPause}>
                     {isPlaying ? <div className="pause-button"></div> : <div className="play-button"></div>}
                 </button>
-                <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
+
+                <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
                 </button>
-
-
-
-
-
+                
             </div>
 
             <div className="Time">

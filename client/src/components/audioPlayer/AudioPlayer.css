@@ -54,18 +54,18 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 14px 0 14px 24px; /* Smaller triangles */
-  border-color: transparent transparent transparent #2b7f8c; /* Back triangle color */
+  border-width: 14px 24px 14px 0; /* Smaller triangles */
+  border-color: transparent #2b7f8c transparent transparent; /* Right-pointing triangle */
 }
 
 .Next {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 14px 24px 14px 0; /* Smaller triangles */
-  border-color: transparent #2b7f8c transparent transparent; /* Next triangle color */
-  
+  border-width: 14px 0 14px 24px; /* Smaller triangles */
+  border-color: transparent transparent transparent #2b7f8c; /* Left-pointing triangle */
 }
+
 
 /* Specific styles for play and pause icons within buttons */
 .play-button, .pause-button {
