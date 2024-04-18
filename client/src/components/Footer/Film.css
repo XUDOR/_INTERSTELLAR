@@ -18,6 +18,7 @@
 @media (max-width: 1920px) and (min-width: 480px) {
   .Film {
   flex-basis: 4%;
+  height: 1vh;
 }
 
 }

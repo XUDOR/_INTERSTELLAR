@@ -12,6 +12,7 @@
   width: 88%; /* Full width for better responsiveness */
   height: 6.5vh; /* Maintain original height for large screens */
   padding: 5px;
+  padding-bottom: 5px;
   background-color: #083D5E;
   color: #FFF;
   z-index: 1000;
@@ -36,7 +37,8 @@
 /* Responsive styles for medium devices (tablets) */
 @media (max-width: 1024px) and (min-width: 769px) {
   .Footer {
-    height: 8.5vh; /* Slightly increase height for medium screens */
+    height: 8vh; /* Slightly increase height for medium screens */
+    padding: 20px;
   }
 
   .Footer > div {
@@ -53,8 +55,9 @@
 /* Responsive styles for small devices (mobiles) */
 @media (max-width: 768px) {
   .Footer {
-    height: 10vh; /* Further increase height for small screens */
-    padding: 3px;
+    height: 9vh; /* Further increase height for small screens */
+    padding: 30px;
+    margin-bottom: 10px;
   }
 
   .Footer > div {

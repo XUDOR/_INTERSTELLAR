@@ -19,6 +19,7 @@
 /* Styles for the display of the audio file name */
 .audio-file-name {
   display: flex;
+  flex: .6;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -34,6 +35,7 @@
 /* Time display and seek bar */
 .Time {
   display: flex;
+  flex: .4;
   justify-content: center;
   align-items: center;
   width: 100%; /* Adjusted for better fit */
@@ -155,7 +157,7 @@
     display: flex;
     justify-content: space-between; /* Spreads the name and time */
     align-items: center;
-    padding: 0 20px; /* Adds padding for visual spacing */
+    
   }
 
   .transport {
@@ -167,62 +169,66 @@
     flex: 1; /* Gives volume and seek controls a flexible space */
     display: flex;
     justify-content: space-between; /* Helps space out the controls */
-    padding: 0 20px; /* Adds padding for visual spacing */
+    
   }
 }
 
+/* ________________________________________________________________ */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .player {
-    flex-direction: column; /* Changes to column to stack groups of controls */
-    flex-wrap: wrap;
+    flex-direction: column; /* Ensures a horizontal layout for larger screens */
+    justify-content: space-around; /* Evenly spaces out the player components */
+    align-items: center;
   }
 
-  .audio-file-name, .Time, .transport {
-    flex-direction: row; /* Ensures these elements are in a row */
-    width: 100%; /* Full width to utilize space */
-    justify-content: left; /* Spreads out the elements evenly */
+  .TimeNameInfo {
+    flex: 1; /* Gives the time and name section a flexible space */
+    display: flex;
+    flex-direction: column;
+    flex: .5;
+    justify-content: space-between; /* Spreads the name and time */
+    align-items: center;
+    
   }
 
   .transport {
-    justify-content: center; /* Centers transport controls */
+    flex: 0.5; /* Adjusts size to not stretch too much */
+    justify-content: center; /* Centers the transport controls */
   }
 
-  .seek-control, .volume-control {
-    flex-direction: row; /* Keeps sliders in a row */
-    width: 100%; /* Full width to match layout */
-    justify-content: space-between; /* Helps space out the slider and label */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .player {
-    width: 100%; /* Full width on smaller screens */
+  .VolumeSeekBox {
+    flex: 1; /* Gives volume and seek controls a flexible space */
+    display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Helps space out the controls */
+  
   }
+  .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
+    width: 8px;
+    height: 20px;
+    margin-bottom: 3px;
 
-  .transport, .Time, .seek-control, .volume-control {
-    flex-direction: column; /* Stack controls vertically on small screens */
-  }
-
-  .Back, .Next, .Play, .seek-slider, .volume-slider {
-    width: 100%; /* Adjust width to fit small screens */
   }
 }
 
 
+
+
+/* ________________________________________________________________ */
+
+@media (max-width: 768px) {
+
+
+  .VolumeSeekBox {
+    flex: 1; /* Gives volume and seek controls a flexible space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Helps space out the controls */
+  
+  }
+
+  
+  }
 
 
