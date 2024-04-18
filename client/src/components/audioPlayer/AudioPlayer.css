@@ -1,232 +1,152 @@
+/* Base styles for the audio player */
 .player {
   display: flex;
-  /*  border: 2px solid red; */
-  width: 70%;
+  flex-direction: column;
+  align-items: center;
+  width: 70%; /* Maintains size but ensures everything fits */
   color: #F9F7E8;
-  justify-content: center;
-  font-size: 15px;
+  font-size: 14px; /* Slightly reduced for better aesthetics */
+  padding: 10px 0;
+  margin: auto;
 }
 
+/* Styles for the display of the audio file name */
 .audio-file-name {
-  padding: 2px;
-  flex: 70%;
-  margin: 2px;
-
-  color: #0F1D38;
-  font-size: 11px;
-  background: #3AA0A0;
-  height: 45px;
+  display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-}
-
-
-/* TRANSPORT */
-
-.transport {
-  flex-direction: row;
-  flex: 60%;
-  justify-content: center;
-  align-items: center;
-  
- /* border: 1px solid gold; */
-}
-
-.Play {
-
-  border: 1px solid #737F3A;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 25%;
-  height: 47px;
-  margin-top: 5px;
-  margin: 2px;
-  
-  cursor: pointer;
-  /* Suggest interaction */
-}
-
-.Play:hover {
-  background-color: #535f0d;
-  /* Change color on hover */
-
-}
-
-.play-button {
-  
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  
-  background-color: #96a508;
-  border-radius: 50%;
-  /* Makes it a circle */
-}
-
-.pause-button {
- 
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  margin: 2px;
-  background-color: #2b7f8c;
-}
-
-.svg-icon {
-  background-color: transparent;
+  height: 30px; /* Reduced height for more space efficiency */
+  margin: 5px 0;
   padding: 2px;
-  width: 20px;
-  /* Width of the SVG */
-  height: 20px;
-  /* Height of the SVG */
-  transition: fill 0.3s ease;
-  /* Smooth transition for hover effects */
+  color: #0F1D38;
+  font-size: 10px; /* Smaller font size for a sleeker look */
+  background: #3AA0A0;
 }
 
-.Back {
+/* Transport controls including previous, play/pause, and next buttons */
+.transport {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 5px 5px;
+}
+
+.Back, .Next, .Play {
+  display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #626154;
-  width: 20%;
-  height: 50px;
-  margin-top: 2px;
-  margin: 2px;
-  padding: 4px;
   cursor: pointer;
-  transition: fill 0.5s ease;
-  /* Smooth transition for hover effects */
+  background-color: transparent;
+  border: 1px solid #626154;
+  width: 40px; /* Adjusted width for better control */
+  height: 40px;
+  margin: 2px;
 }
 
-.Back:hover {
-  border: 1px solid #626154;
+.Back:hover, .Next:hover, .Play:hover {
   background-color: #065A82;
-  width: 20%;
-  margin-left: 2px;
-  padding: 3px;
-  cursor: pointer;
+}
+
+/* Transform squares into triangle shapes using borders */
+.Back {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 24px; /* Smaller triangles */
+  border-color: transparent transparent transparent #2b7f8c; /* Back triangle color */
 }
 
 .Next {
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #626154;
-  width: 20%;
-  height: 50px;
-  margin: 2px;
-  margin-bottom: 4px;
-  padding: 4px;
-  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 24px 14px 0; /* Smaller triangles */
+  border-color: transparent #2b7f8c transparent transparent; /* Next triangle color */
+  
 }
 
-.Next:hover {
-  border: 1px solid #626154;
-  background-color: #065A82;
-  width: 20%;
-  margin-right: 2px;
-  padding: 3px;
-  cursor: pointer;
-}
-
-
-/* TIME */
-
-.Time {
-  border: 2px solid #3AA0A0;
-
-  /* Adjust spacing between elements */
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 40%;
-  padding: 5px;
-  /* Added padding for visual space */
-  margin-right: 5px;
-  margin-left: 5px;
-  font-size: 12px;
-}
-
-/* Volume */
-
-.volume-control {
-/*  border: 1px solid #3AA0A0; */
-
+/* Specific styles for play and pause icons within buttons */
+.play-button, .pause-button {
   display: flex;
-  /* Ensures flex properties apply */
+  justify-content: center;
   align-items: center;
-  /* Align the slider within this control */
-  margin-left: 10px;
-  margin-top: 1px;
-  /* Space out from preceding elements */
-  height: 48px;
-  width: 100%;
-  /* Control the max width of your volume slider */
+  background-color: #96a508;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
-.volume-slider {
+.pause-button {
+  background-color: #2b7f8c;
+  width: 20px; /* Ensures the pause icon is square */
+  height: 20px; /* Square pause button */
+}
 
+/* Time display and seek bar */
+.Time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjusted for better fit */
+  height: 48px;
+  border: 1px solid #3AA0A0;
+  font-size: 11px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+/* Seek and Volume Controls */
+.seek-control, .volume-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5px;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.seek-slider, .volume-slider {
   -webkit-appearance: none;
-  appearance: none;
-  width: 80%;
-  height: 5px;
+  width: 100%; /* Full width for better usability */
+  height: 10px;
   background: #0F1D38;
   outline: none;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: opacity .3s;
 }
 
-.volume-slider:hover {
-  opacity: 1;
-}
-
-.volume-slider::-webkit-slider-thumb {
+.seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  appearance: none;
-  width: 5px;
-  height: 50px;
-  background: #3AA0A0;
-  cursor: pointer;
-}
-
-/* Seek */
-
-.seek-control {
-  /* border: 1px solid #3AA0A0;*/
-  display: flex;
-  /* Ensures flex properties apply */
-  justify-content: center;
-  align-items: center;
-  /* Align the slider within this control */
-  margin-left: 5px;
-  /* Space out from preceding elements */
-  width: 100%;
-  /* Control the max width of your volume slider */
-}
-
-.seek-slider {
-
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 10px;
-  background: #F9F7E8;
-  outline: none;
-  opacity: 0.5;
-  transition: opacity .3s;
-}
-
-.seek-slider:hover {
-  opacity: 1;
-}
-
-.seek-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 5px;
-  height: 35px;
+  width: 4px;
+  height: 45px;
   background: #96a508;
   cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .player {
+    width: 100%; /* Full width on smaller screens */
+    flex-direction: column;
+  }
+
+  .transport, .Time, .seek-control, .volume-control {
+    flex-direction: column; /* Stack controls vertically on small screens */
+  }
+
+  .Back, .Next, .Play, .seek-slider, .volume-slider {
+    width: 100%; /* Adjust width to fit small screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .transport {
+    justify-content: space-around;
+  }
+
+  .Time, .seek-control, .volume-control {
+    width: 100%; /* Adjust width for medium screens */
+  }
 }

@@ -1,40 +1,55 @@
-/* Footer.css */
-.Footer {
-  position: fixed;
-  /* Fixed position relative to the viewport */
-  left: 2;
-  /* Align to the left side of the viewport */
-  bottom: 0;
-  /* Align to the bottom of the viewport */
-  width: 80%;
-  /* Adjust based on the space you want for the queue */
-  height: 6vh;
-  /* Consistent footer height */
-  display: flex;
-  justify-content: flex-end;
-  /* Align content to the right */
-  align-items: center;
-  padding: 5px;
-  margin-right: 0px;
-  background-color: #083D5E;
-  /* Footer background color */
-  /* border: 2px solid white;*/
-
-  color: #FFF;
-  /* Text color for better contrast */
-  z-index: 1000;
-  /* Ensure the footer stays above other elements */
-}
-
-.Footer>div {
+/* Base styles for the App Container */
+.AppContainer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  /* Center content horizontally */
+}
+
+/* Base styles for Footer */
+.Footer {
+  position: fixed;
+  left: 0px;  /* Set to 0px to align properly at the left edge */
+  bottom: 0px; /* Set to 0px to align properly at the bottom */
+  width: 88%; /* Full width for better responsiveness */
+  height: 6.5vh; /* Maintain original height for large screens */
+  padding: 5px;
+  background-color: #083D5E;
+  color: #FFF;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  /* Center content vertically */
+}
+
+/* Style adjustments for the divs inside the Footer */
+.Footer > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   height: 100%;
   margin: 3px;
   padding: 5px;
 }
 
+/* Responsive styles for medium devices (tablets) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .Footer {
+    height: 8.5vh; /* Slightly increase height for medium screens */
+  }
+
+  .Footer > div {
+    flex-direction: column; /* Stack children vertically */
+  }
+}
+
+/* Responsive styles for small devices (mobiles) */
+@media (max-width: 768px) {
+  .Footer {
+    height: 10vh; /* Further increase height for small screens */
+    padding: 3px;
+  }
+
+  .Footer > div {
+    padding: 2px; /* Reduce padding for smaller div elements */
+  }
+}

@@ -1,7 +1,7 @@
 /* User.css  */
 
 .Film {
-  flex-basis: 5%;
+  flex-basis: 10%;
   border: 1px solid gray;
   color: #E0ECED;
   padding: 3px;
@@ -12,4 +12,22 @@
 
 .Film:hover {
   background-color: #065A82; /* Darker background on hover */
+}
+
+
+@media (max-width: 1280px) and (min-width: 1025px) {
+  .Film {
+  flex-basis: 7%;
+}
+
+}
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+  .Film{
+    flex-basis: 4%;
+  }
+
+
 }

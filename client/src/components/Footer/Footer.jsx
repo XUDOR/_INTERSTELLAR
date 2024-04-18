@@ -10,6 +10,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <div className="AppContainer">
+      
       <footer className="Footer">
         {/* <Downloads /> */}
         <Film />
