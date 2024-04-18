@@ -1,13 +1,19 @@
 /* Base styles for the audio player */
 .player {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 70%; /* Maintains size but ensures everything fits */
+  width: 80%; /* Maintains size but ensures everything fits */
   color: #F9F7E8;
   font-size: 14px; /* Slightly reduced for better aesthetics */
   padding: 10px 0;
   margin: auto;
+}
+
+.TimeNameInfo{
+  display: flex;
+  flex-direction: row;
+  flex: 20%;
 }
 
 /* Styles for the display of the audio file name */
@@ -17,17 +23,33 @@
   align-items: center;
   width: 100%;
   height: 30px; /* Reduced height for more space efficiency */
-  margin: 5px 0;
+  margin: 5px 1;
   padding: 2px;
   color: #0F1D38;
   font-size: 10px; /* Smaller font size for a sleeker look */
+  border: 1px solid #3AA0A0;
   background: #3AA0A0;
 }
+
+/* Time display and seek bar */
+.Time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjusted for better fit */
+  height: 30px;
+  border: 1px solid #3AA0A0;
+  font-size: 11px;
+  padding: 5px;
+  margin: 5px;
+}
+
+
 
 /* Transport controls including previous, play/pause, and next buttons */
 .transport {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   width: 50%;
   margin: 5px 5px;
@@ -66,7 +88,6 @@
   border-color: transparent transparent transparent #2b7f8c; /* Left-pointing triangle */
 }
 
-
 /* Specific styles for play and pause icons within buttons */
 .play-button, .pause-button {
   display: flex;
@@ -85,20 +106,14 @@
   border-radius: 0%;
 }
 
-/* Time display and seek bar */
-.Time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Adjusted for better fit */
-  height: 48px;
-  border: 1px solid #3AA0A0;
-  font-size: 11px;
-  padding: 5px;
-  margin-top: 5px;
-}
+
 
 /* Seek and Volume Controls */
+
+.VolumeSeekBox{
+  display: flex;
+  flex-direction: row;
+}
 .seek-control, .volume-control {
   display: flex;
   justify-content: space-between;
@@ -111,7 +126,7 @@
 .seek-slider, .volume-slider {
   -webkit-appearance: none;
   width: 100%; /* Full width for better usability */
-  height: 10px;
+  height: 5px;
   background: #0F1D38;
   outline: none;
   opacity: 0.7;
@@ -125,6 +140,72 @@
   background: #96a508;
   cursor: pointer;
 }
+
+/* ________________________________________________________________ */
+
+@media (min-width: 1025px) {
+  .player {
+    flex-direction: row; /* Ensures a horizontal layout for larger screens */
+    justify-content: space-around; /* Evenly spaces out the player components */
+    align-items: center;
+  }
+
+  .TimeNameInfo {
+    flex: 1; /* Gives the time and name section a flexible space */
+    display: flex;
+    justify-content: space-between; /* Spreads the name and time */
+    align-items: center;
+    padding: 0 20px; /* Adds padding for visual spacing */
+  }
+
+  .transport {
+    flex: 0.5; /* Adjusts size to not stretch too much */
+    justify-content: center; /* Centers the transport controls */
+  }
+
+  .VolumeSeekBox {
+    flex: 1; /* Gives volume and seek controls a flexible space */
+    display: flex;
+    justify-content: space-between; /* Helps space out the controls */
+    padding: 0 20px; /* Adds padding for visual spacing */
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .player {
+    flex-direction: column; /* Changes to column to stack groups of controls */
+    flex-wrap: wrap;
+  }
+
+  .audio-file-name, .Time, .transport {
+    flex-direction: row; /* Ensures these elements are in a row */
+    width: 100%; /* Full width to utilize space */
+    justify-content: left; /* Spreads out the elements evenly */
+  }
+
+  .transport {
+    justify-content: center; /* Centers transport controls */
+  }
+
+  .seek-control, .volume-control {
+    flex-direction: row; /* Keeps sliders in a row */
+    width: 100%; /* Full width to match layout */
+    justify-content: space-between; /* Helps space out the slider and label */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -142,12 +223,6 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .transport {
-    justify-content: space-around;
-  }
 
-  .Time, .seek-control, .volume-control {
-    width: 100%; /* Adjust width for medium screens */
-  }
-}
+
+
