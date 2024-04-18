@@ -15,19 +15,10 @@
 }
 
 
-@media (max-width: 1280px) and (min-width: 1025px) {
+@media (max-width: 1920px) and (min-width: 480px) {
   .Film {
-  flex-basis: 7%;
+  flex-basis: 4%;
 }
 
 }
 
-
-@media (max-width: 1024px) and (min-width: 769px) {
-
-  .Film{
-    flex-basis: 4%;
-  }
-
-
-}
