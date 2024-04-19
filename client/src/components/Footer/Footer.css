@@ -7,10 +7,14 @@
 /* Base styles for Footer */
 .Footer {
   position: fixed;
-  left: 0px;  /* Set to 0px to align properly at the left edge */
-  bottom: 0px; /* Set to 0px to align properly at the bottom */
-  width: 88%; /* Full width for better responsiveness */
-  height: 6.5vh; /* Maintain original height for large screens */
+  left: 0px;
+  /* Set to 0px to align properly at the left edge */
+  bottom: 0px;
+  /* Set to 0px to align properly at the bottom */
+  width: 88%;
+  /* Full width for better responsiveness */
+  height: 6.5vh;
+  /* Maintain original height for large screens */
   padding: 5px;
   padding-bottom: 5px;
   background-color: #083D5E;
@@ -22,11 +26,13 @@
 }
 
 /* Style adjustments for the divs inside the Footer */
-.Footer > div {
+.Footer>div {
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
   height: 100%;
   margin: 3px;
   padding: 5px;
@@ -35,14 +41,16 @@
 
 
 /* Responsive styles for medium devices (tablets) */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1023px) and (min-width: 769px) {
   .Footer {
-    height: 8vh; /* Slightly increase height for medium screens */
-    padding: 20px;
+    height: 10vh;
+    /* Slightly increase height for medium screens */
+    padding-bottom: 10px;
   }
 
-  .Footer > div {
-    flex-direction: row; /* Stack children vertically */
+  .Footer>div {
+    flex-direction: row;
+    /* Stack children vertically */
   }
 }
 
@@ -55,12 +63,50 @@
 /* Responsive styles for small devices (mobiles) */
 @media (max-width: 768px) {
   .Footer {
-    height: 9vh; /* Further increase height for small screens */
-    padding: 30px;
-    margin-bottom: 10px;
+    height: 10vh;
+    /* Further increase height for small screens */
+    padding: 10px;
   }
 
-  .Footer > div {
-    padding: 2px; /* Reduce padding for smaller div elements */
+  .Footer>div {
+    padding: 12px;
+    /* Reduce padding for smaller div elements */
   }
+}
+
+
+@media (min-width: 390px)and (max-width: 768px) {
+
+  Footer {
+    border: 1 solid 3px;
+    height: 100px;
+    /* Further increase height for small screens */
+    padding: 20px;
+  }
+
+  .Footer>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    height: 100%;
+    margin: 3px;
+    padding: 5px;
+  }
+
+}
+
+@media (min-width: 290px)and (max-width: 390px) {
+
+  Footer {
+    
+    min-height: 7h;
+    /* Further increase height for small screens */
+    padding: 30px;
+  }
+
+
+
 }

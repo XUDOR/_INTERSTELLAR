@@ -150,6 +150,7 @@
     flex-direction: row; /* Ensures a horizontal layout for larger screens */
     justify-content: space-around; /* Evenly spaces out the player components */
     align-items: center;
+    width: 70%;
   }
 
   .TimeNameInfo {
@@ -171,22 +172,37 @@
     justify-content: space-between; /* Helps space out the controls */
     
   }
+
+  .seek-control, .volume-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+
 }
+
+
 
 /* ________________________________________________________________ */
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .player {
     flex-direction: column; /* Ensures a horizontal layout for larger screens */
-    justify-content: space-around; /* Evenly spaces out the player components */
+    flex: .9;
+    justify-content: center; /* Evenly spaces out the player components */
     align-items: center;
+    width: 60%;
   }
 
   .TimeNameInfo {
-    flex: 1; /* Gives the time and name section a flexible space */
+     /* Gives the time and name section a flexible space */
     display: flex;
     flex-direction: column;
-    flex: .5;
+    flex: .6;
     justify-content: space-between; /* Spreads the name and time */
     align-items: center;
     
@@ -198,7 +214,50 @@
   }
 
   .VolumeSeekBox {
-    flex: 1; /* Gives volume and seek controls a flexible space */
+    
+    display: flex;
+    flex-direction: column;
+    flex: .8; /* Gives volume and seek controls a flexible space */
+    justify-content: right; /* Helps space out the controls */
+  
+  }
+  .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
+    width: 8px;
+    height: 20px;
+    margin-bottom: 5px;
+
+  }
+}
+
+
+
+
+/* ________________________________________________________________ */
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .player {
+    display: flex;
+    flex-direction: column; /* Ensures a horizontal layout for larger screens */
+    flex-wrap: wrap;
+    justify-content: left; /* Evenly spaces out the player components */
+    align-items: center;
+  }
+  .TimeNameInfo {
+    flex: 1; /* Gives the time and name section a flexible space */
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: left; /* Spreads the name and time */
+    align-items: center;
+  }
+
+  .transport {
+    flex: 0.7; /* Adjusts size to not stretch too much */
+    justify-content: center; /* Centers the transport controls */
+  }
+
+  .VolumeSeekBox {
+    flex: 2; /* Gives volume and seek controls a flexible space */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Helps space out the controls */
@@ -210,25 +269,45 @@
     margin-bottom: 3px;
 
   }
+  
 }
+@media (min-width: 290px)and (max-width: 480px) {
 
+  .player {
+    display: flex;
+    flex-direction: column-reverse; /* Ensures a horizontal layout for larger screens */
+    flex-wrap: wrap;
+    justify-content: center; /* Evenly spaces out the player components */
+    align-items: center;
+  }
+  .transport {
+    flex: 0.7; /* Adjusts size to not stretch too much */
+    justify-content: center; /* Centers the transport controls */
+  }
 
-
-
-/* ________________________________________________________________ */
-
-@media (max-width: 768px) {
+  .TimeNameInfo {
+    flex: 1; /* Gives the time and name section a flexible space */
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: left; /* Spreads the name and time */
+    align-items: center;
+  }
 
 
   .VolumeSeekBox {
-    flex: 1; /* Gives volume and seek controls a flexible space */
+    flex: 2; /* Gives volume and seek controls a flexible space */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Helps space out the controls */
+    margin-bottom: 50px;
   
   }
+  .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
+    width: 8px;
+    height: 20px;
+    margin-bottom: 3px;
 
-  
   }
 
-
+}

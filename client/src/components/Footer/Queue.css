@@ -1,11 +1,11 @@
 /* Queue.css */
 
 .Queue {
-  flex-basis: 70%;
-  border-top: 2px solid #0F1D38;
+  flex-basis: 60%;
+  border-top: 1px solid #0F1D38;
   color: #E0ECED;
 
-  padding: 5px;
+  padding: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
   /* Updated to transition all properties smoothly */
@@ -23,6 +23,7 @@
   padding-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
+  width: 20%;
 }
 
 .Queue:hover {
@@ -33,7 +34,7 @@
   color: #E0ECED;
   /* Light color for text */
   background-color: transparent;
-  padding-bottom: 15px;
+  padding-bottom: 17px;
 }
 
 
@@ -136,4 +137,71 @@
 .is-favorite {
   background-color: transparent;
   color: #E0ECED;
+}
+
+
+@media (min-width: 768px)and (max-width: 1424px) {
+  .Queue {
+    flex-basis: 70%;
+    border-top: 2px solid #0F1D38;
+    color: #E0ECED;
+    margin-bottom: 15px;
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Updated to transition all properties smoothly */
+    overflow: hidden;
+    /* Keeps the content from spilling out */
+    max-height: 60px;
+    /* Initial max-height, adjust based on your needs */
+  }
+
+  .Queue.expanded {
+    max-height: 1050px;
+    /* Increased max-height when expanded */
+    flex-basis: 100%;
+    /* Optional: Takes more space when expanded */
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 30%;
+  }
+
+
+
+}
+
+@media (min-width: 320px)and (max-width: 768px) {
+
+
+  .Queue {
+    flex-basis: 70%;
+    border-top: 2px solid #0F1D38;
+    color: #E0ECED;
+
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Updated to transition all properties smoothly */
+    overflow: hidden;
+    /* Keeps the content from spilling out */
+    max-height: 60px;
+    /* Initial max-height, adjust based on your needs */
+  }
+
+  .Queue.expanded {
+    max-height: 950px;
+    /* Increased max-height when expanded */
+    flex-basis: 100%;
+    /* Optional: Takes more space when expanded */
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 50%;
+  }
+
+
+
+
+
 }
