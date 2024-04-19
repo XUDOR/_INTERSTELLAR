@@ -4,7 +4,6 @@ import './AudioPlayer.css';
 
 const AudioPlayer = () => {
     const { queue, currentSongIndex, setCurrentSongIndex } = useContext(CentralQueueContext);
-    
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);

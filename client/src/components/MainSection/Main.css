@@ -38,7 +38,7 @@
 }
 
 
-@media (min-width: 390px)and (max-width: 768px) {
+@media (min-width: 290px)and (max-width: 768px) {
 
   .Main {
     display: flex;
