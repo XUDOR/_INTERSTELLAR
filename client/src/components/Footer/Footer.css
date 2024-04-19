@@ -78,10 +78,10 @@
 @media (min-width: 390px)and (max-width: 768px) {
 
   Footer {
-    border: 1 solid 3px;
-    height: 100px;
+    
+    height: 10vh;
     /* Further increase height for small screens */
-    padding: 20px;
+    padding: 30px;
   }
 
   .Footer>div {
