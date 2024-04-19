@@ -54,3 +54,22 @@ iframe {
   height: 100%;
   border: none; /* Removes iframe border */
 }
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .FilmContainers {
+    flex-direction: column;
+    align-items: stretch; /* This will make each child container stretch to fit the container's width */
+  }
+
+  .FilmContainer {
+    width: calc(100% - 10px); /* Take full width minus some margin for aesthetics */
+    padding-top: 56.25%; /* This percentage maintains a 16:9 aspect ratio */
+    margin: 5px;
+    box-sizing: border-box;
+  }
+}
+
+
+
+@media (min-width: 320px)and (max-width: 768px) {
+}
