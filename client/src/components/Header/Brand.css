@@ -1,20 +1,23 @@
 /* Header/Brand.css */
 
 .brand {
+  margin-top: 20px;
   margin: 15px;
+  padding-top: 5px;
   flex: 2;
   display: flex;
-  align-items: center; /* This ensures vertical centering within the brand div */
+  align-items: center;
+  /* This ensures vertical centering within the brand div */
   background-color: #083D5E;
-  
+
 }
 
 .brand img {
   background-color: #083D5E;
-  width: 220px; /* Adjust as needed */
+  width: 220px;
+  /* Adjust as needed */
   height: auto;
- padding: 0;
-  margin: 0;
-  
-}
+  padding-top: 10px;
+  margin-top: 10px;
 
+}
