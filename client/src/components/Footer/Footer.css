@@ -13,7 +13,7 @@
   /* Set to 0px to align properly at the bottom */
   width: 88%;
   /* Full width for better responsiveness */
-  height: 6.5vh;
+  height: 10vh;
   /* Maintain original height for large screens */
   padding: 5px;
   padding-bottom: 5px;
@@ -56,14 +56,10 @@
 
 
 
-
-
-
-
 /* Responsive styles for small devices (mobiles) */
 @media (max-width: 768px) {
   .Footer {
-    height: 10vh;
+    height: 12vh;
     /* Further increase height for small screens */
     padding: 10px;
   }
@@ -79,7 +75,7 @@
 
   Footer {
     
-    height: 10vh;
+    height: 12vh;
     /* Further increase height for small screens */
     padding: 30px;
   }
@@ -102,7 +98,7 @@
 
   Footer {
     
-    min-height: 7h;
+    min-height: 50px;
     /* Further increase height for small screens */
     padding: 30px;
   }
