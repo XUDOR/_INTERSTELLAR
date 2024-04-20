@@ -51,7 +51,7 @@ CREATE TABLE songs (
     artist_id INTEGER NOT NULL REFERENCES artists(id),
     album_id INTEGER NOT NULL REFERENCES albums(id),
     track_id INTEGER NOT NULL
-);
+);      
 
 
 
