@@ -16,48 +16,24 @@ const AudioPlayer = () => {
 
     const currentSong = queue[currentSongIndex] || {};
 
-    const togglePlayStop = useCallback(() => {
+    const togglePlayback = useCallback(() => {
+        if (!audioPlayer.current) return;
+    
         if (isPlaying) {
-            console.log('Stopping playback, resetting position');
+            console.log('Pausing playback');
             audioPlayer.current.pause();
-            audioPlayer.current.currentTime = 0;  // Reset to start for stop functionality
             setIsPlaying(false);
         } else {
-            console.log('Starting playback from beginning');
-            if (audioPlayer.current) {
-                audioPlayer.current.currentTime = 0;  // Ensure it starts from the beginning
-                audioPlayer.current.play().catch(error => {
-                    console.error("Error starting the song:", error);
-                });
-                setIsPlaying(true);
-            }
-        }
-    }, [isPlaying]);
-    
-
-    const pausePlayback = useCallback(() => {
-        console.log('Attempting to pause');
-        setIsPlaying(false);
-        if (audioPlayer.current) {
-            console.log('Current time before pause:', audioPlayer.current.currentTime);
-            audioPlayer.current.pause();
-            console.log('Current time after pause:', audioPlayer.current.currentTime);
-        }
-        setIsPlaying(false);
-    }, []);
-
-    const resumePlayback = useCallback(() => {
-        if (!isPlaying && audioPlayer.current) {
-            console.log('Resuming playback from current time:', audioPlayer.current.currentTime);
+            console.log('Resuming playback');
             audioPlayer.current.play().catch(error => {
-                console.error("Error resuming the song:", error);
+                console.error("Error during playback:", error);
             });
             setIsPlaying(true);
         }
     }, [isPlaying]);
     
     
-
+    
     const playNextSong = useCallback(() => {
         if (repeatMode === 2) {
             audioPlayer.current.currentTime = 0;
@@ -68,7 +44,7 @@ const AudioPlayer = () => {
                 setIsPlaying(false);
             } else {
                 setCurrentSongIndex(nextIndex);
-                setIsPlaying(true);
+                setIsPlaying(false);
             }
         }
     }, [setCurrentSongIndex, currentSongIndex, queue.length, repeatMode]);
@@ -78,13 +54,19 @@ const AudioPlayer = () => {
         if (player) {
             player.src = currentSong.audio_url || '';
             player.load();
-        if (isPlaying || autoplay 
-    ) {
-                player.play().catch(error => console.error("Error playing the song:", error));
+    
+            const shouldPlay = isPlaying || autoplay;
+            if (shouldPlay) {
+                player.play().catch(error => {
+                    console.error("Error playing the song:", error);
+                    setIsPlaying(false); // Ensure state is correct if an error occurs
+                });
+            } else {
+                setIsPlaying(false);
             }
         }
-    }, [currentSongIndex, currentSong.audio_url, isPlaying,autoplay
-]);
+    }, [currentSongIndex, currentSong.audio_url, isPlaying, autoplay]);
+    
 
    
 
@@ -113,13 +95,13 @@ const AudioPlayer = () => {
         const handleKeyPress = (e) => {
             if (e.keyCode === 32) { // Spacebar
                 e.preventDefault();
-                togglePlayStop();
+                togglePlayback();
             }
         };
 
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [togglePlayStop]);
+    }, [togglePlayback]);
 
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
@@ -142,7 +124,7 @@ const AudioPlayer = () => {
         const seconds = Math.floor(secs % 60);
         return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
-
+// --->>> Render for PAGE
     return (
         <div className={`player ${isExpanded ? 'expanded' : 'collapsed'}`}>
             <button className='playToggle' onClick={() => setIsExpanded(!isExpanded)}></button>
@@ -155,16 +137,20 @@ const AudioPlayer = () => {
                     </div>
                     <div className='transport'>
                         <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}></button>
-                        <button className="PlayStop" onClick={togglePlayStop}>
+                        <button className="PlayStop" onClick={togglePlayback}>
                             {isPlaying ? <div className="stop-button"></div> : <div className="play-button"></div>}
                         </button>
-                        <button className="Pause" onClick={pausePlayback}>||</button>
-                        <button className="Resume" onClick={resumePlayback}>Resume</button>
+                        
                         <button className="Next" onClick={playNextSong}></button>
                         <button className="Repeat" onClick={() => setRepeatMode((repeatMode + 1) % 3)}>
                             {repeatMode === 0 ? "Off" : repeatMode === 1 ? "Queue" : "Song"}
                         </button>
-                        <button className="Auto" onClick={() => setAutoplay(!autoplay)}>List: {autoplay ? "On" : "Off"}</button>
+                        <button 
+              className={`Auto ${autoplay ? 'AutoOn' : ''}`} 
+              onClick={() => setAutoplay(!autoplay)}
+            >
+              List: {autoplay ? "On" : "Off"}
+            </button>
                     </div>
 
                     <div className='VolumeSeekBox'>
