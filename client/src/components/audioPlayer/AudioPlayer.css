@@ -24,10 +24,11 @@
 
 .player {
   display: flex;
+  
   flex-direction: row;
   align-items: center;
-  width: 80%; /* Maintains size but ensures everything fits */
-  height: 100px;
+  width: 8%; /* Maintains size but ensures everything fits */
+  height: 110px;
   color: #F9F7E8;
   font-size: 14px; /* Slightly reduced for better aesthetics */
   padding: 10px 0;
@@ -88,7 +89,7 @@
   margin: 5px 5px;
 }
 
-.Back, .Next, .PlayStop, .Resume {
+.Back, .Next, .PlayStop {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,13 +206,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: pointer;      
   background-color: transparent;
   border: 1px solid #626154;
   color: #3AA0A0;
   width: 50px; /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
+  transition: all 0.3s ease;
+}
+
+
+.AutoOn {
+  background-color: #96a508; /* Green background for autoplay on */
+  color: #0F1D38;
+  border-radius: 5px;
 }
 
 
@@ -220,6 +229,7 @@
 .VolumeSeekBox{
   display: flex;
   flex-direction: row;
+  
 }
 .seek-control, .volume-control {
   display: flex;
