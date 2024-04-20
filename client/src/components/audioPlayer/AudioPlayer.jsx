@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useRef, useContext } from 'react';
+import React, { useEffect, useState, useRef, useContext, useCallback } from 'react';
 import { CentralQueueContext } from '../../Contexts/CentralQueueContext';
 import './AudioPlayer.css';
 
 const AudioPlayer = () => {
     const { queue, currentSongIndex, setCurrentSongIndex } = useContext(CentralQueueContext);
-    
     const [isPlaying, setIsPlaying] = useState(false);
+    const [autoplay, setAutoplay] = useState(true);
+    const [repeatMode, setRepeatMode] = useState(0); // 0: off, 1: repeat queue, 2: repeat one song
+    const [isExpanded, setIsExpanded] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isSeeking, setIsSeeking] = useState(false);
@@ -14,85 +16,82 @@ const AudioPlayer = () => {
 
     const currentSong = queue[currentSongIndex] || {};
 
+    const togglePlayPause = useCallback(() => {
+        setIsPlaying(prev => !prev);
+    }, []);
+
+    const playNextSong = useCallback(() => {
+        if (repeatMode === 2) {
+            audioPlayer.current.currentTime = 0;
+            audioPlayer.current.play();
+        } else {
+            let nextIndex = (currentSongIndex + 1) % queue.length;
+            if (repeatMode === 0 && currentSongIndex === queue.length - 1) {
+                setIsPlaying(false);
+            } else {
+                setCurrentSongIndex(nextIndex);
+                setIsPlaying(true);
+            }
+        }
+    }, [currentSongIndex, queue.length, repeatMode]);
+
     useEffect(() => {
         const player = audioPlayer.current;
-        if (player && currentSong.audio_url) {
-            player.src = currentSong.audio_url;
+        if (player) {
+            player.src = currentSong.audio_url || '';
             player.load();
             if (isPlaying) {
-                player.play().catch(e => console.error("Error auto-playing the song:", e));
+                player.play().catch(error => console.error("Error playing the song:", error));
             }
         }
     }, [currentSongIndex, currentSong.audio_url, isPlaying]);
 
     useEffect(() => {
         const player = audioPlayer.current;
-        if (player) {
-            const updateProgress = () => {
-                setCurrentTime(player.currentTime);
-            };
-            const updateDuration = () => {
-                setDuration(player.duration);
-            };
-            const playNextSong = () => {
-                const nextIndex = (currentSongIndex + 1) % queue.length;
-                setCurrentSongIndex(nextIndex);
-                setIsPlaying(true);
-            };
+        if (!player) return;
 
-            player.addEventListener('timeupdate', updateProgress);
-            player.addEventListener('loadedmetadata', updateDuration);
-            player.addEventListener('ended', playNextSong);
+        const updateProgress = () => {
+            if (!isSeeking) setCurrentTime(player.currentTime);
+        };
 
-            return () => {
-                player.removeEventListener('timeupdate', updateProgress);
-                player.removeEventListener('loadedmetadata', updateDuration);
-                player.removeEventListener('ended', playNextSong);
-            };
-        }
-    }, [currentSongIndex, queue.length,setCurrentSongIndex]);
+        const updateDuration = () => setDuration(player.duration);
+
+        player.addEventListener('timeupdate', updateProgress);
+        player.addEventListener('loadedmetadata', updateDuration);
+        player.addEventListener('ended', playNextSong);
+
+        return () => {
+            player.removeEventListener('timeupdate', updateProgress);
+            player.removeEventListener('loadedmetadata', updateDuration);
+            player.removeEventListener('ended', playNextSong);
+        };
+    }, [playNextSong, isSeeking]);
 
     useEffect(() => {
         const handleKeyPress = (e) => {
             if (e.keyCode === 32) { // Spacebar
-                e.preventDefault(); // Stop the page from scrolling
+                e.preventDefault();
                 togglePlayPause();
             }
         };
 
         window.addEventListener('keydown', handleKeyPress);
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
-
-    const togglePlayPause = () => {
-        setIsPlaying(prevIsPlaying => {
-            if (!prevIsPlaying && audioPlayer.current) {
-                audioPlayer.current.play().catch(error => {
-                    console.error("Error playing the song:", error);
-                    return false;
-                });
-            } else if (audioPlayer.current) {
-                audioPlayer.current.pause();
-            }
-            return !prevIsPlaying;
-        });
-    };
+        return () => window.removeEventListener('keydown', handleKeyPress);
+    }, [togglePlayPause]);
 
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
+        setCurrentTime(newTime);
         if (audioPlayer.current) {
             audioPlayer.current.currentTime = newTime;
-            setCurrentTime(newTime);
         }
     };
 
     const handleVolumeChange = (e) => {
         const newVolume = parseFloat(e.target.value);
+        setVolume(newVolume);
         if (audioPlayer.current) {
             audioPlayer.current.volume = newVolume;
-            setVolume(newVolume);
         }
     };
 
@@ -103,60 +102,36 @@ const AudioPlayer = () => {
     };
 
     return (
-        <div className="player">
-            <audio ref={audioPlayer}></audio>
-
-            <div className='TimeNameInfo'>
-                <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
-
-                <div className="Time">
-                    {calculateTime(currentTime)} / {calculateTime(duration)}
-                </div>
-            </div>
-
-
-
-
-            <div className='transport'>
-                <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}>
-                </button>
-
-                <button className="Play" onClick={togglePlayPause}>
-                    {isPlaying ? <div className="pause-button"></div> : <div className="play-button"></div>}
-                </button>
-
-                <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}>
-                </button>
-
-            </div>
-
-
-            <div className='VolumeSeekBox'>
-                <div className="seek-control">
-                    <input
-                        type="range"
-                        min="0"
-                        max={duration || 0}
-                        value={isSeeking ? 0 : currentTime}
-                        onChange={handleSeekChange}
-                        onMouseDown={() => setIsSeeking(true)}
-                        onMouseUp={() => setIsSeeking(false)}
-                        className="seek-slider"
-                        step=".05"
-                    />
-                </div>
-                <div className="volume-control">
-                    <input
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value={volume}
-                        onChange={handleVolumeChange}
-                        className="volume-slider"
-                    />
-                </div>
-            </div>
+        <div className={`player ${isExpanded ? 'expanded' : 'collapsed'}`}>
+            <button className='playToggle'onClick={() => setIsExpanded(!isExpanded)}></button>
+            {isExpanded && (
+                <>
+                    <audio ref={audioPlayer}></audio>
+                    <div className='TimeNameInfo'>
+                        <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
+                        <div className="Time">{calculateTime(currentTime)} / {calculateTime(duration)}</div>
+                    </div>
+                    <div className='transport'>
+                        <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}></button>
+                        <button className="Play" onClick={togglePlayPause}>
+                            {isPlaying ? <div className="pause-button"></div> : <div className="play-button"></div>}
+                        </button>
+                        <button className="Next" onClick={playNextSong}></button>
+                        <button className="Repeat"onClick={() => setRepeatMode((repeatMode + 1) % 3)}>
+                            {repeatMode === 0 ? "Off" : repeatMode === 1 ? "Queue" : "Song"}
+                        </button>
+                        <button className="Auto"onClick={() => setAutoplay(!autoplay)}>Auto: {autoplay ? "On" : "Off"}</button>
+                    </div>
+                    <div className='VolumeSeekBox'>
+                        <div className="seek-control">
+                            <input type="range" min="0" max={duration || 0} value={currentTime} onChange={handleSeekChange} onMouseDown={() => setIsSeeking(true)} onMouseUp={() => setIsSeeking(false)} className="seek-slider" step=".05" />
+                        </div>
+                        <div className="volume-control">
+                            <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="volume-slider" />
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
