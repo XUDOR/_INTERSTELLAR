@@ -88,19 +88,37 @@
   margin: 5px 5px;
 }
 
-.Back, .Next, .Play {
+.Back, .Next, .PlayStop, .Resume {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #626154;
+  color: #3AA0A0;
   width: 40px; /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
 }
 
-.Back:hover, .Next:hover, .Play:hover {
+ .Resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #626154;
+  color: #3AA0A0;
+  width: 55px; /* Adjusted width for better control */
+  height: 40px;
+  margin: 2px;
+}
+
+
+
+
+
+.Back:hover, .Next:hover, .PlayStop:hover {
   background-color: #065A82;
 }
 
@@ -121,8 +139,10 @@
   border-color: transparent transparent transparent #2b7f8c; /* Left-pointing triangle */
 }
 
+
+
 /* Specific styles for play and pause icons within buttons */
-.play-button, .pause-button {
+.play-button, .stop-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,12 +152,31 @@
   border-radius: 50%;
 }
 
-.pause-button {
+.stop-button {
   background-color: #2b7f8c;
   width: 20px; /* Ensures the pause icon is square */
   height: 20px; /* Square pause button */
   border-radius: 0%;
 }
+
+.Pause {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #626154;
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+  color:#96a508
+}
+
+.Pause:hover {
+  background-color: #065A82; /* Different hover color for visual feedback */
+}
+
+
 
 
 .Repeat {
