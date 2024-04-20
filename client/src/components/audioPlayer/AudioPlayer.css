@@ -1,14 +1,45 @@
 /* Base styles for the audio player */
+
+
+.playToggle {
+  position: relative; /* Change to absolute or fixed if needed */
+  z-index: 10; /* Ensures it is above other elements */
+  border: 1px solid #3AA0A0;
+  width: 50px;
+  height: 60px;
+  justify-content: left;
+  margin-right: 5px;
+  background-image: url('../../images/Icons/player_forest.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease; /* Smooth transition for size changes */
+}
+
+.playToggle:hover {
+  background-color: #065A82;
+
+
+}
+
 .player {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 80%; /* Maintains size but ensures everything fits */
+  height: 100px;
   color: #F9F7E8;
   font-size: 14px; /* Slightly reduced for better aesthetics */
   padding: 10px 0;
   margin: auto;
+  justify-content: flex-start; /* Aligns items to the start of the main-axis */
 }
+
+.player.collapsed {
+  justify-content: flex-start; /* This ensures items are left-aligned when collapsed */
+}
+
+
 
 .TimeNameInfo{
   display: flex;
@@ -109,6 +140,41 @@
 }
 
 
+.Repeat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url('../../images/Icons/repeat_leaf.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: top;
+  border: 1px solid #626154;
+  color: #3AA0A0;
+  
+  width: 50px; /* Adjusted width for better control */
+  height: 60px;
+  margin-top: 20px;
+  margin: 2px;
+  padding-top: 40px;
+}
+
+
+.Auto {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #626154;
+  color: #3AA0A0;
+  width: 50px; /* Adjusted width for better control */
+  height: 40px;
+  margin: 2px;
+}
+
 
 /* Seek and Volume Controls */
 
@@ -138,7 +204,7 @@
 
 .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 4px;
+  width: 5px;
   height: 45px;
   background: #96a508;
   cursor: pointer;
@@ -272,44 +338,57 @@
   }
   
 }
-@media (min-width: 290px)and (max-width: 480px) {
-
+@media (min-width: 290px) and (max-width: 480px) {
   .player {
-    display: flex;
-    flex-direction: column-reverse; /* Ensures a horizontal layout for larger screens */
-    flex-wrap: wrap;
-    justify-content: center; /* Evenly spaces out the player components */
-    align-items: center;
-    padding-bottom: 120px;
-  }
-  .transport {
-    flex: 0.7; /* Adjusts size to not stretch too much */
-    justify-content: center; /* Centers the transport controls */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+    padding: 10px; /* Provide padding around the elements */
+    width: 100%; /* Use full width available */
+    height: auto; /* Height adjusts to content */
+    padding-bottom: 120px; /* Extra padding at the bottom */
   }
 
-  .TimeNameInfo {
-    flex: 1; /* Gives the time and name section a flexible space */
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    justify-content: left; /* Spreads the name and time */
-    align-items: center;
+  .player.expanded {
+    background-color: #0F1D38;
+    min-height: 300px; /* Set a minimum height when expanded */
+    height: auto; /* Allow height to grow with the content */
+    padding: 15px; /* Slightly more padding */
   }
-
 
   .VolumeSeekBox {
-    flex: 2; /* Gives volume and seek controls a flexible space */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Helps space out the controls */
-    margin-bottom: 50px;
-  
+    width: 100%; /* Full width for all child components */
+    margin-top: 10px; /* Space above each component */
+    margin-bottom: 10px; /* Space below each component */
+    width: 100%;
+    flex-direction: column; /* Stack internal elements vertically */
   }
+
+
+
+  .TimeNameInfo {
+    width: 100%; /* Full width for all child components */
+    margin-top: 10px; /* Space above each component */
+    margin-bottom: 10px; /* Space below each component */
+    flex-direction: column; /* Stack internal elements vertically */
+  }
+
+   .transport  {
+    width: 100%; /* Full width for all child components */
+    margin-top: 10px; /* Space above each component */
+    margin-bottom: 10px; /* Space below each component */
+    flex-direction: row; /* Stack internal elements vertically */
+  }
+
+
+
+  .seek-slider, .volume-slider {
+    width: 90%; /* Reduce width slightly to allow for padding */
+    margin: 0 auto; /* Center sliders horizontally */
+  }
+
   .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
-    width: 8px;
-    height: 20px;
-    margin-bottom: 3px;
-
+    height: 20px; /* Adjust thumb size for easier interaction */
+    width: 8px; /* Maintain a narrow width for the thumb */
   }
-
 }
