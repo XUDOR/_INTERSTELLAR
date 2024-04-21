@@ -476,7 +476,7 @@
     align-items: center;
     justify-content: flex-start;
     max-width: 300px;
-    max-height: 400px;
+    max-height: 300px;
     background-color: #083D5E;
   }
 
@@ -538,7 +538,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 5px;
-    margin-right: 70px;
+    margin-right: 80px;
     min-width: 420px;
     max-height: 50px;
     justify-content: center;
@@ -548,7 +548,7 @@
     margin-top: 15px;
     margin-right: 10px;
     margin-left: 20px;
-    min-width: 50px;
+    min-width: 40px;
     min-height: 110;
     padding-bottom: 10px;
 
@@ -557,7 +557,7 @@
   .Time {
     margin-top: 15px;
     margin-right: 75px;
-    min-width: 75px;
+    min-width: 85px;
     padding-right: 10px;
   }
 
