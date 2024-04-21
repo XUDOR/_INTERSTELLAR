@@ -5,6 +5,7 @@
   min-height: 50px;
   border: 1px solid gray;
   color: #E0ECED;
+  margin-right: 20px;
   padding: 13px;
   cursor: pointer;
   /* Changes the cursor to indicate it's clickable */
