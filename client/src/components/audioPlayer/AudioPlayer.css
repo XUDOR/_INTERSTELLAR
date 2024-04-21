@@ -2,47 +2,64 @@
 
 
 .playToggle {
-  position: relative; /* Change to absolute or fixed if needed */
-  z-index: 10; /* Ensures it is above other elements */
+  position: relative;
+  /* Change to absolute or fixed if needed */
+  z-index: 10;
+  /* Ensures it is above other elements */
   border: 1px solid #3AA0A0;
   width: 50px;
   height: 60px;
-  justify-content: left;
+  justify-content: flex-start;
   margin-right: 5px;
   background-image: url('../../images/Icons/player_forest.png');
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all 0.3s ease; /* Smooth transition for size changes */
+  transition: all 0.3s ease;
+  /* Smooth transition for size changes */
 }
 
 .playToggle:hover {
   background-color: #065A82;
+}
 
+.playerContainer {
+  background-color: #083D5E;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 
 }
+
+
+
 
 .player {
   display: flex;
-  
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  width: 8%; /* Maintains size but ensures everything fits */
+  width: 8%;
+  /* Maintains size but ensures everything fits */
   height: 110px;
   color: #F9F7E8;
-  font-size: 14px; /* Slightly reduced for better aesthetics */
+  font-size: 14px;
+  /* Slightly reduced for better aesthetics */
   padding: 10px 0;
   margin: auto;
-  justify-content: flex-start; /* Aligns items to the start of the main-axis */
+  justify-content: left;
+  /* Aligns items to the start of the main-axis */
 }
 
 .player.collapsed {
-  justify-content: flex-start; /* This ensures items are left-aligned when collapsed */
+  justify-content: flex-start;
+  /* This ensures items are left-aligned when collapsed */
 }
 
 
 
-.TimeNameInfo{
+.TimeNameInfo {
   display: flex;
   flex-direction: row;
   flex: 20%;
@@ -55,11 +72,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 30px; /* Reduced height for more space efficiency */
+  height: 30px;
+  /* Reduced height for more space efficiency */
   margin: 5px 1;
   padding: 2px;
   color: #0F1D38;
-  font-size: 10px; /* Smaller font size for a sleeker look */
+  font-size: 10px;
+  /* Smaller font size for a sleeker look */
   border: 1px solid #3AA0A0;
   background: #3AA0A0;
 }
@@ -70,7 +89,8 @@
   flex: .4;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Adjusted for better fit */
+  width: 100%;
+  /* Adjusted for better fit */
   height: 30px;
   border: 1px solid #3AA0A0;
   font-size: 11px;
@@ -89,7 +109,9 @@
   margin: 5px 5px;
 }
 
-.Back, .Next, .PlayStop {
+.Back,
+.Next,
+.PlayStop {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,12 +119,13 @@
   background-color: transparent;
   border: 1px solid #626154;
   color: #3AA0A0;
-  width: 40px; /* Adjusted width for better control */
+  width: 40px;
+  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
 }
 
- .Resume {
+.Resume {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +133,8 @@
   background-color: transparent;
   border: 1px solid #626154;
   color: #3AA0A0;
-  width: 55px; /* Adjusted width for better control */
+  width: 55px;
+  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
 }
@@ -119,7 +143,9 @@
 
 
 
-.Back:hover, .Next:hover, .PlayStop:hover {
+.Back:hover,
+.Next:hover,
+.PlayStop:hover {
   background-color: #065A82;
 }
 
@@ -128,22 +154,27 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 14px 24px 14px 0; /* Smaller triangles */
-  border-color: transparent #2b7f8c transparent transparent; /* Right-pointing triangle */
+  border-width: 14px 24px 14px 0;
+  /* Smaller triangles */
+  border-color: transparent #2b7f8c transparent transparent;
+  /* Right-pointing triangle */
 }
 
 .Next {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 14px 0 14px 24px; /* Smaller triangles */
-  border-color: transparent transparent transparent #2b7f8c; /* Left-pointing triangle */
+  border-width: 14px 0 14px 24px;
+  /* Smaller triangles */
+  border-color: transparent transparent transparent #2b7f8c;
+  /* Left-pointing triangle */
 }
 
 
 
 /* Specific styles for play and pause icons within buttons */
-.play-button, .stop-button {
+.play-button,
+.stop-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,8 +186,10 @@
 
 .stop-button {
   background-color: #2b7f8c;
-  width: 20px; /* Ensures the pause icon is square */
-  height: 20px; /* Square pause button */
+  width: 20px;
+  /* Ensures the pause icon is square */
+  height: 20px;
+  /* Square pause button */
   border-radius: 0%;
 }
 
@@ -170,11 +203,12 @@
   width: 40px;
   height: 40px;
   margin: 2px;
-  color:#96a508
+  color: #96a508
 }
 
 .Pause:hover {
-  background-color: #065A82; /* Different hover color for visual feedback */
+  background-color: #065A82;
+  /* Different hover color for visual feedback */
 }
 
 
@@ -192,8 +226,9 @@
   background-position: top;
   border: 1px solid #626154;
   color: #3AA0A0;
-  
-  width: 50px; /* Adjusted width for better control */
+
+  width: 50px;
+  /* Adjusted width for better control */
   height: 60px;
   margin-top: 20px;
   margin: 2px;
@@ -206,11 +241,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;      
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid #626154;
   color: #3AA0A0;
-  width: 50px; /* Adjusted width for better control */
+  width: 50px;
+  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
   transition: all 0.3s ease;
@@ -218,7 +254,8 @@
 
 
 .AutoOn {
-  background-color: #96a508; /* Green background for autoplay on */
+  background-color: #96a508;
+  /* Green background for autoplay on */
   color: #0F1D38;
   border-radius: 5px;
 }
@@ -226,12 +263,15 @@
 
 /* Seek and Volume Controls */
 
-.VolumeSeekBox{
+.VolumeSeekBox {
   display: flex;
   flex-direction: row;
-  
+  margin-left: 10px;
+
 }
-.seek-control, .volume-control {
+
+.seek-control,
+.volume-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -240,9 +280,10 @@
   padding: 5px 0;
 }
 
-.seek-slider, .volume-slider {
+.seek-slider,
+.volume-slider {
   -webkit-appearance: none;
-  width: 100%; /* Full width for better usability */
+  width: 100%;
   height: 5px;
   background: #0F1D38;
   outline: none;
@@ -251,7 +292,8 @@
   margin-bottom: 5px;
 }
 
-.seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
+.seek-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 5px;
   height: 45px;
@@ -263,33 +305,36 @@
 
 @media (min-width: 1025px) {
   .player {
-    flex-direction: row; /* Ensures a horizontal layout for larger screens */
-    justify-content: space-around; /* Evenly spaces out the player components */
+
+
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 80%;
   }
 
   .TimeNameInfo {
-    flex: 1; /* Gives the time and name section a flexible space */
+    flex: 1;
     display: flex;
-    justify-content: space-between; /* Spreads the name and time */
+    justify-content: space-between;
     align-items: center;
-    
+
   }
 
   .transport {
-    flex: 0.5; /* Adjusts size to not stretch too much */
-    justify-content: center; /* Centers the transport controls */
+    flex: 0.5;
+    justify-content: center;
   }
 
   .VolumeSeekBox {
-    flex: 1; /* Gives volume and seek controls a flexible space */
+    flex: 1;
     display: flex;
-    justify-content: space-between; /* Helps space out the controls */
-    
+    justify-content: space-between;
+
   }
 
-  .seek-control, .volume-control {
+  .seek-control,
+  .volume-control {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -307,38 +352,62 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .player {
-    flex-direction: column; /* Ensures a horizontal layout for larger screens */
+
+
+    flex-direction: column;
     flex: .9;
-    justify-content: center; /* Evenly spaces out the player components */
+    justify-content: center;
     align-items: center;
     width: 60%;
+    height: 10vh;
   }
 
   .TimeNameInfo {
-     /* Gives the time and name section a flexible space */
+    background-color: #083D5E;
+
     display: flex;
     flex-direction: column;
     flex: .6;
-    justify-content: space-between; /* Spreads the name and time */
+    justify-content: space-between;
     align-items: center;
-    
+    margin-left: 10px;
+
   }
 
   .transport {
-    flex: 0.5; /* Adjusts size to not stretch too much */
-    justify-content: center; /* Centers the transport controls */
+    flex: 0.5;
+    justify-content: center;
+    margin-left: 10px;
   }
 
   .VolumeSeekBox {
-    
+
     display: flex;
     flex-direction: column;
-    flex: .8; /* Gives volume and seek controls a flexible space */
-    justify-content: right; /* Helps space out the controls */
-  
+    flex: .8;
+    justify-content: right;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 0px;
+    margin-bottom: 5px;
   }
-  .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
-    width: 8px;
+
+  .seek-slider,
+  .volume-slider {
+
+    width: 100%;
+    height: 5px;
+    margin-bottom: 15px;
+
+  }
+
+
+
+
+
+  .seek-slider::-webkit-slider-thumb,
+  .volume-slider::-webkit-slider-thumb {
+    width: 5px;
     height: 20px;
     margin-bottom: 5px;
 
@@ -352,92 +421,114 @@
 
 @media (min-width: 480px) and (max-width: 768px) {
   .player {
+
     display: flex;
-    flex-direction: column; /* Ensures a horizontal layout for larger screens */
-    flex-wrap: wrap;
-    justify-content: left; /* Evenly spaces out the player components */
+    flex-direction: row;
+    flex: .9;
+    justify-content: left;
     align-items: center;
   }
+
   .TimeNameInfo {
-    flex: 1; /* Gives the time and name section a flexible space */
+    flex: 1;
     display: flex;
     flex-direction: column;
     width: 70%;
-    justify-content: left; /* Spreads the name and time */
+    justify-content: left;
     align-items: center;
+    margin-bottom: 20px;
   }
 
   .transport {
-    flex: 0.7; /* Adjusts size to not stretch too much */
-    justify-content: center; /* Centers the transport controls */
+    flex: 0.7;
+    justify-content: center;
   }
 
   .VolumeSeekBox {
-    flex: 2; /* Gives volume and seek controls a flexible space */
+    flex: 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Helps space out the controls */
-  
+    justify-content: space-between;
+
   }
-  .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
+
+  .seek-slider::-webkit-slider-thumb,
+  .volume-slider::-webkit-slider-thumb {
     width: 8px;
     height: 20px;
     margin-bottom: 3px;
 
   }
-  
+
 }
+
 @media (min-width: 290px) and (max-width: 480px) {
+  .playerContainer {
+    background-color: #083D5E;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 200px;
+    max-height: 500px;
+
+  
+  }
+
+
   .player {
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center elements vertically */
-    align-items: center; /* Center elements horizontally */
-    padding: 10px; /* Provide padding around the elements */
-    width: 100%; /* Use full width available */
-    height: auto; /* Height adjusts to content */
-    padding-bottom: 120px; /* Extra padding at the bottom */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 120px;
   }
 
   .player.expanded {
     background-color: #0F1D38;
-    min-height: 300px; /* Set a minimum height when expanded */
-    height: auto; /* Allow height to grow with the content */
-    padding: 15px; /* Slightly more padding */
+    min-height: 300px;
+    height: auto;
+    padding: 15px;
   }
 
   .VolumeSeekBox {
-    width: 100%; /* Full width for all child components */
-    margin-top: 10px; /* Space above each component */
-    margin-bottom: 10px; /* Space below each component */
     width: 100%;
-    flex-direction: column; /* Stack internal elements vertically */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-direction: column;
   }
 
 
 
   .TimeNameInfo {
-    width: 100%; /* Full width for all child components */
-    margin-top: 10px; /* Space above each component */
-    margin-bottom: 10px; /* Space below each component */
-    flex-direction: column; /* Stack internal elements vertically */
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
   }
 
-   .transport  {
-    width: 100%; /* Full width for all child components */
-    margin-top: 10px; /* Space above each component */
-    margin-bottom: 10px; /* Space below each component */
-    flex-direction: row; /* Stack internal elements vertically */
+  .transport {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
   }
 
 
 
-  .seek-slider, .volume-slider {
-    width: 90%; /* Reduce width slightly to allow for padding */
-    margin: 0 auto; /* Center sliders horizontally */
+  .seek-slider,
+  .volume-slider {
+    width: 90%;
+    margin: 0 auto;
   }
 
-  .seek-slider::-webkit-slider-thumb, .volume-slider::-webkit-slider-thumb {
-    height: 20px; /* Adjust thumb size for easier interaction */
-    width: 8px; /* Maintain a narrow width for the thumb */
+  .seek-slider::-webkit-slider-thumb,
+  .volume-slider::-webkit-slider-thumb {
+    height: 20px;
+    width: 8px;
   }
 }

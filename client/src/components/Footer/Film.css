@@ -16,7 +16,7 @@
 }
 
 
-@media (max-width: 1920px) and (min-width: 1025px) {
+@media (min-width: 1025px)and (max-width: 1920px)  {
   .Film {
   flex-basis: 3%;
   height: 1vh;
@@ -25,11 +25,11 @@
 
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (min-width: 769px)and(max-width: 1024px) { 
 
 .Film{
   flex-basis: 1%;
-  height: 1vh;
+  
 
 }
 

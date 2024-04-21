@@ -1,11 +1,8 @@
 /* Base styles for the App Container */
-.AppContainer {
-  display: flex;
-  flex-direction: row;
-}
 
 /* Base styles for Footer */
 .Footer {
+  
   position: fixed;
   left: 0px;
   /* Set to 0px to align properly at the left edge */
@@ -13,10 +10,10 @@
   /* Set to 0px to align properly at the bottom */
   width: 88%;
   /* Full width for better responsiveness */
-  height: 10vh;
+  height: 11vh;
   /* Maintain original height for large screens */
   padding: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 30px;
   background-color: #083D5E;
   color: #FFF;
   z-index: 1000;
@@ -41,11 +38,13 @@
 
 
 /* Responsive styles for medium devices (tablets) */
-@media (max-width: 1023px) and (min-width: 769px) {
+@media (min-width: 769px) and   (max-width: 1023px) {
   .Footer {
-    height: 10vh;
+ 
+    height: 12vh;
     /* Slightly increase height for medium screens */
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 39px;
   }
 
   .Footer>div {
@@ -59,9 +58,11 @@
 /* Responsive styles for small devices (mobiles) */
 @media (max-width: 768px) {
   .Footer {
+    
+    
     height: 12vh;
     /* Further increase height for small screens */
-    padding: 10px;
+    padding-bottom: 25px;
   }
 
   .Footer>div {
@@ -98,7 +99,7 @@
 
   Footer {
     
-    min-height: 50px;
+    min-height: 150px;
     /* Further increase height for small screens */
     padding: 30px;
   }
