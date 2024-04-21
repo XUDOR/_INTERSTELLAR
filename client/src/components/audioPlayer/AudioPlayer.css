@@ -3,9 +3,7 @@
 
 .playToggle {
   position: relative;
-  /* Change to absolute or fixed if needed */
   z-index: 10;
-  /* Ensures it is above other elements */
   border: 1px solid #3AA0A0;
   width: 50px;
   height: 60px;
@@ -16,7 +14,6 @@
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.3s ease;
-  /* Smooth transition for size changes */
 }
 
 .playToggle:hover {
@@ -462,15 +459,144 @@
 
 }
 
+/* Media Query for iPhone in Portrait Mode */
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 844px) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .playToggle {
+      margin-top:0px;
+      margin-right: 100px;
+      margin-bottom: 0px;
+      z-index: 10;
+     
+    }
+
+  .playerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    max-width: 300px;
+    max-height: 400px;
+    background-color: #083D5E; 
+  }
+
+  .player {
+    background-color: red;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; 
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+
+  .player.expanded {
+    background-color:   #083D5E; 
+    display: flex;
+    flex-direction: column;
+    min-width: 390px; 
+    min-height: 300px; 
+    padding: 5px;
+    margin-bottom: 250px;
+  }
+  .playerContainer {
+    display: flex;
+    flex-direction: column;
+   
+    min-height: 0px; 
+    margin-bottom: 250px;
+    margin-right: 20px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .transport {
+    
+  min-width: 390px; 
+  justify-content: center; 
+  margin-right: 75px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  }
+  
+.Back, .PlayStop, .Next, .Repeat, .AutoOn {
+  margin-right: 35px;
+  margin-top:0px;
+  margin-bottom: 5px;
+}
+
+.TimeNameInfo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-right: 60px;
+  min-width: 420px;
+  max-height: 50px;
+  justify-content: center;
+}
+
+.audio-file-name{
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: 20px;
+  min-width: 70px;
+  min-height: 100;
+  
+}
+
+.Time {
+  margin-top: 15px;
+  margin-right: 45px;
+  min-width: 75px;
+  padding-right: 10px;
+}
+
+
+.VolumeSeekBox {
+margin-bottom: 50px;
+min-width: 420px;
+min-height: 100px;
+margin-top: 0px;
+margin-right: 95px;
+padding: 40px;
+padding-bottom: 100px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 @media (min-width: 290px) and (max-width: 480px) {
   .playerContainer {
-    background-color: #083D5E;
+    background-color: red;
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    max-width: 200px;
+    max-width: 300px;
     max-height: 500px;
 
   
@@ -487,12 +613,7 @@
     padding-bottom: 120px;
   }
 
-  .player.expanded {
-    background-color: #0F1D38;
-    min-height: 300px;
-    height: auto;
-    padding: 15px;
-  }
+  
 
   .VolumeSeekBox {
     width: 100%;
@@ -532,3 +653,4 @@
     width: 8px;
   }
 }
+*/
