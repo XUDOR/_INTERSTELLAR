@@ -177,10 +177,11 @@
       
       max-height: 390px;
       flex-basis: 100%;
+      margin-top: 10px;
       padding-bottom: 10px;
-      padding-left: 7px;
+      padding-left: 15px;
       padding-right: 0px;
-      width: 25%;
+      width: 27%;
     }
 
     .QueueTitle {
@@ -188,7 +189,7 @@
       /* Light color for text */
       background-color: transparent;
       padding-bottom: 10px;
-      padding-left: 15px;
+      padding-left: 25px;
       margin-top: 15px;
       margin-bottom: 15px;
     }

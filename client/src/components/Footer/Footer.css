@@ -72,6 +72,44 @@
 }
 
 
+
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 844px) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+
+
+    .Footer {
+    min-width: 490px;
+    margin-right: 100px;
+    
+      
+      /* Further increase height for small screens */
+      padding-bottom: 25px;
+    }
+
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 390px)and (max-width: 768px) {
 
   Footer {
