@@ -1,0 +1,101 @@
+/* Film.css  */
+
+.Film {
+  
+  min-height: 50px;
+  border: 1px solid gray;
+  color: #E0ECED;
+  padding: 13px;
+  cursor: pointer;
+  /* Changes the cursor to indicate it's clickable */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for the background color */
+  z-index: 1000;
+
+}
+
+.Film:hover {
+  background-color: #065A82;
+  /* Darker background on hover */
+}
+
+
+
+
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+
+  .Film {
+    flex-basis: 7%;
+    /* Adjusted for demonstration */
+    background-color: #083D5E;
+    padding: 5px;
+    min-width: 30px;
+    /* Increased for testing */
+    min-height: 60px;
+    /* Increased for testing */
+
+  }
+}
+
+
+
+
+@media (min-width: 769px)and(max-width: 1024px) {
+
+  .Film {
+    flex-basis: 1%;
+
+
+  }
+
+}
+
+@media (min-width: 480px)and (max-width: 768px) {
+
+  .Film {
+    flex-basis: .5;
+    height: 1vh;
+
+  }
+}
+
+
+
+
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+
+  .Film {
+    flex-basis: 7%;
+    /* Adjusted for demonstration */
+    background-color: #083D5E;
+    margin-top: 20px;
+    padding: 15px;
+    min-width: 40px;
+    /* Increased for testing */
+    min-height: 50px;
+    /* Increased for testing */
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 290px)and (max-width: 480px) {
+
+  .Film {
+    margin-top: 20px;
+    width: 40px;
+    max-height: 60px;
+    
+
+  }
+}
