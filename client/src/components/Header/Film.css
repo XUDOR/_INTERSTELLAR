@@ -68,16 +68,17 @@
 @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
 
   .Film {
-    flex-basis: 7%;
+    flex-basis: 1%;
     /* Adjusted for demonstration */
     background-color: #083D5E;
     margin-top: 20px;
+    margin-right: 20px;
     padding: 15px;
     min-width: 40px;
     /* Increased for testing */
     min-height: 50px;
     /* Increased for testing */
-
+    justify-content: space-around;
   }
 }
 
