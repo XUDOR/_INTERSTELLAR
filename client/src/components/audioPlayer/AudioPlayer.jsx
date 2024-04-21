@@ -131,6 +131,7 @@ const AudioPlayer = () => {
             {isExpanded && (
                 <>
                     <audio ref={audioPlayer}></audio>
+                    <div className='playerContainer'>
                     <div className='TimeNameInfo'>
                         <div className="audio-file-name">{currentSong.name || "No song loaded"}</div>
                         <div className="Time">{calculateTime(currentTime)} / {calculateTime(duration)}</div>
@@ -160,6 +161,7 @@ const AudioPlayer = () => {
                         <div className="volume-control">
                             <input type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} className="volume-slider" />
                         </div>
+                    </div>
                     </div>
                 </>
             )}
