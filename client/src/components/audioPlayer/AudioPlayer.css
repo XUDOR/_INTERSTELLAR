@@ -25,33 +25,30 @@
   display: flex;
   flex: 1;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
 
 }
-
-
-
 
 .player {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   width: 8%;
-  /* Maintains size but ensures everything fits */
+
   height: 110px;
   color: #F9F7E8;
   font-size: 14px;
-  /* Slightly reduced for better aesthetics */
+
   padding: 10px 0;
   margin: auto;
   justify-content: left;
-  /* Aligns items to the start of the main-axis */
+
 }
 
 .player.collapsed {
   justify-content: flex-start;
-  /* This ensures items are left-aligned when collapsed */
+
 }
 
 
@@ -59,35 +56,51 @@
 .TimeNameInfo {
   display: flex;
   flex-direction: row;
-  flex: 20%;
+  justify-content: flex-start;
+  align-items: center;
+  /* Add this if you want to vertically align your items */
+  max-width: 300px;
+  /* Set a maximum width to prevent stretching */
+  padding: 0 10px;
+  /* Add some padding if needed */
+  margin: 0;
+  /* This centers it in the parent element if there is extra space */
 }
 
-/* Styles for the display of the audio file name */
+
+
+
 .audio-file-name {
   display: flex;
-  flex: .6;
-  justify-content: center;
+  flex-grow: 1;
+  flex-basis: 60%;
+  /* Starts at 60% of the container width */
+  margin: 0 10px;
+  /* Adjust spacing as needed */
+  overflow: hidden;
+  /* Ensures text doesn't overflow */
+  white-space: nowrap;
+  /* Keeps the text on one line */
+  text-overflow: ellipsis;
+  /* Adds an ellipsis for overflowed text */
+  justify-content: left;
   align-items: center;
-  width: 100%;
+  min-width: 100px;
   height: 30px;
-  /* Reduced height for more space efficiency */
   margin: 5px 1;
   padding: 2px;
   color: #0F1D38;
   font-size: 10px;
-  /* Smaller font size for a sleeker look */
   border: 1px solid #3AA0A0;
   background: #3AA0A0;
 }
 
-/* Time display and seek bar */
 .Time {
   display: flex;
-  flex: .4;
-  justify-content: center;
+  flex-basis: 40%;
+  justify-content: left;
   align-items: center;
   width: 100%;
-  /* Adjusted for better fit */
   height: 30px;
   border: 1px solid #3AA0A0;
   font-size: 11px;
@@ -95,14 +108,12 @@
   margin: 5px;
 }
 
-
-
-/* Transport controls including previous, play/pause, and next buttons */
 .transport {
   display: flex;
-  justify-content: left;
+
+  justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 80%;
   margin: 5px 5px;
 }
 
@@ -117,7 +128,6 @@
   border: 1px solid #626154;
   color: #3AA0A0;
   width: 40px;
-  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
 }
@@ -136,25 +146,18 @@
   margin: 2px;
 }
 
-
-
-
-
 .Back:hover,
 .Next:hover,
 .PlayStop:hover {
   background-color: #065A82;
 }
 
-/* Transform squares into triangle shapes using borders */
 .Back {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 14px 24px 14px 0;
-  /* Smaller triangles */
   border-color: transparent #2b7f8c transparent transparent;
-  /* Right-pointing triangle */
 }
 
 .Next {
@@ -162,14 +165,11 @@
   height: 0;
   border-style: solid;
   border-width: 14px 0 14px 24px;
-  /* Smaller triangles */
   border-color: transparent transparent transparent #2b7f8c;
-  /* Left-pointing triangle */
 }
 
 
 
-/* Specific styles for play and pause icons within buttons */
 .play-button,
 .stop-button {
   display: flex;
@@ -184,9 +184,7 @@
 .stop-button {
   background-color: #2b7f8c;
   width: 20px;
-  /* Ensures the pause icon is square */
   height: 20px;
-  /* Square pause button */
   border-radius: 0%;
 }
 
@@ -205,11 +203,40 @@
 
 .Pause:hover {
   background-color: #065A82;
-  /* Different hover color for visual feedback */
+}
+
+.SkipBack,
+.SkipForward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #626154;
+  color: #3AA0A0;
+  width: 45px;
+  height: 45px;
+  margin: 2px;
 }
 
 
+.SkipBack {
+  background-image: url('../../images/Icons/back30.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease;
 
+
+}
+
+.SkipForward {
+  background-image: url('../../images/Icons/ahead30.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease;
+}
 
 .Repeat {
   display: flex;
@@ -225,16 +252,13 @@
   color: #3AA0A0;
 
   width: 50px;
-  /* Adjusted width for better control */
   height: 60px;
   margin-top: 20px;
   margin: 2px;
   padding-top: 40px;
 }
 
-
 .Auto {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -249,7 +273,6 @@
   transition: all 0.3s ease;
 }
 
-
 .AutoOn {
   background-color: #96a508;
   /* Green background for autoplay on */
@@ -258,13 +281,13 @@
 }
 
 
-/* Seek and Volume Controls */
-
 .VolumeSeekBox {
-  display: flex;
-  flex-direction: row;
+  flex-grow: 2;
+  /* Prevent it from growing */
+  flex-basis: content;
+  /* Size based on content */
+  min-width: 250px;
   margin-left: 10px;
-
 }
 
 .seek-control,
@@ -294,7 +317,8 @@
   -webkit-appearance: none;
   width: 25px;
   height: 35px;
-  border: 2px solid #96a508;;
+  border: 2px solid #96a508;
+  ;
   cursor: pointer;
 }
 
@@ -339,12 +363,14 @@
     width: 100%;
     padding: 5px 0;
   }
+
   .seek-slider::-webkit-slider-thumb,
   .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 25px;
     height: 35px;
-    border: 2px solid #96a508;;
+    border: 2px solid #96a508;
+    ;
     cursor: pointer;
   }
 
@@ -414,7 +440,8 @@
     -webkit-appearance: none;
     width: 25px;
     height: 35px;
-    border: 2px solid #96a508;;
+    border: 2px solid #96a508;
+    ;
     cursor: pointer;
   }
 }
@@ -489,7 +516,7 @@
   }
 
   .player {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -580,7 +607,7 @@
     margin-bottom: 20px;
     margin-right: 195px;
     padding: 20px;
-    
+
   }
 
   .seek-slider::-webkit-slider-thumb,
@@ -588,7 +615,8 @@
     -webkit-appearance: none;
     width: 25px;
     height: 35px;
-    border: 2px solid #96a508;;
+    border: 2px solid #96a508;
+    ;
     cursor: pointer;
   }
 

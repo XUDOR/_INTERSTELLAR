@@ -19,7 +19,7 @@
   z-index: 1000;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
 }
 
 /* Style adjustments for the divs inside the Footer */
