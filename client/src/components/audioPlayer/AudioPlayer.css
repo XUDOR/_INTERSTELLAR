@@ -212,7 +212,7 @@
   align-items: center;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #626154;
+  border: 0px solid #626154;
   color: #3AA0A0;
   width: 45px;
   height: 45px;
@@ -221,8 +221,8 @@
 
 
 .SkipBack {
-  background-image: url('../../images/Icons/back30.png');
-  background-size: 50%;
+  background-image: url('../../images/Icons/bwk30_stoneteal.png');
+  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.3s ease;
@@ -231,8 +231,8 @@
 }
 
 .SkipForward {
-  background-image: url('../../images/Icons/ahead30.png');
-  background-size: 50%;
+  background-image: url('../../images/Icons/fwd30_stoneTeal.png');
+  background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.3s ease;
