@@ -2,28 +2,32 @@ import { useState, useCallback, useEffect } from 'react';
 
 export const useVolumeControl = (audioRef, initialVolume = 0.9) => {
     const [volume, setVolume] = useState(initialVolume);
+    const [isMuted, setIsMuted] = useState(false);
 
-    const handleVolumeChange = useCallback((event) => {
-        const newVolume = event.target.value;
+    const handleVolumeChange = useCallback((newVolume) => {
         const numericVolume = parseFloat(newVolume);
         if (Number.isFinite(numericVolume) && numericVolume >= 0 && numericVolume <= 1) {
             setVolume(numericVolume);
+            setIsMuted(false); // Unmute when volume is adjusted
             if (audioRef.current) {
-                audioRef.current.volume = numericVolume;  
-            } else {
-                
+                audioRef.current.volume = numericVolume;
             }
-        } else {
         }
     }, [audioRef]);
-    
-    
 
-    // Initial setup to ensure the correct volume is set when the component mounts
+    const toggleMute = useCallback(() => {
+        setIsMuted(!isMuted);
+        if (audioRef.current) {
+            audioRef.current.volume = isMuted ? volume : 0;
+        }
+    }, [audioRef, isMuted, volume]);
+
+    // Initialize the volume when the component mounts
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = initialVolume;
         }
     }, [audioRef, initialVolume]);
-    return { volume, handleVolumeChange };
+
+    return { volume, handleVolumeChange, toggleMute, isMuted };
 };
