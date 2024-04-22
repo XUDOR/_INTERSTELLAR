@@ -18,9 +18,10 @@ export const useVolumeControl = (audioRef, initialVolume = 0.9) => {
     const toggleMute = useCallback(() => {
         setIsMuted(!isMuted);
         if (audioRef.current) {
-            audioRef.current.volume = isMuted ? volume : 0;
+            audioRef.current.volume = !isMuted ? 0 : volume;  // Ensure to switch logic to restore volume correctly
         }
     }, [audioRef, isMuted, volume]);
+    
 
     // Initialize the volume when the component mounts
     useEffect(() => {

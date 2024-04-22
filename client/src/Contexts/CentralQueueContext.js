@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { createContext, useReducer, useEffect, useContext } from 'react';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
 
 export const CentralQueueContext = createContext();
 
@@ -7,13 +7,13 @@ const initialState = {
     queue: [],
     originalQueue: [],
     currentSongIndex: 0,
-    autoplayEnabled: true, // Default state for autoplay
+    autoplayEnabled: true,
     isLoading: false,
     showFavorites: false,
     error: null
 };
 
-const shuffleArray = (array) => {
+const shuffleArray = array => {
     let newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -25,12 +25,7 @@ const shuffleArray = (array) => {
 const queueReducer = (state, action) => {
     switch (action.type) {
         case 'SET_QUEUE':
-            return {
-                ...state,
-                queue: action.payload,
-                originalQueue: state.originalQueue.length === 0 ? action.payload : state.originalQueue,
-                isLoading: false
-            };
+            return { ...state, queue: action.payload, originalQueue: state.originalQueue.length === 0 ? action.payload : state.originalQueue, isLoading: false };
         case 'ADD_SONGS':
             return { ...state, queue: [...state.queue, ...action.payload] };
         case 'SET_CURRENT_SONG_INDEX':
@@ -49,7 +44,7 @@ const queueReducer = (state, action) => {
             return { ...state, queue: state.queue.map((song, index) => index === action.index ? { ...song, isFavorite: !song.isFavorite } : song) };
         case 'FILTER_BY_ALBUM':
             return { ...state, queue: state.queue.filter(song => song.album === action.albumName) };
-        case 'TOGGLE_AUTOPLAY': // Toggle autoplay functionality
+        case 'TOGGLE_AUTOPLAY':
             return { ...state, autoplayEnabled: !state.autoplayEnabled };
         case 'LOADING':
             return { ...state, isLoading: true };
@@ -79,21 +74,24 @@ export const CentralQueueProvider = ({ children }) => {
         fetchSongs();
     }, []);
 
-    const setCurrentSongIndex = (index) => dispatch({ type: 'SET_CURRENT_SONG_INDEX', index });
-    const clearQueue = () => dispatch({ type: 'CLEAR_QUEUE' });
-    const addSongs = (songs) => dispatch({ type: 'ADD_SONGS', payload: songs });
-    const shuffleQueue = () => dispatch({ type: 'SHUFFLE_QUEUE' });
-    const resetQueue = () => dispatch({ type: 'RESET_QUEUE' });
-    const toggleFavorite = (index) => dispatch({ type: 'TOGGLE_FAVORITE', index });
-    const toggleShowFavorites = () => dispatch({ type: 'TOGGLE_SHOW_FAVORITES' });
-    const toggleAutoplay = () => dispatch({ type: 'TOGGLE_AUTOPLAY' }); // Dispatch action for toggling autoplay
-    const filterByAlbum = (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName });
-
     return (
-        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites, toggleAutoplay }}>
+        <CentralQueueContext.Provider value={{
+            ...state,
+            dispatch,
+            setCurrentSongIndex: (index) => dispatch({ type: 'SET_CURRENT_SONG_INDEX', index }),
+            clearQueue: () => dispatch({ type: 'CLEAR_QUEUE' }),
+            addSongs: (songs) => dispatch({ type: 'ADD_SONGS', payload: songs }),
+            shuffleQueue: () => dispatch({ type: 'SHUFFLE_QUEUE' }),
+            resetQueue: () => dispatch({ type: 'RESET_QUEUE' }),
+            toggleFavorite: (index) => dispatch({ type: 'TOGGLE_FAVORITE', index }),
+            toggleShowFavorites: () => dispatch({ type: 'TOGGLE_SHOW_FAVORITES' }),
+            toggleAutoplay: () => dispatch({ type: 'TOGGLE_AUTOPLAY' }),
+            filterByAlbum: (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName })
+        }}>
             {children}
         </CentralQueueContext.Provider>
     );
 };
 
+// Export the useCentralQueue hook
 export const useCentralQueue = () => useContext(CentralQueueContext);

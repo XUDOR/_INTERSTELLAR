@@ -1,52 +1,68 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { CentralQueueContext } from '../../Contexts/CentralQueueContext';
-import { useAudioControl } from '../../hooks/useAudioControl';
-import { useTrackProgress } from '../../hooks/useTrackProgress';
-import { useVolumeControl } from '../../hooks/useVolumeControl';
+import { PlaybackContext } from '../../Contexts/PlaybackContext';
 import './AudioPlayer.css';
 
 const AudioPlayer = () => {
     const {
-        queue, currentSongIndex, setCurrentSongIndex, autoplayEnabled, toggleAutoplay
-    } = useContext(CentralQueueContext);
-    const { isPlaying, togglePlayback, audioRef } = useAudioControl(autoplayEnabled);
-    const { currentTime, duration, setCurrentTime, setIsSeeking, skipTime } = useTrackProgress(audioRef);
-    const { volume, handleVolumeChange, isMuted, toggleMute } = useVolumeControl(audioRef);
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [repeat, setRepeat] = useState('off');
+        isPlaying,
+        togglePlayback,
+        currentTime,
+        duration,
+        setCurrentTime,
+        skipTime,
+        volume,
+        handleVolumeChange,
+        isMuted,
+        toggleMute,
+        autoplayEnabled,
+        toggleAutoplay,
+        repeat,
+        toggleRepeat,
+        tracks,
+        currentTrackIndex,
+        setCurrentTrackIndex,
+    } = useContext(PlaybackContext);
 
-    const calculateTime = (secs) => {
-        const minutes = Math.floor(secs / 60);
-        const seconds = Math.floor(secs % 60);
-        return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    };
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.src = tracks[currentTrackIndex];  // Adjust according to your tracks array
+            audioRef.current.load();
+            if (autoplayEnabled && isPlaying) {
+                audioRef.current.play().catch((e) => console.log("Autoplay prevented by the browser"));
+            }
+        }
+    }, [currentTrackIndex, tracks, autoplayEnabled, isPlaying]);
+
+    useEffect(() => {
+        const handleTimeUpdate = () => setCurrentTime(audioRef.current.currentTime);
+        const handleDurationChange = () => setDuration(audioRef.current.duration);
+
+        audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
+        audioRef.current.addEventListener('durationchange', handleDurationChange);
+
+        return () => {
+            audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+            audioRef.current.removeEventListener('durationchange', handleDurationChange);
+        };
+    }, []);
 
     const handleSkip = (seconds) => {
-        skipTime(seconds);
+        const newTime = Math.max(0, Math.min(currentTime + seconds, duration));
+        setCurrentTime(newTime);
+        audioRef.current.currentTime = newTime;
     };
 
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
         setCurrentTime(newTime);
-        if (audioRef.current) {
-            audioRef.current.currentTime = newTime;
-        }
+        audioRef.current.currentTime = newTime;
     };
-
-    useEffect(() => {
-        if (audioRef.current && queue.length > 0) {
-            audioRef.current.src = queue[currentSongIndex]?.audio_url || '';
-            audioRef.current.load();
-            if (autoplayEnabled) {
-                audioRef.current.play().catch((e) => console.log("Autoplay prevented by the browser"));
-            }
-        }
-    }, [currentSongIndex, queue, audioRef, autoplayEnabled]);
 
     const toggleExpand = () => setIsExpanded(!isExpanded);
-    const toggleRepeat = () => {
-        setRepeat(repeat === 'off' ? 'all' : repeat === 'all' ? 'one' : 'off');
-    };
 
     return (
         <div className={`player ${isExpanded ? 'expanded' : 'collapsed'}`}>
@@ -55,20 +71,20 @@ const AudioPlayer = () => {
                 <div className='playerContainer'>
                     <audio ref={audioRef}></audio>
                     <div className='TimeNameInfo'>
-                        <div className="audio-file-name">{queue[currentSongIndex]?.name || "No song loaded"}</div>
-                        <div className="Time">{calculateTime(currentTime)} / {calculateTime(duration)}</div>
+                        <div className="audio-file-name">{tracks[currentTrackIndex] || "No song loaded"}</div>
+                        <div className="Time">{currentTime.toFixed(2)} / {duration.toFixed(2)}</div>
                     </div>
                     <div className='transport'>
                         <button className="SkipBack" onClick={() => handleSkip(-30)}></button>
-                        <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}></button>
+                        <button className="Back" onClick={() => setCurrentTrackIndex((currentTrackIndex - 1 + tracks.length) % tracks.length)}></button>
                         <button className="PlayStop" onClick={togglePlayback}>{isPlaying ? "Pause" : "Play"}</button>
-                        <button className="Next" onClick={() => setCurrentSongIndex((currentSongIndex + 1) % queue.length)}></button>
+                        <button className="Next" onClick={() => setCurrentTrackIndex((currentTrackIndex + 1) % tracks.length)}></button>
                         <button className="SkipForward" onClick={() => handleSkip(30)}></button>
-                        <button className='Repeat' onClick={toggleRepeat}>{repeat}</button>
+                        <button className='Repeat' onClick={toggleRepeat}>{repeat ? 'Disable Repeat' : 'Enable Repeat'}</button>
                         <button className="Auto" onClick={toggleAutoplay}>{autoplayEnabled ? 'Disable Autoplay' : 'Enable Autoplay'}</button>
                         <button className="Mute" onClick={toggleMute}>{isMuted ? 'Unmute' : 'Mute'}</button>
                         <div className='VolumeSeekBox'>
-                            <input type="range" min="0" max={duration || 0} value={currentTime} onChange={handleSeekChange} onMouseDown={() => setIsSeeking(true)} onMouseUp={() => setIsSeeking(false)} className="seek-slider" step=".05" />
+                            <input type="range" min="0" max={duration || 0} value={currentTime} onChange={handleSeekChange} onMouseDown={() => setCurrentTime(currentTime)} onMouseUp={() => setCurrentTime(currentTime)} className="seek-slider" step=".05" />
                             <input type="range" min="0" max="1" step="0.01" value={isMuted ? 0 : volume} onChange={handleVolumeChange} className="volume-slider" />
                         </div>
                     </div>
