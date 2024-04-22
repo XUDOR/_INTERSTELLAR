@@ -7,6 +7,7 @@ const initialState = {
     queue: [],
     originalQueue: [],
     currentSongIndex: 0,
+    autoplayEnabled: true, // Default state for autoplay
     isLoading: false,
     showFavorites: false,
     error: null
@@ -48,6 +49,8 @@ const queueReducer = (state, action) => {
             return { ...state, queue: state.queue.map((song, index) => index === action.index ? { ...song, isFavorite: !song.isFavorite } : song) };
         case 'FILTER_BY_ALBUM':
             return { ...state, queue: state.queue.filter(song => song.album === action.albumName) };
+        case 'TOGGLE_AUTOPLAY': // Toggle autoplay functionality
+            return { ...state, autoplayEnabled: !state.autoplayEnabled };
         case 'LOADING':
             return { ...state, isLoading: true };
         case 'ERROR':
@@ -63,10 +66,8 @@ export const CentralQueueProvider = ({ children }) => {
     const fetchSongs = async () => {
         dispatch({ type: 'LOADING' });
         try {
-           
             const response = await axios.get('/api/songs');
             const songs = await response.data;
-
             const queueWithGlobalIndex = songs.map((song, index) => ({ ...song, globalIndex: index, isFavorite: false }));
             dispatch({ type: 'SET_QUEUE', payload: queueWithGlobalIndex });
         } catch (error) {
@@ -85,10 +86,11 @@ export const CentralQueueProvider = ({ children }) => {
     const resetQueue = () => dispatch({ type: 'RESET_QUEUE' });
     const toggleFavorite = (index) => dispatch({ type: 'TOGGLE_FAVORITE', index });
     const toggleShowFavorites = () => dispatch({ type: 'TOGGLE_SHOW_FAVORITES' });
+    const toggleAutoplay = () => dispatch({ type: 'TOGGLE_AUTOPLAY' }); // Dispatch action for toggling autoplay
     const filterByAlbum = (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName });
 
     return (
-        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites }}>
+        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites, toggleAutoplay }}>
             {children}
         </CentralQueueContext.Provider>
     );
