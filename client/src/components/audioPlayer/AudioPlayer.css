@@ -268,7 +268,7 @@
   color: #3AA0A0;
   width: 50px;
   /* Adjusted width for better control */
-  height: 40px;
+  height: 50px;
   margin: 2px;
   transition: all 0.3s ease;
 }
@@ -279,6 +279,27 @@
   color: #0F1D38;
   border-radius: 5px;
 }
+
+.Mute {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  /*background-image: url('../../images/Icons/Mute-Green.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: top;*/
+  border: 1px solid #626154;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  color: #96a508
+
+}
+
+
 
 
 .VolumeSeekBox {
