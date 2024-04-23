@@ -54,7 +54,17 @@
 
 }
 
+.FormField-name {
 
+  border-left: 1px solid gray;
+  margin-bottom: 10px; /* Adjust as needed */
+  min-height: 50px;
+
+
+
+
+
+}
 
 label {
   border-left: 1px solid gray;
@@ -63,12 +73,15 @@ label {
 input {
   color: #E0ECED;
   border-left: 1px solid gray;
-  
+}
+
+.content {
+
+  color: #E0ECED;
+
 }
 
 .submit{
 
   background-color: #2b7f8c;
-
-
 }

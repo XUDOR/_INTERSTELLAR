@@ -26,7 +26,7 @@ const ContactPage = () => {
               <div className="FormField">
                 
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" />
+                <input classname="nameInput"type="text" id="name" name="name" />
               </div>
               <div className="FormField">
                 <label htmlFor="email">Email:</label>
