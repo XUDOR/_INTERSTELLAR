@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { CentralQueueContext } from './CentralQueueContext'; // Adjust the import path as necessary
 
 export const PlaybackContext = createContext();
 
@@ -10,68 +11,81 @@ export const PlaybackProvider = ({ children }) => {
     const [volume, setVolume] = useState(0.75);
     const [isMuted, setIsMuted] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(180); // Assuming 180 is a placeholder
+    const [duration, setDuration] = useState(180); // Default duration set as a number
 
-    const tracks = ['Track 1', 'Track 2', 'Track 3']; // Placeholder tracks
+    const { queue } = useContext(CentralQueueContext);
 
-    useEffect(() => {
-        const handleTrackEnd = () => {
-            if (repeat) {
-                play(); // Restart current track if repeat is on
-            } else if (autoplay) {
-                playNext(); // Play next track if autoplay is on
-            }
-        };
+    const play = useCallback(() => {
+        setIsPlaying(true);
+    }, []);
 
-        if (isPlaying) {
-            console.log(`Playing ${tracks[currentTrackIndex]}`);
-            setTimeout(handleTrackEnd, 3000); // Simulate a track ending after 3 seconds
-        }
-    }, [isPlaying, currentTrackIndex, repeat, autoplay, tracks]);
+    const pause = useCallback(() => {
+        setIsPlaying(false);
+    }, []);
 
-    const play = () => setIsPlaying(true);
-    const pause = () => setIsPlaying(false);
-    const playNext = () => {
-        let nextIndex = currentTrackIndex + 1;
-        if (nextIndex >= tracks.length) {
-            nextIndex = repeat ? 0 : currentTrackIndex;
-        }
+    const playNext = useCallback((increment = 1) => {
+        let nextIndex = (currentTrackIndex + increment + queue.length) % queue.length;
         setCurrentTrackIndex(nextIndex);
         setIsPlaying(true);
-    };
-    const toggleAutoplay = () => setAutoplay(!autoplay);
-    const toggleRepeat = () => setRepeat(!repeat);
-    const toggleMute = () => {
-        setIsMuted(!isMuted);
-        setVolume(isMuted ? 0.75 : 0);
-    };
-    const handleVolumeChange = (newVolume) => {
+    }, [currentTrackIndex, queue.length]);
+
+    const toggleAutoplay = useCallback(() => {
+        setAutoplay(prev => !prev);
+    }, []);
+
+    const toggleRepeat = useCallback(() => {
+        setRepeat(prev => !prev);
+    }, []);
+
+    const toggleMute = useCallback(() => {
+        setIsMuted(prev => !prev);
+        setVolume(prev => (prev > 0 ? 0 : 0.75));
+    }, []);
+
+    const handleVolumeChange = useCallback((newVolume) => {
         setVolume(newVolume);
         setIsMuted(newVolume === 0);
-    };
-    const seek = (time) => {
+    }, []);
+
+    const seek = useCallback((time) => {
         setCurrentTime(time);
-    };
+    }, []);
+
+    useEffect(() => {
+        if (queue.length > 0 && queue[currentTrackIndex]) {
+            const newDuration = Number(queue[currentTrackIndex].duration) || 180;
+            setDuration(newDuration);
+            setCurrentTime(0); // Reset current time when track changes
+        }
+    }, [currentTrackIndex, queue]);
+
+    useEffect(() => {
+        if (isPlaying && queue[currentTrackIndex]) {
+            const timer = setTimeout(() => {
+                playNext(); // Automatically play next when timeout expires
+            }, duration * 1000); // duration in seconds
+            return () => clearTimeout(timer);
+        }
+    }, [isPlaying, currentTrackIndex, duration, queue, playNext]);
 
     return (
         <PlaybackContext.Provider value={{
+            isPlaying,
+            currentTrackIndex,
+            tracks: queue,
+            repeat,
+            autoplay,
+            volume,
+            isMuted,
+            currentTime,
+            duration,
             play,
             pause,
             playNext,
             toggleAutoplay,
             toggleRepeat,
-            isPlaying,
-            currentTrackIndex,
-            tracks,
-            repeat,
-            autoplay,
-            volume,
-            handleVolumeChange,
             toggleMute,
-            isMuted,
-            currentTime,
-            duration,
-            setDuration,
+            handleVolumeChange,
             seek
         }}>
             {children}

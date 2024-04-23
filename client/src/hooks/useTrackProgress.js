@@ -1,5 +1,4 @@
 // useTrackProgress.js
-
 import { useState, useEffect, useCallback } from 'react';
 
 export const useTrackProgress = (audioRef) => {
@@ -7,31 +6,28 @@ export const useTrackProgress = (audioRef) => {
     const [duration, setDuration] = useState(0);
     const [isSeeking, setIsSeeking] = useState(false);
 
-    const skipTime = useCallback((time) => {
+    const seek = useCallback((time) => {
         if (audioRef.current) {
-            audioRef.current.currentTime += time;
-            setCurrentTime(audioRef.current.currentTime);
+            audioRef.current.currentTime = time;
+            setCurrentTime(time);
         }
-    }, []);
+    }, [audioRef]);
 
     useEffect(() => {
         const player = audioRef.current;
         if (!player) return;
 
-        const updateProgress = () => {
-            if (!isSeeking) setCurrentTime(player.currentTime);
-        };
-
+        const updateProgress = () => setCurrentTime(player.currentTime);
         const updateDuration = () => setDuration(player.duration);
 
         player.addEventListener('timeupdate', updateProgress);
-        player.addEventListener('loadedmetadata', updateDuration);
+        player.addEventListener('durationchange', updateDuration);
 
         return () => {
             player.removeEventListener('timeupdate', updateProgress);
-            player.removeEventListener('loadedmetadata', updateDuration);
+            player.removeEventListener('durationchange', updateDuration);
         };
-    }, [audioRef, isSeeking]);
+    }, [audioRef]);
 
-    return { currentTime, duration, setCurrentTime, setIsSeeking, skipTime };
+    return { currentTime, duration, seek, setIsSeeking };
 };
