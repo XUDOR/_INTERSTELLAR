@@ -10,7 +10,6 @@
   padding-right: 10px; 
   padding-top: 10px;
   border-top: 1px solid gray;
-  
 }
 
 .ContactTitle {
@@ -21,4 +20,55 @@
   margin-right: 10px; 
 }
 
+.MasterContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Adjust as needed */
+}
 
+.Container1,
+.Container2,
+.Container3 {
+  color: #E0ECED;
+  flex: 1;
+  justify-content: flex-start;
+  margin-right: 20px; /* Adjust as needed */
+  border: 1px solid gray;
+  background-color: #2b7f8c;
+
+
+}
+
+.Picture {
+  /* Styles for your picture container */
+}
+
+.Info1 {
+  /* Styles for Info 1 container */
+}
+
+.FormField {
+  border-left: 1px solid gray;
+  margin-bottom: 10px; /* Adjust as needed */
+  min-height: 50px;
+
+}
+
+
+
+label {
+  border-left: 1px solid gray;
+  margin-right: 10px; /* Adjust as needed */
+}
+input {
+  color: #E0ECED;
+  border-left: 1px solid gray;
+  
+}
+
+.submit{
+
+  background-color: #2b7f8c;
+
+
+}
