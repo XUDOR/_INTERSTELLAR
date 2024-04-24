@@ -27,21 +27,33 @@
   margin: 3px;
   padding: 5px;
 }
-@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+
+/* Media Query for iPhone12/13-------------------->>>>>>>>>>>>>>>>>>>> [LANDSCAPE] Mode */
+
+@media only screen 
+and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: landscape) 
+and (-webkit-device-pixel-ratio: 3) {
 
   .Footer {
+    justify-content: left;
+    
     position: fixed;
     min-height: 85px;
-    min-width: 500px;
-    padding: 30px;
+    max-width: 860px;
+    padding: 10px;
+    margin-left: 0px;
   }
 
   .Footer>div {
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100%;
+
     margin: 3px;
     padding: 5px;
   }
