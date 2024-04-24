@@ -16,16 +16,16 @@
 }
 
 .contact-link {
-  color: #E0ECED; /* Matches the text color of your navigation */
-  text-decoration: none; /* Initially, no underline */
-  padding: 5px; /* Adjust padding as needed to match other nav items */
-  cursor: pointer; /* Indicates it's clickable */
-  transition: color 0.3s ease; /* Smooth transition for the color */
+  color: #E0ECED; 
+  text-decoration: none; 
+  padding: 5px; 
+  cursor: pointer; 
+  transition: color 0.3s ease; 
 }
 
 .contact-link:hover {
-  color: #3AA0A0; /* Lighter blue on hover, adjust this color as needed */
-  text-decoration: underline; /* Adds underline on hover */
+  color: #3AA0A0;
+  text-decoration: underline; 
 }
 
   @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
