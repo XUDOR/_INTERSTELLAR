@@ -33,15 +33,11 @@
   .Film {
     
     display: flex;
-    
-   
     background-color: #083D5E;
     padding: 5px;
     min-width: 50px;
-    
-    min-height: 60px;
-   
-
+    min-height: 50px;
+    margin-bottom: 5px;
   }
 }
 
@@ -52,8 +48,6 @@
 
   .Film {
     flex-basis: 1%;
-
-
   }
 }
 
@@ -65,14 +59,11 @@
 
   .Film {
     flex-basis: .2;
-   
     background-color: #083D5E;
     margin-top: 0px;
     margin-right: 10px;
-    
     min-width: 60px;
-    
-    min-height: 50px;
+    min-height: 40px;
    
 
   }
