@@ -1,24 +1,56 @@
-/* ContactPage.css */
-.Contact-Header {
-  border-bottom: 1px solid gray;
-  /* Other styles as needed */
-}
+/* General styling for Contact Page */
 
 .ContactContent {
   display: flex;
-  justify-content: flex-end; 
-  padding-right: 10px; 
+  justify-content: flex-end;
   padding-top: 10px;
+  padding-right: 10px;
   border-top: 1px solid gray;
-  
 }
 
 .ContactTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid gray;
   color: #E0ECED;
+  background-color: #20232A;
   padding: 5px;
-  align-self: flex-start; 
-  margin-right: 10px; 
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
+.ContactDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: #3AA0A0;
+  background-color: #E0ECED;
+  line-height: 1.6;
+  min-height: 190px;
+}
 
+.Column1, .Column2 {
+background-color: transparent;
+
+}
+/* Media Query for iPhone 12/13 in landscape mode */
+
+@media only screen 
+and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: landscape) 
+and (-webkit-device-pixel-ratio: 3) {
+  
+  .ContactTitle {
+    display: none;
+  }
+
+  .ContactDetails {
+    justify-content: center;
+    min-height: 100px;
+    padding-top: 5px;
+  }
+}
