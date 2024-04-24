@@ -12,9 +12,11 @@ const Header = () => {
   return (
     <header className={`header ${headerClassName}`}>
       <Brand />
-      
+      <div className='ContactFilmContainer'>
       {!isMinimal && <Contact />}
       <Film/>
+      </div>
+
     </header>
 
   );
