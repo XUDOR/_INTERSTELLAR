@@ -80,9 +80,12 @@
 
 
   Footer {
+    
     position: fixed;
-    min-height: 30px;
+    min-height: 40px;
     padding: 30px;
+    max-width: 300px;
+    margin-bottom: 0px;
   }
 
   .Footer>div {
@@ -97,11 +100,12 @@
 
 }
 
-@media (min-width: 290px)and (max-width: 390px) {
+@media (min-width: 290px)and (max-width: 389px) {
 
   Footer {
     
-    min-height: 150px;
+    max-height: 148px;
+    max-width: 300px;
     padding: 30px;
   }
 
