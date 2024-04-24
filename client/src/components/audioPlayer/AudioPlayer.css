@@ -38,20 +38,16 @@
   flex-direction: column;
   align-items: center;
   width: 8%;
-  /* Maintains size but ensures everything fits */
   height: 110px;
   color: #F9F7E8;
   font-size: 14px;
-  /* Slightly reduced for better aesthetics */
   padding: 10px 0;
   margin: auto;
   justify-content: left;
-  /* Aligns items to the start of the main-axis */
 }
 
 .player.collapsed {
   justify-content: flex-start;
-  /* This ensures items are left-aligned when collapsed */
 }
 
 
@@ -62,7 +58,6 @@
   flex: 20%;
 }
 
-/* Styles for the display of the audio file name */
 .audio-file-name {
   display: flex;
   flex: .6;
@@ -70,24 +65,20 @@
   align-items: center;
   width: 100%;
   height: 30px;
-  /* Reduced height for more space efficiency */
   margin: 5px 1;
   padding: 2px;
   color: #0F1D38;
   font-size: 10px;
-  /* Smaller font size for a sleeker look */
   border: 1px solid #3AA0A0;
   background: #3AA0A0;
 }
 
-/* Time display and seek bar */
 .Time {
   display: flex;
   flex: .4;
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* Adjusted for better fit */
   height: 30px;
   border: 1px solid #3AA0A0;
   font-size: 11px;
@@ -97,7 +88,6 @@
 
 
 
-/* Transport controls including previous, play/pause, and next buttons */
 .transport {
   display: flex;
   justify-content: left;
@@ -117,7 +107,6 @@
   border: 1px solid #626154;
   color: #3AA0A0;
   width: 40px;
-  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
 }
@@ -131,7 +120,6 @@
   border: 1px solid #626154;
   color: #3AA0A0;
   width: 55px;
-  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
 }
@@ -146,15 +134,12 @@
   background-color: #065A82;
 }
 
-/* Transform squares into triangle shapes using borders */
 .Back {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 14px 24px 14px 0;
-  /* Smaller triangles */
   border-color: transparent #2b7f8c transparent transparent;
-  /* Right-pointing triangle */
 }
 
 .Next {
@@ -162,14 +147,11 @@
   height: 0;
   border-style: solid;
   border-width: 14px 0 14px 24px;
-  /* Smaller triangles */
   border-color: transparent transparent transparent #2b7f8c;
-  /* Left-pointing triangle */
 }
 
 
 
-/* Specific styles for play and pause icons within buttons */
 .play-button,
 .stop-button {
   display: flex;
@@ -184,9 +166,7 @@
 .stop-button {
   background-color: #2b7f8c;
   width: 20px;
-  /* Ensures the pause icon is square */
   height: 20px;
-  /* Square pause button */
   border-radius: 0%;
 }
 
@@ -205,7 +185,6 @@
 
 .Pause:hover {
   background-color: #065A82;
-  /* Different hover color for visual feedback */
 }
 
 
@@ -225,7 +204,6 @@
   color: #3AA0A0;
 
   width: 50px;
-  /* Adjusted width for better control */
   height: 60px;
   margin-top: 20px;
   margin: 3px;
@@ -243,7 +221,6 @@
   border: 1px solid #626154;
   color: #3AA0A0;
   width: 50px;
-  /* Adjusted width for better control */
   height: 40px;
   margin: 2px;
   margin-left: 2px;
@@ -253,14 +230,12 @@
 
 .AutoOn {
   background-color: #96a508;
-  /* Green background for autoplay on */
   color: #0F1D38;
   border-radius: 5px;
   margin-left: 2px;
 }
 
 
-/* Seek and Volume Controls */
 
 .VolumeSeekBox {
   display: flex;
@@ -341,11 +316,7 @@
     width: 100%;
     padding: 5px 0;
   }
-
-
 }
-
-
 
 /* ________________________________________________________________ */
 
@@ -400,10 +371,6 @@
 
   }
 
-
-
-
-
   .seek-slider::-webkit-slider-thumb,
   .volume-slider::-webkit-slider-thumb {
     width: 5px;
@@ -412,9 +379,6 @@
 
   }
 }
-
-
-
 
 /* ________________________________________________________________ */
 
@@ -543,7 +507,7 @@ and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
   .Next,
   .Repeat,
   .AutoOn {
-    margin-right: 15px;
+    margin-right: 25px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
