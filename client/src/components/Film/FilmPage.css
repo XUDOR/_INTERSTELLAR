@@ -1,10 +1,5 @@
 /* FilmPage.css */
 
-.Film-header {
-  border-bottom: 1px solid gray;
-  /* Add other header styles as needed */
-}
-
 .FilmContent {
   display: flex;
   justify-content: flex-end;
@@ -27,16 +22,19 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
-
   align-items: center; /* Aligns items at the start of the container */
   flex-wrap: wrap; /* Allows containers to wrap on smaller screens */
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+
+
 }
-.FilmContainer {
+.FilmContainer1, .FilmContainer2 {
   display: flex;
   
   justify-content: center;
   align-items: center;
-  border: 1px solid gray;
+  
   color: #E0ECED;
   margin: 5px; /* Adjust margins as needed for spacing */
   box-sizing: border-box; /* Includes padding and border in the element's total width */
@@ -61,7 +59,7 @@ iframe {
     align-items: stretch; /* This will make each child container stretch to fit the container's width */
   }
 
-  .FilmContainer {
+  .FilmContainer1, .FilmContainer2 {
     width: calc(100% - 10px); /* Take full width minus some margin for aesthetics */
     padding-top: 56.25%; /* This percentage maintains a 16:9 aspect ratio */
     margin: 5px;
@@ -70,6 +68,68 @@ iframe {
 }
 
 
+/* Media Query for iPhone12/13-------------------->>>>>>>>>>>>>>>>>>>> [LANDSCAPE] Mode */
 
-@media (min-width: 320px)and (max-width: 768px) {
+@media only screen 
+and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: landscape) 
+and (-webkit-device-pixel-ratio: 3) {
+
+  .FilmContainers {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .FilmContainer1, .FilmContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: #E0ECED;
+    margin: 5px;
+    box-sizing: border-box;
+    position: relative;
+    width: calc(60% - 20px); /* Increased width */
+    padding-top: calc(33.75% - 10px); /* Increased padding-top for height adjustment */
+    height: 0;
+  }
+  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+
+.FilmContainer2 {
+  padding-bottom: 60px;
 }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

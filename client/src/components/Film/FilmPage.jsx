@@ -4,7 +4,7 @@ import './FilmPage.css'; // Ensure this path matches your file structure
 const FilmPage = () => {
   return (
     <div className="FilmContainers">
-      <div className="FilmContainer">
+      <div className="FilmContainer1">
         <iframe
           src="https://player.vimeo.com/video/935038582?badge=0&autopause=0&player_id=0&app_id=58479"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
@@ -13,7 +13,7 @@ const FilmPage = () => {
           loading="lazy"
         ></iframe>
       </div>
-      <div className="FilmContainer">
+      <div className="FilmContainer2">
         <iframe
           src="https://player.vimeo.com/video/935116508?badge=0&autopause=0&player_id=0&app_id=58479"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
