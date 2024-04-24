@@ -5,13 +5,9 @@
   
   position: fixed;
   left: 0px;
-  /* Set to 0px to align properly at the left edge */
   bottom: 0px;
-  /* Set to 0px to align properly at the bottom */
   width: 88%;
-  /* Full width for better responsiveness */
   height: 11vh;
-  /* Maintain original height for large screens */
   padding: 5px;
   padding-bottom: 30px;
   background-color: #083D5E;
@@ -22,85 +18,21 @@
   align-items: center;
 }
 
-/* Style adjustments for the divs inside the Footer */
 .Footer>div {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* Center content horizontally */
   align-items: center;
-  /* Center content vertically */
   height: 100%;
   margin: 3px;
   padding: 5px;
 }
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
 
-
-
-/* Responsive styles for medium devices (tablets) */
-@media (min-width: 769px) and   (max-width: 1023px) {
   .Footer {
-    
-    height: 12vh;
-    /* Slightly increase height for medium screens */
-    padding-top: 15px;
-    padding-bottom: 39px;
-  }
-
-  .Footer>div {
-    flex-direction: row;
-    /* Stack children vertically */
-  }
-}
-
-
-
-/* Responsive styles for small devices (mobiles) */
-@media (max-width: 768px) {
-  .Footer {
-    
-    
-    height: 12vh;
-    /* Further increase height for small screens */
-    padding-bottom: 25px;
-  }
-
-  .Footer>div {
-    padding: 12px;
-    /* Reduce padding for smaller div elements */
-  }
-}
-
-
-
-@media only screen 
-  and (min-device-width: 390px) 
-  and (max-device-width: 844px) 
-  and (orientation: portrait) 
-  and (-webkit-device-pixel-ratio: 3) {
-
-
-
-    .Footer {
-    min-width: 490px;
-    
-    
-      
-      /* Further increase height for small screens */
-      padding-bottom: 25px;
-    }
-
-    
-  }
-
-
-  @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
-
-
-  Footer {
     position: fixed;
-    min-height: 30px;
-    /* Further increase height for small screens */
+    min-height: 80px;
+    min-width: 800px;
     padding: 30px;
   }
 
@@ -108,9 +40,56 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* Center content horizontally */
     align-items: center;
-    /* Center content vertically */
+    height: 100%;
+    margin: 3px;
+    padding: 5px;
+  }
+}
+
+
+@media (min-width: 769px) and   (max-width: 1023px) {
+  .Footer {
+    
+    height: 12vh;
+    padding-top: 15px;
+    padding-bottom: 39px;
+  }
+
+  .Footer>div {
+    flex-direction: row;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .Footer {
+    
+    
+    height: 12vh;
+    padding-bottom: 25px;
+  }
+
+  .Footer>div {
+    padding: 12px;
+  }
+}
+
+  @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+
+
+  Footer {
+    position: fixed;
+    min-height: 30px;
+    padding: 30px;
+  }
+
+  .Footer>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     margin: 3px;
     padding: 5px;
@@ -123,7 +102,6 @@
   Footer {
     
     min-height: 150px;
-    /* Further increase height for small screens */
     padding: 30px;
   }
 
