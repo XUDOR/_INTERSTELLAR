@@ -8,9 +8,7 @@
   color: #E0ECED;
   padding: 5px;
   cursor: pointer;
-  /* Changes the cursor to indicate it's clickable */
   transition: background-color 0.3s ease;
-  /* Smooth transition for the background color */
   z-index: 1000;
   margin-left: 10px;
   margin-bottom:50px;
