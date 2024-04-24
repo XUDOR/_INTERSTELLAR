@@ -2,9 +2,43 @@
 
 .header {
   display: flex;
-  justify-content: space-between; /* Distributes space between items */
-  align-items: center; /* Vertically center items in the container */
+  justify-content: space-between;
+ 
+  align-items: center;
+  
   background-color: #083D5E;
-  margin: 10px; /* Adds 20 pixels of space above the header */
+  margin: 10px;
+  margin-bottom: 20px;
+ 
   height: 80px;
+}
+
+
+
+.ContactFilmContainer {
+  display: flex;
+  flex-direction: column;
+
+  
+  align-items: center;
+
+  margin-top: 0px;
+
+}
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+
+
+
+
+  .ContactFilmContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  
+  }
 }

@@ -3,20 +3,25 @@
 .Film {
   
   min-height: 50px;
+  min-width: 60px;
   border: 1px solid gray;
   color: #E0ECED;
-  padding: 13px;
+  padding: 5px;
   cursor: pointer;
   /* Changes the cursor to indicate it's clickable */
   transition: background-color 0.3s ease;
   /* Smooth transition for the background color */
   z-index: 1000;
+  margin-left: 10px;
+  margin-bottom:50px;
+  justify-content: center;
+  align-items: center;
 
 }
 
 .Film:hover {
   background-color: #065A82;
-  /* Darker background on hover */
+ 
 }
 
 
@@ -26,14 +31,16 @@
 @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
 
   .Film {
-    flex-basis: 7%;
-    /* Adjusted for demonstration */
+    
+    display: flex;
+    
+   
     background-color: #083D5E;
     padding: 5px;
-    min-width: 30px;
-    /* Increased for testing */
+    min-width: 50px;
+    
     min-height: 60px;
-    /* Increased for testing */
+   
 
   }
 }
@@ -48,16 +55,6 @@
 
 
   }
-
-}
-
-@media (min-width: 480px)and (max-width: 768px) {
-
-  .Film {
-    flex-basis: .5;
-    height: 1vh;
-
-  }
 }
 
 
@@ -67,15 +64,16 @@
 @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
 
   .Film {
-    flex-basis: 7%;
-    /* Adjusted for demonstration */
+    flex-basis: .2;
+   
     background-color: #083D5E;
-    margin-top: 20px;
-    padding: 15px;
-    min-width: 40px;
-    /* Increased for testing */
+    margin-top: 0px;
+    margin-right: 10px;
+    
+    min-width: 60px;
+    
     min-height: 50px;
-    /* Increased for testing */
+   
 
   }
 }

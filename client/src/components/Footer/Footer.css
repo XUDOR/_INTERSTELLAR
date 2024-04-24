@@ -40,7 +40,7 @@
 /* Responsive styles for medium devices (tablets) */
 @media (min-width: 769px) and   (max-width: 1023px) {
   .Footer {
- 
+    
     height: 12vh;
     /* Slightly increase height for medium screens */
     padding-top: 15px;
@@ -94,27 +94,12 @@
   }
 
 
+  @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 390px)and (max-width: 768px) {
 
   Footer {
-    
-    height: 12vh;
+    position: fixed;
+    min-height: 30px;
     /* Further increase height for small screens */
     padding: 30px;
   }

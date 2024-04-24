@@ -1,14 +1,18 @@
 /* header/Contact.css*/
 
 .Contact {
-  flex: .3;
-  
+  min-height: 50px;
+  flex: .2;
   border-left: 2px solid #0F1D38;
+  margin-top: 25px;
+  margin-bottom: 5px;
   margin-left: 2px;
   text-decoration: none;
   color: #E0ECED;
-  padding: 10px;
-  height: 100%;
+  padding: 5px;
+  
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-link {
@@ -20,7 +24,28 @@
 }
 
 .contact-link:hover {
-  color: #007bff; /* Lighter blue on hover, adjust this color as needed */
+  color: #3AA0A0; /* Lighter blue on hover, adjust this color as needed */
   text-decoration: underline; /* Adds underline on hover */
 }
 
+  @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+
+
+    .Contact {
+      min-height: 30px;
+      flex: .2;
+      border-left: 2px solid #0F1D38;
+      margin-top: 95px;
+      margin-bottom: 0px;
+      margin-left: 2px;
+      text-decoration: none;
+      color: #E0ECED;
+      padding: 5px;
+      
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+  }
