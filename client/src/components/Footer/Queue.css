@@ -45,7 +45,6 @@
 
 .QueueTitle {
   color: #E0ECED;
-  /* Light color for text */
   background-color: transparent;
   margin-top: 20px;
   padding-bottom: 30px;
@@ -54,7 +53,6 @@
 .QueueItems {
   padding-top: 25px;
   padding-right: 15px;
-  /* Corrected padding-right */
   padding-left: 15px;
   background-color: transparent;
 }
@@ -187,7 +185,6 @@
 
     .QueueTitle {
       color: #E0ECED;
-      /* Light color for text */
       background-color: transparent;
       padding-bottom: 10px;
       padding-left: 25px;
@@ -241,14 +238,6 @@
     }
 }
 
-
-
-
-
-
-
-
-
 /* ---------------------------------->>>>>>>>>>>>>>> iphone 12/13[LANDSCAPE] */
 
 @media only screen 
@@ -285,7 +274,6 @@
 
     .QueueTitle {
       color: #E0ECED;
-      /* Light color for text */
       background-color: transparent;
       padding-bottom: 10px;
       padding-left: 25px;
@@ -293,8 +281,6 @@
       margin-bottom: 15px;
     }
 }
-
-
 /* ------------>>>>>>>>>>>>>>>>> iphone 12 [PORTRAIT] */
 
 @media only screen 
@@ -334,7 +320,6 @@
 
     .QueueTitle {
       color: #E0ECED;
-      /* Light color for text */
       background-color: transparent;
       padding-bottom: 10px;
       padding-left: 25px;
@@ -342,8 +327,6 @@
       margin-bottom: 15px;
     }
 }
-
-
 /* ---------------------------------->>>>>>>>>>>>>>> iphone 12/13[LANDSCAPE] */
 
 @media only screen 
@@ -380,7 +363,6 @@
 
     .QueueTitle {
       color: #E0ECED;
-      /* Light color for text */
       background-color: transparent;
       padding-bottom: 10px;
       padding-left: 25px;
