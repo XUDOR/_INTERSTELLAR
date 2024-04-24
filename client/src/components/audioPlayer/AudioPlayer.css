@@ -502,7 +502,7 @@
 
     display: flex;
     flex-direction: row;
-    flex: .9;
+    flex: .78;
     justify-content: left;
     align-items: center;
   }

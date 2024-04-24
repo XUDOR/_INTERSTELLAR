@@ -15,7 +15,7 @@
   width: 15%;
   max-height: 70px;
   background-color: #083D5E;
-  overflow-y: auto;
+  
   border-left: 3px solid #0F1D38;
   z-index: 1000;
   justify-content: flex-end;
@@ -29,13 +29,13 @@
 }
 
 .Queue.expanded {
-  max-height: 900px;
-  /* Increased max-height when expanded */
+  max-height: 800px;
   flex-basis: 100%;
-  /* Optional: Takes more space when expanded */
+  overflow-y: auto;
   padding-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
+  overflow-y: auto;
   width: 20%;
 }
 
@@ -78,7 +78,6 @@
 
 .highlight {
   color: #3AA0A0;
-  /* Highlight color for the currently playing song */
   background-color: #E0ECED;
   border-radius: 3px;
   padding: 1px;
@@ -125,7 +124,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    overflow-y: auto;
     max-height: 70px;
     padding-bottom: 20px;
     ;
@@ -133,8 +131,10 @@
   }
 
   .Queue.expanded {
-    max-height: 900px;
+    overflow-y: auto;
+    max-height: 800px;
     flex-basis: 100%;
+    overflow-y: auto;
     padding-bottom: 20px;
     padding-left: 15px;
     padding-right: 1px;
@@ -144,7 +144,6 @@
 
   .QueueTitle {
     color: #E0ECED;
-    /* Light color for text */
     background-color: transparent;
     padding-bottom: 25px;
     margin-top: 10px;
@@ -152,6 +151,106 @@
   }
 
 }
+/* ---------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> iphone 14[LANDSCAPE] */
+
+@media only screen 
+  and (min-device-width: 430px) 
+  and (max-device-width: 932px) 
+  and (orientation: landscape) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .Queue {
+      flex-basis: 70%;
+      border-top: 2px solid #0F1D38;
+      color: #E0ECED;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      max-height: 75px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      width: 15%;
+    }
+  
+    .Queue.expanded {
+      overflow-y: auto;
+      max-height: 420px;
+      flex-basis: 100%;
+      margin-top: 10px;
+      overflow-y: auto;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 5px;
+      width: 27%;
+    }
+
+    .QueueTitle {
+      color: #E0ECED;
+      /* Light color for text */
+      background-color: transparent;
+      padding-bottom: 10px;
+      padding-left: 25px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+}
+
+/* ---------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> iphone 14[PORTRAIT] */
+
+@media only screen 
+  and (min-device-width: 430px) 
+  and (max-device-width: 932px) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .Queue {
+      flex-basis: 50%;
+      border-top: 2px solid #0F1D38;
+      color: #E0ECED;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      max-height: 75px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      width: 35%;
+    }
+  
+    .Queue.expanded {
+      background-color: red;
+      overflow-y: auto;
+      max-height: 520px;
+      flex-basis: 100%;
+      margin-top: 10px;
+      overflow-y: auto;
+      padding-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 5px;
+      width: 50%;
+    }
+
+    .QueueTitle {
+      color: #E0ECED;
+      /* Light color for text */
+      background-color: transparent;
+      padding-bottom: 10px;
+      padding-left: 25px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ---------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> iphone 12[LANSCAPE] */
 
 @media only screen 
   and (min-device-width: 390px) 
@@ -166,7 +265,6 @@
       cursor: pointer;
       transition: all 0.3s ease;
       overflow: hidden;
-      overflow-y: auto;
       max-height: 75px;
       padding-top: 10px;
       padding-bottom: 10px;
@@ -175,10 +273,11 @@
     }
   
     .Queue.expanded {
-      
-      max-height: 300px;
+      overflow-y: auto;
+      max-height: 375px;
       flex-basis: 100%;
       margin-top: 10px;
+      overflow-y: auto;
       padding-bottom: 10px;
       padding-left: 15px;
       padding-right: 0px;
@@ -196,6 +295,55 @@
     }
 }
 
+
+/* ---------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> iphone 12 [PORTRAIT] */
+
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 844px) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .Queue {
+      flex-basis: 70%;
+      border-top: 2px solid #0F1D38;
+      color: #E0ECED;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      max-height: 75px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      width: 15%;
+    }
+  
+    .Queue.expanded {
+    
+      overflow-y: auto;
+      max-height: 775px;
+      flex-basis: 100%;
+      margin-top: 10px;
+      overflow-y: auto;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 0px;
+      width: 27%;
+    }
+
+    .QueueTitle {
+      color: #E0ECED;
+      /* Light color for text */
+      background-color: transparent;
+      padding-bottom: 10px;
+      padding-left: 25px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+}
+
+
+
 @media (min-width: 390px)and (max-width: 768px) {
 
   .Queue {
@@ -205,7 +353,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
-    overflow-y: auto;
     max-height: 70px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -213,8 +360,9 @@
   }
 
   .Queue.expanded {
-    max-height: 895px;
+    max-height: 800px;
     flex-basis: 100%;
+    overflow-y: auto;
     padding-bottom: 10px;
     padding-left: 35px;
     padding-right: 5px;
@@ -253,7 +401,7 @@
   }
 
   .Queue.expanded {
-    max-height: 800px;
+    max-height: 500px;
     flex-basis: 100%;
     padding-bottom: 10px;
     padding-left: 35px;
