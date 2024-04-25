@@ -308,7 +308,7 @@
     .Queue.expanded {
     
       overflow-y: auto;
-      max-height: 820px;
+      max-height: 750px;
       flex-basis: 100%;
       margin-top: 10px;
       overflow-y: auto;
