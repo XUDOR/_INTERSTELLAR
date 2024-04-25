@@ -1,7 +1,7 @@
 /* General styling for Contact Page */
-
 .ContactContent {
   display: flex;
+  flex-direction: row; /* Ensure the container allows for horizontal layout */
   justify-content: flex-end;
   padding-top: 10px;
   padding-right: 10px;
@@ -22,9 +22,9 @@
 
 .ContactDetails {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row; /* Adjust to row to align columns horizontally */
+  justify-content: space-between; /* Adjusts distribution of children (columns) */
+  align-items: flex-start; /* Aligns items in columns at their start */
   padding: 10px;
   color: #3AA0A0;
   background-color: #E0ECED;
@@ -33,11 +33,14 @@
 }
 
 .Column1, .Column2 {
-background-color: transparent;
-
+  background-color: transparent;
+  flex: 1; /* Allows both columns to take equal space */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align text to the left */
 }
-/* Media Query for iPhone 12/13 in landscape mode */
 
+/* Media Query for iPhone 12/13 in [LANDSCAPE]*/
 @media only screen 
 and (min-device-width: 390px) 
 and (max-device-width: 844px) 
@@ -50,7 +53,50 @@ and (-webkit-device-pixel-ratio: 3) {
 
   .ContactDetails {
     justify-content: center;
-    min-height: 100px;
+    min-height: 120px;
     padding-top: 5px;
   }
+}
+
+.Column1 {
+  font-size:  20px;
+}
+
+.Column2 {
+  font-size:  20px; /* Ensures consistent font size with Column1 */
+}
+
+/* Media Query for iPhone 12/13 in [LANDSCAPE]*/
+@media only screen 
+and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: portrait) 
+and (-webkit-device-pixel-ratio: 3) {
+  
+  .ContactTitle {
+    display: none;
+  }
+
+  .ContactDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+    padding-top: 5px;
+  }
+}
+
+.Column1 {
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size:  20px;
+  margin-bottom: 0px;
+}
+
+.Column2 {
+  margin-left: 30px;
+  margin-top: 10px;
+
+  font-size:  18px; /* Ensures consistent font size with Column1 */
+  color: #20232A
 }
