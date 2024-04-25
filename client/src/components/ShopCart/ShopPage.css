@@ -51,11 +51,23 @@
   color: #000;
 }
 
+.product-details {
+  background-color: transparent;
+
+}
+
 .product-name {
   border: 1px solid gray;
+  background-color: transparent;
   padding: 5px; /* Added padding for better text visibility */
   text-align: center; /* Centering product name */
 }
+
+.product-price {
+  background-color: transparent;
+
+}
+
 
 .add-product {
   border: 1px solid white;
