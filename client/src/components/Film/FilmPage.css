@@ -18,7 +18,7 @@
 
 /* Container for both film elements */
 .FilmContainers {
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
