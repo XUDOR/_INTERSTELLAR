@@ -51,7 +51,7 @@ const ShopPage = () => {
 
   return (
     <div className="shopPage">
-      <div className="shopTitle">Shop</div>
+      
       <div className="shopContent">
         <div className="shopContainer">
           <ProductList products={products} onAddToCart={onAddToCart} />
