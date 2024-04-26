@@ -86,7 +86,9 @@ and (-webkit-device-pixel-ratio: 3) {
   }
 }
 
-  @media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  @media only screen and (min-device-width: 390px) 
+  and (max-device-width: 844px) and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio: 3) {
 
   Footer {
     
@@ -108,6 +110,8 @@ and (-webkit-device-pixel-ratio: 3) {
   }
 
 }
+/* Media Query for iPhone12/13 mini-------------------->>>>>>>>>>>>>>>>>>>> [PORTRAIT] Mode */
+
 
 @media (min-width: 290px)and (max-width: 389px) {
 
