@@ -6,13 +6,11 @@
   padding-bottom: 300px;
 }
 
-
 .shopContent {
   display: flex;
   margin-top: 20px;
   padding-right: 10px;
   padding-top: 10px;
-  
 }
 
 .shopContainer {
@@ -37,7 +35,7 @@
   padding: 10px;
   background: #333;
   color: #fff;
-  border: 2px solid #f7fde1;
+  border: 1px solid #f7fde1;
   cursor: pointer;
 }
 
@@ -47,44 +45,69 @@
 }
 
 .product-details {
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
   background-color: transparent;
+  justify-content: center;
+  align-items: flex-start;
+}
 
+.product-cover img {
+  align-items: center;
+  justify-content: center;
+  width: 60%;  /* Reduce image width to 60% */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .product-name {
   border: 1px solid gray;
   background-color: transparent;
-  padding: 5px; /* Added padding for better text visibility */
-  text-align: center; /* Centering product name */
+  padding: 2px;
+  margin: 0px;
+  margin-top: 2px;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 14px;
 }
+
+.product-catalogue {
+  background-color: transparent;
+  font-size: 13px;
+
+
+}
+
 
 .product-price {
   background-color: transparent;
-
 }
-
 
 .add-to-cart {
   border: 1px solid white;
-  background-color: #333; /* Added background color for consistency */
+  background-color: #333;
   color: white;
-  padding: 10px;
-  cursor: pointer; /* Ensures cursor changes on hover */
+  padding: 5px;
+  cursor: pointer;
 }
 
 .add-product:hover {
-  background-color: #5A5956; /* Darker background on hover */
+  background-color: #5A5956;
   color: #CEDDC2;
 }
 
 .cart {
   display: flex;
-  background-color: #FFFEF5;
+  background-color: #065A82;
   border: 2px solid red;
   justify-content: flex-start;
   margin-left: 5%;
   padding: 20px;
   height: 500px;
+}
+
+.cart-title {
+  background-color: transparent;
 }
 
 .cartItems {
@@ -118,4 +141,9 @@
 .cart-item button:hover {
   background: #5A5956;
   color: #CEDDC2;
+}
+
+.total {
+  justify-content: flex-end;
+  background-color: #0F1D38;
 }
