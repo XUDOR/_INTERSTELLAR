@@ -1,23 +1,42 @@
 /* Catalogue.css */
-.Catalogue-header {
-  border-bottom: 1px solid gray;
-  /* Other styles as needed */
-}
+
 
 .CatalogueContent {
+ 
   display: flex;
-  justify-content: flex-end; 
-  padding: 5px; 
-;
+  justify-content: flex-end;
+  padding: 5px;
+  margin-top: 20px;
   border-bottom: 1px solid #0F1D38;
   color: #3AA0A0;
-  
+
 }
 
 .CatalogueTitle {
   border: 1px solid gray;
   color: #E0ECED;
   padding: 5px;
-  align-self: flex-start; 
-  margin-right: 10px; 
+  align-self: flex-start;
+  margin-right: 10px;
+}
+
+@media only screen and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+
+
+  .CatalogueContent {
+    
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    margin-top: 0px;
+    border-bottom: 1px solid #0F1D38;
+    color: #3AA0A0;
+  
+  }
+
+
+
+
 }
