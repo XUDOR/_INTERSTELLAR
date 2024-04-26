@@ -5,7 +5,7 @@ const ContactPage = () => {
   return (
     <>
       <div className="ContactContent"> 
-        <div className='ContactTitle'>Contact</div>  
+        
       </div>
       <div className="ContactDetails">
         <div className="Column1">Roderick Shoolbraid</div>
