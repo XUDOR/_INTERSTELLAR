@@ -1,22 +1,22 @@
-/* General styling for Contact Page */
 .ContactContent {
   display: flex;
   flex-direction: row;
-  /* Ensure the container allows for horizontal layout */
   justify-content: flex-end;
+  margin-top: 20px;
   padding-top: 10px;
   padding-right: 10px;
-  border-top: 1px solid gray;
+  
 }
 
 .ContactTitle {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid gray;
+  border: 10px solid gray;
   color: #E0ECED;
   background-color: #20232A;
   padding: 5px;
+  
   margin-right: 10px;
   margin-bottom: 20px;
 }
@@ -24,11 +24,8 @@
 .ContactDetails {
   display: flex;
   flex-direction: row;
-  /* Adjust to row to align columns horizontally */
   justify-content: space-between;
-  /* Adjusts distribution of children (columns) */
   align-items: flex-start;
-  /* Aligns items in columns at their start */
   padding: 10px;
   color: #3AA0A0;
   background-color: #E0ECED;
@@ -40,11 +37,9 @@
 .Column2 {
   background-color: transparent;
   flex: 1;
-  /* Allows both columns to take equal space */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  /* Align text to the left */
 }
 
 /* Media Query for iPhone 12/13 in [LANDSCAPE]*/
