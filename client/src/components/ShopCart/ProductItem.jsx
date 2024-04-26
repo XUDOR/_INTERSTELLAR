@@ -7,9 +7,11 @@ const ProductItem = ({ product, onAddToCart }) => {
       <div className="product-details">
         <h3 className="product-name">{product.name}</h3>
         <div className="product-catalogue">{product.catalogueID}</div>
-        <p className="product-price">${product.price.toFixed(2)}</p>
       </div>
+      <div className="price-addCart">
+      <p className="product-price">${product.price.toFixed(2)}</p>
       <button className="add-to-cart" onClick={() => onAddToCart(product)}>+</button>
+      </div>
     </div>
   );
 };
