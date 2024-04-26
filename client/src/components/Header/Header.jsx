@@ -2,6 +2,7 @@
 import React from 'react';
 import Brand from './Brand';
 import Film from './Film';
+import Shop from './Shop';
 import Contact from './Contact';
 import { useHeaderStyle } from '../../hooks/useHeaderStyle'; 
 import './Header.css';
@@ -12,9 +13,10 @@ const Header = () => {
   return (
     <header className={`header ${headerClassName}`}>
       <Brand />
-      <div className='ContactFilmContainer'>
+      <div className='ContactFilmShopContainer'>
       {!isMinimal && <Contact />}
-      <Film/>
+      {!isMinimal && <Film/>}
+      {!isMinimal && <Shop/>}
       </div>
 
     </header>
