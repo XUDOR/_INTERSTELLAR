@@ -41,6 +41,7 @@
 
 .Queue:hover {
   background-color: #065A82;
+  transition: background-color 0.3s ease;
 }
 
 .QueueTitle {
