@@ -9,7 +9,8 @@ export function useHeaderStyle() {
     '/user', 
     '/downloads', 
     '/epk',
-    '/contact'
+    '/contact',
+    '/film'
   ];
   const isMinimal = minimalHeaderPaths.includes(location.pathname);
 
