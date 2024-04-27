@@ -5,7 +5,7 @@ const Total = ({ cartItems }) => {
 
   return (
     <div className="total">
-      <h3>Total: ${total.toFixed(2)}</h3>
+      <h3 className="total-text">Total: ${total.toFixed(2)}</h3>
     </div>
   );
 };
