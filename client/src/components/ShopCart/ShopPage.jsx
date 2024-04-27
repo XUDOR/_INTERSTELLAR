@@ -54,8 +54,8 @@ const ShopPage = () => {
       <div className="shopContent">
         <div className="shopContainer">
           <ProductList products={products} onAddToCart={onAddToCart} />
-          <Cart cartItems={cartItems} onRemoveFromCart={onRemoveFromCart} />
         </div>
+        <Cart cartItems={cartItems} onRemoveFromCart={onRemoveFromCart} />
       </div>
     </div>
   );
