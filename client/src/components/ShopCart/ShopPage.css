@@ -8,8 +8,8 @@
 
 .shopContent {
   display: flex;
-  justify-content: flex-start; /* Aligns items to the start of the container */
-  flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+  justify-content: flex-start; 
+  flex-wrap: wrap; 
   margin-top: 20px;
   padding-right: 10px;
   padding-top: 10px;
@@ -17,12 +17,12 @@
 
 .shopContainer {
   display: flex;
-  flex-wrap: wrap; /* Allows items within this container to wrap */
+  flex-wrap: wrap; 
 }
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Adjust the minmax for desired item width */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
   gap: 15px;
   flex: 3;
   margin-top: 10px; 
@@ -194,4 +194,79 @@ font-size: 16px;
 font-weight: lighter;
 }
 
+/*--------------------------------RESSPONSIVE------working below----------------------------------- /*
 
+ Media Query for iPhone14MAX-------------------->>>>>>>>>>>>>>>>>>>> [PORTRAIT] Mode */
+
+@media only screen 
+and (min-device-width: 430px) 
+and (max-device-width: 932px) 
+and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 15px;
+    flex: 3;
+    margin-top: 25px; 
+    margin-left: 5px;
+    margin-right: 0px;
+  }
+}
+
+/* Media Query for iPhone14MAX-------------------->>>>>>>>>>>>>>>>>>>> [LANDSCAPE] Mode */
+
+@media only screen 
+and (min-device-width: 430px) 
+and (max-device-width: 932px) 
+and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+    gap: 15px;
+    flex: 3;
+    margin-top: 25px; 
+    margin-left: 45px;
+    margin-right: 0px;
+  }
+}
+
+/* Media Query for iPhone12/13-------------------->>>>>>>>>>>>>>>>>>>> [PORTRAIT] Mode */
+
+@media only screen 
+and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+
+
+  .product-list {
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 2px;
+    flex: 2;
+    margin-top: 25px; 
+    margin-left: 0px;
+    margin-right: 5px;
+   
+  }
+
+}
+/* Media Query for iPhone12/13-------------------->>>>>>>>>>>>>>>>>>>> [LABDSCAPE] Mode */
+@media only screen 
+and (min-device-width: 390px) 
+and (max-device-width: 844px) 
+and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 5px;
+    flex: 3;
+    margin-top: 10px; 
+    margin-left: 10px;
+    margin-right: 25px;
+  }
+
+}
