@@ -18,7 +18,7 @@ const CARD_STYLES = {
       iconColor: "#fa755a"
     },
   },
-  hidePostalCode: false, // If you want to hide the postal code field
+  hidePostalCode: true, // If you want to hide the postal code field
 };
 
 
