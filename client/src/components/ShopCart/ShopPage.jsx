@@ -25,7 +25,7 @@ const products = [
     { id: 18, name: 'Poem for a Homeworld', price: 16.00, catalogueID: '#01040118', image: '/images/ART_THUMBNAILS-CART_DISPLAY/18_POEM-HOMEWORLD_thumb.png' },
     { id: 19, name: 'Rhombus', price: 11.00, catalogueID: '#01040119', image: '/images/ART_THUMBNAILS-CART_DISPLAY/19_RHOMBUS_thumb.png' },
     { id: 20, name: 'Natura - Cassette', price: 12.00, catalogueID: '#01020105 /cassette', image: '/images/ART_THUMBNAILS-CART_DISPLAY/5_NATURA_thumb.png' },
-    { id: 21, name: 'Discography', price: 100.00, catalogueID: '#010401A', image: '/images/ART_THUMBNAILS-CART_DISPLAY/A_Discography_thumb.png' }
+    { id: 21, name: 'Discography', price: 1.00, catalogueID: '#010401A', image: '/images/ART_THUMBNAILS-CART_DISPLAY/A_Discography_thumb.png' }
 ];
 
 const ShopPage = () => {
