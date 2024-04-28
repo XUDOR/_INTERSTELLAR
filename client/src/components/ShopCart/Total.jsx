@@ -1,6 +1,6 @@
 import React from "react";
 
-const Total = ({ cartItems }) => {
+const Total = ({ cartItems = [] }) => { // Set a default value of an empty array for cartItems
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
