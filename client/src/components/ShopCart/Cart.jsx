@@ -1,6 +1,5 @@
 import React from 'react';
 import CartItem from './CartItem';
-import Total from './Total';
 import CheckoutForm from './CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -15,7 +14,7 @@ const Cart = ({ cartItems, onRemoveFromCart }) => {
 
     return (
         <div className="cart">
-            <h2 className="cart-title">Your Cart</h2>
+            <h2 className="cart-title">Cart</h2>
             {cartItems.length > 0 ? (
                 cartItems.map(item => (
                     <CartItem key={item.id} item={item} onRemoveFromCart={onRemoveFromCart} />
