@@ -12,7 +12,7 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 5001; 
 
-// CORS Options
+/* CORS Options
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("Origin received:", origin); // Add this to check what origin is being received
@@ -23,6 +23,7 @@ const corsOptions = {
     }
   }
 };
+*/
 
 
 app.use(helmet());
