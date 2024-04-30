@@ -1,41 +1,39 @@
-// Load environment variables from .env file
 require('dotenv').config();
 
-// Import necessary Node.js modules
 const express = require('express');
 const cors = require('cors');
-const helmet = require('helmet'); // Security middleware for setting HTTP headers
+const helmet = require('helmet'); 
 const path = require('path');
 
-// Import route configurations
+const frontEndDomainProduction = process.env.FRONTEND_DOMAIN_PRODUCTION; // Example: 'https://your-netlify-app.netlify.app'
+const frontEndDomainDevelopment = 'http://localhost:3000'; // Adjust port if different
+
 const routes = require('./routes');
-
-// Create an Express application
 const app = express();
-const PORT = process.env.PORT || 5001; // Port from environment variable or default to 5001
+const PORT = process.env.PORT || 5001; 
 
-// Apply Helmet to enhance API security
+// CORS Options
+const corsOptions = {
+  origin: function (origin, callback) {
+    if ([frontEndDomainProduction, frontEndDomainDevelopment].indexOf(origin) !== -1 || !origin) {
+      callback(null, true) // Allow if it's one of our sites or server-to-server requests where origin is undefined
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+};
+
 app.use(helmet());
-
-// Automatically parse JSON-formatted request bodies
 app.use(express.json());
 
-// Enable CORS with default settings to allow cross-origin requests
-app.use(cors());
+app.use(cors(corsOptions));
 
-// Serve static files from the 'public' directory
 app.use('/static', express.static(path.join(__dirname, 'public')));
-
-// Mount centralized routes with '/api' as the base path
 app.use('/api', routes);
-
-// Global error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack); // Log error stack for debugging
-  res.status(500).send('Something broke!'); // Send generic server error message
+  console.error(err.stack); 
+  res.status(500).send('Something broke!'); 
 });
-
-// Start the server on the specified port
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
