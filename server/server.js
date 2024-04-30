@@ -28,7 +28,7 @@ const corsOptions = {
 app.use(helmet());
 app.use(express.json());
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/api', routes);
