@@ -15,13 +15,15 @@ const PORT = process.env.PORT || 5001;
 // CORS Options
 const corsOptions = {
   origin: function (origin, callback) {
+    console.log("Origin received:", origin); // Add this to check what origin is being received
     if ([frontEndDomainProduction, frontEndDomainDevelopment].indexOf(origin) !== -1 || !origin) {
-      callback(null, true) // Allow if it's one of our sites or server-to-server requests where origin is undefined
+      callback(null, true); // Allow if it's one of our sites or server-to-server requests where origin is undefined
     } else {
-      callback(new Error('Not allowed by CORS'))
+      callback(new Error('Not allowed by CORS'));
     }
   }
 };
+
 
 app.use(helmet());
 app.use(express.json());
