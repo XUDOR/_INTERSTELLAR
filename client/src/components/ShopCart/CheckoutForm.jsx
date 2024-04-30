@@ -51,7 +51,7 @@ const CheckoutForm = ({ total }) => {
       setError(error.message);
       setLoading(false); // Stop loading as there is an error
     } else {
-      fetch('/api/payment', {
+      fetch('https://interstellar-fdok.onrender.com/api/payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
