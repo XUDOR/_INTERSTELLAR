@@ -9,7 +9,7 @@ const CARD_STYLES = {
       fontSmoothing: "antialiased",
       fontSize: "18px",
       '::placeholder': {
-        color: "#0aaac3"
+        color: "ivory"
       },
       padding: '10px', // Give some padding inside the CardElement
     },
