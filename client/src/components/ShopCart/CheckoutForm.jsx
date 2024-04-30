@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const CARD_STYLES = {
@@ -18,19 +18,26 @@ const CARD_STYLES = {
       iconColor: "#fa755a"
     },
   },
-  hidePostalCode: true, // If you want to hide the postal code field
+  hidePostalCode: true // If you want to hide the postal code field
 };
-
 
 const CheckoutForm = ({ total }) => {
   const stripe = useStripe();
   const elements = useElements();
+  const [error, setError] = useState(null);
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false); // State to handle loading during processing
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true); // Start loading
+    setError(null);  // Reset errors on new submission
+    setMessage('');
 
     if (!stripe || !elements) {
       console.log("Stripe.js hasn't loaded yet.");
+      setError("Stripe.js is not fully loaded. Please try again later.");
+      setLoading(false); // Stop loading as there is an error
       return;
     }
 
@@ -41,18 +48,41 @@ const CheckoutForm = ({ total }) => {
     });
 
     if (error) {
-      console.log('[error]', error);
+      setError(error.message);
+      setLoading(false); // Stop loading as there is an error
     } else {
-      console.log('[PaymentMethod]', paymentMethod);
-      // Implement further logic here, e.g., post to your server for payment processing
+      fetch('/api/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          paymentMethodId: paymentMethod.id,
+          amount: total,
+          currency: 'usd'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        setLoading(false); // Stop loading once the response is received
+        if (data.success) {
+          setMessage('Payment successful!');
+        } else {
+          setError('Payment failed. Please try again.');
+        }
+      })
+      .catch(error => {
+        setError('Network error. Please try again.');
+        setLoading(false); // Stop loading as there is a network error
+      });
     }
   };
 
   return (
     <form className="PaymentForm" onSubmit={handleSubmit}>
       <CardElement options={CARD_STYLES} />
-      <button className="PayButton" type="submit" disabled={!stripe}>
-        Pay ${total.toFixed(2)}
+      {error && <div className="error">{error}</div>}
+      {message && <div className="success">{message}</div>}
+      <button className="PayButton" type="submit" disabled={!stripe || loading}>
+        {loading ? 'Processing...' : `Pay $${total.toFixed(2)}`}
       </button>
     </form>
   );
