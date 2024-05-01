@@ -248,6 +248,20 @@ font-weight: lighter;
   flex-direction: column;
 }
 
+.StripeElement--complete {
+background-color: #96a508;
+color: #f7fde1;
+
+}
+
+
+
+
+
+
+
+
+
 /*--------------------------------RESSPONSIVE------working below----------------------------------- /*
 
  Media Query for iPhone14MAX-------------------->>>>>>>>>>>>>>>>>>>> [PORTRAIT] Mode */
