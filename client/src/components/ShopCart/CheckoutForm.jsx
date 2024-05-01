@@ -4,12 +4,12 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 const CARD_STYLES = {
   style: {
     base: {
-      color: "#add8e6",
+      color: "#fff",
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: "antialiased",
       fontSize: "18px",
       '::placeholder': {
-        color: "ivory"
+        color: "#fff"
       },
       padding: '10px', // Give some padding inside the CardElement
     },
