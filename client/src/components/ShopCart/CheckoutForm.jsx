@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Import axios
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const CARD_STYLES = {
@@ -11,7 +12,7 @@ const CARD_STYLES = {
       '::placeholder': {
         color: "#fff"
       },
-      padding: '10px', // Give some padding inside the CardElement
+     //padding: '10px', // Give some padding inside the CardElement
     },
     invalid: {
       color: "#fa755a",
@@ -51,19 +52,19 @@ const CheckoutForm = ({ total }) => {
       setError(error.message);
       setLoading(false); // Stop loading as there is an error
     } else {
-      fetch('https://interstellar-fdok.onrender.com/api/payment', {
-        method: 'POST',
+      axios({
+        method: 'post',
+        url: 'https://interstellar-fdok.onrender.com/api/payment',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        data: {
           paymentMethodId: paymentMethod.id,
           amount: total,
           currency: 'usd'
-        })
+        }
       })
-      .then(response => response.json())
-      .then(data => {
+      .then(response => {
         setLoading(false); // Stop loading once the response is received
-        if (data.success) {
+        if (response.data.success) {
           setMessage('Payment successful!');
         } else {
           setError('Payment failed. Please try again.');
