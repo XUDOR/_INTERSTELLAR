@@ -243,7 +243,7 @@ font-weight: lighter;
 }
 
 .StripeElement > div {
-  background-color: #96a508;
+
   display: flex;
   flex-direction: column;
 }
