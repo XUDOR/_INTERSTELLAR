@@ -15,7 +15,8 @@ router.use('/albums', albumRoutes);
 router.use('/songs', songRoutes);
 router.use('/central', centralRoutes);
 router.use('/webhooks/stripe', stripeWebhook);
-router.use('/api', paymentRoutes); 
+router.use('/payment', paymentRoutes);
+ 
 //router.use('/admin', adminRoutes);
 
 
