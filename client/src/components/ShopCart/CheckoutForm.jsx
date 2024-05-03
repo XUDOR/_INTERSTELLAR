@@ -12,7 +12,8 @@ const CARD_STYLES = {
       '::placeholder': {
         color: "#96a508" // Placeholder text color
       },
-      backgroundColor: "#083D5E", // Setting default background color
+      backgroundColor: "#2b7f8c", // Setting default background color
+      
     },
     invalid: {
       color: "#fa755a", // Color for invalid input
