@@ -5,6 +5,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // POST endpoint to process payments
 router.post('/', async (req, res) => {
     console.log(req.body);
+    console.log("Received amount on server: ", req.body.amount);
     const { paymentMethodId, amount, currency } = req.body;
 
     try {

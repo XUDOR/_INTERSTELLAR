@@ -22,6 +22,7 @@ const CARD_STYLES = {
 };
 
 const CheckoutForm = ({ total }) => {
+  console.log("Received Total in CheckoutForm: ", total);
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState('');
@@ -54,8 +55,8 @@ const CheckoutForm = ({ total }) => {
 
       const response = await axios.post('https://interstellar-fdok.onrender.com/api/payment', {
         paymentMethodId: paymentMethod.id,
-        amount: total,
-        currency: 'cad' // <--- i could change to CAD
+        amount: Math.round(total * 100),
+        currency: 'cad' 
       }, {
         headers: { 'Content-Type': 'application/json' }
       });

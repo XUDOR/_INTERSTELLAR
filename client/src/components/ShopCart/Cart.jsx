@@ -11,7 +11,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 const Cart = ({ cartItems, onRemoveFromCart }) => {
     // Calculate total price of the cart
     const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
+    console.log("Calculated Total: ", total);
     return (
         <div className="cart">
             <h2 className="cart-title">Cart</h2>
