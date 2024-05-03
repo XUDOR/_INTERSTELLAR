@@ -248,23 +248,6 @@ font-weight: lighter;
   flex-direction: column;
 }
 
-.StripeElement--complete {
-background-color: #96a508;
-color: #f7fde1;
-
-}
-
-
-.StripeElement StripeElement--webkit-autofill StripeElement--complete
-
-
-.__PrivateStripeElement {
-background-color: #2b7f8c;
-  
-}
-
-
-
 
 
 
