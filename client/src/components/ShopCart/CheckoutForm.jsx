@@ -55,7 +55,7 @@ const CheckoutForm = ({ total }) => {
       const response = await axios.post('https://interstellar-fdok.onrender.com/api/payment', {
         paymentMethodId: paymentMethod.id,
         amount: total,
-        currency: 'usd'
+        currency: 'cad' // <--- i could change to CAD
       }, {
         headers: { 'Content-Type': 'application/json' }
       });
