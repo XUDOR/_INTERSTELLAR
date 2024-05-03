@@ -15,12 +15,7 @@ router.post('/', async (req, res) => {
             payment_method: paymentMethodId,
             confirm: true, // Automatically confirm the payment
             payment_method_types: ['card'], // Specify that only card payments are accepted
-            automatic_payment_methods: {
-                enabled: true,
-                allow_redirects: 'never' // Explicitly disallow any payment methods that involve redirects
-            }
         });
-        
 
         // If successful, send back a success response
         res.status(200).json({ success: true, paymentIntentId: paymentIntent.id });
