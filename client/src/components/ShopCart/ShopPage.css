@@ -234,7 +234,7 @@ font-weight: lighter;
   background-color: #083D5E;
   padding: 16px;
   border-radius: 3px;
-  border: 1px solid #0aaac3; /* Border color  d9e0cd    match button */
+  border: 3px solid #0aaac3; /* Border color  d9e0cd    match button */
   margin-top: 5px;
   width: 100%;
   height: 50px;
@@ -253,6 +253,9 @@ background-color: #96a508;
 color: #f7fde1;
 
 }
+
+
+.StripeElement StripeElement--webkit-autofill StripeElement--complete
 
 
 .__PrivateStripeElement {

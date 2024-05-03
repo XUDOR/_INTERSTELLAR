@@ -5,21 +5,28 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 const CARD_STYLES = {
   style: {
     base: {
-      color: "#ffffff",
+      color: "#ffffff", // Ensuring text is white for readability
       fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
       fontSmoothing: "antialiased",
       fontSize: "16px",
       '::placeholder': {
-        color: "#96a508"
+        color: "#96a508" // Placeholder text color
       },
+      backgroundColor: "#083D5E", // Setting default background color
     },
     invalid: {
-      color: "#fa755a",
-      iconColor: "#fa755a"
+      color: "#fa755a", // Color for invalid input
+      iconColor: "#fa755a" // Icon color for invalid input
     },
+    // Targeting the autofill to change the background color when input fields are autofilled
+    '::autofill': {
+      color: '#fce883', // Change this to your preferred autofill text color if needed
+      backgroundColor: '#2b7f8c' // Your desired background color for autofilled content
+    }
   },
   hidePostalCode: true
 };
+
 
 const CheckoutForm = ({ total }) => {
   console.log("Received Total in CheckoutForm: ", total);
