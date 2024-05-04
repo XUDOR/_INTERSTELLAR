@@ -196,6 +196,27 @@ font-size: 16px;
 font-weight: lighter;
 }
 
+.input-field {
+  background-color: transparent;
+  border: 1px solid #2b7f8c; /* Matching border style with existing elements */
+  color: #E0ECED;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-field::placeholder {
+  color: #96a508; /* Placeholder text color matching existing styles */
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #96a508; /* Highlight color when the input is focused */
+}
+
+
 
 
 .PayButton {
