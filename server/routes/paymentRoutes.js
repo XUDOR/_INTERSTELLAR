@@ -6,7 +6,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 router.post('/', async (req, res) => {
     console.log(req.body);
     console.log("Received amount on server: ", req.body.amount);
-    const { paymentMethodId, amount, currency } = req.body;
+    const { paymentMethodId, amount, currency, customerDetails } = req.body; // Assume customerDetails is being sent
 
     try {
         // Create a PaymentIntent with the amount and currency
@@ -16,6 +16,17 @@ router.post('/', async (req, res) => {
             payment_method: paymentMethodId,
             confirm: true, // Automatically confirm the payment
             payment_method_types: ['card'], // Specify that only card payments are accepted
+            metadata: {
+                firstName: customerDetails.firstName,
+                lastName: customerDetails.lastName,
+                email: customerDetails.email,
+                addressLine1: customerDetails.addressLine1 || '',
+                addressLine2: customerDetails.addressLine2 || '',
+                city: customerDetails.city || '',
+                state: customerDetails.state || '',
+                country: customerDetails.country || '',
+                postalCode: customerDetails.postalCode || '',
+            }
         });
 
         // If successful, send back a success response
