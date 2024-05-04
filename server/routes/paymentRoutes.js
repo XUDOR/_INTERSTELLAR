@@ -4,8 +4,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const sendEmail = require('./services/mailer'); // Adjust the path if necessary
 
 router.post('/', async (req, res) => {
-    console.log(req.body);
-    console.log("Received amount on server: ", req.body.amount);
+    
     const { paymentMethodId, amount, currency, customerDetails } = req.body;
 
     try {
