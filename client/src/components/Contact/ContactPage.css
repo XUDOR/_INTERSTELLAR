@@ -1,103 +1,87 @@
+/* ContactPage.css */
+.Contact-Header {
+  border-bottom: 1px solid gray;
+  /* Other styles as needed */
+}
+
 .ContactContent {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 20px;
+  justify-content: flex-end; 
+  padding-right: 10px; 
   padding-top: 10px;
-  padding-right: 10px;
-  
+  border-top: 1px solid gray;
 }
 
 .ContactTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 10px solid gray;
+  border: 1px solid gray;
   color: #E0ECED;
-  background-color: #20232A;
   padding: 5px;
-  
-  margin-right: 10px;
-  margin-bottom: 20px;
+  align-self: flex-start; 
+  margin-right: 10px; 
 }
 
-.ContactDetails {
+.MasterContainer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px;
-  color: #3AA0A0;
-  background-color: #E0ECED;
-  line-height: 1.6;
-  min-height: 190px;
+  margin-top: 20px; /* Adjust as needed */
 }
 
-.Column1,
-.Column2 {
-  background-color: transparent;
+.Container1,
+.Container2,
+.Container3 {
+  color: #E0ECED;
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  justify-content: flex-start;
+  margin-right: 20px; /* Adjust as needed */
+  border: 1px solid gray;
+  background-color: #2b7f8c;
+
+
 }
 
-/* Media Query for iPhone 12/13 in [LANDSCAPE]*/
-@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
-
-  .ContactTitle {
-    display: none;
-  }
-
-  .ContactDetails {
-    justify-content: center;
-    min-height: 130px;
-    padding-top: 5px;
-  }
+.Picture {
+  /* Styles for your picture container */
 }
 
-.Column1 {
-  margin-top: 0px;
-  margin-left: 30px;
-  font-size: 20px;
-  margin-bottom: 0px;
+.Info1 {
+  /* Styles for Info 1 container */
 }
 
-.Column2 {
-  
-  margin-top: 15px;
-  font-size: 19px;
-  color: #20232A
+.FormField {
+  border-left: 1px solid gray;
+  margin-bottom: 10px; /* Adjust as needed */
+  min-height: 50px;
+
 }
 
-/* Media Query for iPhone 12/13 in [LANDSCAPE]*/
-@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+.FormField-name {
 
-  .ContactTitle {
-    display: none;
-  }
+  border-left: 1px solid gray;
+  margin-bottom: 10px; /* Adjust as needed */
+  min-height: 50px;
 
-  .ContactDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 200px;
-    padding-top: 5px;
-  }
+
+
+
+
 }
 
-.Column1 {
-  margin-top: 20px;
-  margin-left: 30px;
-  font-size: 20px;
-  margin-bottom: 0px;
+label {
+  border-left: 1px solid gray;
+  margin-right: 10px; /* Adjust as needed */
+}
+input {
+  color: #E0ECED;
+  border-left: 1px solid gray;
 }
 
-.Column2 {
-  padding-top: 0px;
-  margin-left: 30px;
-  margin-top: 0px;
-  margin-bottom: 25px;
-  font-size: 18px;
-  color: #20232A
+.content {
+
+  color: #E0ECED;
+
+}
+
+.submit{
+
+  background-color: #2b7f8c;
 }
