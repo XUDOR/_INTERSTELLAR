@@ -11,7 +11,7 @@ const ContactPage = () => {
             <img src="/pictures/RODERICK_SHOOLBRAID-PROMO1_2022sm.png" alt="Roderick Shoolbraid Promo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div className="Info1">
-            <p>Contact Details</p>
+            <p className='Contact-text'>Contact: Roderick Shoolbraid | 1 778 922 8992</p>
           </div>
         </div>
         <div className="Container2">
