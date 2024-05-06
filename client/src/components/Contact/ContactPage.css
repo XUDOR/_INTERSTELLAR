@@ -1,87 +1,96 @@
 /* ContactPage.css */
-.Contact-Header {
-  border-bottom: 1px solid gray;
-  /* Other styles as needed */
-}
-
 .ContactContent {
   display: flex;
-  justify-content: flex-end; 
-  padding-right: 10px; 
-  padding-top: 10px;
-  border-top: 1px solid gray;
-}
-
-.ContactTitle {
-  border: 1px solid gray;
-  color: #E0ECED;
-  padding: 5px;
-  align-self: flex-start; 
-  margin-right: 10px; 
+  flex-direction: column;
+  padding: 1px;
+  background: transparent; /* Background color for the whole contact content area */
 }
 
 .MasterContainer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px; /* Adjust as needed */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three equally divided columns for desktop */
+  grid-gap: 10px;
+  padding: 2px;
+  background-color:transparent;
+}
+
+@media (max-width: 768px) {
+  .MasterContainer {
+    grid-template-columns: 1fr; /* Stack the containers on top of each other on mobile */
+  }
 }
 
 .Container1,
 .Container2,
 .Container3 {
-  color: #E0ECED;
-  flex: 1;
-  justify-content: flex-start;
-  margin-right: 20px; /* Adjust as needed */
-  border: 1px solid gray;
-  background-color: #2b7f8c;
-
-
+  border: 2px solid #065A82;
+  padding: 5px;
+  
 }
 
 .Picture {
-  /* Styles for your picture container */
+  width: 100%; /* Full width of the container */
+  height: 100px; /* Fixed height, adjust as needed */
+  /* Ensure no background image is set here */
 }
 
-.Info1 {
-  /* Styles for Info 1 container */
+.Info1, .Info2 {
+  padding: 1px;
+  color: #333; /* Dark text color for readability */
+}
+
+.FormField-name, .FormField-email, .FormField-date, .FormField-formContent {
+
+  margin: 7px;
 }
 
 .FormField {
-  border-left: 1px solid gray;
-  margin-bottom: 10px; /* Adjust as needed */
-  min-height: 50px;
+  margin: 1px 0;
+}
+
+
+
+.nameInput {
+margin-top: 3px;
 
 }
 
-.FormField-name {
 
-  border-left: 1px solid gray;
-  margin-bottom: 10px; /* Adjust as needed */
-  min-height: 50px;
-
-
-
-
-
-}
 
 label {
-  border-left: 1px solid gray;
-  margin-right: 10px; /* Adjust as needed */
-}
-input {
-  color: #E0ECED;
-  border-left: 1px solid gray;
+  margin-left: 1px;
+  margin-bottom: 6px;
+  
 }
 
-.content {
-
-  color: #E0ECED;
-
+input, textarea {
+  width: calc(100% - 22px); /* Full width minus padding */
+  padding: 5px;
+  color: #96a508;
+  font-size: 15px;
+  font-weight: lighter;
+  border: 1px solid #2b7f8c;
 }
 
-.submit{
+#content {
+  background-color: #0F1D38; /* Dark blue background for content textarea */
+  color: #F9F7E8; /* White text color for readability */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+}
 
-  background-color: #2b7f8c;
+
+.submit {
+  margin-left: 8px;
+  margin-bottom: 8px;
+  padding: 10px 20px;
+  background-color: #96a508; /* Green background for the submit button */
+  color: #F9F7E8;
+  border: none;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: #065A82;
+  transition: all 0.4s ease;
 }
