@@ -93,15 +93,17 @@ const AudioPlayer = () => {
 
     useEffect(() => {
         const handleKeyPress = (e) => {
-            if (e.keyCode === 32) { // Spacebar
+            // Check if the key press is happening inside input fields or textareas
+            if (e.keyCode === 32 && !['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(e.target.tagName)) {
                 e.preventDefault();
                 togglePlayback();
             }
         };
-
+    
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [togglePlayback]);
+    
 
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
