@@ -2,23 +2,35 @@
 .ContactContent {
   display: flex;
   flex-direction: column;
+  margin-top: 15px;
   padding: 1px;
   background: transparent; /* Background color for the whole contact content area */
+  overflow-y: auto;
+  padding-bottom: 100px;
 }
 
 .MasterContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Three equally divided columns for desktop */
+  grid-template-columns: 2fr 1fr 1fr; /* Three equally divided columns for desktop */
   grid-gap: 10px;
   padding: 2px;
+  margin-top: 20px;
   background-color:transparent;
+  
 }
 
 @media (max-width: 768px) {
   .MasterContainer {
     grid-template-columns: 1fr; /* Stack the containers on top of each other on mobile */
+    overflow-y: auto; /* Ensure scrolling is possible */
+  }
+
+  .Container1, .Container2, .Container3 {
+    height: auto; /* Adjust height for mobile */
+    padding: 5px; /* Adjust padding if necessary */
   }
 }
+
 
 .Container1,
 .Container2,
@@ -30,13 +42,36 @@
 
 .Picture {
   width: 100%; /* Full width of the container */
-  height: 100px; /* Fixed height, adjust as needed */
-  /* Ensure no background image is set here */
+  height: auto; /* Maintain aspect ratio */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  overflow: hidden; /* Prevents image overflow */
 }
 
-.Info1, .Info2 {
+.Picture img {
+  max-width: 100%; /* Maximum width of the image as 75% of its parent */
+  height: auto; /* Auto-adjust the height to maintain aspect ratio */
+  object-fit: contain; /* Ensures the image is scaled correctly within bounds */
+}
+
+.Info1 {
+  background-color: #065A82;
+display: flex;
+justify-content: left;
+
+}
+
+.Contact-text {
+  background-color: transparent;
+  padding: 4px;
+  margin: 4px;
+}
+
+
+.Info2 {
   padding: 1px;
-  color: #333; /* Dark text color for readability */
+  
 }
 
 .FormField-name, .FormField-email, .FormField-date, .FormField-formContent {
@@ -64,12 +99,13 @@ label {
 }
 
 input, textarea {
-  width: calc(100% - 22px); /* Full width minus padding */
+  width: 100%;
   padding: 5px;
   color: #96a508;
   font-size: 15px;
   font-weight: lighter;
   border: 1px solid #2b7f8c;
+  justify-content: center;
 }
 
 #content {
@@ -78,7 +114,14 @@ input, textarea {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: lighter;
+  min-height: 200px; /* Minimum height, can adjust as needed */
+  resize: none; /* Disables the resize handle */
+  overflow: hidden; /* Prevents scrollbars from appearing */
+  width: 100%; /* Full width */
+  padding: 5px;
+  border: 1px solid #2b7f8c;
 }
+
 
 
 .submit {
