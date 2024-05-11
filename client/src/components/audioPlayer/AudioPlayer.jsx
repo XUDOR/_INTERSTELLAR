@@ -18,22 +18,24 @@ const AudioPlayer = () => {
 
     const togglePlayback = useCallback(() => {
         if (!audioPlayer.current) return;
-    
         if (isPlaying) {
             console.log('Pausing playback');
             audioPlayer.current.pause();
-            setIsPlaying(false);
         } else {
-            console.log('Resuming playback');
+            console.log('Starting playback');
             audioPlayer.current.play().catch(error => {
                 console.error("Error during playback:", error);
             });
-            setIsPlaying(true);
         }
+        setIsPlaying(!isPlaying);
     }, [isPlaying]);
-    
-    
-    
+
+    const skipTime = (time) => {
+        if (!audioPlayer.current) return;
+        let newTime = audioPlayer.current.currentTime + time;
+        audioPlayer.current.currentTime = Math.max(0, Math.min(newTime, audioPlayer.current.duration)); // Ensures we stay within bounds
+    };
+
     const playNextSong = useCallback(() => {
         if (repeatMode === 2) {
             audioPlayer.current.currentTime = 0;
@@ -54,7 +56,7 @@ const AudioPlayer = () => {
         if (player) {
             player.src = currentSong.audio_url || '';
             player.load();
-    
+
             const shouldPlay = isPlaying || autoplay;
             if (shouldPlay) {
                 player.play().catch(error => {
@@ -66,9 +68,6 @@ const AudioPlayer = () => {
             }
         }
     }, [currentSongIndex, currentSong.audio_url, isPlaying, autoplay]);
-    
-
-   
 
     useEffect(() => {
         const player = audioPlayer.current;
@@ -103,7 +102,6 @@ const AudioPlayer = () => {
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [togglePlayback]);
-    
 
     const handleSeekChange = (e) => {
         const newTime = parseFloat(e.target.value);
@@ -126,7 +124,7 @@ const AudioPlayer = () => {
         const seconds = Math.floor(secs % 60);
         return `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
-// --->>> Render for PAGE
+
     return (
         <div className={`player ${isExpanded ? 'expanded' : 'collapsed'}`}>
             <button className='playToggle' onClick={() => setIsExpanded(!isExpanded)}></button>
@@ -143,8 +141,9 @@ const AudioPlayer = () => {
                         <button className="PlayStop" onClick={togglePlayback}>
                             {isPlaying ? <div className="stop-button"></div> : <div className="play-button"></div>}
                         </button>
-                        
                         <button className="Next" onClick={playNextSong}></button>
+                        <button onClick={() => skipTime(-30)}>-30s</button>
+                        <button onClick={() => skipTime(30)}>+30s</button>
                         <button className="Repeat" onClick={() => setRepeatMode((repeatMode + 1) % 3)}>
                             {repeatMode === 0 ? "Off" : repeatMode === 1 ? "Queue" : "Song"}
                         </button>
