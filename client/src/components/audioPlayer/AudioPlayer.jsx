@@ -19,10 +19,8 @@ const AudioPlayer = () => {
     const togglePlayback = useCallback(() => {
         if (!audioPlayer.current) return;
         if (isPlaying) {
-            
             audioPlayer.current.pause();
         } else {
-            
             audioPlayer.current.play().catch(error => {
                 console.error("Error during playback:", error);
             });
@@ -67,7 +65,7 @@ const AudioPlayer = () => {
                 setIsPlaying(false);
             }
         }
-    }, [currentSongIndex, currentSong.audio_url, autoplay]);
+    }, [currentSongIndex, currentSong.audio_url, autoplay, isPlaying]);
 
     useEffect(() => {
         const player = audioPlayer.current;
