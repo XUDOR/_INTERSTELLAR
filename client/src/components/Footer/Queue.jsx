@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { CentralQueueContext } from '../../Contexts/CentralQueueContext';
 import './Queue.css';
 import axios from 'axios';
@@ -7,6 +7,7 @@ const Queue = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [playlistName, setPlaylistName] = useState('');
+    const [playlists, setPlaylists] = useState([]);
     const {
         queue, 
         currentSongIndex, 
@@ -15,8 +16,21 @@ const Queue = () => {
         resetQueue, 
         toggleFavorite, 
         toggleShowFavorites,
-        showFavorites
+        showFavorites,
+        setQueue
     } = useContext(CentralQueueContext);
+
+    useEffect(() => {
+        const fetchPlaylists = async () => {
+            try {
+                const response = await axios.get('/api/playlists');
+                setPlaylists(response.data);
+            } catch (error) {
+                console.error('Error fetching playlists:', error);
+            }
+        };
+        fetchPlaylists();
+    }, []);
 
     const toggleQueue = () => {
         setIsExpanded(!isExpanded);
@@ -24,6 +38,10 @@ const Queue = () => {
 
     const handleSongClick = (id) => {
         setCurrentSongById(id);
+    };
+
+    const handlePlaylistClick = (playlist) => {
+        setQueue(playlist.songs);
     };
 
     const saveFavoritesAsPlaylist = async () => {
@@ -66,6 +84,12 @@ const Queue = () => {
                                       e.stopPropagation();
                                       toggleFavorite(song.id);
                                   }}>★</span>
+                        </div>
+                    ))}
+                    <h3>Playlists</h3>
+                    {playlists.map((playlist) => (
+                        <div key={playlist.id} className="QueueItem" onClick={() => handlePlaylistClick(playlist)}>
+                            {playlist.name}
                         </div>
                     ))}
                 </div>
