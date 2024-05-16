@@ -1,7 +1,4 @@
-//playlistService.js
-
-const { Pool } = require('pg');
-const pool = new Pool();
+const pool = require('../db');
 
 const savePlaylist = async (name, songs) => {
     const client = await pool.connect();
