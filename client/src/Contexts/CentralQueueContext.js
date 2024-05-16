@@ -1,5 +1,3 @@
-///  CentralQueueContext.js
-
 import React, { createContext, useReducer, useEffect, useContext } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
