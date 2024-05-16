@@ -1,7 +1,8 @@
-// CentralQueueContext.js
+///  CentralQueueContext.js
 
 import React, { createContext, useReducer, useEffect, useContext } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 export const CentralQueueContext = createContext();
 
@@ -50,7 +51,19 @@ const queueReducer = (state, action) => {
         case 'TOGGLE_SHOW_FAVORITES':
             return { ...state, showFavorites: !state.showFavorites };
         case 'TOGGLE_FAVORITE':
-            return { ...state, queue: state.queue.map((song, index) => index === action.index ? { ...song, isFavorite: !song.isFavorite } : song) };
+            const updatedQueue = state.queue.map((song) =>
+                song.id === action.id ? { ...song, isFavorite: !song.isFavorite } : song
+            );
+            Cookies.set('favorites', JSON.stringify(updatedQueue.filter(song => song.isFavorite)));
+            return { ...state, queue: updatedQueue };
+        case 'SET_FAVORITES':
+            return { 
+                ...state, 
+                queue: state.queue.map(song => ({
+                    ...song,
+                    isFavorite: action.payload.includes(song.id)
+                }))
+            };
         case 'FILTER_BY_ALBUM':
             return { ...state, queue: state.queue.filter(song => song.album === action.albumName) };
         case 'LOADING':
@@ -81,13 +94,21 @@ export const CentralQueueProvider = ({ children }) => {
         fetchSongs();
     }, []);
 
+    useEffect(() => {
+        const savedFavorites = Cookies.get('favorites');
+        if (savedFavorites) {
+            const favoriteIds = JSON.parse(savedFavorites).map(fav => fav.id);
+            dispatch({ type: 'SET_FAVORITES', payload: favoriteIds });
+        }
+    }, []);
+
     const setCurrentSongIndex = (index) => dispatch({ type: 'SET_CURRENT_SONG_INDEX', index });
     const setCurrentSongById = (id) => dispatch({ type: 'SET_CURRENT_SONG_BY_ID', id });
     const clearQueue = () => dispatch({ type: 'CLEAR_QUEUE' });
     const addSongs = (songs) => dispatch({ type: 'ADD_SONGS', payload: songs });
     const shuffleQueue = () => dispatch({ type: 'SHUFFLE_QUEUE' });
     const resetQueue = () => dispatch({ type: 'RESET_QUEUE' });
-    const toggleFavorite = (index) => dispatch({ type: 'TOGGLE_FAVORITE', index });
+    const toggleFavorite = (id) => dispatch({ type: 'TOGGLE_FAVORITE', id });
     const toggleShowFavorites = () => dispatch({ type: 'TOGGLE_SHOW_FAVORITES' });
     const filterByAlbum = (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName });
 
