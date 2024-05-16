@@ -138,12 +138,15 @@ const AudioPlayer = () => {
                     </div>
                     <div className='transport'>
                         <button className="Back" onClick={() => setCurrentSongIndex((currentSongIndex - 1 + queue.length) % queue.length)}></button>
+                        
+                        <button className="SkipBack"onClick={() => skipTime(-30)}></button>
                         <button className="PlayStop" onClick={togglePlayback}>
                             {isPlaying ? <div className="stop-button"></div> : <div className="play-button"></div>}
                         </button>
+                        <button className="SkipForward"onClick={() => skipTime(30)}></button>
                         <button className="Next" onClick={playNextSong}></button>
-                        <button onClick={() => skipTime(-30)}>-30s</button>
-                        <button onClick={() => skipTime(30)}>+30s</button>
+                        
+                        
                         <button className="Repeat" onClick={() => setRepeatMode((repeatMode + 1) % 3)}>
                             {repeatMode === 0 ? "Off" : repeatMode === 1 ? "Queue" : "Song"}
                         </button>
