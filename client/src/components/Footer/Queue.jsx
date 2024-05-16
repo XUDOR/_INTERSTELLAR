@@ -74,7 +74,7 @@ const Queue = () => {
                 <div className="modal">
                     <div className="modal-content">
                         <span className="close" onClick={() => setIsModalOpen(false)}>&times;</span>
-                        <h2>Name Your Playlist</h2>
+                        <h2 className='playList-text'>Name Your Playlist</h2>
                         <input 
                             type="text" 
                             value={playlistName}
