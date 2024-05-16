@@ -6,7 +6,7 @@ const AudioPlayer = () => {
     const { queue, currentSongIndex, setCurrentSongIndex } = useContext(CentralQueueContext);
     const [isPlaying, setIsPlaying] = useState(false);
     const [autoplay, setAutoplay] = useState(true);
-    const [repeatMode, setRepeatMode] = useState(0); // 0: off, 1: repeat queue, 2: repeat one song
+    const [repeatMode, setRepeatMode] = useState(0); // 0: off, 1: repeat queue, 2: repeat one song, 3: repeat playlist
     const [isExpanded, setIsExpanded] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
@@ -19,10 +19,8 @@ const AudioPlayer = () => {
     const togglePlayback = useCallback(() => {
         if (!audioPlayer.current) return;
         if (isPlaying) {
-            
             audioPlayer.current.pause();
         } else {
-            
             audioPlayer.current.play().catch(error => {
                 console.error("Error during playback:", error);
             });
@@ -143,8 +141,8 @@ const AudioPlayer = () => {
                             </button>
                             <button className="SkipForward" onClick={() => skipTime(30)}></button>
                             <button className="Next" onClick={playNextSong}></button>
-                            <button className="Repeat" onClick={() => setRepeatMode((repeatMode + 1) % 3)}>
-                                {repeatMode === 0 ? "Off" : repeatMode === 1 ? "Queue" : "Song"}
+                            <button className="Repeat" onClick={() => setRepeatMode((repeatMode + 1) % 4)}>
+                                {repeatMode === 0 ? "Off" : repeatMode === 1 ? "Queue" : repeatMode === 2 ? "Song" : "Playlist"}
                             </button>
                             <button className={`Auto ${autoplay ? 'AutoOn' : ''}`} onClick={() => setAutoplay(!autoplay)}>
                                 List: {autoplay ? "On" : "Off"}
