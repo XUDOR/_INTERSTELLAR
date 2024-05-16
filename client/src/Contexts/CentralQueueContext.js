@@ -1,5 +1,7 @@
-import axios from 'axios';
+// CentralQueueContext.js
+
 import React, { createContext, useReducer, useEffect, useContext } from 'react';
+import axios from 'axios';
 
 export const CentralQueueContext = createContext();
 
@@ -34,6 +36,9 @@ const queueReducer = (state, action) => {
             return { ...state, queue: [...state.queue, ...action.payload] };
         case 'SET_CURRENT_SONG_INDEX':
             return { ...state, currentSongIndex: action.index };
+        case 'SET_CURRENT_SONG_BY_ID':
+            const songIndex = state.queue.findIndex(song => song.id === action.id);
+            return { ...state, currentSongIndex: songIndex !== -1 ? songIndex : state.currentSongIndex };
         case 'CLEAR_QUEUE':
             return { ...state, queue: [], currentSongIndex: 0 };
         case 'RELOAD_QUEUE':
@@ -63,10 +68,8 @@ export const CentralQueueProvider = ({ children }) => {
     const fetchSongs = async () => {
         dispatch({ type: 'LOADING' });
         try {
-           
             const response = await axios.get('/api/songs');
             const songs = await response.data;
-
             const queueWithGlobalIndex = songs.map((song, index) => ({ ...song, globalIndex: index, isFavorite: false }));
             dispatch({ type: 'SET_QUEUE', payload: queueWithGlobalIndex });
         } catch (error) {
@@ -79,6 +82,7 @@ export const CentralQueueProvider = ({ children }) => {
     }, []);
 
     const setCurrentSongIndex = (index) => dispatch({ type: 'SET_CURRENT_SONG_INDEX', index });
+    const setCurrentSongById = (id) => dispatch({ type: 'SET_CURRENT_SONG_BY_ID', id });
     const clearQueue = () => dispatch({ type: 'CLEAR_QUEUE' });
     const addSongs = (songs) => dispatch({ type: 'ADD_SONGS', payload: songs });
     const shuffleQueue = () => dispatch({ type: 'SHUFFLE_QUEUE' });
@@ -88,7 +92,7 @@ export const CentralQueueProvider = ({ children }) => {
     const filterByAlbum = (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName });
 
     return (
-        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites }}>
+        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, setCurrentSongById, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites }}>
             {children}
         </CentralQueueContext.Provider>
     );
