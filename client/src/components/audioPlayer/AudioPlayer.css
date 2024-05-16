@@ -187,8 +187,37 @@
   background-color: #065A82;
 }
 
+.SkipBack,
+.SkipForward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0px solid #626154;
+  color: #3AA0A0;
+  width: 45px;
+  height: 45px;
+  margin: 2px;
+}
 
 
+.SkipBack {
+  background-image: url('../../images/Icons/bwk30_stoneteal.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease;
+
+}
+
+.SkipForward {
+  background-image: url('../../images/Icons/fwd30_stoneTeal.png');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease;
+}
 
 .Repeat {
   display: flex;
