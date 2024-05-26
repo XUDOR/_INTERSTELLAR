@@ -44,6 +44,15 @@ const Queue = () => {
         setQueue(playlist.songs);
     };
 
+    const deletePlaylist = async (playlistId) => {
+        try {
+            await axios.delete(`/api/playlists/${playlistId}`);
+            setPlaylists(playlists.filter(playlist => playlist.id !== playlistId));
+        } catch (error) {
+            console.error('Error deleting playlist:', error);
+        }
+    };
+
     const saveFavoritesAsPlaylist = async () => {
         const favoriteSongs = queue.filter(song => song.isFavorite);
         if (favoriteSongs.length > 0 && playlistName) {
@@ -86,10 +95,13 @@ const Queue = () => {
                                   }}>★</span>
                         </div>
                     ))}
-                    <h3>Playlists</h3>
+                    <h3 className='Playlists-title-text'>Playlists</h3>
                     {playlists.map((playlist) => (
-                        <div key={playlist.id} className="QueueItem" onClick={() => handlePlaylistClick(playlist)}>
-                            {playlist.name}
+                        <div key={playlist.id} className="QueueItem">
+                            <div onClick={() => handlePlaylistClick(playlist)}>
+                                {playlist.name}
+                            </div>
+                            <button onClick={(e) => { e.stopPropagation(); deletePlaylist(playlist.id); }}>x</button>
                         </div>
                     ))}
                 </div>
