@@ -1,5 +1,3 @@
-///  CentralQueueContext.js
-
 import React, { createContext, useReducer, useEffect, useContext } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -111,9 +109,22 @@ export const CentralQueueProvider = ({ children }) => {
     const toggleFavorite = (id) => dispatch({ type: 'TOGGLE_FAVORITE', id });
     const toggleShowFavorites = () => dispatch({ type: 'TOGGLE_SHOW_FAVORITES' });
     const filterByAlbum = (albumName) => dispatch({ type: 'FILTER_BY_ALBUM', albumName });
+    const setQueue = (queue) => dispatch({ type: 'SET_QUEUE', payload: queue });
 
     return (
-        <CentralQueueContext.Provider value={{ ...state, setCurrentSongIndex, setCurrentSongById, clearQueue, addSongs, shuffleQueue, toggleFavorite, filterByAlbum, resetQueue, toggleShowFavorites }}>
+        <CentralQueueContext.Provider value={{
+            ...state,
+            setCurrentSongIndex,
+            setCurrentSongById,
+            clearQueue,
+            addSongs,
+            shuffleQueue,
+            toggleFavorite,
+            filterByAlbum,
+            resetQueue,
+            toggleShowFavorites,
+            setQueue
+        }}>
             {children}
         </CentralQueueContext.Provider>
     );
