@@ -41,7 +41,23 @@ const getPlaylists = async () => {
     }
 };
 
+const deletePlaylist = async (playlistId) => {
+    const client = await pool.connect();
+    try {
+        await client.query('BEGIN');
+        await client.query('DELETE FROM playlist_songs WHERE playlist_id = $1', [playlistId]);
+        await client.query('DELETE FROM playlists WHERE id = $1', [playlistId]);
+        await client.query('COMMIT');
+    } catch (err) {
+        await client.query('ROLLBACK');
+        throw err;
+    } finally {
+        client.release();
+    }
+};
+
 module.exports = {
     savePlaylist,
-    getPlaylists
+    getPlaylists,
+    deletePlaylist
 };
