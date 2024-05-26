@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { savePlaylist, getPlaylists } = require('../services/playlistService');
+const { savePlaylist, getPlaylists, deletePlaylist } = require('../services/playlistService');
 
 router.post('/', async (req, res) => {
     const { name, songs } = req.body;
@@ -20,6 +20,18 @@ router.get('/', async (req, res) => {
         res.json(playlists);
     } catch (err) {
         console.error('Error fetching playlists:', err);
+        res.status(500).send('Server error');
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        await deletePlaylist(id);
+        res.status(204).send();
+    } catch (err) {
+        console.error('Error deleting playlist:', err);
         res.status(500).send('Server error');
     }
 });
