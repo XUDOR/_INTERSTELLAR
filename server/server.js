@@ -12,18 +12,21 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 5001; 
 
-/* CORS Options
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log("Origin received:", origin); // Add this to check what origin is being received
-    if ([frontEndDomainProduction, frontEndDomainDevelopment].indexOf(origin) !== -1 || !origin) {
-      callback(null, true); // Allow if it's one of our sites or server-to-server requests where origin is undefined
+    console.log("Origin received:", origin); // Debugging: Log the incoming origin
+    const allowedOrigins = [frontEndDomainProduction, frontEndDomainDevelopment];
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true); // Allow requests from whitelisted origins or server-side requests
     } else {
       callback(new Error('Not allowed by CORS'));
     }
-  }
+  },
 };
-*/
+
+app.use(cors(corsOptions));
+
 
 
 app.use(helmet());
